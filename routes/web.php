@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\RunySliderVueController;
+use App\Models\RunySliderVue;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/slider', [RunySliderVueController::class , 'pics' ]);

@@ -185,6 +185,22 @@ return [
         /*
          * Package Service Providers...
          */
+        App\Providers\FortifyServiceProvider::class,
+
+        /*
+         * My Package Service Providers...
+         */
+        Post\PostServiceProvider::class,
+        Product\ProductServiceProvider::class,
+        HomePage\HomeServiceProvider::class,
+        Cart\OrderServiceProvider::class,
+        Cart\CartServiceProvider::class,
+        Customer\CustomerServiceProvider::class,
+        Sms\SmsServiceProvider::class,
+        SliderB5\SliderB5ServiceProvider::class,
+        FilesManager\FilesServiceProvider::class,
+        Employee\EmployeeServiceProvider::class,
+        Rqsts\RqstsServiceProvider::class,
 
         /*
          * Application Service Providers...
