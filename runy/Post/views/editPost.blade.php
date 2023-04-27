@@ -1,7 +1,7 @@
 @extends('layouts.runyApp',['title'=>$title,'description'=>''])
 
 @section('content')
-    @include('layouts.main-header')
+    @include('layouts.cp-header')
     <div class="container">
         <!-- Title and Top Buttons Start -->
         <div class="page-title-container">
@@ -70,5 +70,5 @@
             ]
         });
     </script>
-    @include('layouts.main-footer')
+    @include('layouts.cp-footer')
 @endsection

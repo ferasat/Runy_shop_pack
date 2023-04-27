@@ -1,19 +1,6 @@
-@extends('layout',[
-'title'=>$title,
-'description'=>$description
-])
-
-@section('css')
-@endsection
-
-@section('js_vendor')
-@endsection
-
-@section('js_page')
-    <script src="{{ asset('/js/pages/horizontal.js') }}"></script>
-@endsection
-
+@extends('layouts.runyApp',[ 'title'=>'پست ها', 'description'=>'' ])
 @section('content')
+    @include('layouts.cp-header')
     <div class="container">
         <!-- Title and Top Buttons Start -->
         <div class="page-title-container">
@@ -32,4 +19,5 @@
         @livewire('admin.post.category.index-category' , ['categories' => $categories , 'description' => $description])
         <!-- Content End -->
     </div>
+    @include('layouts.cp-footer')
 @endsection

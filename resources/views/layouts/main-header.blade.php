@@ -5,7 +5,7 @@
             <div class="col-lg-2 col-md-3 col-sm-4 col-5">
                 <div class="logo-area default">
                     <a href="#">
-                        <img src="assets/img/logo.png" alt="">
+                        <img src="{{ setting_site()->site_logo }}" alt="{{ setting_site()->site_name }}">
                     </a>
                 </div>
             </div>

@@ -126,4 +126,6 @@ class PageController extends Controller
         return view('PostView::blogPost' , compact('html_tag_data' , 'title' , 'description' ,
             'breadcrumbs' ));
     }
+
+
 }

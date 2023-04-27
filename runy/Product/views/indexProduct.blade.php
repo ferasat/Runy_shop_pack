@@ -23,5 +23,5 @@
         @livewire('admin.product.index-product' , ['products' => $products , 'description' => $description])
         <!-- Content End -->
     </div>
-    @include('layouts.main-footer')
+    @include('layouts.cp-footer')
 @endsection

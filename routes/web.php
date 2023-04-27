@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\RunySliderVueController;
 use App\Models\RunySliderVue;
+use HomePage\HomePageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,7 +17,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomePageController::class , 'index']);
 Route::get('/slider', [RunySliderVueController::class , 'pics' ]);
+
+
+Route::get('/dashboard', [DashboardController::class , 'index' ])->name('dashboard');
+

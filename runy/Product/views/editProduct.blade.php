@@ -63,7 +63,7 @@
         </form>
         <!-- Content End -->
     </div>
-    @include('layouts.main-footer')
+    @include('layouts.cp-footer')
     <script>
         class MyUploadAdapter {
             constructor(loader) {

@@ -14,6 +14,8 @@ class CreateSettingsTable extends Migration
             $table->id();
             $table->string('site_name')->default('رانی شاپ');
             $table->string('site_url')->default('tarahsite.net');
+            $table->string('site_logo')->default('https://tarahsite.net/wp-content/themes/tarahsite-V-4/img/logo-tarah.png');
+            $table->string('site_icon')->default('https://tarahsite.net/wp-content/themes/tarahsite-V-4/img/logo-tarah.png');
             $table->string('dash_url')->default('runy.runyshop.ir');
             $table->boolean('have_ssl')->default('1');  // have ssl ?
             $table->string('site_short_description')->default('شعار سایت');

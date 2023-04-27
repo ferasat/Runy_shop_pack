@@ -20,5 +20,5 @@
         @livewire('admin.post.index-post' , ['type' => $type , 'description' => $description])
         <!-- Content End -->
     </div>
-    @include('layouts.main-footer')
+    @include('layouts.cp-footer')
 @endsection

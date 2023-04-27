@@ -4,8 +4,8 @@
         <div class="row">
             <div class="col-lg-2 col-md-3 col-sm-4 col-5">
                 <div class="logo-area default">
-                    <a href="#">
-                        <img src="assets/img/logo.png" alt="">
+                    <a href="{{ asset(route('dashboard')) }}">
+                        <img src="{{ asset('theme/img/logo.png') }}" alt="رانی شاپ">
                     </a>
                 </div>
             </div>
@@ -13,7 +13,7 @@
                 <div class="search-area default">
                     <form action="" class="search">
                         <input type="text" placeholder="نام کالا، برند و یا دسته مورد نظر خود را جستجو کنید…">
-                        <button type="submit"><img src="assets/img/search.png" alt=""></button>
+                        <button type="submit"><img src="{{ asset('theme/img/search.png') }}" alt=""></button>
                     </form>
                 </div>
             </div>
@@ -53,7 +53,7 @@
                                     <button class="basket-item-remove"></button>
                                     <div class="basket-item-content">
                                         <div class="basket-item-image">
-                                            <img alt="" src="assets/img/cart/2324935.jpg">
+                                            <img alt="" src="{{ asset('theme/img/sample-tour.jpg') }}">
                                         </div>
                                         <div class="basket-item-details">
                                             <div class="basket-item-title">هندزفری بلوتوث مدل S530
