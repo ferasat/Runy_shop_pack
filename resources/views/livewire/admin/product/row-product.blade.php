@@ -14,6 +14,7 @@
                     <div class="text-small text-muted">{{ statusProduct($product->statusPublish) }}</div>
                 </div>
                 <div class="d-flex">
+                    <a class="btn btn-outline-primary btn-sm ms-1" href="{{asset('/product/'.$product->slug)}}" target="_blank">دیدن</a>
                     <a class="btn btn-outline-warning btn-sm ms-1" href="{{asset('/dashboard/product/edit/'.$product->id)}}" type="button">ویرایش</a>
                     <a class="btn btn-outline-secondary btn-sm ms-1" wire:click.privent="cloneProduct({{$product->id}})">رو نوشت</a>
                     <a class="btn btn-outline-danger btn-sm ms-1" href="{{ asset('/dashboard/product/delete/'.$product->id) }}" {{--wire:click.privent="deleteProduct({{$product->id}})"--}}>حذف</a>

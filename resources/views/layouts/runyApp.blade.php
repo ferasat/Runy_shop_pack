@@ -13,18 +13,7 @@
 </head>
 <body class="index-page sidebar-collapse">
 
-<!-- responsive-header -->
-@if(\Illuminate\Support\Facades\Auth::user()->levelPermission > 2)
-@livewire('admin.theme.navbar-responsive')
-@else
-
-@endif
-
-<!-- responsive-header -->
-
-<div class="wrapper default">
-    @yield('content')
-</div>
+@yield('content')
 
 @include('layouts.runyFooter')
 @livewireScripts

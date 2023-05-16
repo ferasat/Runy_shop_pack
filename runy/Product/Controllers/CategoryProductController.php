@@ -12,14 +12,13 @@ class CategoryProductController extends Controller
 
     public function index()
     {
-        $html_tag_data = ["override"=>'{ "attributes" : { "placement" : "horizontal", "layout":"boxed" }, "storagePrefix" : "starter-project", "showSettings" : false }'];
         $title = 'دستبندی محصول';
         $description= 'مدیریت دستبندی محصول';
         $breadcrumbs = ["/dashboard"=>" پیشخوان " , "/dashboard/product" => " محصولات  ", "/dashboard/product/category" => " دستبندی محصولات  " ];
 
         $categoris = CategoryProduct::all()->sortByDesc('id');
 
-        return view('ProductView::category.catsProduct' , compact('html_tag_data' , 'title' , 'description' , 'breadcrumbs' , 'categoris'));
+        return view('ProductView::category.catsProduct' , compact('title' , 'description' , 'breadcrumbs' , 'categoris'));
     }
 
     public function create()

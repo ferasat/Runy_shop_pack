@@ -3,6 +3,7 @@
 namespace Product\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Setting;
 use App\Models\Taxonomy;
 use FilesManager\Models\FileManager;
 use Ghasedak\GhasedakApi;
@@ -53,7 +54,6 @@ class ProductController extends Controller
 
     public function edit(Product $id)
     {
-        $html_tag_data = ["override" => '{ "attributes" : { "placement" : "horizontal", "layout":"boxed" }, "storagePrefix" : "starter-project", "showSettings" : false }'];
         $title = 'ویرایش ' . $id->name;
         $description = 'ویرایش محصول';
         $breadcrumbs = ["/dashboard" => " پیشخوان ", "/dashboard/product" => " محصولات  "];
@@ -61,7 +61,7 @@ class ProductController extends Controller
         $ckeditor = true;
         $product = $id;
 
-        return view('ProductView::editProduct', compact('html_tag_data', 'title', 'description',
+        return view('ProductView::editProduct', compact('title', 'description',
             'breadcrumbs', 'product', 'ckeditor'));
     }
 
@@ -181,27 +181,32 @@ class ProductController extends Controller
 
     public function show(Product $product)
     {
-        //dd($product);
-        $html_tag_data = ["override" => '{ "attributes" : { "placement" : "horizontal", "layout":"boxed" }, "storagePrefix" : "starter-project", "showSettings" : false }'];
         $title = $product->name;
         $description = $product->titleSeo . ' | ' . $product->focusKeyword;
-        $breadcrumbs = ["/" => " خانه ", "/shop" => " فروشگاه  ", "/product/" . $product->slug => $product->name];
+        //$breadcrumbs = ["/"=>" خانه " , "/shop" => "فروشگاه", "/product/".$product->slug => $product->name ];
+        $breadcrumbs = '<ul class="breadcrumb">
+                            <li>
+                                <a href="'.asset('/').'" title=""><span>خانه</span></a>
+                            </li>
+                            <li>
+                                <a href="'.asset('/shop').'" title="فروشگاه"><span>فروشگاه</span></a>
+                            </li>
+                            <li>
+                                <a href="'.asset('/product/'.$product->slug).'" title="'.$product->name.'"><span>'.$product->name.'</span></a>
+                            </li>
+                        </ul>';
 
-        /*$api = new GhasedakApi('8ddae8ab83ecc56fcad9f398c61f31c24ed7994a5273b6c684f5db0b26d31344');
-        dd($api);*/
 
-        return view('ProductView::show', compact('product', 'html_tag_data', 'title', 'description', 'breadcrumbs'));
+        return view('ProductView::show', compact('product', 'title', 'description' , 'breadcrumbs'));
     }
 
     public function shop()
     {
-        $html_tag_data = ["override" => '{ "attributes" : { "placement" : "horizontal", "layout":"boxed" }, "storagePrefix" : "starter-project", "showSettings" : false }'];
-        $title = 'فروشگاه هیدرولیک جم';
-        $description = 'مهره دنباله خم - شلنگ فشار قوی - شیر فشار قوی - بوش حصیری';
-        $breadcrumbs = ["/" => " خانه ", "/shop" => " فروشگاه  "];
+        $setting = Setting::query()->first();
+        $title = $setting->site_name;
+        $description = $setting->site_short_description ;
 
-
-        return view('ProductView::shop', compact( 'html_tag_data', 'title', 'description', 'breadcrumbs'));
+        return view('ProductView::shop', compact(  'title', 'description'));
     }
 
 }

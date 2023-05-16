@@ -1,15 +1,7 @@
-@extends('layout',[
-'title'=>$title,
-'description'=>$description
-])
+@extends('layout',['title'=>$title,'description'=>$description])
 
-@section('css')
-@endsection
+@section('content')
 
-@section('js_vendor')
-@endsection
-
-@section('js_page')
     <div class="container">
         <!-- Title and Top Buttons Start -->
         <div class="page-title-container">
@@ -17,7 +9,6 @@
                 <!-- Title Start -->
                 <div class="col-12 col-md-7">
                     <h1 class="mb-0 pb-0 display-4" id="title">{{ $title }}</h1>
-                    @include('_layout.breadcrumb',['breadcrumbs'=>$breadcrumbs])
                 </div>
                 <!-- Title End -->
             </div>
@@ -28,9 +19,8 @@
         @livewire('user.product.shop' )
         <!-- Content End -->
     </div>
-    @include('_layout.runy_footer')
-@endsection
 
-@section('content')
-    <script src="{{ asset('/js/pages/horizontal.js') }}"></script>
+
+    @livewire('user.theme.user-footer')
+
 @endsection

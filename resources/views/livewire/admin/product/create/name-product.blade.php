@@ -11,7 +11,7 @@
 
         </div>
         <div class="d-flex justify-content-end">
-            <a href="" target="_blank" class="btn btn-icon btn-icon-end btn-tertiary active-scale-up" type="button">
+            <a href="{{ asset('/product/'.$slug) }}" target="_blank" class="btn btn-icon btn-icon-end btn-tertiary active-scale-up" type="button">
                 <span >دیدن محصول</span>
                 <i data-cs-icon="link"></i>
             </a>

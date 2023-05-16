@@ -86,6 +86,28 @@ function catsInPro($pro_id) // دستبندی هایی که در این محصو
     }
 }
 
+function catsInProLink($pro_id) // دستبندی هایی که در این محصول هستند
+{
+
+    $taxs = Taxonomy::query()->where([
+        'type_id' => $pro_id,
+        'type' => 'product',
+        'item' => 'cat',
+        'is' => '1',
+    ])->get();
+
+
+    if (sizeof($taxs) > 0) {
+        $categoris = '';
+        foreach ($taxs as $cat){
+            $categoris = $categoris . '<a target="_blank" title="'.$cat->name.'" href="'.asset('/product/cat/').$cat->slug.'">'.$cat->name.'</a>';
+        }
+        return $categoris;
+    } else {
+        return null;  /// در این محصول این دستبندی نیست
+    }
+}
+
 function isOrNot_pro($cat_id, $pro_id)
 {
     $tax_is = DB::table('taxonomies')->where([
@@ -120,4 +142,8 @@ function isTax_pro($cat_id, $pro_id)
     } else {
         return false;
     }
+}
+function off_percent($price , $spPrice)
+{
+    return round(100 - ($spPrice*100)/$price) ;
 }

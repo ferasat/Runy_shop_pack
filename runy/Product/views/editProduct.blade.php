@@ -1,69 +1,75 @@
-@extends('layouts.runyApp',[
-'title'=>$title,
-'description'=>'ویرایش محصول'
-])
-
+@extends('layouts.runyApp',['title'=>$title,'description'=>'ویرایش محصول' , 'editor' => true])
 
 @section('content')
-    @include('layouts.cp-header')
-    <div class="container">
-        <!-- Title and Top Buttons Start -->
-        <div class="page-title-container">
-            <div class="row">
-                <!-- Title Start -->
-                <div class="col-12 col-md-7">
-                    <h1 class="mb-0 pb-0 display-4" id="title">{{ $title }}</h1>
+    <!-- responsive-header For mobile-->
+    @livewire('admin.theme.admin-navbar-responsive' , ['menu'=>'cp'])
+    <!-- responsive-header -->
 
+    <div class="wrapper default">
+        @livewire('admin.theme.admin-cp-header' , ['menu'=>'cp'])
+
+        <div class="container">
+            <!-- Title and Top Buttons Start -->
+            <div class="page-title-container">
+                <div class="row">
+                    <!-- Title Start -->
+                    <div class="col-12 col-md-7">
+                        <h3 class="p-3" id="title">{{ $title }}</h3>
+                    </div>
+                    <!-- Title End -->
                 </div>
-                <!-- Title End -->
             </div>
-        </div>
-        <!-- Title and Top Buttons End -->
+            <!-- Title and Top Buttons End -->
 
-        <!-- Content Start -->
-        <form class="row " method="post" action="{{ asset('dashboard/product/edit/'.$product->id) }}"  enctype="multipart/form-data">
-            @csrf
-            <input type="hidden" name="product_id" value="{{$product->id}}">
-            <div class="col-xl-8 mb-5">
-                <section class="scroll-section" id="listPost">
+            <!-- Content Start -->
+            <form class="row " method="post" action="{{ asset('dashboard/product/edit/'.$product->id) }}"
+                  enctype="multipart/form-data">
+                @csrf
+                <input type="hidden" name="product_id" value="{{$product->id}}">
+                <div class="col-xl-8 mb-5">
+                    <section class="scroll-section" id="listPost">
 
-                    @livewire('admin.product.create.name-product' , ['product' => $product ] )
+                        @livewire('admin.product.create.name-product' , ['product' => $product ] )
 
-                    <div class="card mb-3">
-                        <div class="card-header">معرفی کوتاه</div>
-                        <div class="card-body">
+                        <div class="card mb-3">
+                            <div class="card-header">معرفی کوتاه</div>
+                            <div class="card-body">
                             <textarea class="form-control editor" id="editor2"
                                       name="shortDescription">{!! $product->shortDescription !!}</textarea>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="card mb-3">
-                        <div class="card-header">توضیحات محصول</div>
-                        <div class="card-body">
+                        <div class="card mb-3">
+                            <div class="card-header">توضیحات محصول</div>
+                            <div class="card-body">
                             <textarea class="form-control editor" id="editor"
                                       name="texts">{!! $product->texts !!}</textarea>
+                            </div>
+                        </div>
+                        @livewire('admin.product.create.info-product' , ['product' => $product ] )
+                    </section>
+                </div>
+                <div class="col-xl-4 mb-5">
+                    @livewire('admin.product.create.sidebar-product' , ['product' => $product ] )
+                    <div class="card mt-5">
+                        <div class="card-body">
+                            @if($product->pic !== null )
+                                <img src="{{asset($product->pic)}}" class="card-img-top sh-19" alt="تصویر شاخص">
+                            @endif
+                            <label class="form-label">تصویر شاخص</label>
+                            <input type="file" class="form-control" name="picture">
                         </div>
                     </div>
-                    @livewire('admin.product.create.info-product' , ['product' => $product ] )
-                </section>
-            </div>
-            <div class="col-xl-4 mb-5">
-                @livewire('admin.product.create.sidebar-product' , ['product' => $product ] )
-                <div class="card mt-5">
-                    <div class="card-body">
-                        @if($product->pic !== null )
-                            <img src="{{asset($product->pic)}}" class="card-img-top sh-19">
-                        @endif
-                        <label class="form-label">تصویر شاخص</label>
-                        <input type="file" class="form-control" name="picture">
-                    </div>
-                </div>
 
-            </div>
-        </form>
-        <!-- Content End -->
+                </div>
+            </form>
+            <!-- Content End -->
+        </div>
+
     </div>
-    @include('layouts.cp-footer')
+
+    @livewire('admin.theme.admin-footer' , ['menu'=>'cp'])
+
     <script>
         class MyUploadAdapter {
             constructor(loader) {
@@ -96,7 +102,7 @@
                 // integration to choose the right communication channel. This example uses
                 // a POST request with JSON as a data structure but your configuration
                 // could be different.
-                xhr.open('POST', '{{route('post.image.upload' , [ '_token' => csrf_token() ] )}}', true);
+                xhr.open('POST', '{{route('editor.upload' , [ '_token' => csrf_token() ] )}}', true);
                 xhr.responseType = 'json';
             }
 

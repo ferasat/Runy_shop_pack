@@ -1,7 +1,4 @@
-@extends('layouts.runyApp',[
-'title'=>'ورود',
-'description'=>'ورود به سایت'
-])
+@extends('layouts.runyApp',['title'=>'ورود','description'=>'ورود به سایت'])
 
 @section('content')
     <div class="container">
