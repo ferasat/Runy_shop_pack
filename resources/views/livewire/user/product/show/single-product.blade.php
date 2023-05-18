@@ -11,7 +11,7 @@
             <div class="col-12">
                 <article class="product">
                     <div class="row">
-                        <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="col-lg-4 col-md-6 col-sm-12 position-relative">
                             <div class="product-gallery default">
                                 <img class="zoom-img" id="img-product-zoom" src="{{ asset($product->pic) }}"
                                      data-zoom-image="{{ asset($product->pic) }}" width="411"
@@ -58,21 +58,18 @@
                                     <span class="tooltip-option">افزودن به علاقمندی</span>
                                 </li>
                                 <li>
-                                    <button data-toggle="modal" data-target="#myModal"><i
+                                    <button data-toggle="modal" data-bs-toggle="modal" data-bs-target="#shareModal"><i
                                             class="fa fa-share-alt"></i></button>
                                     <span class="tooltip-option">اشتراک گذاری</span>
                                 </li>
                             </ul>
                             <!-- Modal Core -->
-                            <div class="modal-share modal fade" id="myModal" tabindex="-1" role="dialog"
-                                 aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-share modal fade" id="shareModal" tabindex="-1" aria-labelledby="shareModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal"
-                                                    aria-hidden="true">&times;
-                                            </button>
-                                            <h4 class="modal-title" id="myModalLabel">اشتراک گذاری</h4>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            <h4 class="modal-title" id="shareModalLabel">اشتراک گذاری</h4>
                                         </div>
                                         <div class="modal-body">
                                             <form class="form-share">
@@ -80,7 +77,8 @@
                                                 <div class="row">
                                                     <div class="col-12">
                                                         <ul class="btn-group-share">
-                                                            <li><a href="#" class="btn-share btn-share-twitter"
+                                                            <li>
+                                                                <a href="#" class="btn-share btn-share-twitter"
                                                                    target="_blank"><i class="fa fa-twitter"></i></a>
                                                             </li>
                                                             <li><a href="#" class="btn-share btn-share-facebook"
@@ -107,19 +105,7 @@
                                                 </div>
                                             </form>
                                         </div>
-                                        <div class="modal-footer">
-                                            <form class="form-share-url default">
-                                                <div class="form-share-url-title">آدرس صفحه</div>
-                                                <div class="row">
-                                                    <div class="col-12">
-                                                        <label class="ui-url">
-                                                            <input class="ui-url-field"
-                                                                   value="https://www.digikala.com">
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -186,19 +172,11 @@
                                 <div class="h4">{{ $product-> price }} <span> تومان </span></div>
                             @endif
 
-                            <div class="product-add default">
-                                <div class="parent-btn">
-                                    <a href="#" class="dk-btn dk-btn-info">
-                                        افزودن به سبد خرید
-                                        <i class="now-ui-icons shopping_cart-simple"></i>
-                                    </a>
-                                </div>
-                            </div>
+                            @livewire('user.cart.add-to-cart' , compact('product'))
+
                         </div>
                         <div class="col-lg-4 col-md-6 col-sm-12 center-breakpoint">
-                            <div class="product-guaranteed default">
-                                بیش از ۱۸۰ نفر از خریداران این محصول را پیشنهاد داده‌اند
-                            </div>
+
                             <div class="product-params default">
                                 @livewire('user.product.show.short-description' , ['product'=>$product])
                             </div>
@@ -248,91 +226,11 @@
                                     </div>
                                     <div class="card-body" id="params" >
                                         <article>
-                                            <h2 class="param-title">
+                                            <h4 class="param-title">
                                                 مشخصات فنی
-                                                <span>Apple iPhone X 256GB Mobile Phone</span>
-                                            </h2>
-                                            <section>
-                                                <h3 class="params-title">مشخصات کلی</h3>
-                                                <ul class="params-list">
-                                                    <li>
-                                                        <div class="params-list-key">
-                                                            <span class="block">ابعاد</span>
-                                                        </div>
-                                                        <div class="params-list-value">
-                                                                    <span class="block">
-                                                                        7.7 × 70.9 × 143.6 میلی‌متر
-                                                                    </span>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="params-list-key">
-                                                            <span class="block">توضیحات سیم کارت</span>
-                                                        </div>
-                                                        <div class="params-list-value">
-                                                                    <span class="block">
-                                                                        سایز نانو (8.8 × 12.3 میلی‌متر)
-                                                                    </span>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="params-list-key">
-                                                            <span class="block">وزن</span>
-                                                        </div>
-                                                        <div class="params-list-value">
-                                                                    <span class="block">
-                                                                        174 گرم
-                                                                    </span>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="params-list-key">
-                                                            <span class="block">ویژگی‌های خاص</span>
-                                                        </div>
-                                                        <div class="params-list-value">
-                                                                    <span class="block">
-                                                                        مقاوم در برابر آب , مناسب عکاسی , مناسب عکاسی
-                                                                        سلفی , مناسب بازی , مجهز به حس‌گر تشخیص چهره
-                                                                    </span>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="params-list-key">
-                                                            <span class="block">تعداد سیم کارت</span>
-                                                        </div>
-                                                        <div class="params-list-value">
-                                                                    <span class="block">
-                                                                        تک سیم کارت
-                                                                    </span>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </section>
-                                            <section>
-                                                <h3 class="params-title">پردازنده</h3>
-                                                <ul class="params-list">
-                                                    <li>
-                                                        <div class="params-list-key">
-                                                            <span class="block">تراشه</span>
-                                                        </div>
-                                                        <div class="params-list-value">
-                                                                    <span class="block">
-                                                                        Apple A11 Bionic Chipset
-                                                                    </span>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="params-list-key">
-                                                            <span class="block">نوع پردازنده</span>
-                                                        </div>
-                                                        <div class="params-list-value">
-                                                                    <span class="block">
-                                                                        64 بیت
-                                                                    </span>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </section>
+                                                <span>{{ $product-> name }}</span>
+                                            </h4>
+                                            {!! $product-> technical_info !!}
                                         </article>
                                     </div>
                                     <div class="card-body" id="comments" >
@@ -345,17 +243,7 @@
                                         </article>
                                     </div>
                                     <div class="card-body" id="questions" >
-                                        <article>
-                                            <h2 class="param-title">
-                                                افزودن نظر
-                                                <span>نظر خود را در مورد محصول مطرح نمایید</span>
-                                            </h2>
-                                            <form action="" class="comment">
-                                                    <textarea class="form-control" placeholder="نظر"
-                                                              rows="5"></textarea>
-                                                <button class="btn btn-default">ارسال نظر</button>
-                                            </form>
-                                        </article>
+                                        @livewire('user.comment.add-comment' , ['type'=>'product' , 'item'=>$product ])
                                     </div>
                             </div>
                         </div>

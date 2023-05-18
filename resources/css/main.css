@@ -1596,7 +1596,7 @@ footer.main-footer .footer-widgets .newsletter form .form-control {
 
 footer.main-footer .footer-widgets .newsletter form .btn {
     position: absolute;
-    top: -5px;
+    top: 2px;
     left: -1px;
     border-radius: 7px;
     font-family: Vazir;

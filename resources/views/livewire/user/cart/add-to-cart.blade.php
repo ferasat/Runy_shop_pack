@@ -1,9 +1,13 @@
 <div >
-    <button type="button" class="btn btn-outline-primary btn-icon-end w-100 w-sm-auto" data-bs-toggle="modal"
-            data-bs-target="#staticAddToCart" wire:click.privent="addToCart({{$product->id}})">
-        خرید
-        <i data-cs-icon="cart"></i>
-    </button>
+    <div class="product-add default">
+        <div class="parent-btn">
+            <a href="#" class="dk-btn dk-btn-info" data-bs-toggle="modal"
+               data-bs-target="#staticAddToCart" wire:click.privent="addToCart({{$product->id}})">
+                افزودن به سبد خرید
+                <i class="now-ui-icons shopping_cart-simple"></i>
+            </a>
+        </div>
+    </div>
     <!-- Modal -->
     <div class="modal fade" id="staticAddToCart" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
          aria-labelledby="staticAddToCartLabel" aria-hidden="true" wire:ignore>

@@ -13,6 +13,7 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->date('date_publish')->nullable(); // تاریخ نمایش پست
             $table->longText('texts')->nullable();
+            $table->longText('technical_info')->nullable();
             $table->longText('shortDescription')->nullable();
             $table->string('pic')->nullable();
             $table->enum('statusPublish', ['forCheck' , 'draft' ,'publish'])->default('draft')->nullable();

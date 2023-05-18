@@ -4,6 +4,6 @@
         {!! $product -> shortDescription !!}
     </div>
 
-    @livewire('user.cart.add-to-cart' , compact('product'))
+
 
 </div>
