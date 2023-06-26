@@ -19,6 +19,7 @@
       <sourceFolder url="file://$MODULE_DIR$/runy/Requests" isTestSource="false" packagePrefix="Rqsts\" />
       <sourceFolder url="file://$MODULE_DIR$/runy/SMSMarketing" isTestSource="false" packagePrefix="Sms\" />
       <sourceFolder url="file://$MODULE_DIR$/runy/SliderB5" isTestSource="false" packagePrefix="SliderB5\" />
+      <sourceFolder url="file://$MODULE_DIR$/runy/RunySEO/src" isTestSource="false" packagePrefix="RunySEO\" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/lexer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/inflector" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dflydev/dot-access-data" />
@@ -136,6 +137,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/pragmarx/google2fa" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/artesaos/seotools" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/league/flysystem-local" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-php83" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

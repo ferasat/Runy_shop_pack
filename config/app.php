@@ -96,6 +96,8 @@ return [
         FilesManager\FilesServiceProvider::class,
         Employee\EmployeeServiceProvider::class,
         Rqsts\RqstsServiceProvider::class,
+        RunySEO\RunySEOServiceProvider::class,
+
 
         /*
          * Application Service Providers...
