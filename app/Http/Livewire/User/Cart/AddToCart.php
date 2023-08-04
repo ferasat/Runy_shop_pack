@@ -16,6 +16,7 @@ class AddToCart extends Component
 
     public function addToCart($product_id)
     {
+       // dd('yes');
         $product = Product::find($product_id);
 
         if ($product->specialPrice > 1) {

@@ -97,6 +97,7 @@ return [
         Employee\EmployeeServiceProvider::class,
         Rqsts\RqstsServiceProvider::class,
         RunySEO\RunySEOServiceProvider::class,
+        SendMessages\SendMessagesServiceProvider::class,
 
 
         /*

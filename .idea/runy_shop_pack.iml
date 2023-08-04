@@ -20,6 +20,7 @@
       <sourceFolder url="file://$MODULE_DIR$/runy/SMSMarketing" isTestSource="false" packagePrefix="Sms\" />
       <sourceFolder url="file://$MODULE_DIR$/runy/SliderB5" isTestSource="false" packagePrefix="SliderB5\" />
       <sourceFolder url="file://$MODULE_DIR$/runy/RunySEO/src" isTestSource="false" packagePrefix="RunySEO\" />
+      <sourceFolder url="file://$MODULE_DIR$/runy/SendMessages" isTestSource="false" packagePrefix="SendMessages\" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/lexer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/inflector" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dflydev/dot-access-data" />
@@ -138,6 +139,11 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/artesaos/seotools" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/league/flysystem-local" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-php83" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/ghasedak/php" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/ghasedak/laravel" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/shetabit/payment" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/shetabit/multipay" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpmailer/phpmailer" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

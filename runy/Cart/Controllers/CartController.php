@@ -62,6 +62,22 @@ class CartController extends Controller
     /// For Customer
     public function my_cart()
     {
+        $title = 'kjj';
+        $description = 'kk' . ' | ' . 'kkj';
+        //$breadcrumbs = ["/"=>" خانه " , "/shop" => "فروشگاه", "/product/".$product->slug => $product->name ];
+        $breadcrumbs = '<ul class="breadcrumb">
+                            <li>
+                                <a href="'.asset('/').'" title=""><span>خانه</span></a>
+                            </li>
+                            <li>
+                                <a href="'.asset('/cart').'" title="فروشگاه"><span>فروشگاه</span></a>
+                            </li>
+                            <li>
+                                <a href="'.asset('/cart').'" title="j"><span>j</span></a>
+                            </li>
+                        </ul>';
 
+
+        return view('CartView::user.showCart' ,compact('title', 'description' , 'breadcrumbs'));
     }
 }

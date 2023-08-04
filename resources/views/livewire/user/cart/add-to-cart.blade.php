@@ -21,12 +21,13 @@
                     @if(session('cart'))
                         @php $productInfo = 'order-'.$product->id ; @endphp
                         @foreach(session('cart') as  $productInfo=> $details )
-                                <?php $total += $details['price'] * $details['quantity'] ?>
+                                @php $total += $details['price'] * $details['quantity'] @endphp
                             <tr>
                                 <td data-th="Product">
                                     <div class="row">
-                                        <div class="col-sm-3 hidden-xs"><img src="{{ asset($details['pic']) }}" width="100" height="100" class="img-responsive"/></div>
-                                        <div class="col-sm-9">
+                                        @if(isset($details['pic']))
+                                            <img src="{{ asset($details['pic']) }}" width="100" height="100" class="img-responsive"/>
+                                        @endif                                        <div class="col-sm-9">
                                             <h4 class="nomargin">{{ $details['name'] }}</h4>
                                         </div>
                                     </div>
