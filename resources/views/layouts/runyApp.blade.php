@@ -17,5 +17,6 @@
 
 @include('layouts.runyFooter')
 @livewireScripts
+
 </body>
 </html>

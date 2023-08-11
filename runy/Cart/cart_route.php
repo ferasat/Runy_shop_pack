@@ -16,7 +16,7 @@ Route::prefix('/dashboard')->group( function (){
     Route::get('/cart/delete/{id}', [CartController::class , 'destroy']);
 });
 
-Route::prefix('/cart')->group( function (){
-    Route::get('/cart/', [CartController::class , 'my_cart']);
-});
+
+Route::get('/cart/', [CartController::class , 'my_cart']);
+Route::get('/invoice/', [CartController::class , 'invoice'])->name('invoice');
 

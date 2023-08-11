@@ -1,7 +1,8 @@
-@extends('layout',[
-'title'=>$title,
-'description'=>$description
-])
+{{--@extends('layout',[--}}
+{{--'title'=>$title,--}}
+{{--'description'=>$description--}}
+{{--])--}}
+@extends('layouts.runyApp',['title'=>'محصولات','description'=>'محصولات'])
 
 @section('css')
 @endsection
@@ -21,7 +22,7 @@
                 <!-- Title Start -->
                 <div class="col-12 col-md-7">
                     <h1 class="mb-0 pb-0 display-4" id="title">{{ $title }}</h1>
-                    @include('_layout.breadcrumb',['breadcrumbs'=>$breadcrumbs])
+{{--                    @include('_layout.breadcrumb',['breadcrumbs'=>$breadcrumbs])--}}
                 </div>
                 <!-- Title End -->
             </div>

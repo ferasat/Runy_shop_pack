@@ -80,4 +80,14 @@ class CartController extends Controller
 
         return view('CartView::user.showCart' ,compact('title', 'description' , 'breadcrumbs'));
     }
+    public function invoice()
+    {
+        $title='صورت حساب';
+        $description = '';
+        $dataTable = true;
+        $html_tag_data = ["override"=>'{ "attributes" : { "placement" : "horizontal", "layout":"boxed" }, "storagePrefix" : "starter-project", "showSettings" : false }'];
+        $breadcrumbs = ["/dashboard" => " پیشخوان ", "/dashboard/carts" => "سفارش ها" ];
+
+        return view('CartView::user.showInvoice' , compact( 'html_tag_data' , 'breadcrumbs' , 'title' , 'description' , 'dataTable')) ;
+    }
 }

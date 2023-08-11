@@ -37,43 +37,47 @@
                             </div>
                         </ul>
                     </div>
+
                     <div class="cart dropdown">
-                        <a href="#" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" id="btn_cart">
-                            <i class="now-ui-icons shopping_cart-simple"></i> سبد خرید
+                        <a href="#" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" id="cart-button" >
+                            <i class="now-ui-icons shopping_cart-simple" onclick="k()"></i> سبد خرید
                         </a>
+
                         <ul class="dropdown-menu" aria-labelledby="btn_cart">
                             <div class="basket-header">
                                 <div class="basket-total">
                                     <span>مبلغ کل خرید:</span>
-                                    <span> ۲۳,۵۰۰</span>
+                                    <span>۲۳,۵۰۰</span>
                                     <span> تومان</span>
                                 </div>
                                 <a href="#" class="basket-link">
                                     <span>مشاهده سبد خرید</span>
                                     <div class="basket-arrow"></div>
                                 </a>
+
                             </div>
                             <ul class="basket-list">
-                                <li>
-                                    <a href="#" class="basket-item">
-                                        <button class="basket-item-remove"></button>
-                                        <div class="basket-item-content">
-                                            <div class="basket-item-image">
-                                                <img alt="" src="{{ asset('theme/img/to_cart.jpg') }}">
-                                            </div>
-                                            <div class="basket-item-details">
-                                                <div class="basket-item-title">هندزفری بلوتوث مدل S530
-                                                </div>
-                                                <div class="basket-item-params">
-                                                    <div class="basket-item-props">
-                                                        <span> ۱ عدد</span>
-                                                        <span>رنگ مشکی</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
+{{--                                @foreach(session('cart') ?? [] as $key => $item)--}}
+{{--                                    <li>--}}
+{{--                                        <a href="#" class="basket-item">--}}
+{{--                                            <button class="basket-item-remove"></button>--}}
+{{--                                            <div class="basket-item-content">--}}
+{{--                                                <div class="basket-item-image">--}}
+{{--                                                    <img alt="" src="{{ asset('theme/img/to_cart.jpg') }}">--}}
+{{--                                                </div>--}}
+{{--                                                <div class="basket-item-details">--}}
+{{--                                                    <div class="basket-item-title">{{ $item['name'] }}</div>--}}
+{{--                                                    <div class="basket-item-params">--}}
+{{--                                                        <div class="basket-item-props">--}}
+{{--                                                            <span>{{ $item['quantity'] }} عدد</span>--}}
+{{--                                                            --}}{{-- Add other item properties as needed --}}
+{{--                                                        </div>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </a>--}}
+{{--                                    </li>--}}
+{{--                                @endforeach--}}
                             </ul>
                             <a href="#" class="basket-submit">ورود و ثبت سفارش</a>
                         </ul>
@@ -493,3 +497,10 @@
     </header>
     <!-- header -->
 </div>
+<script>
+
+
+    function k() {
+        window.onload;
+    }
+</script>

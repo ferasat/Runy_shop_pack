@@ -9,6 +9,7 @@ class AddToCart extends Component
 {
     public $product;
 
+
     public function render()
     {
         return view('livewire.user.cart.add-to-cart');
@@ -16,7 +17,7 @@ class AddToCart extends Component
 
     public function addToCart($product_id)
     {
-       // dd('yes');
+        // dd('yes');
         $product = Product::find($product_id);
 
         if ($product->specialPrice > 1) {
@@ -35,6 +36,7 @@ class AddToCart extends Component
         if (!$cart) {
             $cart = [
                 'order-' . $product_id => [
+                    "product_id" => $product->id,
                     "name" => $product->name,
                     "quantity" => 1,
                     "price" => $priceProduct,
@@ -54,6 +56,7 @@ class AddToCart extends Component
             } else {
                 // if item not exist in cart then add to cart with quantity = 1
                 $cart['order-' . $product_id] = [
+                    "product_id" => $product->id,
                     "name" => $product->name,
                     "quantity" => 1,
                     "price" => $priceProduct,
@@ -65,10 +68,16 @@ class AddToCart extends Component
                 return redirect()->back()->with('success', 'Product added to cart successfully!');
             }
 
-            //dd(session()->all());
+            //   dd(session()->all());
 
         }
 
 
+
+    }
+    public function refreshCartDropdown()
+    {
+        // Use the `refresh` method to update the Livewire component.
+        $this->emit('refreshCartDropdown');
     }
 }

@@ -1,5 +1,4 @@
 <section class="scroll-section" id="listCarts">
-
     <div class="card h-100-card">
         <div class="card-body mb-n2 border-last-none h-100">
             @foreach($carts as $cart)
