@@ -20,14 +20,12 @@ return new class extends Migration
             $table->longText('text_sms')->nullable();
             $table->longText('text_email')->nullable();
             $table->date('date_first_send')->nullable();
+            $table->timestamp('periodic_time')->nullable();
             $table->bigInteger('customer_id')->nullable();
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('send_messages');

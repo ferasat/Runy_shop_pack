@@ -28,6 +28,7 @@ class CreateProductsTable extends Migration
             $table->integer('numberView')->nullable();  // آمار بازدید این مطلب
             $table->string('slug')->unique()->nullable();
             $table->string('redirect')->nullable();
+            $table->string('action_periodic')->nullable();
             $table->foreignId('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();

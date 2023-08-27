@@ -3,10 +3,12 @@
 namespace App\Http\Livewire\Admin\Post;
 
 use Livewire\Component;
+use Livewire\WithPagination;
 use Post\Models\Post;
 
 class IndexPost extends Component
 {
+    use WithPagination ;
     public $type , $description , $editView = false , $postInfo;
 
     protected $listeners = [

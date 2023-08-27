@@ -17,14 +17,13 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $html_tag_data = ["override" => '{ "attributes" : { "placement" : "horizontal", "layout":"boxed" }, "storagePrefix" : "starter-project", "showSettings" : false }'];
         $title = 'محصولات';
         $description = 'مدیریت محصول';
         $breadcrumbs = ["/dashboard" => " پیشخوان ", "/dashboard/product" => " محصولات  "];
 
         $products = Product::all()->sortByDesc('id');
 
-        return view('ProductView::indexProduct', compact('html_tag_data', 'title', 'description', 'breadcrumbs', 'products'));
+        return view('ProductView::indexProduct', compact('title', 'description', 'breadcrumbs', 'products'));
     }
 
     public function create()

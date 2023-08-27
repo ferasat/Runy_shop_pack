@@ -520,7 +520,6 @@ header.main-header .cart .dropdown-menu .basket-submit {
 header.main-header .main-menu {
     width: 100%;
     float: right;
-    margin: 15px 0px 10px 0px;
 }
 
 header.main-header .main-menu .list {
@@ -6722,54 +6721,6 @@ main.profile-user-page .responsive-profile-menu .dropdown-menu a i {
 }
 
 @media (min-width: 576px) {
-
-}
-
-@media (max-width: 520px) {
-    #amazing-slider {
-        display: none;
-    }
-
-    #amazing-slider-responsive {
-        display: block;
-    }
-
-    .owl-nav {
-        display: none !important;
-    }
-
-    .checkout-item {
-        width: 490px;
-        overflow-x: visible;
-        display: block;
-    }
-
-    .box-tabs-tab {
-        width: 25%;
-        text-align: center;
-    }
-
-    .box-tabs-tab a {
-        font-size: 12px;
-    }
-
-    .box-tabs-tab a i {
-        display: none;
-    }
-
-    .single-product .card-header {
-        background-color: #fff;
-    }
-
-    .single-product .card-header button {
-        font-size: 14px;
-    }
-
-    .shopping-page .checkout-contact-location {
-        position: relative;
-        display: inline-block;
-        margin: 0 30px 30px;
-    }
 
 }
 

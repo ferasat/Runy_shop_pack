@@ -11,10 +11,7 @@
             </div>
             <div class="col-lg-6 col-md-5 col-sm-8 col-7">
                 <div class="search-area default">
-                    <form action="" class="search">
-                        <input type="text" placeholder="نام کالا، برند و یا دسته مورد نظر خود را جستجو کنید…">
-                        <button type="submit"><img src="{{ asset('theme/img/search.png') }}" alt=""></button>
-                    </form>
+
                 </div>
             </div>
             <div class="col-md-4 col-sm-12">
@@ -76,7 +73,7 @@
         </div>
     </div>
     <nav class="main-menu">
-        <div class="container-fluid">
+        <div class="container">
             <ul class="list float-right">
 
                 <li class="list-item">

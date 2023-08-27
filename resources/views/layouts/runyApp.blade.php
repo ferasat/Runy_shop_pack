@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="fa" dir="rtl">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,7 +11,7 @@
     @include('layouts.runyHead')
     @livewireStyles
 </head>
-<body class="index-page sidebar-collapse">
+<body class="index-page">
 
 @yield('content')
 

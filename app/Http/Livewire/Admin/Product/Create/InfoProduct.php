@@ -25,7 +25,11 @@ class InfoProduct extends Component
     {
         //dd($this->product->id);
         $pro = Product::find($this->product->id);
-        $pro->price = $this->price;
+        if ($this->price == 0 or $this->price == null or $this->price == ''){
+            $pro->price = 0;
+        }else{
+            $pro->price = $this->price;
+        }
         $pro->input_stock = $this->input_stock;
         $pro->specialPrice = $this->specialPrice;
         $pro->save();
