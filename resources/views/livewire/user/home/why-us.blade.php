@@ -2,7 +2,7 @@
     <div class="container" data-aos="fade-up">
         <div class="section-header">
             <span>محصولات</span>
-            <h2>محصولات</h2>
+            <h4 class="h2">محصولات</h4>
 
         </div>
 

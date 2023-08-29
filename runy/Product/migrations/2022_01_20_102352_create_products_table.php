@@ -11,6 +11,7 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('name_en')->nullable();
             $table->date('date_publish')->nullable(); // تاریخ نمایش پست
             $table->longText('texts')->nullable();
             $table->longText('technical_info')->nullable();

@@ -59,16 +59,6 @@ li {
     padding-right: 0;
 }
 
-.default {
-    width: 100%;
-    height: auto;
-    float: right;
-}
-
-.parent-btn {
-    overflow: hidden;
-}
-
 .dk-btn {
     font-size: 1.286rem;
     padding: 18px 80px;
@@ -3509,10 +3499,6 @@ main.single-product .product .gallery-items li img {
     float: right;
 }
 
-.product-variants .radio {
-    float: right;
-    margin-left: 7px;
-}
 
 .product-variants .radio label {
     padding-left: 35px;
@@ -3521,41 +3507,16 @@ main.single-product .product .gallery-items li img {
 
 .product-variants .radio label::before,
 .product-variants .radio label::after {
-    border: 1px solid #3081fb;
+    border: 1px solid #ce1212;
 }
 
 .product-variants .radio input[type="radio"]:checked+label::after {
     width: 10px;
     height: 10px;
-    background-color: #3081fb;
-    border-color: #3081fb;
+    background-color: #ce1212;
+    border-color: #ce1212;
     top: 8px;
     left: 8px;
-}
-
-.product-guarantee {
-    margin: 10px 0 15px;
-    color: #6f6f6f;
-    font-size: 13px;
-    font-size: .929rem;
-    line-height: 1.692;
-}
-
-.product-guarantee i {
-    float: right;
-    margin: 4px 0 0 10px;
-    color: #3081fb;
-}
-
-.product-guarantee p {
-    float: right;
-}
-
-.product-delivery-seller i {
-    font-size: 20px;
-    color: #c1c1c1;
-    float: right;
-    margin-left: 7px;
 }
 
 .product-delivery-seller span {

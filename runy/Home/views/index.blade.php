@@ -9,10 +9,8 @@
     @livewire('user.home.why-us')
     @livewire('user.home.category-service')
     @livewire('user.home.features')
-    @livewire('user.home.features')
-    @livewire('user.home.mag.')
+    @livewire('user.home.mag')
 
-    @livewire('user.home.recent-category-products' , [ 'cat_id'=> 1 ] , key(1))
 
     @livewire('user.theme.user-footer')
 

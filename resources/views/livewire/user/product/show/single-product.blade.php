@@ -1,10 +1,12 @@
-<main class="single-product default">
+<div class="container-fluid">
+    @livewire('user.theme.breadcrumbs' )
+
+<main class="single-product">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <nav>
                     {!! $breadcrumbs !!}
-
                 </nav>
             </div>
         </div>
@@ -13,7 +15,7 @@
                 <article class="product">
                     <div class="row">
                         <div class="col-lg-4 col-md-6 col-sm-12 position-relative">
-                            <div class="product-gallery default">
+                            <div class="product-gallery ">
                                 <img class="zoom-img" id="img-product-zoom" src="{{ asset($product->pic) }}"
                                      data-zoom-image="{{ asset($product->pic) }}" width="411"
                                      alt="{{ $product->name }}"/>
@@ -113,10 +115,10 @@
                             <!-- Modal Core -->
                         </div>
                         <div class="col-lg-4 col-md-6 col-sm-12">
-                            <div class="product-title default">
+                            <div class="product-title">
                                 <h1 title="{{ $product-> name }}" class="mb-4 h3">{{ $product-> name }}</h1>
                             </div>
-                            <div class="product-directory default">
+                            <div class="product-directory  d-block">
                                 <ul>
                                     <span>دسته‌بندی</span> :
                                     @if($cats = catsInPro($product->id))
@@ -131,16 +133,16 @@
                             </div>
 
                             @if($is_feature)
-                                <div class="product-variants default">
-                                    <span>انتخاب رنگ: </span>
-                                    <div class="radio">
+                                <div class="product-variants  d-block">
+                                    <h6>انتخاب رنگ: </h6>
+                                    <div class="d-inline p-2">
                                         <input type="radio" name="radio1" id="radio1" value="option1">
                                         <label for="radio1">
                                             خاکستری
                                         </label>
                                     </div>
 
-                                    <div class="radio">
+                                    <div class="d-inline p-2">
                                         <input type="radio" name="radio1" id="radio2" value="option2" checked="">
                                         <label for="radio2">
                                             نقره ای
@@ -150,9 +152,9 @@
                                 </div>
                             @endif
 
-                            <div class="product-guarantee default">
+                            <div class="product-guarantee d-block">
                                 <i class="fa fa-check-circle"></i>
-                                <p class="product-guarantee-text">گارانتی اصالت و سلامت فیزیکی کالا</p>
+                                <span class="product-guarantee-text">گارانتی اصالت و سلامت فیزیکی کالا</span>
                             </div>
 
                             @if($product->specialPrice > 1)
@@ -170,7 +172,7 @@
                                     <del>{{ $product-> price }} <span> تومان </span></del>
                                 </div>
                             @else
-                                <div class="h4">{{ $product-> price }} <span> تومان </span></div>
+                                <h5 class="h4">{{ $product-> price }} <span> تومان </span></h5>
                             @endif
 
                             @livewire('user.cart.add-to-cart' , compact('product'))
@@ -178,7 +180,7 @@
                         </div>
                         <div class="col-lg-4 col-md-6 col-sm-12 center-breakpoint">
 
-                            <div class="product-params default">
+                            <div class="product-params ">
                                 @livewire('user.product.show.short-description' , ['product'=>$product])
                             </div>
                         </div>
@@ -188,9 +190,9 @@
         </div>
         <div class="row">
             <div class="container">
-                <div class="col-12 default no-padding">
-                    <div class="product-tabs default">
-                        <div class="box-tabs default">
+                <div class="col-12  no-padding">
+                    <div class="product-tabs ">
+                        <div class="box-tabs ">
                             <ul class="nav" >
                                 <li class="box-tabs-tab">
                                     <a class="active" data-toggle="tab" href="#desc" role="tab"
@@ -218,7 +220,7 @@
                                 <!-- Tab panes -->
                                     <div class="card-body" id="desc" >
                                         <article>
-                                            <div class="parent-expert default">
+                                            <div class="parent-expert ">
                                                 <div class="content-expert">
                                                     {!! $product->texts !!}
                                                 </div>
@@ -231,7 +233,7 @@
                                                 مشخصات فنی
                                                 <span>{{ $product-> name }}</span>
                                             </h4>
-                                            {!! $product-> technical_info !!}
+                                            {!! $product->technical_info !!}
                                         </article>
                                     </div>
                                     <div class="card-body" id="comments" >
@@ -254,3 +256,4 @@
         </div>
     </div>
 </main>
+</div>
