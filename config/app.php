@@ -98,6 +98,7 @@ return [
         Rqsts\RqstsServiceProvider::class,
         RunySEO\RunySEOServiceProvider::class,
         SendMessages\SendMessagesServiceProvider::class,
+        SiteLogs\SiteLogsServiceProvider::class,
 
 
         /*

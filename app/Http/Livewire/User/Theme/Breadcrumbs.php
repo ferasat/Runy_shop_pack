@@ -6,6 +6,7 @@ use Livewire\Component;
 
 class Breadcrumbs extends Component
 {
+    public $breadcrumbs ;
     public function render()
     {
         return view('livewire.user.theme.breadcrumbs');

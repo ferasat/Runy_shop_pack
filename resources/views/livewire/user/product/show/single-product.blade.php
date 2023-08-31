@@ -1,15 +1,7 @@
 <div class="container-fluid">
-    @livewire('user.theme.breadcrumbs' )
-
 <main class="single-product">
     <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <nav>
-                    {!! $breadcrumbs !!}
-                </nav>
-            </div>
-        </div>
+        @livewire('user.theme.breadcrumbs' , compact('breadcrumbs') )
         <div class="row">
             <div class="col-12">
                 <article class="product">

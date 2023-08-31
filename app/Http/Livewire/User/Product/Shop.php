@@ -9,6 +9,20 @@ use Product\Models\Product;
 class Shop extends Component
 {
     use WithPagination;
+
+    public $breadcrumbs ;
+
+    public function mount()
+    {
+        $this->breadcrumbs = '<ul class="breadcrumb">
+                            <li>
+                                <a href="'.asset('/').'" title=""><span>خانه</span></a>
+                            </li>
+                            <li>
+                                <a href="'.asset('/shop').'" title="فروشگاه"><span>فروشگاه</span></a>
+                            </li>
+                        </ul>';
+    }
     protected $paginationTheme = 'bootstrap';
 
     public function render()

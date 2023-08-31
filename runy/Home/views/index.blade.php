@@ -4,7 +4,6 @@
 
     @livewire('user.theme.user-navbar-responsive')
 
-
     @livewire('user.home.slide.slide-show')
     @livewire('user.home.why-us')
     @livewire('user.home.category-service')

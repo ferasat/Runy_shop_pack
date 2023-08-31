@@ -42,6 +42,7 @@
             "Rqsts\\": "runy/Requests",
             "RunySEO\\": "runy/RunySEO/src/",
             "SendMessages\\": "runy/SendMessages",
+            "SiteLogs\\": "runy/SiteLogs",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
         }

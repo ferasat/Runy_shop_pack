@@ -205,7 +205,8 @@ class ProductController extends Controller
         $title = $setting->site_name;
         $description = $setting->site_short_description ;
 
-        return view('ProductView::shop', compact(  'title', 'description'));
+
+        return view('ProductView::shop', compact(  'title', 'description' ));
     }
 
 }
