@@ -8,45 +8,63 @@
             </a>
         </div>
     </div>
-    <!-- Modal -->
-    <div class="modal fade" id="staticAddToCart" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-         aria-labelledby="staticAddToCartLabel" aria-hidden="true" wire:ignore>
-        <div class="modal-dialog" >
-            @if($product->formatProduct == 'show')
-                @livewire('user.product.offline-order' , ['product'=>$product])
-            @else
-                @livewire('user.product.online-order' , ['product'=>$product])
-                <div class="card">
-                    @php $total = 0 @endphp
-                    @if(session('cart'))
-                        @php $productInfo = 'order-'.$product->id ; @endphp
-                        @foreach(session('cart') as  $productInfo=> $details )
-                                @php $total += $details['price'] * $details['quantity'] @endphp
-                            <tr>
-                                <td data-th="Product">
-                                    <div class="row">
-                                        @if(isset($details['pic']))
-                                            <img src="{{ asset($details['pic']) }}" width="100" height="100" class="img-responsive"/>
-                                        @endif                                        <div class="col-sm-9">
-                                            <h4 class="nomargin">{{ $details['name'] }}</h4>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td data-th="Price">${{ $details['price'] }}</td>
-                                <td data-th="Quantity">
-                                    <input type="number" value="{{ $details['quantity'] }}" class="form-control quantity" />
-                                </td>
-                                <td data-th="Subtotal" class="text-center">${{ $details['price'] * $details['quantity'] }}</td>
-                                <td class="actions" data-th="">
-                                    <button class="btn btn-info btn-sm update-cart" data-id="{{ $product }}"><i class="fa fa-refresh"></i></button>
-                                    <button class="btn btn-danger btn-sm remove-from-cart" data-id="{{ $product }}"><i class="fa fa-trash-o"></i></button>
-                                </td>
-                            </tr>
-                        @endforeach
-                    @endif
+
+    @if($product->formatProduct == 'show')
+        @livewire('user.product.offline-order' , ['product'=>$product])
+    @else
+        @if($showModal)
+            <div class="modal_runy @if( !$showModal ) d-none @endif" id="modal_runy" >
+                <div class="modal_runy-content">
+                    <div class="modal_runy-body">
+                        <div class="card">
+                            <div class="row">
+                                <div class="col-2">
+                                    <button class="btn btn-danger" wire:click.prevent="hiddenModal()">Close</button>
+                                </div>
+                            </div>
+                            @php $total = 0 @endphp
+                            @if(session('cart'))
+                                @php $productInfo = 'order-'.$product->id ; @endphp
+                                @foreach(session('cart') as  $productInfo=> $details )
+                                    @php $total += $details['price'] * $details['quantity'] @endphp
+                                    <tr>
+                                        <td data-th="Product">
+                                            <div class="row te">
+                                                @if(isset($details['pic']))
+                                                    <img src="{{ asset($details['pic']) }}"
+                                                         class="img-responsive w-50 h-50"/>
+                                                @endif
+                                                <div class="col-sm-9">
+                                                    <h3 class="nomargin">{{ $details['name'] }}</h3>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td data-th="Price" ><h3>${{ $details['price'] }}</h3></td>
+                                        <td data-th="Quantity">
+                                            <div class="flex items-center justify-center">
+                                                <button class="btn btn-info btn-sm" wire:click="decreaseQuantity('{{ $productInfo }}')">-</button>
+                                                <span class="mx-2">{{ $details['quantity'] }}</span>
+                                                <button class="btn btn-info btn-sm" wire:click="increaseQuantity('{{ $productInfo }}')">+</button>
+                                            </div>
+                                        </td>
+                                        <td data-th="Subtotal" class="text-center"><h3>{{ $details['price'] * $details['quantity'] }}</h3></td>
+                                        <td class="actions" data-th="">
+                                            <button class="btn btn-danger btn-sm mt-2" wire:click="removeFromCart('{{ $productInfo }}')">x</button>
+                                        </td>
+                                    </tr>
+                                    <br>
+                                @endforeach
+                                <hr>
+                                <h3>جمع کل:{{$total}}</h3>
+                                <a class="btn btn-success btn-sm mt-2" href="{{asset(route('cart'))}}">مشاهده سبد خرید</a>
+                                <a class="btn btn-info btn-sm mt-2" href="{{asset(route('invoice'))}}">تسویه حساب</a>
+                            @endif
+                        </div>
+                    </div>
+
                 </div>
-            @endif
-        </div>
-    </div>
+            </div>
+        @endif
+    @endif
     @if(session()->has('success_add'))  @endif
 </div>

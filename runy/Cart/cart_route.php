@@ -17,6 +17,6 @@ Route::prefix('/dashboard')->group( function (){
 });
 
 
-Route::get('/cart/', [CartController::class , 'my_cart']);
+Route::get('/cart/', [CartController::class , 'my_cart'])->name('cart');
 Route::get('/invoice/', [CartController::class , 'invoice'])->name('invoice');
 

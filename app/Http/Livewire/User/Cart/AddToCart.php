@@ -7,11 +7,19 @@ use Product\Models\Product;
 
 class AddToCart extends Component
 {
-    public $product;
-
-
+    public $product,$showModal=false,$cart;
     public function render()
     {
+        $this->cart = session()->get('cart', []);
+        $total = 0;
+
+        foreach ($this->cart as $id => $product) {
+            $subtotal = $product['price'] * $product['quantity'];
+            $this->cart[$id]['subtotal'] = $subtotal;
+            $total += $subtotal;
+        }
+
+        session(['cart' => $this->cart]);
         return view('livewire.user.cart.add-to-cart');
     }
 
@@ -47,6 +55,7 @@ class AddToCart extends Component
 
             session()->put('success_add', 'محصول به سبد خرید اضافه شد!');
 
+
         } else {
             if (isset($cart['order-' . $product_id])) {
                 $cart['order-' . $product_id]['quantity']++;
@@ -60,24 +69,42 @@ class AddToCart extends Component
                     "name" => $product->name,
                     "quantity" => 1,
                     "price" => $priceProduct,
-                    "photo" => $product->pic
+                    "pic" => $product->pic
                 ];
                 session()->put('cart', $cart);
                 session()->put('success_add', 'محصول به سبد خرید اضافه شد!');
 
-                return redirect()->back()->with('success', 'Product added to cart successfully!');
+               // return redirect()->back()->with('success', 'Product added to cart successfully!');
             }
 
             //   dd(session()->all());
 
         }
-
-
+        $this->showModal=true;
 
     }
-    public function refreshCartDropdown()
+
+    public function hiddenModal()
     {
-        // Use the `refresh` method to update the Livewire component.
-        $this->emit('refreshCartDropdown');
+        $this->showModal = false ;
+    }
+
+    public function increaseQuantity($productId)
+    {
+        $this->cart[$productId]['quantity']++;
+        session(['cart' => $this->cart]);
+    }
+
+    public function decreaseQuantity($productId)
+    {
+        if ($this->cart[$productId]['quantity'] > 1) {
+            $this->cart[$productId]['quantity']--;
+            session(['cart' => $this->cart]);
+        }
+    }
+    public function removeFromCart($productId)
+    {
+        unset($this->cart[$productId]);
+        session(['cart' => $this->cart]);
     }
 }
