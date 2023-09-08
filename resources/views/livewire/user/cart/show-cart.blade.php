@@ -16,10 +16,10 @@
                     <tr>
                         <td data-th="Product">
                             <div class="row">
-                                {{-- <img src="{{ asset($product['pic']) }}" width="100" height="100" class="img-responsive"/> --}}
+                                 <img src="{{ asset($product['pic']) }}"  class="img-responsive w-50 h-50"/>
                                 <div class="col-sm-3 hidden-xs">
-                                    @if(isset($product['pic']))
-                                    @endif
+{{--                                    @if(isset($product['pic']))--}}
+{{--                                    @endif--}}
                                 </div>
                                 <div class="col-sm-9">
                                     <h4>{{ $product['name'] }}</h4>

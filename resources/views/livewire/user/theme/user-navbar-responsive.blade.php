@@ -700,7 +700,7 @@
                     </li>
                     <li class="list-item amazing-item">
 
-                        <a class="nav-link" href="#"> سبد خرید
+                        <a class="nav-link" href="{{asset(route('cart'))}}"> سبد خرید
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                  class="bi bi-cart3" viewBox="0 0 16 16">
                                 <path
@@ -728,10 +728,19 @@
     </header>
     <!-- header -->
 
-
 </div>
 <script>
     function k() {
         window.onload;
     }
+    document.addEventListener('livewire:load', function () {
+        Livewire.on('refreshHeader', function () {
+            Livewire.hook('message.sent', () => {
+                Livewire.emit('refreshHeader');
+            });
+            Livewire.hook('message.processed', () => {
+                Livewire.emit('refreshHeader');
+            });
+        });
+    });
 </script>

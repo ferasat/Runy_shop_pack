@@ -10,6 +10,8 @@ class AddToCart extends Component
     public $product,$showModal=false,$cart;
     public function render()
     {
+        $totalQuantity = 0;
+
         $this->cart = session()->get('cart', []);
         $total = 0;
 
@@ -17,9 +19,11 @@ class AddToCart extends Component
             $subtotal = $product['price'] * $product['quantity'];
             $this->cart[$id]['subtotal'] = $subtotal;
             $total += $subtotal;
+            $totalQuantity += $product['quantity'];
         }
 
         session(['cart' => $this->cart]);
+
         return view('livewire.user.cart.add-to-cart');
     }
 
@@ -80,6 +84,7 @@ class AddToCart extends Component
             //   dd(session()->all());
 
         }
+
         $this->showModal=true;
 
     }
