@@ -10,7 +10,7 @@ class AddToCart extends Component
     public $product,$showModal=false,$cart;
     public function render()
     {
-        ////feri
+        ////feri////
         $totalQuantity = 0;
 
         $this->cart = session()->get('cart', []);
