@@ -4,7 +4,7 @@
 
     @livewire('user.theme.user-navbar-responsive')
 
-    @livewire('user.cart.show-invoice')
+    @livewire('user.cart.show-invoice',compact('cart_id'))
 
     @livewire('user.theme.user-footer')
 

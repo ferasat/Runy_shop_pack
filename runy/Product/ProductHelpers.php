@@ -147,3 +147,26 @@ function off_percent($price , $spPrice)
 {
     return round(100 - ($spPrice*100)/$price) ;
 }
+
+function isValidDiscount($discount)
+{
+    $now = now();
+    if ($discount->type === 'percentage' || $discount->type === 'fixed') {
+        if ($discount->status === 'active') {
+            if ($discount->capacity !== null && $discount->capacity <= 0) {
+                return false;
+            }
+
+            if ($discount->duration === 'date') {
+                return ($now->gte($discount->start_date) && $now->lte($discount->end_date));
+            } elseif ($discount->duration === 'time') {
+
+                return ($now->gte($discount->start_time) && $now->lte($discount->end_time));
+            }
+
+            return false;
+        }
+    }
+
+    return false;
+}

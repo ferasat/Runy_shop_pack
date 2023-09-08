@@ -3,7 +3,7 @@
         <div class="col-6 ">
             <div class="card ">
                 <div class="card-header">
-                    <h1>جزئیات صورت حساب</h1>
+                    <h3>جزئیات صورت حساب</h3>
                 </div>
                 <div class="card-body">
                     <div class="row">
@@ -35,12 +35,12 @@
                         <input type="text" class="form-control" name="address" id="address" wire:model.lazy="address">
                     </div>
 
-{{--                    <div class="row my-2">--}}
-{{--                        <div class="form-group col-6">--}}
-{{--                            <label for="codeposti">کد پستی</label>--}}
-{{--                            <input type="text" class="form-control" name="code_posti" id="codeposti" wire:model.lazy="codeposti">--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
+                {{--                    <div class="row my-2">--}}
+                {{--                        <div class="form-group col-6">--}}
+                {{--                            <label for="codeposti">کد پستی</label>--}}
+                {{--                            <input type="text" class="form-control" name="code_posti" id="codeposti" wire:model.lazy="codeposti">--}}
+                {{--                        </div>--}}
+                {{--                    </div>--}}
                 </div>
 
             </div>
@@ -49,7 +49,7 @@
         <div class="col-6">
             <div class="card ">
                 <div class="card-header">
-                    <h1>سفارش شما</h1>
+                    <h3>سفارش شما</h3>
                 </div>
                 <div class="card-body">
                     <div class="row m-2">
@@ -63,28 +63,31 @@
                             </tr>
                             </thead>
                             <tbody>
-
-                            @if(session('cart'))
-                                @php $total=0 @endphp
-                                @foreach(session('cart') as $id => $product)
-                                    @php $total += $product['subtotal'] @endphp
-                            <tr>
-                                <td>
-                                    <span>{{$product['quantity']}}	×</span>
-                                    <span>{{$product['name']}}</span>
-                                </td>
-                                <td>{{$product['subtotal']}}</td>
+                                @foreach($orders as $order)
+                                    <tr>
+                                        <td>
+                                            <span>{{$order->quantity}}	×</span>
+                                            <span>{{$order->product_name}}</span>
+                                        </td>
+                                        <td>{{$order->sum}}</td>
 
 
-                            </tr>
+                                    </tr>
                                 @endforeach
-                            @endif
+
                             <tr>
                                 <td>
                                     <span>جمع کل</span>
                                 </td>
-                                <td>{{$total}}</td>
+                                <td>{{$cart->total_price}}</td>
 
+
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>جمع کل با احتساب تخفیف</span>
+                                </td>
+                                <td>{{$cart->discounted_total_price}}</td>
                             </tr>
                             <tr>
                                 <td>
@@ -115,7 +118,7 @@
                     </div>
                 </div>
                 <div class="card-footer d-flex justify-content-center">
-                    <button class="btn btn-dark" wire:click.privent="order()">ثبت سفارش</button>
+                    <button class="btn btn-dark" wire:click.prevent="pay_invoice()">ثبت سفارش</button>
                 </div>
             </div>
         </div>

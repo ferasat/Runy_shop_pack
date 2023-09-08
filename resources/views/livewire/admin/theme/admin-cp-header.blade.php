@@ -88,6 +88,10 @@
                 <li class="list-item">
                     <a class="nav-link" href="{{asset(route('page.index'))}}"> برگه ها</a>
                 </li>
+                <li class="list-item">
+                    <a class="nav-link" href="{{asset(route('discount.index'))}}">تخفیف ها</a>
+                </li>
+
 
             </ul>
         </div>

@@ -43,6 +43,9 @@
                 <li>
                     <a href="{{asset(route('page.index'))}}">برگه ها</a>
                 </li>
+                <li>
+                    <a href="{{asset(route('discount.index'))}}">تخفیف ها</a>
+                </li>
             </ul>
         </div>
     </div>

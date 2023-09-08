@@ -3,13 +3,15 @@
 namespace App\Http\Livewire\User\Cart;
 
 use Cart\Models\Cart;
+use Cart\Models\Invoice;
 use Cart\Models\Order;
+use Ghasedak\GhasedakApi;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class ShowInvoice extends Component
 {
-    public $name,$family,$email,$cellPhone,$address ;
+    public $name,$family,$email,$cellPhone,$address,$cart_id ,$cart,$orders;
     public function mount()
     {
         if (Auth::id())
@@ -19,41 +21,26 @@ class ShowInvoice extends Component
             $this->email=Auth::user()->email;
             $this->cellPhone=Auth::user()->cellPhone;
         }
-        $my_carts=session('cart');
-       // $firstOrder = reset($my_carts);
-        //$cartId = $firstOrder['cart_id'];
 
-      //  dd($my_carts);
+        $this->cart=Cart::query()->find($this->cart_id);
+        $this->orders=Order::query()->where('cart_id',$this->cart_id)->get();
+
+
+
     }
     public function render()
     {
         return view('livewire.user.cart.show-invoice');
     }
-    public function order()
+    public function pay_invoice()
     {
-        if (Auth::id())
-        {
-            $user=Auth::user();
-            $cart=new Cart();
-            $cart->name=$user->name;
-            $cart->family=$user->family;
-            $cart->cell=$this->cellPhone;
-            $cart->address=$this->address;
-            $cart->user_id=$user->id;
-            $cart->save();
-            foreach (session('cart') as $product){
 
-                $order=new Order();
-                $order->cart_id=$cart->id;
-                $order->product_id=$product['product_id'];
-                $order->product_name=$product['name'];
-                $order->product_price=$product['price'];
-                $order->quantity=$product['quantity'];
-                $order->sum=$product['subtotal'];
-                $order->save();
-            }
-        }else{
-            dd('kj');
-        }
+        $invoice=new Invoice();
+        $invoice->status=1;
+        $invoice->contract_rules=1;
+        $invoice->amount=$this->cart->discounted_total_price;
+        $invoice->save();
+        return redirect()->route('pay.invoice');
+
     }
 }

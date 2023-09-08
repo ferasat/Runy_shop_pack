@@ -42,16 +42,34 @@
                 @endforeach
             @endif
             </tbody>
-            <tfoot>
-            <tr>
-                <td colspan="5" class="text-right "><h3><strong>مجموع کل: {{$total}}</strong></h3></td>
-            </tr>
-            <tr>
-                <td colspan="5" class="text-right">
-                    <button class="btn btn-success" wire:click.privent="invoice()">Checkout</button>
-                </td>
-            </tr>
-            </tfoot>
         </table>
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4 my-2">
+                        <label for="code" class="form-label">کد تخفیف</label>
+                        <input type="text" class="form-control" wire:model.lazy="code">
+                    </div>
+                    <div class="col-md-4">
+                        <button id="btn" class="btn btn-success" wire:click.prevent="apply({{$total}})">اعمال</button>
+                    </div>
+
+                </div>
+
+
+
+                <h3><strong>مجموع کل: {{$total}}</strong></h3>
+                @if($dis>0)
+                        <h3><strong>مجموع کل با احتساب تخفیف: {{$dis}}</strong></h3>
+                @endif
+                <button class="btn btn-success" wire:click.privent="checkout({{$total}})">Checkout</button>
+                @if($badDiscount)
+                    <div class="alert alert-danger mt-3">
+                        کد تخفیف منقضی
+                    </div>
+                @endif
+            </div>
+        </div>
+
     </div>
 </div>

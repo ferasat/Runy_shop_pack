@@ -21,6 +21,7 @@
       <sourceFolder url="file://$MODULE_DIR$/runy/SliderB5" isTestSource="false" packagePrefix="SliderB5\" />
       <sourceFolder url="file://$MODULE_DIR$/runy/RunySEO/src" isTestSource="false" packagePrefix="RunySEO\" />
       <sourceFolder url="file://$MODULE_DIR$/runy/SendMessages" isTestSource="false" packagePrefix="SendMessages\" />
+      <sourceFolder url="file://$MODULE_DIR$/runy/SiteLogs" isTestSource="false" packagePrefix="SiteLogs\" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/lexer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/inflector" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dflydev/dot-access-data" />
