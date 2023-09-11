@@ -3,6 +3,7 @@
 namespace Product\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Product\Models\Discount;
 use App\Http\Controllers\Controller;
 
@@ -27,6 +28,7 @@ class DiscountController extends Controller
         $new->amount = 0;
         $new->type = 'percentage';
         $new->status = 'active';
+        $new->user_id = Auth::id();
         $new->save();
 
         return redirect()->to('dashboard/discount/edit/' . $new->id);

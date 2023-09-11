@@ -1,10 +1,10 @@
 <?php
 
-namespace SliderB5\Controllers;
+namespace RunySliderB5\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use SliderB5\Models\RunySliderB5;
+use RunySliderB5\Models\RunySliderB5;
 
 class RunySliderB5Controller extends Controller
 {

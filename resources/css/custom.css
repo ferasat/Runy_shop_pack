@@ -147,14 +147,6 @@ button.dk-btn {
 
 @media (min-width: 1200px) {}
 
-
-/* header */
-
-header.main-header {
-    background-color: #fff;
-}
-
-
 /* ----------------- Start Header */
 
 
@@ -3191,7 +3183,7 @@ ul.gallery-options li:hover .tooltip-option {
 
 /* Profile-User Page */
 
-main.profile-user-page .profile-box {
+.profile-box {
     margin-bottom: 21px;
     background-color: #fff;
     -webkit-box-shadow: 0 12px 12px 0 hsla(0, 0%, 71%, .1);
@@ -3199,13 +3191,7 @@ main.profile-user-page .profile-box {
     border: 1px solid #dedede;
 }
 
-main.profile-user-page .profile-box-header {
-    position: relative;
-    background-color: #ce1212;
-    height: 47px;
-}
-
-main.profile-user-page .profile-box-avatar img {
+.profile-box-avatar img {
     width: 54px;
     height: 54px;
     background: #fff;
@@ -3223,7 +3209,7 @@ main.profile-user-page .profile-box-avatar img {
     background-position: 50%;
 }
 
-main.profile-user-page .profile-box-btn-edit {
+.profile-box-btn-edit {
     width: 16px;
     height: 16px;
     -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .08);
@@ -3239,7 +3225,7 @@ main.profile-user-page .profile-box-btn-edit {
     cursor: pointer;
 }
 
-main.profile-user-page .profile-box-btn-edit i {
+.profile-box-btn-edit i {
     float: right;
     font-size: 11px;
     position: absolute;
@@ -3248,7 +3234,7 @@ main.profile-user-page .profile-box-btn-edit i {
     color: #A8A8A8;
 }
 
-main.profile-user-page .profile-box-username {
+.profile-box-username {
     padding: 23px 20px 19px;
     text-align: center;
     font-size: 16px;
@@ -3257,14 +3243,14 @@ main.profile-user-page .profile-box-username {
     letter-spacing: -.5px;
 }
 
-main.profile-user-page .profile-box-tabs {
+.profile-box-tabs {
     border-top: 1px solid #f1f1f1;
     background-color: #fcfcfc;
     min-height: 47px;
     text-align: center;
 }
 
-main.profile-user-page .profile-box-tabs a.profile-box-tab {
+.profile-box-tabs a.profile-box-tab {
     display: inline-block;
     max-width: 50%;
     padding: 10px;
@@ -3277,24 +3263,24 @@ main.profile-user-page .profile-box-tabs a.profile-box-tab {
     position: relative;
 }
 
-main.profile-user-page .profile-box-tabs a.profile-box-tab:first-child {
+.profile-box-tabs a.profile-box-tab:first-child {
     border-left: 1px solid #ebebeb;
 }
 
-main.profile-user-page .profile-box-tabs i {
+.profile-box-tabs i {
     display: block;
 }
 
-main.profile-user-page .modal-width-custom .modal-dialog {
+.modal-width-custom .modal-dialog {
     max-width: 600px;
 }
 
-main.profile-user-page ul.profile-avatars li {
+ul.profile-avatars li {
     display: inline-block;
     margin: 0 4px;
 }
 
-main.profile-user-page .profile-avatars-item {
+ .profile-avatars-item {
     width: 112px;
     height: 112px;
     background: 50% 50% no-repeat;
@@ -3304,7 +3290,7 @@ main.profile-user-page .profile-avatars-item {
     cursor: pointer;
 }
 
-main.profile-user-page .profile-menu {
+ .profile-menu {
     background-color: #fff;
     -webkit-box-shadow: 0 12px 12px 0 hsla(0, 0%, 71%, .1);
     box-shadow: 0 12px 12px 0 hsla(0, 0%, 71%, .1);
@@ -3312,7 +3298,7 @@ main.profile-user-page .profile-menu {
     margin-bottom: 21px;
 }
 
-main.profile-user-page .profile-menu-header {
+.profile-menu-header {
     padding: 18px 39px 18px 0;
     border-bottom: 1px solid #f3f3f3;
     font-weight: 700;
@@ -3323,7 +3309,7 @@ main.profile-user-page .profile-menu-header {
     line-height: 1.692;
 }
 
-main.profile-user-page .profile-menu-items {
+ .profile-menu-items {
     list-style: none;
     font-size: 14px;
     line-height: 1.571;
@@ -3331,32 +3317,32 @@ main.profile-user-page .profile-menu-items {
     letter-spacing: -.3px;
 }
 
-main.profile-user-page .profile-menu-items li a {
+.profile-menu-items li a {
     position: relative;
     padding: 12px 53px 12px 0;
     color: #5b5b5b;
     line-height: 50px;
 }
 
-main.profile-user-page .profile-menu-items li a i {
+.profile-menu-items li a i {
     position: absolute;
     right: 20px;
     top: 18px;
 }
 
-main.profile-user-page .profile-menu-items li a.active,
-main.profile-user-page .profile-menu-items li a:hover {
+.profile-menu-items li a.active,
+ .profile-menu-items li a:hover {
     background-color: #f6ffff;
     color: #ce1212;
 }
 
-main.profile-user-page h1.title-tab-content {
+ h1.title-tab-content {
     color: #858585;
     margin: 10px 0 15px;
     font-size: 17px;
 }
 
-main.profile-user-page .content-section {
+.content-section {
     background-color: #fff;
     box-shadow: 0 12px 12px 0 hsla(0, 0%, 71%, .1);
     border: 1px solid #dedede;
@@ -3364,13 +3350,13 @@ main.profile-user-page .content-section {
     padding: 10px 20px;
 }
 
-main.profile-user-page .content-section p {
+.content-section p {
     font-size: 18px;
     line-height: 30px;
     color: #939393;
 }
 
-main.profile-user-page .content-section p span.title {
+.content-section p span.title {
     display: block;
     text-align: right;
     font-size: 14px;
@@ -3379,15 +3365,15 @@ main.profile-user-page .content-section p span.title {
     color: #bababa;
 }
 
-main.profile-user-page .content-section form input::placeholder {
+.content-section form input::placeholder {
     padding-right: 5px;
 }
 
-main.profile-user-page .content-section form button.btn-default {
+.content-section form button.btn-default {
     font-family: iranyekan;
 }
 
-main.profile-user-page .profile-recent-fav-row {
+.profile-recent-fav-row {
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
@@ -3398,21 +3384,21 @@ main.profile-user-page .profile-recent-fav-row {
     border-bottom: 1px solid #f1f1f1;
 }
 
-main.profile-user-page .profile-recent-fav-col {
+.profile-recent-fav-col {
     width: 100%;
     min-height: 1px;
     padding: 4px 0;
 }
 
-main.profile-user-page .profile-recent-fav-col,
-main.profile-user-page .profile-recent-fav-col-thumb {
+.profile-recent-fav-col,
+.profile-recent-fav-col-thumb {
     position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
 }
 
-main.profile-user-page .profile-recent-fav-col-thumb {
+.profile-recent-fav-col-thumb {
     -ms-flex: 0 0 15%;
     -webkit-box-flex: 0;
     flex: 0 0 15%;
@@ -3429,16 +3415,16 @@ main.profile-user-page .profile-recent-fav-col-thumb {
     align-items: center;
 }
 
-main.profile-user-page .profile-recent-fav-col-thumb img {
+.profile-recent-fav-col-thumb img {
     overflow: hidden;
 }
 
-main.profile-user-page .profile-recent-fav-col-thumb img {
+.profile-recent-fav-col-thumb img {
     max-width: 80%;
     max-height: 80%;
 }
 
-main.profile-user-page .profile-recent-fav-col-title {
+.profile-recent-fav-col-title {
     -ms-flex: 0 0 70%;
     -webkit-box-flex: 0;
     flex: 0 0 70%;
@@ -3452,21 +3438,21 @@ main.profile-user-page .profile-recent-fav-col-title {
     justify-content: center;
 }
 
-main.profile-user-page .profile-recent-fav-name {
+.profile-recent-fav-name {
     font-size: 13px;
     font-size: .929rem;
     line-height: 1.692;
     margin-bottom: 5px;
 }
 
-main.profile-user-page .profile-recent-fav-price {
+.profile-recent-fav-price {
     font-size: 13px;
     font-size: .929rem;
     line-height: 1.692;
     color: #fb3449;
 }
 
-main.profile-user-page .profile-recent-fav-col-actions {
+.profile-recent-fav-col-actions {
     -ms-flex: 0 0 15%;
     -webkit-box-flex: 0;
     flex: 0 0 15%;
@@ -3480,7 +3466,7 @@ main.profile-user-page .profile-recent-fav-col-actions {
     padding: 0 15px;
 }
 
-main.profile-user-page .btn-action {
+.btn-action {
     width: 33px;
     height: 28px;
     border-radius: 8px;
@@ -3490,29 +3476,29 @@ main.profile-user-page .btn-action {
     cursor: pointer;
 }
 
-main.profile-user-page .btn-action-remove {
+.btn-action-remove {
     background-color: #fff;
     border: 1px solid #c5c5c5;
 }
 
-main.profile-user-page .btn-action-remove i {
+.btn-action-remove i {
     font-size: 14px;
     color: #929292;
 }
 
-main.profile-user-page .icon-empty i {
+.icon-empty i {
     font-size: 154px;
     margin-bottom: 30px;
     display: block;
     color: #dadada;
 }
 
-main.profile-user-page h1.text-empty {
+h1.text-empty {
     font-size: 26px;
     color: #dadada;
 }
 
-main.profile-user-page .profile-return-request-form p {
+.profile-return-request-form p {
     margin-right: 20px;
     margin-bottom: 11px;
     color: #737373;
@@ -3521,12 +3507,12 @@ main.profile-user-page .profile-return-request-form p {
     line-height: 1.467;
 }
 
-main.profile-user-page .profile-return-request-form-row .profile-return-request-form-field {
+.profile-return-request-form-row .profile-return-request-form-field {
     float: right;
     width: 100%;
 }
 
-main.profile-user-page .profile-return-request-form-row .btn-primary {
+.profile-return-request-form-row .btn-primary {
     font-size: 15px;
     border-radius: 8px;
     background-color: #ff1744;
@@ -3538,7 +3524,7 @@ main.profile-user-page .profile-return-request-form-row .btn-primary {
     font-family: inherit;
 }
 
-main.profile-user-page .content-section .view-product {
+.content-section .view-product {
     font-size: 15px;
     border-radius: 8px;
     background-color: #ff1744;
@@ -3550,26 +3536,26 @@ main.profile-user-page .content-section .view-product {
     font-family: inherit;
 }
 
-main.profile-user-page .responsive-profile-menu {
+.responsive-profile-menu {
     display: none;
 }
 
-main.profile-user-page .responsive-profile-menu .dropdown-toggle::after {
+.responsive-profile-menu .dropdown-toggle::after {
     display: none;
 }
 
-main.profile-user-page .responsive-profile-menu .dropdown-toggle i {
+.responsive-profile-menu .dropdown-toggle i {
     float: right;
     margin: 3px 0 0 10px;
 }
 
-main.profile-user-page .responsive-profile-menu .dropdown-menu a.active-menu,
-main.profile-user-page .responsive-profile-menu .dropdown-menu a:active {
+.responsive-profile-menu .dropdown-menu a.active-menu,
+.responsive-profile-menu .dropdown-menu a:active {
     background-color: #f6ffff;
     color: #ce1212;
 }
 
-main.profile-user-page .responsive-profile-menu .dropdown-menu a i {
+.responsive-profile-menu .dropdown-menu a i {
     float: right;
     margin: 4px 0 0 7px;
 }
@@ -4375,9 +4361,7 @@ main.profile-user-page .responsive-profile-menu .dropdown-menu a i {
 }
 
 @media (max-width: 1077px) {
-    header.main-header {
-        display: none;
-    }
+
     nav.header-responsive {
         display: block;
     }
@@ -4896,8 +4880,7 @@ main.profile-user-page .responsive-profile-menu .dropdown-menu a i {
     main.page-404,
     main.cart-page,
     main.search-page,
-    main.single-product,
-    main.profile-user-page {
+    main.single-product{
         margin-top: 125px;
     }
     .shopping-page main.cart-page {
@@ -5617,20 +5600,6 @@ h6, .h6 {
 }
 
 /* Button style */
-.btn {
-    font-size: 14px;
-    font-family: "Nunito Sans", sans-serif;
-    font-weight: 700;
-    text-transform: uppercase;
-    padding: 10px 22px;
-    border-radius: 50px;
-    border: 1px solid;
-    position: relative;
-    z-index: 1;
-    transition: 0.2s ease;
-}
-
-
 .btn-primary {
     background: #ce1212;
     color: #fff;
@@ -5669,17 +5638,8 @@ select {
     transition: 0.2s ease;
 }
 
-
-
-
-
 .post-title:hover {
     color: #ce1212;
-}
-
-section {
-    padding: 80px 0;
-    overflow: hidden;
 }
 
 .section-header {
@@ -5688,11 +5648,6 @@ section {
     position: relative;
 }
 
-
-section {
-    padding: 80px 0;
-    overflow: hidden;
-}
 
 .section-header {
     text-align: center;
@@ -5923,21 +5878,10 @@ section {
     background: #ce1212;
 }
 
-
-.nav-link {
-    color:#ce1212;
-}
-
-
 .hr {
     margin: 40px 0;
     color:#ce1212;
 }
-
-
-
-
-
 
 hr {
     margin: 40px 0;
@@ -6817,3 +6761,113 @@ main.single-product .breadcrumb {
     background-color: transparent;
     padding: 0;
 }
+/*---- Labafi Modal -----*/
+.modal_runy {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease, opacity 0.3s ease; /* Add transitions */
+
+
+}
+.modal_runy-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border-radius: 4px;
+    width: 50%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    height: 800px;
+    overflow: auto;
+}
+.modal_runy.active {
+    opacity: 1;
+    pointer-events: auto; /* Allow interaction */
+}
+
+.modal_runy-content.active {
+    transform: translateY(0);
+}
+
+.runy_close {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.runy_close:hover,
+.runy_close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+/*----End Modal----*/
+/*---- Color Runy----*/
+.btn {
+    font-family: Vazir !important ;
+}
+.btn-runy-primary{
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #6c429a;
+    --bs-btn-border-color: #734aa1;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #6c429a;
+    --bs-btn-hover-border-color: #734aa1;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #6c429a;
+    --bs-btn-active-border-color: #6c429a;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #6c429a;
+    --bs-btn-disabled-border-color: #6c429a;
+}
+.bg-runy-primary {
+    background-color: #6c429a !important;
+}
+.bg-runy-primary-g {
+    background: rgba(169,76,157,1);
+    background: -moz-linear-gradient(top, rgba(169,76,157,1) 0%, rgba(108,66,154,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(169,76,157,1)), color-stop(100%, rgba(108,66,154,1)));
+    background: -webkit-linear-gradient(top, rgba(169,76,157,1) 0%, rgba(108,66,154,1) 100%);
+    background: -o-linear-gradient(top, rgba(169,76,157,1) 0%, rgba(108,66,154,1) 100%);
+    background: -ms-linear-gradient(top, rgba(169,76,157,1) 0%, rgba(108,66,154,1) 100%);
+    background: linear-gradient(to bottom, rgba(169,76,157,1) 0%, rgba(108,66,154,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a94c9d', endColorstr='#6c429a', GradientType=0 );
+}
+.bg-runy-cart {
+    background-color: #6c429a !important;
+}
+.bg-runy-post {
+    background-color: #6c429a !important;
+}
+.bg-runy-club {
+    background-color: #6c429a !important;
+}
+.bg-runy-service {
+    background-color: #6c429a !important;
+}
+
+.dropdown-item-runy.active .dropdown-item-runy:active {
+    color:var(--bs-dropdown-link-active-color);
+    text-decoration:none;
+    background-color: #6c429a !important;
+}
+
+/*-- Border --*/
+.border-radius-primary {
+    border-radius: 12% 88% 12% 88% / 88% 20% 80% 12% ;
+}
+

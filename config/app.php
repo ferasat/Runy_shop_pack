@@ -92,7 +92,7 @@ return [
         Cart\CartServiceProvider::class,
         Customer\CustomerServiceProvider::class,
         Sms\SmsServiceProvider::class,
-        SliderB5\SliderB5ServiceProvider::class,
+        RunySliderB5\SliderB5ServiceProvider::class,
         FilesManager\FilesServiceProvider::class,
         Employee\EmployeeServiceProvider::class,
         Rqsts\RqstsServiceProvider::class,

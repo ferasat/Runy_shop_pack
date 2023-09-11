@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Product\Controllers\CategoryProductController;
 use Product\Controllers\DiscountController;
 use Product\Controllers\ProductController;
+use Product\Controllers\ServiceController;
 
 
 Route::prefix('/dashboard')->middleware('auth')->group( function (){
@@ -23,5 +24,8 @@ Route::prefix('/dashboard')->middleware('auth')->group( function (){
     Route::get('/discount/edit/{id}', [DiscountController::class , 'edit'])->name('discount.edit');
     Route::post('/discount/edit/{id}', [DiscountController::class , 'update']);
 
+    Route::get('/services/', [ServiceController::class , 'index'])->name('service.index');
+    Route::get('/service/create', [ServiceController::class , 'create'])->name('service.create');
+    Route::get('/service/edit/{id}', [ServiceController::class , 'edit'])->name('service.edit');
 });
 

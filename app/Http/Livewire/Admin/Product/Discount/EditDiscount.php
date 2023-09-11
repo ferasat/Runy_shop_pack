@@ -8,12 +8,11 @@ use Product\Models\Product;
 
 class EditDiscount extends Component
 {
-    public $discount,$products,$users,$product_id,$user_id,$code,$amount,$type,$duration,$start_date,$end_date,
-    $start_time,$end_time,$capacity,$status,$showDate=false,$showTime=false;
+    public $discount,$products,$users,$product_id,$code,$amount,$type,$duration,$start_date,$end_date,
+    $start_time,$end_time,$capacity,$status,$showDate=false,$showTime=false , $for_user_id;
     public function mount()
     {
         $this->showDate=true;
-        $this->user_id=$this->discount->user_id;
         $this->code=$this->discount->code;
         $this->type=$this->discount->type;
         $this->amount=$this->discount->amount;
@@ -46,7 +45,7 @@ class EditDiscount extends Component
     public function save()
     {
         $this->discount->product_id=$this->product_id;
-        $this->discount->user_id=$this->user_id;
+        $this->discount->for_user_id=$this->for_user_id;
         $this->discount->code=$this->code;
         $this->discount->amount=$this->amount;
         $this->discount->type=$this->type;

@@ -3,6 +3,7 @@
 use App\Http\Controllers\CKEditorController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\RunySliderVueController;
+use App\Http\Controllers\SettingController;
 use App\Models\RunySliderVue;
 use HomePage\HomePageController;
 use Illuminate\Support\Facades\Route;
@@ -25,4 +26,5 @@ Route::get('/slider', [RunySliderVueController::class , 'pics' ]);
 Route::get('/home', [DashboardController::class , 'index' ])->middleware('auth');
 Route::get('/dashboard', [DashboardController::class , 'index' ])->middleware('auth')->name('dashboard');
 Route::post('/dashboard/editor_upload', [CKEditorController::class , 'upload' ])->name('editor.upload');
+Route::get('/dashboard/settings', [SettingController::class , 'index'])->middleware('auth')->name('setting.index');
 

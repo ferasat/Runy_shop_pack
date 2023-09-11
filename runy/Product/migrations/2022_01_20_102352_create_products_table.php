@@ -19,7 +19,7 @@ class CreateProductsTable extends Migration
             $table->string('pic')->nullable();
             $table->enum('statusPublish', ['forCheck' , 'draft' ,'publish'])->default('draft')->nullable();
             $table->integer('specialPin')->default('0');  /// هر عدد یه معنی : 0 معمولی - 1 خاص و پین شده
-            $table->enum('formatProduct' , ['normal','show','varPro','gallery','dl-video','dl-file'])->default('normal');  /// فرمت نمایش پست را نشان می دهد
+            $table->enum('formatProduct' , ['normal','show','varPro','gallery','dl-video','dl-file','service'])->default('normal');  /// فرمت نمایش پست را نشان می دهد
             $table->bigInteger('price')->nullable();  // قیمت محصول
             $table->bigInteger('specialPrice')->nullable();  // قیمت ویژه محصول
             $table->integer('input_stock')->nullable();  // موجودی
@@ -29,7 +29,7 @@ class CreateProductsTable extends Migration
             $table->integer('numberView')->nullable();  // آمار بازدید این مطلب
             $table->string('slug')->unique()->nullable();
             $table->string('redirect')->nullable();
-            $table->string('action_periodic')->nullable();
+            $table->string('action_periodic')->nullable(); // دوره ای که عملی باید انجام شود
             $table->foreignId('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();

@@ -1,9 +1,6 @@
 @extends('layouts.runyApp',['title'=>'تخفیف ها','description'=>'تخفیف ها'])
 
 @section('content')
-    <!-- responsive-header For mobile-->
-    @livewire('admin.theme.admin-navbar-responsive' , ['menu'=>'cp'])
-    <!-- responsive-header -->
 
     <div class="wrapper default">
         @livewire('admin.theme.admin-cp-header' , ['menu'=>'cp'])

@@ -18,7 +18,7 @@
       <sourceFolder url="file://$MODULE_DIR$/runy/Product" isTestSource="false" packagePrefix="Product\" />
       <sourceFolder url="file://$MODULE_DIR$/runy/Requests" isTestSource="false" packagePrefix="Rqsts\" />
       <sourceFolder url="file://$MODULE_DIR$/runy/SMSMarketing" isTestSource="false" packagePrefix="Sms\" />
-      <sourceFolder url="file://$MODULE_DIR$/runy/SliderB5" isTestSource="false" packagePrefix="SliderB5\" />
+      <sourceFolder url="file://$MODULE_DIR$/runy/SliderB5" isTestSource="false" packagePrefix="RunySliderB5\" />
       <sourceFolder url="file://$MODULE_DIR$/runy/RunySEO/src" isTestSource="false" packagePrefix="RunySEO\" />
       <sourceFolder url="file://$MODULE_DIR$/runy/SendMessages" isTestSource="false" packagePrefix="SendMessages\" />
       <sourceFolder url="file://$MODULE_DIR$/runy/SiteLogs" isTestSource="false" packagePrefix="SiteLogs\" />

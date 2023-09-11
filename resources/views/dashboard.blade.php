@@ -1,60 +1,36 @@
 @extends('layouts.runyApp' , ['title'=>'پیشخوان'])
 @section('content')
 
-    <!-- responsive-header For mobile-->
-    @if(Auth::check() and Auth::user()->levelPermission > 2)
-        @livewire('admin.theme.admin-navbar-responsive' , ['menu'=>'cp'])
-    @else
-        @livewire('user.dashboard.navbar-responsive-dashboard')
-    @endif
-
     <!-- responsive-header -->
 
-    <div class="wrapper default">
+    <div class="wrapper ">
         @if(Auth::check() and Auth::user()->levelPermission > 2)
             @livewire('admin.theme.admin-cp-header' , ['menu'=>'cp'])
         @else
             @livewire('user.dashboard.user-cp-header')
         @endif
 
-        <main class="profile-user-page default">
-            <div class="container">
+        <main class="dashboard-user-page ">
+            <div class="container mt-5">
                 <div class="row">
                     <div class="profile-page col-xl-9 col-lg-8 col-md-12 order-2">
                         <div class="row">
-                            <div class="col-12">
-                                <div class="col-12">
-                                    <h1 class="title-tab-content">درخواست مرجوعی</h1>
+                            <div class="col-md-4">
+                                <div class="card border-0 bg-runy-primary-g">
+                                    تعداد سفارش محصول
+
                                 </div>
-                                <div class="content-section default">
-                                    <form method="get" class="profile-return-request-form">
-                                        <p> برای مرجوع کردن کالایی از سفارش خود، شماره سفارش را در زیر وارد نمایید.</p>
-                                        <div class="profile-return-request-form-row">
-                                            <div class="row">
-                                                <div class="col-md-9 col-12">
-                                                    <div class="profile-return-request-form-field">
-                                                        <label class="ui-input">
-                                                            <input class="input-field" type="text"
-                                                                   placeholder="مثلا 765301">
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3 col-12">
-                                                    <div
-                                                        class="profile-return-request-form-button profile-return-request-form-button-top-btn">
-                                                        <button type="submit" class="btn-primary">بررسی سفارش</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card bg-runy-primary">
+                                    باشگاه مشتریان
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="profile-page-aside col-xl-3 col-lg-4 col-md-6 center-section order-1">
                         <div class="profile-box">
-                            <div class="profile-box-header">
+                            <div class="profile-box-header bg-runy-primary">
                                 <div class="profile-box-avatar">
                                     <img src="{{ asset(Auth::user()->pic) }}" alt="{{ fullName(Auth::user()->id) }}">
                                 </div>
@@ -92,41 +68,41 @@
                                     <i class="now-ui-icons ui-1_lock-circle-open"></i>
                                     تغییر رمز
                                 </a>
-                                <a href="#" class="profile-box-tab profile-box-tab--sign-out">
+                                <a href="{{ asset(route('logout')) }}" class="profile-box-tab profile-box-tab--sign-out">
                                     <i class="now-ui-icons media-1_button-power"></i>
                                     خروج از حساب
                                 </a>
                             </div>
                         </div>
                         <div class="responsive-profile-menu show-md">
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
-                                        aria-haspopup="true" aria-expanded="false">
+
+                            <div class="dropdown">
+                                <button class="btn btn-runy-primary dropdown-toggle w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fa fa-navicon"></i>
-                                    حساب کاربری شما
+                                    دسترسی سریع
                                 </button>
-                                <div class="dropdown-menu dropdown-menu-right text-right">
-                                    <a href="profile.html" class="dropdown-item">
-                                        <i class="now-ui-icons users_single-02"></i>
-                                        پروفایل
-                                    </a>
-                                    <a href="profile-orders.html" class="dropdown-item">
-                                        <i class="now-ui-icons shopping_basket"></i>
-                                        همه سفارش ها
-                                    </a>
-                                    <a href="profile-orders-return.html" class="dropdown-item active-menu">
-                                        <i class="now-ui-icons files_single-copy-04"></i>
-                                        درخواست مرجوعی
-                                    </a>
-                                    <a href="profile-favorites.html" class="dropdown-item">
-                                        <i class="now-ui-icons ui-2_favourite-28"></i>
-                                        لیست علاقمندی ها
-                                    </a>
-                                    <a href="profile-personal-info.html" class="dropdown-item">
-                                        <i class="now-ui-icons business_badge"></i>
-                                        اطلاعات شخصی
-                                    </a>
-                                </div>
+                                <ul class="dropdown-menu dropdown-menu-dark">
+                                    <li>
+                                        <a class="dropdown-item dropdown-item-runy active " href="#">
+                                            <i class="now-ui-icons business_badge"></i>
+                                            فروش جدید
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item dropdown-item-runy" href="#">
+                                            <i class="now-ui-icons shopping_basket"></i>
+                                            سرویس جدید
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item dropdown-item-runy" href="#">
+                                            <i class="now-ui-icons files_single-copy-04"></i>
+                                            مرجوعی
+                                        </a>
+                                    </li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item dropdown-item-runy" href="#">در گاه بانکی</a></li>
+                                </ul>
                             </div>
                         </div>
                         <div class="profile-menu hidden-md">
@@ -134,33 +110,33 @@
                             <ul class="profile-menu-items">
                                 <li>
                                     <i class="fa fa-navicon"></i>
-                                    <a href="profile.html">
+                                    <a href="#">
                                         <i class="now-ui-icons users_single-02"></i>
-                                        پروفایل
+                                        فروش جدید
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="profile-orders.html">
+                                    <a href="#">
                                         <i class="now-ui-icons shopping_basket"></i>
-                                        همه سفارش ها
+                                        سرویس جدید
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="profile-orders-return.html" class="active">
+                                    <a href="#" class="active">
                                         <i class="now-ui-icons files_single-copy-04"></i>
                                         درخواست مرجوعی
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="profile-favorites.html">
+                                    <a href="#">
                                         <i class="now-ui-icons ui-2_favourite-28"></i>
-                                        لیست علاقمندی ها
+                                        سرویس پیامک
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="profile-personal-info.html">
+                                    <a href="#">
                                         <i class="now-ui-icons business_badge"></i>
-                                        اطلاعات شخصی
+                                        باشگاه مشتریان
                                     </a>
                                 </li>
                             </ul>

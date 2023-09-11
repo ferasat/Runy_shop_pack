@@ -8,7 +8,7 @@
             <div class="row mb-4">
                 <div class="col-md-6">
                     <label for="user_id" class="form-label">کاربر</label>
-                    <select id="user_id" class="form-select" wire:model.lazy="user_id" name="user_id">
+                    <select id="user_id" class="form-select" wire:model.lazy="for_user_id" name="for_user_id">
                         <option value="null" selected>عمومی</option>
                         @foreach($users as $user)
                             <option value="{{$user->id}}" >{{$user->name}}</option>

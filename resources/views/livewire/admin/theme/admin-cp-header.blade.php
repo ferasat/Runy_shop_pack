@@ -1,99 +1,58 @@
 <!-- header -->
-<header class="main-header default">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-2 col-md-3 col-sm-4 col-5">
-                <div class="logo-area default">
-                    <a href="{{ asset(route('dashboard')) }}">
-                        <img src="{{ asset('theme/img/logo.png') }}" alt="رانی شاپ">
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-5 col-sm-8 col-7">
-                <div class="search-area default">
+<header class="main-header">
+    <nav class="navbar navbar-expand-lg bg-runy-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{{ asset(route('dashboard')) }}">
+                <img src="{{ asset('theme/img/logo.png') }}" alt="رانی شاپ" class="w-50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link text-white active" aria-current="page" href="{{ asset('dashboard') }}">پیشخوان</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{{ asset(route('product.index')) }}">محصولات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{{ asset(route('service.index')) }}">خدمات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{{asset(route('post.index'))}}">نوشته ها</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{{asset(route('page.index'))}}"> برگه ها</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{{asset(route('discount.index'))}}">تخفیف ها</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{{asset(route('discount.index'))}}">باشگاه مشرتریان</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{{asset(route('setting.index'))}}">تنظیمات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{{asset(route('sliderB5.index'))}}">اسلایدشو</a>
+                    </li>
 
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-12">
-                <div class="user-login dropdown">
-                    <a href="#" class="btn btn-neutral dropdown-toggle"  data-bs-toggle="dropdown" aria-expanded="false" id="btn_login">
-                        ورود / ثبت نام
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="btn_login">
-                        <div class="dropdown-item">
-                            <a class="btn btn-info">ورود به سایت</a>
-                        </div>
-                        <div class="dropdown-item font-weight-bold">
-                            <span>کاربر جدید هستید؟</span> <a class="register" href="#">ثبت‌نام</a>
-                        </div>
-                    </ul>
-                </div>
-                <div class="cart dropdown">
-                    <a href="#" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" id="btn_cart">
-                        <i class="now-ui-icons shopping_cart-simple"></i> سبد خرید
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="btn_cart">
-                        <div class="basket-header">
-                            <div class="basket-total">
-                                <span>مبلغ کل خرید:</span>
-                                <span> ۲۳,۵۰۰</span>
-                                <span> تومان</span>
-                            </div>
-                            <a href="#" class="basket-link">
-                                <span>مشاهده سبد خرید</span>
-                                <div class="basket-arrow"></div>
-                            </a>
-                        </div>
-                        <ul class="basket-list">
-                            <li>
-                                <a href="#" class="basket-item">
-                                    <button class="basket-item-remove"></button>
-                                    <div class="basket-item-content">
-                                        <div class="basket-item-image">
-                                            <img alt="" src="{{ asset('theme/img/sample-tour.jpg') }}">
-                                        </div>
-                                        <div class="basket-item-details">
-                                            <div class="basket-item-title">هندزفری بلوتوث مدل S530
-                                            </div>
-                                            <div class="basket-item-params">
-                                                <div class="basket-item-props">
-                                                    <span> ۱ عدد</span>
-                                                    <span>رنگ مشکی</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
+                </ul>
+                <div class="d-flex" >
+                    <div class="btn-group dropstart">
+                        <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            حساب کاربری
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">پروفایل</a></li>
+                            <li><a class="dropdown-item" href="#">اعتبار</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">تنظیمات درگاه</a></li>
                         </ul>
-                        <a href="#" class="basket-submit">ورود و ثبت سفارش</a>
-                    </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <nav class="main-menu">
-        <div class="container">
-            <ul class="list float-right">
-
-                <li class="list-item">
-                    <a class="nav-link" href="{{ asset('dashboard') }}">پیشخوان</a>
-                </li>
-                <li class="list-item">
-                    <a class="nav-link" href="{{ asset(route('product.index')) }}">محصولات</a>
-                </li>
-                <li class="list-item">
-                    <a class="nav-link" href="{{asset(route('post.index'))}}">نوشته ها</a>
-                </li>
-                <li class="list-item">
-                    <a class="nav-link" href="{{asset(route('page.index'))}}"> برگه ها</a>
-                </li>
-                <li class="list-item">
-                    <a class="nav-link" href="{{asset(route('discount.index'))}}">تخفیف ها</a>
-                </li>
-
-
-            </ul>
         </div>
     </nav>
 </header>

@@ -1,6 +1,6 @@
 <?php
 
-namespace SliderB5;
+namespace RunySliderB5;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Route;

@@ -1,28 +1,22 @@
 @extends('layouts.runyApp',['title'=>$title,'description'=>''])
 
 @section('content')
-    @include('layouts.cp-header')
-    <div class="container">
-        <!-- Title and Top Buttons Start -->
-        <div class="page-title-container">
-            <div class="row">
-                <!-- Title Start -->
-                <div class="col-12 col-md-7">
-                    <h1 class="mb-0 pb-0 display-4" id="title">{{ $title }}</h1>
+    <div class="wrapper default">
+        @livewire('admin.theme.admin-cp-header' , ['menu'=>'cp'])
+
+        <div class="container">
+            <!-- Title and Top Buttons Start -->
+            <div class="page-title-container">
+                <div class="row">
+                    <!-- Title Start -->
+                    <div class="col-12 col-md-7">
+                        <h1 class="mb-0 pb-0 display-4" id="title">{{ $title }}</h1>
+
+                    </div>
+                    <!-- Title End -->
                 </div>
-                <!-- Title End -->
             </div>
-        </div>
-        <!-- Title and Top Buttons End -->
-
-        <!-- Content Start -->
-        <div class=" d-flex justify-content-between">
-            <div class="card-body">
-                <p class="mb-0">{{$description}} .</p>
-            </div>
-
-
-        </div>
+            <!-- Title and Top Buttons End -->
 
         <form class="row " method="post" @if($post->typePost == 'page') action="{{ asset('/dashboard/page/edit') }}" @else action="{{ asset('/dashboard/post/edit') }}" @endif enctype="multipart/form-data">
             <input type="hidden" name="post_id" value="{{$post->id}}">
@@ -53,7 +47,10 @@
             </div>
         </form>
         <!-- Content End -->
+        </div>
     </div>
+
+
     <script>
         $('#texts').summernote({
             placeholder: 'سلام به رانی خوش آمدید',
@@ -70,5 +67,6 @@
             ]
         });
     </script>
-    @include('layouts.cp-footer')
+
+    @livewire('admin.theme.admin-footer' , ['menu'=>'cp'])
 @endsection

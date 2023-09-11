@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('discounts', function (Blueprint $table) {
             $table->id();
             $table->integer('product_id')->nullable();
-            $table->integer('user_id')->nullable();
+            $table->bigInteger('user_id')->nullable(); // ثبت کننده کد
+            $table->bigInteger('for_user_id')->nullable(); ///  برای فلان کاربر
             $table->string('code')->nullable();
             $table->bigInteger('amount')->nullable();
             $table->enum('type',['percentage','fixed'])->default('percentage');

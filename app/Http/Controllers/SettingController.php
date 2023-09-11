@@ -10,12 +10,11 @@ class SettingController extends Controller
 
     public function index()
     {
-        $html_tag_data = ["override"=>'{ "attributes" : { "placement" : "horizontal", "layout":"boxed" }, "storagePrefix" : "starter-project", "showSettings" : false }'];
         $title = 'تنظیمات';
         $description = 'تنظیمات عمومی';
         $breadcrumbs = ["/dashboard"=>" پیشخوان " , "/dashboard/setting" => "  تنظیمات " ];
         $editor = true ;
-        return view('admin.setting.indexSetting' , compact('html_tag_data','title','description' ,
+        return view('setting.indexSetting' , compact('title','description' ,
             'breadcrumbs'));
     }
 

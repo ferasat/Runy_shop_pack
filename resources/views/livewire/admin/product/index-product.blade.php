@@ -2,8 +2,8 @@
     <div class="col-xl-8 mb-5">
         <section class="scroll-section" id="listPost">
             @foreach($products as $product)
-                <div class="card ">
-                    <div class="card-body mb-n2 border-last-none h-100">
+                <div class="card mb-2 shadow">
+                    <div class="card-body">
                         @livewire('admin.product.row-product' , ['product' => $product]  , key($product->id))
                     </div>
                 </div>

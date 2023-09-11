@@ -143,11 +143,6 @@ textarea {
 
 }
 
-/* header */
-header.main-header {
-    padding: 15px 0 0 0 ;
-    background-color: #fff;
-}
 
 /* ----------------- Start Header */
 header.main-header .logo-area {
@@ -4180,7 +4175,7 @@ ul.gallery-options li:hover .tooltip-option {
 
 /* Profile-User Page */
 
-main.profile-user-page .profile-box {
+.profile-box {
     margin-bottom: 21px;
     background-color: #fff;
     -webkit-box-shadow: 0 12px 12px 0 hsla(0, 0%, 71%, .1);
@@ -4188,13 +4183,13 @@ main.profile-user-page .profile-box {
     border: 1px solid #dedede;
 }
 
-main.profile-user-page .profile-box-header {
+.profile-box-header {
     position: relative;
     background-color: #00bfd6;
     height: 47px;
 }
 
-main.profile-user-page .profile-box-avatar img {
+.profile-box-avatar img {
     width: 54px;
     height: 54px;
     background: #fff;
@@ -4212,7 +4207,7 @@ main.profile-user-page .profile-box-avatar img {
     background-position: 50%;
 }
 
-main.profile-user-page .profile-box-btn-edit {
+.profile-box-btn-edit {
     width: 16px;
     height: 16px;
     -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .08);
@@ -4228,7 +4223,7 @@ main.profile-user-page .profile-box-btn-edit {
     cursor: pointer;
 }
 
-main.profile-user-page .profile-box-btn-edit i {
+.profile-box-btn-edit i {
     float: right;
     font-size: 11px;
     position: absolute;
@@ -4237,7 +4232,7 @@ main.profile-user-page .profile-box-btn-edit i {
     color: #A8A8A8;
 }
 
-main.profile-user-page .profile-box-username {
+.profile-box-username {
     padding: 23px 20px 19px;
     text-align: center;
     font-size: 16px;
@@ -4246,14 +4241,14 @@ main.profile-user-page .profile-box-username {
     letter-spacing: -.5px;
 }
 
-main.profile-user-page .profile-box-tabs {
+.profile-box-tabs {
     border-top: 1px solid #f1f1f1;
     background-color: #fcfcfc;
     min-height: 47px;
     text-align: center;
 }
 
-main.profile-user-page .profile-box-tabs a.profile-box-tab {
+.profile-box-tabs a.profile-box-tab {
     display: inline-block;
     max-width: 50%;
     padding: 10px;
@@ -4266,24 +4261,24 @@ main.profile-user-page .profile-box-tabs a.profile-box-tab {
     position: relative;
 }
 
-main.profile-user-page .profile-box-tabs a.profile-box-tab:first-child {
+.profile-box-tabs a.profile-box-tab:first-child {
     border-left: 1px solid #ebebeb;
 }
 
-main.profile-user-page .profile-box-tabs i {
+.profile-box-tabs i {
     display: block;
 }
 
-main.profile-user-page .modal-width-custom .modal-dialog {
+.modal-width-custom .modal-dialog {
     max-width: 600px;
 }
 
-main.profile-user-page ul.profile-avatars li {
+ul.profile-avatars li {
     display: inline-block;
     margin: 0 4px;
 }
 
-main.profile-user-page .profile-avatars-item {
+.profile-avatars-item {
     width: 112px;
     height: 112px;
     background: 50% 50% no-repeat;
@@ -5383,9 +5378,6 @@ main.profile-user-page .responsive-profile-menu .dropdown-menu a i {
 }
 
 @media (max-width: 1077px) {
-    header.main-header {
-        display: none;
-    }
 
     nav.header-responsive {
         display: block;
