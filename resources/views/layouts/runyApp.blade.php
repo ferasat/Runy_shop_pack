@@ -17,6 +17,7 @@
 @yield('content')
 
 @include('layouts.runyFooter')
+
 @livewireScripts
 
 </body>

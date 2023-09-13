@@ -20,7 +20,7 @@ class HomePageController extends Controller
         SEOTools::twitter()->setSite('@aminferasat');
         SEOTools::jsonLd()->addImage(setting_site()->site_logo);
 
-        return view('HomeView::index' );
+        return view('HomeView::index' , ['owl_carousel'=>true ]);
     }
 
 

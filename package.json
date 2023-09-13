@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "serve": "php artisan serve",
+    "serve": "php artisan serve --port=8080",
     "opt": "php artisan optimize:clear",
     "dev": "vite",
     "build": "vite build"

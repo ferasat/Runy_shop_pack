@@ -6,7 +6,7 @@
     <nav class="navbar direction-ltr fixed-top header-responsive">
         <div class="container">
             <div class="navbar-translate">
-                <div class="navbar-brand" href="#">
+                <div class="navbar-brand" href="{{ asset('/') }}">
                     <img src="{{ setting_site()->site_logo }}" alt="{{ setting_site()->site_name }}">
                 </div>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
@@ -234,25 +234,26 @@
 
 
     <!-- header -->
-    <header class="main-header">
+    <header class="main-header ">
         <div class="container">
             <div class="row">
                 <div class="col-lg-1 col-md-1 col-sm-2 col-3">
-                    <div class="logo-area">
-                        <a href="">
+                    <div class="logo-area default">
+                        <a href="{{ asset('/') }}">
                             <img src="{{ setting_site()->site_logo }}" alt="{{ setting_site()->site_name }}">
                         </a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-5 col-sm-8 col-7">
-                    <div class="search-area">
+                    <div class="search-area default">
                         <form action="" class="search mt-4">
+
                             <input type="text" placeholder="نام کالا، برند و یا دسته مورد نظر خود را جستجو کنید…">
+
+
                             <button type="submit">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                     class="bi bi-search" viewBox="0 0 16 16">
-                                    <path
-                                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
                                 </svg>
                             </button>
                         </form>
@@ -265,17 +266,19 @@
             <div class="container">
                 <ul class="list float-right">
                     <li class="list-item list-item-has-children mega-menu mega-menu-col-5">
-                        <a class="nav-link">کالای دیجیتال</a>
+                        <a class="nav-link" >دسته بندی کالا</a>
                         <ul class="sub-menu nav">
                             <li class="list-item list-item-has-children">
-                                <i class="now-ui-icons arrows-1_minimal-left"></i><a class="main-list-item nav-link"
-                                                                                     href="http://localhost:63342/mortazavi-bootstrap/allproduct.html?_ijt=ucfrq60mf07i33i51jis2ngb4d&_ij_reload=RELOAD_ON_SAVE">همه
-                                    محصولات</a>
+                                <i class="now-ui-icons arrows-1_minimal-left"></i><a class="main-list-item nav-link" href="http://localhost:63342/mortazavi-bootstrap/allproduct.html?_ijt=ucfrq60mf07i33i51jis2ngb4d&_ij_reload=RELOAD_ON_SAVE" >همه محصولات</a>
 
                             </li>
                             <li class="list-item list-item-has-children">
-                                <i class="now-ui-icons arrows-1_minimal-left"></i><a class="main-list-item nav-link">پرینتر</a>
+                                <i class="now-ui-icons arrows-1_minimal-left"></i><a class="main-list-item nav-link" >تحهیزات اداری و فروشگاهی</a>
+
                                 <ul class="sub-menu nav">
+                                    <li class="list-item">
+                                        <i class="now-ui-icons arrows-1_minimal-left"></i><a class="main-list-item nav-link" >پرینتر</a>
+                                    </li>
                                     <li class="list-item">
                                         <a class="nav-link" href="#">پرینتر لیزری</a>
                                     </li>
@@ -289,11 +292,29 @@
                                         <a class="nav-link" href="#">پرینتر سوزنی</a>
                                     </li>
                                     <li class="list-item">
-                                        <a class="nav-link" href="#">پایه نگهدارنده گوشی</a>
+                                        <a class="nav-link" href="#">ماشین حساب</a>
                                     </li>
+                                    <li class="list-item">
+                                        <a class="nav-link" href="#">دستگاه کپی</a>
+                                    </li>
+                                    <li class="list-item">
+                                        <a class="nav-link" href="#">اسکنر</a>
+                                    </li>
+                                    <li class="list-item">
+                                        <a class="nav-link" href="#">دستگاه کاغذ خردکن</a>
+                                    </li>
+                                    <li class="list-item">
+                                        <a class="nav-link" href="#">پول شمار</a>
+                                    </li>
+                                    <li class="list-item">
+                                        <a class="nav-link" href="#">تست اسکناس</a>
+                                    </li>
+                                    <li class="list-item">
+                                        <a class="nav-link" href="#">پرفراژ چک</a>
+                                    </li>
+
                                     <li class="list-item list-item-has-children">
-                                        <i class="now-ui-icons arrows-1_minimal-left"></i><a
-                                            class="main-list-item nav-link" href="#">جهیزات اداری-پزشکی</a>
+                                        <i class="now-ui-icons arrows-1_minimal-left"></i><a class="main-list-item nav-link" href="#">جهیزات اداری-پزشکی</a>
                                         <ul class="sub-menu nav">
                                             <li class="list-item">
                                                 <a class="nav-link" href="#">مچ بند شناسایی بیمار</a>
@@ -303,21 +324,15 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li class="list-item">
-                                        <i class="now-ui-icons arrows-1_minimal-left"></i><a
-                                            class="main-list-item nav-link" href="#">ماشین حساب</a>
-                                    </li>
-                                    <li class="list-item">
-                                        <i class="now-ui-icons arrows-1_minimal-left"></i><a
-                                            class="main-list-item nav-link" href="#">دستگاه کپی</a>
-                                    </li>
                                 </ul>
                             </li>
                             <li class="list-item list-item-has-children">
-                                <i class="now-ui-icons arrows-1_minimal-left"></i><a class="main-list-item nav-link"
-                                                                                     href="#">تجهیزات فروشگاهی و
-                                    بانکی</a>
+                                <i class="now-ui-icons arrows-1_minimal-left"></i><a class="main-list-item nav-link" href="#">تجهیزات فروشگاهی و بانکی</a>
                                 <ul class="sub-menu nav">
+                                    <li class="list-item">
+                                        <i class="now-ui-icons arrows-1_minimal-left"></i><a class="main-list-item nav-link" >بارکدخوان</a>
+
+                                    </li>
                                     <li class="list-item">
                                         <a class="nav-link" href="#">بارکدخوان با سیم</a>
                                     </li>
@@ -328,7 +343,13 @@
                                         <a class="nav-link" href="#">بارکدخوان همراه</a>
                                     </li>
                                     <li class="list-item">
-                                        <a class="nav-link" href="#">لیبل پرینتر</a>
+                                        <i class="now-ui-icons arrows-1_minimal-left"></i><a class="main-list-item nav-link" >لیبل پرینتر</a>
+                                    </li>
+                                    <li class="list-item">
+                                        <a class="nav-link" href="#">لوازم جانبی لیبل پرینتر</a>
+                                    </li>
+                                    <li class="list-item">
+                                        <i class="now-ui-icons arrows-1_minimal-left"></i><a class="main-list-item nav-link" >فیش پرینتر</a>
                                     </li>
                                     <li class="list-item">
                                         <a class="nav-link" href="#">فیش پرینتر</a>
@@ -339,12 +360,23 @@
                                     <li class="list-item">
                                         <a class="nav-link" href="#">نرم افزار فروش و حسابداری</a>
                                     </li>
+                                    <li class="list-item">
+                                        <a class="nav-link" href="#">لیبل زن دستی</a>
+                                    </li>
+                                    <li class="list-item">
+                                        <a class="nav-link" href="#">موبایل پرینتر</a>
+                                    </li>
+                                    <li class="list-item">
+                                        <a class="nav-link" href="#">کشوی پول</a>
+                                    </li>
                                 </ul>
                             </li>
                             <li class="list-item list-item-has-children">
-                                <i class="now-ui-icons arrows-1_minimal-left"></i><a class="nav-link" href="#">مواد
-                                    مصرفی</a>
+                                <i class="now-ui-icons arrows-1_minimal-left"></i><a class="nav-link" href="#">مواد مصرفی</a>
                                 <ul class="sub-menu nav">
+                                    <li class="list-item">
+                                        <i class="now-ui-icons arrows-1_minimal-left"></i><a class="main-list-item nav-link" >کارتریج</a>
+                                    </li>
                                     <li class="list-item">
                                         <a class="nav-link" href="#">کارتریج لیزری رنگی</a>
                                     </li>
@@ -355,6 +387,9 @@
                                         <a class="nav-link" href="#">کارتریج جوهرافشان</a>
                                     </li>
                                     <li class="list-item">
+                                        <i class="now-ui-icons arrows-1_minimal-left"></i><a class="main-list-item nav-link" >ریبون</a>
+                                    </li>
+                                    <li class="list-item">
                                         <a class="nav-link" href="#">ریبون پرینتر سوزنی</a>
                                     </li>
                                     <li class="list-item">
@@ -363,31 +398,137 @@
                                     <li class="list-item">
                                         <a class="nav-link" href="#">ریبون کارت پرینتر</a>
                                     </li>
+                                    <li class="list-item">
+                                        <a class="nav-link" href="#">ریبون تاریخ زن</a>
+                                    </li>
+                                    <li class="list-item">
+                                        <a class="nav-link" href="#">تونر</a>
+                                    </li>
+                                    <li class="list-item">
+                                        <a class="nav-link" href="#">لیبل (برچسب)</a>
+                                    </li>
+                                    <li class="list-item">
+                                        <a class="nav-link" href="#">نوار لیبل پرینتر</a>
+                                    </li>
+                                    <li class="list-item">
+                                        <a class="nav-link" href="#">کارت pvc</a>
+                                    </li>
+                                    <li class="list-item">
+                                        <a class="nav-link" href="#"> رول حرارتی</a>
+                                    </li>
+                                    <li class="list-item">
+                                        <a class="nav-link" href="#">جوهر پرینتر و پلاتر </a>
+                                    </li>
+
+
+
                                 </ul>
                             </li>
                             <li class="list-item list-item-has-children">
-                                <i class="now-ui-icons arrows-1_minimal-left"></i><a class="nav-link" href="#">کالای
-                                    استوک</a>
+
+
+
                                 <ul class="sub-menu nav">
                                     <li class="list-item">
-                                        <a class="nav-link" href="#">پرینتر استوک</a>
+                                        <a class="nav-link" href="#">تانک و کارتریج قابل شارژ </a>
                                     </li>
                                     <li class="list-item">
-                                        <a class="nav-link" href="#">دستگاه کپی استوک</a>
+                                        <a class="nav-link" href="#">کاغذ عکس </a>
                                     </li>
                                     <li class="list-item">
-                                        <a class="nav-link" href="#">لیبل پرینتر استوک</a>
+                                        <a class="nav-link" href="#">دولوپر</a>
+                                    </li>
+
+
+
+                                    <li class="list-item">
+                                        <a class="nav-link" href="#">مرکب ریسوگراف</a>
                                     </li>
                                     <li class="list-item">
-                                        <a class="nav-link" href="#">بارکدخوان استوک</a>
+                                        <a class="nav-link" href="#">باتری</a>
                                     </li>
+                                    <li class="list-item">
+                                        <a class="nav-link" href="#">کاربن فکس</a>
+                                    </li>
+                                    <li class="list-item">
+                                        <i class="now-ui-icons arrows-1_minimal-left"></i><a class="main-list-item nav-link" >قطعات</a>
+                                    </li>
+
+                                    <li class="list-item">
+
+                                        <a class="nav-link" href="#">چیپست</a>
+                                    </li>
+                                    <li class="list-item">
+                                        <a class="nav-link" href="#">درام</a>
+                                    </li>
+                                    <li class="list-item">
+                                        <a class="nav-link" href="#">بلید </a>
+                                    </li>
+                                    <li class="list-item">
+                                        <a class="nav-link" href="#"> مگنت </a>
+                                    </li>
+                                    <li class="list-item">
+                                        <a class="nav-link" href="#">فرم رولر  </a>
+                                    </li>
+                                    <li class="list-item">
+                                        <a class="nav-link" href="#"> فیوزینگ</a>
+                                    </li>
+                                    <li class="list-item">
+                                        <a class="nav-link" href="#"> فیلم فیوزینگ</a>
+                                    </li>
+                                    <li class="list-item">
+                                        <a class="nav-link" href="#"> برد فرمتر</a>
+                                    </li>
+                                    <li class="list-item">
+                                        <a class="nav-link" href="#"> برد پاور</a>
+                                    </li>
+
+
+
+
                                 </ul>
                             </li>
                             <li class="list-item list-item-has-children">
-                                <i class="now-ui-icons arrows-1_minimal-left"></i><a class="nav-link" href="#">سامانه
-                                    تعمیرات
-                                </a>
+
                                 <ul class="sub-menu nav">
+                                    <li class="list-item">
+                                        <a class="nav-link" href="#"> ترنسفر بلت</a>
+                                    </li>
+                                    <li class="list-item">
+                                        <a class="nav-link" href="#"> پرس</a>
+                                    </li>
+                                    <li class="list-item">
+                                        <a class="nav-link" href="#"> هات رول</a>
+                                    </li>
+                                    <li class="list-item">
+                                        <a class="nav-link" href="#">  کاغذ کش</a>
+                                    </li>
+
+
+                                    <li class="list-item">
+                                        <a class="nav-link" href="#"> سپریشن پد </a>
+                                    </li>
+                                    <li class="list-item">
+                                        <a class="nav-link" href="#">  سینی خروجی</a>
+                                    </li>
+                                    <li class="list-item">
+                                        <a class="nav-link" href="#"> سینی ورودی</a>
+                                    </li>
+                                    <li class="list-item">
+                                        <a class="nav-link" href="#"> ناخنک </a>
+                                    </li>
+                                    <li class="list-item">
+                                        <a class="nav-link" href="#"> چرخ دنده </a>
+                                    </li>
+                                    <li class="list-item">
+                                        <a class="nav-link" href="#"> هد پرینتر </a>
+                                    </li>
+                                    <li class="list-item">
+                                        <a class="nav-link" href="#"> آداپتور </a>
+                                    </li>
+                                    <li class="list-item">
+                                        <a class="nav-link" href="#"> سایر قطعات </a>
+                                    </li>
                                     <li class="list-item">
                                         <a class="nav-link" href="#"> تعمیر دستگاه کپی</a>
                                     </li>
@@ -404,279 +545,94 @@
                                         <a class="nav-link" href="#">شارژ کارتریج سامسونگ</a>
                                     </li>
                                 </ul>
+
                             </li>
+
 
                         </ul>
                     </li>
                     <li class="list-item list-item-has-children mega-menu mega-menu-col-5">
-                        <a class="nav-link">تعمیر تجهیزات فروشگاهی</a>
+                        <a class="nav-link" >کالای استوک</a>
                         <ul class="sub-menu nav">
                             <li class="list-item list-item-has-children">
-                                <i class="now-ui-icons arrows-1_minimal-left"></i><a class="main-list-item nav-link"
-                                                                                     href="#">تعمیر تجهیزات فروشگاهی</a>
                                 <ul class="sub-menu nav">
                                     <li class="list-item">
-                                        <a class="nav-link" href="#">کیف و کاور گوشی</a>
+                                        <a class="nav-link" href="#">پرنتر استوک</a>
                                     </li>
                                     <li class="list-item">
-                                        <a class="nav-link" href="#">پاور بانک</a>
+                                        <a class="nav-link" href="#">دستگاه کپی استوک </a>
                                     </li>
                                     <li class="list-item">
-                                        <a class="nav-link" href="#">هندزفری،هدفون</a>
+                                        <a class="nav-link" href="#">لیبل پرینتر استوک</a>
                                     </li>
                                     <li class="list-item">
-                                        <a class="nav-link" href="#">پایه نگهدارنده گوشی</a>
-                                    </li>
-                                    <li class="list-item list-item-has-children">
-                                        <i class="now-ui-icons arrows-1_minimal-left"></i><a
-                                            class="main-list-item nav-link" href="#">گوشی موبایل
-                                        </a>
-                                        <ul class="sub-menu nav">
-                                            <li class="list-item">
-                                                <a class="nav-link" href="#">آیفون اپل</a>
-                                            </li>
-                                            <li class="list-item">
-                                                <a class="nav-link" href="#">هوآوی</a>
-                                            </li>
-                                        </ul>
+                                        <a class="nav-link" href="#">بارکدخوان استوک  </a>
                                     </li>
                                     <li class="list-item">
-                                        <i class="now-ui-icons arrows-1_minimal-left"></i><a
-                                            class="main-list-item nav-link" href="#">ساعت هوشمند
-                                        </a>
+                                        <a class="nav-link" href="#">فیش پرینتر کارکرده </a>
                                     </li>
                                     <li class="list-item">
-                                        <i class="now-ui-icons arrows-1_minimal-left"></i><a
-                                            class="main-list-item nav-link" href="#">اسپیکر بلوتوث و با سیم</a>
+                                        <a class="nav-link" href="#">موبایل پرینتر استوک  </a>
                                     </li>
+
                                 </ul>
                             </li>
-                            <li class="list-item list-item-has-children">
-                                <i class="now-ui-icons arrows-1_minimal-left"></i><a class="main-list-item nav-link"
-                                                                                     href="#">موبایل</a>
-                                <ul class="sub-menu nav">
-                                    <li class="list-item">
-                                        <a class="nav-link" href="#">Apple</a>
-                                    </li>
-                                    <li class="list-item">
-                                        <a class="nav-link" href="#">ASUS</a>
-                                    </li>
-                                    <li class="list-item">
-                                        <a class="nav-link" href="#">HTC</a>
-                                    </li>
-                                    <li class="list-item">
-                                        <a class="nav-link" href="#">LG</a>
-                                    </li>
-                                    <li class="list-item">
-                                        <a class="nav-link" href="#">Nokia</a>
-                                    </li>
-                                    <li class="list-item">
-                                        <a class="nav-link" href="#">Samsung</a>
-                                    </li>
-                                    <li class="list-item">
-                                        <a class="nav-link" href="#">Sony</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="list-item list-item-has-children">
-                                <i class="now-ui-icons arrows-1_minimal-left"></i><a class="nav-link" href="#">تبلت و
-                                    کتابخوان</a>
-                                <ul class="sub-menu nav">
-                                    <li class="list-item">
-                                        <a class="nav-link" href="#">Acer</a>
-                                    </li>
-                                    <li class="list-item">
-                                        <a class="nav-link" href="#">Amazon</a>
-                                    </li>
-                                    <li class="list-item">
-                                        <a class="nav-link" href="#">Apple</a>
-                                    </li>
-                                    <li class="list-item">
-                                        <a class="nav-link" href="#">ASUS</a>
-                                    </li>
-                                    <li class="list-item">
-                                        <a class="nav-link" href="#">HTC</a>
-                                    </li>
-                                    <li class="list-item">
-                                        <a class="nav-link" href="#">Samsung</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="list-item list-item-has-children">
-                                <i class="now-ui-icons arrows-1_minimal-left"></i><a class="nav-link"
-                                                                                     href="#">دوربین</a>
-                                <ul class="sub-menu nav">
-                                    <li class="list-item">
-                                        <a class="nav-link" href="#">Canon</a>
-                                    </li>
-                                    <li class="list-item">
-                                        <a class="nav-link" href="#">Casio</a>
-                                    </li>
-                                    <li class="list-item">
-                                        <a class="nav-link" href="#">Nikon</a>
-                                    </li>
-                                    <li class="list-item">
-                                        <a class="nav-link" href="#">Sony</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="list-item list-item-has-children">
-                                <i class="now-ui-icons arrows-1_minimal-left"></i><a class="nav-link" href="#">کامپیوتر
-                                    و تجهیزات جانبی
-                                </a>
-                                <ul class="sub-menu nav">
-                                    <li class="list-item">
-                                        <a class="nav-link" href="#">هارد دیسک</a>
-                                    </li>
-                                    <li class="list-item">
-                                        <a class="nav-link" href="#">نمایشگر</a>
-                                    </li>
-                                    <li class="list-item">
-                                        <a class="nav-link" href="#">مادر بورد</a>
-                                    </li>
-                                    <li class="list-item">
-                                        <a class="nav-link" href="#">پردازنده</a>
-                                    </li>
-                                    <li class="list-item">
-                                        <a class="nav-link" href="#">کارت گرافیک</a>
-                                    </li>
-                                </ul>
-                            </li>
+
 
                         </ul>
                     </li>
                     <li class="list-item list-item-has-children mega-menu mega-menu-col-5">
-                        <a class="nav-link" href="">تجهیزات و لوازم پزشکی</a>
+                        <a class="nav-link" href="">خدمات</a>
                         <ul class="sub-menu nav">
                             <li class="list-item list-item-has-children">
-                                <i class="now-ui-icons arrows-1_minimal-left"></i><a class="main-list-item nav-link">لوازم
-                                    جانبی گوشی</a>
+                                <i class="now-ui-icons arrows-1_minimal-left"></i><a class="main-list-item nav-link" >تعمیر تجهیزات فروشگاهی</a>
                                 <ul class="sub-menu nav">
                                     <li class="list-item">
-                                        <a class="nav-link">کیف و کاور گوشی</a>
+                                        <a class="nav-link" >تعمیر دستگاه فیش زن</a>
                                     </li>
                                     <li class="list-item">
-                                        <a class="nav-link">پاور بانک</a>
+                                        <a class="nav-link" >تعمیر دستگاه لیبل زن</a>
                                     </li>
                                     <li class="list-item">
-                                        <a class="nav-link">هندزفری،هدفون</a>
+                                        <a class="nav-link" >تعمیر دستگاه بارکد خوان</a>
                                     </li>
-                                    <li class="list-item">
-                                        <a class="nav-link">پایه نگهدارنده گوشی</a>
-                                    </li>
-                                    <li class="list-item list-item-has-children">
-                                        <i class="now-ui-icons arrows-1_minimal-left"></i><a
-                                            class="main-list-item nav-link">گوشی موبایل
-                                        </a>
-                                        <ul class="sub-menu nav">
-                                            <li class="list-item">
-                                                <a class="nav-link">آیفون اپل</a>
-                                            </li>
-                                            <li class="list-item">
-                                                <a class="nav-link">هوآوی</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="list-item">
-                                        <i class="now-ui-icons arrows-1_minimal-left"></i><a
-                                            class="main-list-item nav-link">ساعت هوشمند
-                                        </a>
-                                    </li>
-                                    <li class="list-item">
-                                        <i class="now-ui-icons arrows-1_minimal-left"></i><a
-                                            class="main-list-item nav-link">اسپیکر بلوتوث و با سیم</a>
-                                    </li>
+
+
                                 </ul>
                             </li>
                             <li class="list-item list-item-has-children">
-                                <i class="now-ui-icons arrows-1_minimal-left"></i><a class="main-list-item nav-link">موبایل</a>
+                                <i class="now-ui-icons arrows-1_minimal-left"></i><a class="main-list-item nav-link" >تعمیر پرینتر و تعمیر دستگاه کپی</a>
                                 <ul class="sub-menu nav">
                                     <li class="list-item">
-                                        <a class="nav-link">Apple</a>
+                                        <a class="nav-link" >تعمیر دستگاه کپی</a>
                                     </li>
                                     <li class="list-item">
-                                        <a class="nav-link">ASUS</a>
+                                        <a class="nav-link" >تعمیر پرینترهای کانن</a>
                                     </li>
                                     <li class="list-item">
-                                        <a class="nav-link">HTC</a>
-                                    </li>
-                                    <li class="list-item">
-                                        <a class="nav-link">LG</a>
-                                    </li>
-                                    <li class="list-item">
-                                        <a class="nav-link">Nokia</a>
-                                    </li>
-                                    <li class="list-item">
-                                        <a class="nav-link">Samsung</a>
-                                    </li>
-                                    <li class="list-item">
-                                        <a class="nav-link">Sony</a>
+                                        <a class="nav-link" >تعمیر پرینترهای اپسون</a>
                                     </li>
                                 </ul>
                             </li>
-                            <li class="list-item list-item-has-children">
-                                <i class="now-ui-icons arrows-1_minimal-left"></i><a class="nav-link">تبلت و
-                                    کتابخوان</a>
+                            <li class="list-item list-item-has-children ">
+                                <i class="now-ui-icons arrows-1_minimal-left"></i><a class="nav-link" >شارژ کارتریج و دستگاه کپی</a>
                                 <ul class="sub-menu nav">
                                     <li class="list-item">
-                                        <a class="nav-link">Acer</a>
+                                        <a class="nav-link" >شارژ کارتریج HP</a>
                                     </li>
                                     <li class="list-item">
-                                        <a class="nav-link">Amazon</a>
+                                        <a class="nav-link" >شارژ کارتریج Canon</a>
                                     </li>
                                     <li class="list-item">
-                                        <a class="nav-link">Apple</a>
+                                        <a class="nav-link" >شارژ کارتریج سامسونگ</a>
                                     </li>
                                     <li class="list-item">
-                                        <a class="nav-link">ASUS</a>
+                                        <a class="nav-link" >شارژ کارتریج در محل</a>
                                     </li>
-                                    <li class="list-item">
-                                        <a class="nav-link">HTC</a>
-                                    </li>
-                                    <li class="list-item">
-                                        <a class="nav-link">Samsung</a>
-                                    </li>
+
                                 </ul>
                             </li>
-                            <li class="list-item list-item-has-children">
-                                <i class="now-ui-icons arrows-1_minimal-left"></i><a class="nav-link">دوربین</a>
-                                <ul class="sub-menu nav">
-                                    <li class="list-item">
-                                        <a class="nav-link">Canon</a>
-                                    </li>
-                                    <li class="list-item">
-                                        <a class="nav-link">Casio</a>
-                                    </li>
-                                    <li class="list-item">
-                                        <a class="nav-link">Nikon</a>
-                                    </li>
-                                    <li class="list-item">
-                                        <a class="nav-link">Sony</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="list-item list-item-has-children">
-                                <i class="now-ui-icons arrows-1_minimal-left"></i><a class="nav-link">کامپیوتر و تجهیزات
-                                    جانبی
-                                </a>
-                                <ul class="sub-menu nav">
-                                    <li class="list-item">
-                                        <a class="nav-link">هارد دیسک</a>
-                                    </li>
-                                    <li class="list-item">
-                                        <a class="nav-link">نمایشگر</a>
-                                    </li>
-                                    <li class="list-item">
-                                        <a class="nav-link">مادر بورد</a>
-                                    </li>
-                                    <li class="list-item">
-                                        <a class="nav-link">پردازنده</a>
-                                    </li>
-                                    <li class="list-item">
-                                        <a class="nav-link">کارت گرافیک</a>
-                                    </li>
-                                </ul>
-                            </li>
+
 
                         </ul>
                     </li>
@@ -684,43 +640,125 @@
                         <a class="nav-link" href="#">نمایندگی برادر</a>
                     </li>
                     <li class="list-item">
-                        <a class="nav-link"
-                           href="http://localhost:63342/mortazavi-bootstrap/drivers.html?_ijt=ucfrq60mf07i33i51jis2ngb4d&_ij_reload=RELOAD_ON_SAVE">
-                            درایور و نرم افزار </a>
+                        <a class="nav-link" href="http://localhost:63342/mortazavi-bootstrap/drivers.html?_ijt=ucfrq60mf07i33i51jis2ngb4d&_ij_reload=RELOAD_ON_SAVE"> درایور و نرم افزار </a>
                     </li>
                     <li class="list-item">
-                        <a class="nav-link"
-                           href="http://localhost:63342/mortazavi-bootstrap/articles.html?_ijt=ucfrq60mf07i33i51jis2ngb4d&_ij_reload=RELOAD_ON_SAVE">مقالات</a>
+                        <a class="nav-link" href="http://localhost:63342/mortazavi-bootstrap/articles.html?_ijt=ucfrq60mf07i33i51jis2ngb4d&_ij_reload=RELOAD_ON_SAVE">آموزش</a>
                     </li>
                     <li class="list-item">
                         <a class="nav-link" href="#">سامانه تعمیرات</a>
                     </li>
                     <li class="list-item">
-                        <a class="nav-link" href="#">آموزش</a>
+                        <a class="nav-link" href="#">مقالات</a>
                     </li>
-                    <li class="list-item amazing-item">
+                    <li class="list-item amazing-item" data-bs-toggle="modal" data-bs-target="#exampleModal1">
 
-                        <a class="nav-link" href="{{asset(route('cart'))}}"> سبد خرید
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                 class="bi bi-cart3" viewBox="0 0 16 16">
-                                <path
-                                    d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content ">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel1">
+                                            سبد خرید شما
+                                        </h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <table class="table table-image">
+                                            <thead>
+                                            <tr>
+                                                <th scope="col"></th>
+                                                <th scope="col">محصول</th>
+                                                <th scope="col">قیمت</th>
+                                                <th scope="col">تعداد</th>
+                                                <th scope="col">قیمت کل</th>
+                                                <th scope="col">عمل</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td class="w-25">
+                                                    <img src="img/20221105_224825_227343122.png" class="img-fluid img-thumbnail" alt="mahsol">
+                                                </td>
+                                                <td>پرینتر کنون</td>
+                                                <td>500,000 تومان</td>
+                                                <td class="qty"><label for="input1"></label><input type="text" class="form-control" id="input1" value="1"></td>
+                                                <td>500,000 تومان</td>
+                                                <td>
+                                                    <a href="#" class=" btn-sm">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                                                            <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                                                        </svg>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="d-flex justify-content-end">
+                                            <h7>Total: <span class="price text-success">500,000 تومان</span></h7>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer border-top-0 d-flex justify-content-between">
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal">بررسی</button>
+                                        <button type="button" class="btn btn-forth">خروج</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a class="nav-link" href="#"> سبد خرید
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
+                                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
                             </svg>
                         </a>
-                    </li>
-                    <li class="list-item amazing-item">
 
-                        <a class="nav-link"
-                           href="http://localhost:63342/mortazavi-bootstrap/signinpage.html?_ijt=ucfrq60mf07i33i51jis2ngb4d&_ij_reload=RELOAD_ON_SAVE">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                 class="bi bi-box-arrow-in-left" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd"
-                                      d="M10 3.5a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 1 1 0v2A1.5 1.5 0 0 1 9.5 14h-8A1.5 1.5 0 0 1 0 12.5v-9A1.5 1.5 0 0 1 1.5 2h8A1.5 1.5 0 0 1 11 3.5v2a.5.5 0 0 1-1 0v-2z"/>
-                                <path fill-rule="evenodd"
-                                      d="M4.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H14.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
+                    </li>
+                    <li class="list-item amazing-item" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModal1Label" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        <div class="myform bg-white">
+                                            <div class="logo-nav-res default text-center">
+                                                <a href="">
+                                                    <img src="img/logo_low-1.webp" height="36px" alt="">
+                                                </a>
+                                            </div>
+                                            <h3 class="text-center">ورود / ثبت نام </h3>
+                                            <p class="text-center">سلام! به فروشگاه مرتضوی خوش آمدید...</p>
+                                            <form>
+                                                <div class="mb-3 mt-4">
+                                                    <label for="exampleInputEmail1" class="form-label">شماره تلفن همراه</label>
+                                                    <input type="email" class="form-control" id="exampleInputEmail1" >
+                                                </div>
+
+                                                <button type="submit" class="btn btn-primary align-items-center mt-3" style="width: 100%">ورود و ثبت نام با رمز یکبار مصرف</button>
+                                                <button type="submit" class="btn btn-forth align-items-center mt-3" style="width: 100%">ورود و ثبت نام با ایمیل</button>
+
+                                                <div class="form-check mt-3">
+                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                    <label class="form-check-label" for="flexCheckDefault">
+                                                        <p><a href="#">شرایط و قوانین</a>  استفاده از سرویس های سایت فروشگاه مرتضوی را می پذیرم . </p>
+                                                    </label>
+                                                </div>
+
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a class="nav-link" href="#">ورود | ثبت نام
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-left" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M10 3.5a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 1 1 0v2A1.5 1.5 0 0 1 9.5 14h-8A1.5 1.5 0 0 1 0 12.5v-9A1.5 1.5 0 0 1 1.5 2h8A1.5 1.5 0 0 1 11 3.5v2a.5.5 0 0 1-1 0v-2z"/>
+                                <path fill-rule="evenodd" d="M4.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H14.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
                             </svg>
-                            ورود | ثبت نام
+
+
                         </a>
+
                     </li>
                 </ul>
             </div>

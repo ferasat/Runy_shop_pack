@@ -1,5 +1,3 @@
-<section id="mag" class="py-5">
-    <div class="container">
-        @livewire('user.post.recent-post' , ['place'=>'home'])
-    </div>
+<section id="mag" class="expert_section py-5">
+    @livewire('user.post.recent-post' , ['place'=>'home'])
 </section>
