@@ -93,13 +93,21 @@ class ShowCart extends Component
             $cart->cell = $user->cellPhone;
             $cart->address = $user->address;
             $cart->user_id = $user->id;
-            if ($this->dis>0)
-            {
-                $cart->discounted_total_price=$this->dis;
+            if ($this->dis > 0) {
+                $cart->discounted_total_price = $this->dis;
             }
-            $cart->total_price=$total;
-            $cart->discount_id=$this->discount_id;
+            $cart->total_price = $total;
+            $cart->discount_id = $this->discount_id;
             $cart->save();
+        }else{
+            $cart = new Cart();
+            if ($this->dis > 0) {
+                $cart->discounted_total_price = $this->dis;
+            }
+            $cart->total_price = $total;
+            $cart->discount_id = $this->discount_id;
+            $cart->save();
+        }
             foreach (session('cart') as $product) {
 
                 $order = new Order();
@@ -111,7 +119,7 @@ class ShowCart extends Component
                 $order->sum = $product['subtotal'];
                 $order->save();
             }
-        }
+
         return $this->redirect(route('invoice').'?cart_id='.$cart->id);
 
     }

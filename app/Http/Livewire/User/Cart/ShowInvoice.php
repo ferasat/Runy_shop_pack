@@ -38,7 +38,8 @@ class ShowInvoice extends Component
         $invoice=new Invoice();
         $invoice->status=1;
         $invoice->contract_rules=1;
-        $invoice->amount=$this->cart->discounted_total_price;
+        //$invoice->amount=$this->cart->discounted_total_price;
+        $invoice->amount=7000;
         $invoice->save();
         return redirect()->route('pay.invoice');
 

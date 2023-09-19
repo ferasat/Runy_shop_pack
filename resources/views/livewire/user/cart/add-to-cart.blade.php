@@ -86,7 +86,7 @@
                             </div>
                             <div class="modal-footer border-top-0 d-flex justify-content-between">
                                 <a class="btn btn-primary" href="{{asset(route('cart'))}}">مشاهده سبد خرید</a>
-                                <a class="btn btn-info" href="{{asset(route('invoice'))}}">تسویه حساب</a>
+                                <button class="btn btn-info" wire:click.privent="checkout({{$total}})">تسویه حساب</button>
                                 <button type="button" class="btn btn-forth">بستن</button>
                             </div>
 
