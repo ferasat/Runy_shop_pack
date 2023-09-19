@@ -269,8 +269,8 @@
                         <a class="nav-link" >دسته بندی کالا</a>
                         <ul class="sub-menu nav">
                             <li class="list-item list-item-has-children">
-                                <i class="now-ui-icons arrows-1_minimal-left"></i><a class="main-list-item nav-link" href="http://localhost:63342/mortazavi-bootstrap/allproduct.html?_ijt=ucfrq60mf07i33i51jis2ngb4d&_ij_reload=RELOAD_ON_SAVE" >همه محصولات</a>
-
+                                <i class="now-ui-icons arrows-1_minimal-left"></i>
+                                <a class="main-list-item nav-link" href="{{ asset('/shop') }}" >همه محصولات</a>
                             </li>
                             <li class="list-item list-item-has-children">
                                 <i class="now-ui-icons arrows-1_minimal-left"></i><a class="main-list-item nav-link" >تحهیزات اداری و فروشگاهی</a>
@@ -651,15 +651,15 @@
                     <li class="list-item">
                         <a class="nav-link" href="#">مقالات</a>
                     </li>
-                    <li class="list-item amazing-item" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+                    <li class="list-item amazing-item" data-bs-toggle="modal" data-bs-target="#cartModal1">
 
-                        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+                        <div class="modal fade" id="cartModal1" tabindex="-1" aria-labelledby="cartModal1Label" aria-hidden="true">
                             <div class="modal-dialog modal-xl">
                                 <div class="modal-content ">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel1">
+                                        <div class="modal-title h5" id="cartModal1Label">
                                             سبد خرید شما
-                                        </h5>
+                                        </div>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
@@ -677,7 +677,7 @@
                                             <tbody>
                                             <tr>
                                                 <td class="w-25">
-                                                    <img src="img/20221105_224825_227343122.png" class="img-fluid img-thumbnail" alt="mahsol">
+                                                    <img src="{{ asset('theme/img/20221105_224825_227343122.png') }}" class="img-fluid img-thumbnail" alt="mahsol">
                                                 </td>
                                                 <td>پرینتر کنون</td>
                                                 <td>500,000 تومان</td>
@@ -694,7 +694,7 @@
                                             </tbody>
                                         </table>
                                         <div class="d-flex justify-content-end">
-                                            <h7>Total: <span class="price text-success">500,000 تومان</span></h7>
+                                            <h6>Total: <span class="price text-success">500,000 تومان</span></h6>
                                         </div>
                                     </div>
                                     <div class="modal-footer border-top-0 d-flex justify-content-between">
@@ -712,34 +712,34 @@
                         </a>
 
                     </li>
-                    <li class="list-item amazing-item" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <li class="list-item amazing-item"  data-bs-toggle="modal" data-bs-target="#loginModal">
 
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModal1Label" aria-hidden="true">
+                        <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-body">
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        <div class="myform bg-white">
+                                        <div class="bg-white">
                                             <div class="logo-nav-res default text-center">
                                                 <a href="">
-                                                    <img src="img/logo_low-1.webp" height="36px" alt="">
+                                                    <img src="{{ setting_site()->site_logo }}" height="36px" alt="">
                                                 </a>
                                             </div>
                                             <h3 class="text-center">ورود / ثبت نام </h3>
                                             <p class="text-center">سلام! به فروشگاه مرتضوی خوش آمدید...</p>
-                                            <form>
+                                            <form method="post" action="{{ asset('/login') }}">
                                                 <div class="mb-3 mt-4">
-                                                    <label for="exampleInputEmail1" class="form-label">شماره تلفن همراه</label>
+                                                    <label for="exampleInputEmail1" class="form-label">ایمیل خود را وارد کنید</label>
                                                     <input type="email" class="form-control" id="exampleInputEmail1" >
                                                 </div>
 
                                                 <button type="submit" class="btn btn-primary align-items-center mt-3" style="width: 100%">ورود و ثبت نام با رمز یکبار مصرف</button>
-                                                <button type="submit" class="btn btn-forth align-items-center mt-3" style="width: 100%">ورود و ثبت نام با ایمیل</button>
+                                                <button type="submit" class="btn btn-forth align-items-center mt-3" style="width: 100%">ورود و ثبت نام با پیامک</button>
 
                                                 <div class="form-check mt-3">
                                                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                                                     <label class="form-check-label" for="flexCheckDefault">
-                                                        <p><a href="#">شرایط و قوانین</a>  استفاده از سرویس های سایت فروشگاه مرتضوی را می پذیرم . </p>
+                                                        <a href="#">شرایط و قوانین</a>  استفاده از سرویس های سایت فروشگاه مرتضوی را می پذیرم .
                                                     </label>
                                                 </div>
 

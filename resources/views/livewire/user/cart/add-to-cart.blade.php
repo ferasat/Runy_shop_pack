@@ -1,4 +1,4 @@
-<div >
+<div>
     <div class="product-add">
         <div class="parent-btn overflow-hidden">
             <a href="#" class="dk-btn dk-btn-info" data-bs-toggle="modal"
@@ -13,52 +13,84 @@
         @livewire('user.product.offline-order' , ['product'=>$product])
     @else
         @if($showModal)
-            <div class="modal_runy @if( !$showModal ) d-none @endif" id="modal_runy" >
+            <div class="modal_runy @if( !$showModal ) d-none @endif" id="modal_runy">
                 <div class="modal_runy-content">
                     <div class="modal_runy-body">
                         <div class="card">
-                            <div class="row">
-                                <div class="col-2">
-                                    <button class="btn btn-danger" wire:click.prevent="hiddenModal()">Close</button>
+                            <div class="modal-header">
+                                <div class="modal-title h5" id="cartModal1Label">
+                                    سبد خرید شما
+                                </div>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                                        wire:click.prevent="hiddenModal()"></button>
+                            </div>
+                            <div class="modal-body">
+                                <table class="table table-image">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col">محصول</th>
+                                        <th scope="col">قیمت</th>
+                                        <th scope="col">تعداد</th>
+                                        <th scope="col">قیمت کل</th>
+                                        <th scope="col">عمل</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    @php $total = 0 @endphp
+                                    @if(session('cart'))
+                                        @php $productInfo = 'order-'.$product->id ; @endphp
+                                        @foreach(session('cart') as  $productInfo=> $details )
+                                            @php $total += $details['price'] * $details['quantity'] @endphp
+                                            <tr>
+                                                <td class="w-25">
+                                                    <img src="{{ asset('theme/img/20221105_224825_227343122.png') }}"
+                                                         alt="mahsol">
+                                                    @if(isset($details['pic']))
+                                                        <img src="{{ asset($details['pic']) }}"
+                                                             class="img-fluid img-thumbnail" alt=""/>
+                                                    @endif
+                                                </td>
+                                                <td>{{ $details['name'] }}</td>
+                                                <td data-th="Price">{{ $details['price'] }} </td>
+                                                <td class="qty" data-th="Quantity">
+                                                    <div class="flex items-center justify-center">
+                                                        <button class="btn btn-info btn-sm"
+                                                                wire:click="decreaseQuantity('{{ $productInfo }}')">-
+                                                        </button>
+                                                        <span class="mx-2">{{ $details['quantity'] }}</span>
+                                                        <button class="btn btn-info btn-sm"
+                                                                wire:click="increaseQuantity('{{ $productInfo }}')">+
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                                <td>{{ $details['price'] * $details['quantity'] }}</td>
+                                                <td>
+                                                    <button wire:click="removeFromCart('{{ $productInfo }}')"
+                                                            class=" btn-sm">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                             fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                                                        </svg>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                    @endif
+                                </table>
+                                <div class="d-flex justify-content-end">
+                                    <div class="h6">جمع کل: <span class="price text-success">{{$total}}</span></div>
                                 </div>
                             </div>
-                            @php $total = 0 @endphp
-                            @if(session('cart'))
-                                @php $productInfo = 'order-'.$product->id ; @endphp
-                                @foreach(session('cart') as  $productInfo=> $details )
-                                    @php $total += $details['price'] * $details['quantity'] @endphp
-                                    <tr>
-                                        <td data-th="Product">
-                                            <div class="row te">
-                                                @if(isset($details['pic']))
-                                                    <img src="{{ asset($details['pic']) }}"
-                                                         class="img-responsive w-50 h-50"/>
-                                                @endif
-                                                <div class="col-sm-9">
-                                                    <h3 class="nomargin">{{ $details['name'] }}</h3>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td data-th="Price" ><h3>${{ $details['price'] }}</h3></td>
-                                        <td data-th="Quantity">
-                                            <div class="flex items-center justify-center">
-                                                <button class="btn btn-info btn-sm" wire:click="decreaseQuantity('{{ $productInfo }}')">-</button>
-                                                <span class="mx-2">{{ $details['quantity'] }}</span>
-                                                <button class="btn btn-info btn-sm" wire:click="increaseQuantity('{{ $productInfo }}')">+</button>
-                                            </div>
-                                        </td>
-                                        <td data-th="Subtotal" class="text-center"><h3>{{ $details['price'] * $details['quantity'] }}</h3></td>
-                                        <td class="actions" data-th="">
-                                            <button class="btn btn-danger btn-sm mt-2" wire:click="removeFromCart('{{ $productInfo }}')">x</button>
-                                        </td>
-                                    </tr>
-                                    <br>
-                                @endforeach
-                                <hr>
-                                <h3>جمع کل:{{$total}}</h3>
-                                <a class="btn btn-success btn-sm mt-2" href="{{asset(route('cart'))}}">مشاهده سبد خرید</a>
-                                <a class="btn btn-info btn-sm mt-2" href="{{asset(route('invoice'))}}">تسویه حساب</a>
-                            @endif
+                            <div class="modal-footer border-top-0 d-flex justify-content-between">
+                                <a class="btn btn-primary" href="{{asset(route('cart'))}}">مشاهده سبد خرید</a>
+                                <a class="btn btn-info" href="{{asset(route('invoice'))}}">تسویه حساب</a>
+                                <button type="button" class="btn btn-forth">بستن</button>
+                            </div>
+
+
                         </div>
                     </div>
 
