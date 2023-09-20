@@ -8,12 +8,13 @@ use Product\Models\Product;
 
 class SidebarProduct extends Component
 {
-    public  $product , $statusPublish , $picture , $categories , $chb=[] ;
+    public  $product , $statusPublish , $picture , $categories , $chb=[] , $specialPin ;
 
     public function mount()
     {
         $this->statusPublish = $this->product->statusPublish ;
         $this->pic = $this->product->picture ;
+        $this->specialPin = $this->product->specialPin ;
         $this->categories = CategoryProduct::all();
     }
     public function render()
@@ -26,6 +27,7 @@ class SidebarProduct extends Component
         /*dd($this->chb);*/
         $pro = Product::query()->find($this->product->id);
         $pro->statusPublish = $this->statusPublish;
+        $pro->specialPin = $this->specialPin;
         $pro->save();
     }
 

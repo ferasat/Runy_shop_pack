@@ -145,7 +145,9 @@ function isTax_pro($cat_id, $pro_id)
 }
 function off_percent($price , $spPrice)
 {
-    return round(100 - ($spPrice*100)/$price) ;
+    if (isset($spPrice) and $spPrice > 0)
+        return round(100 - ($spPrice*100)/$price) ;
+    else return 0 ;
 }
 
 function isValidDiscount($discount)

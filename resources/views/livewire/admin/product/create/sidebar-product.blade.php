@@ -12,6 +12,16 @@
                 </select>
             </div>
         </div>
+        <div class="card-body">
+            <label class="visually-hidden" for="autoSizingInputGroup">پین شود</label>
+            <div class="input-group">
+                <div class="input-group-text">پین شود</div>
+                <select id="statusPublish" wire:model.lazy="specialPin" class="form-select" aria-hidden="true">
+                    <option value="1">بله</option>
+                    <option value="0">خیر</option>
+                </select>
+            </div>
+        </div>
         <div class="card-footer">
             <button class="btn btn-primary mb-1 active-scale-up">ذخیره</button>
         </div>
