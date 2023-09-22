@@ -3,21 +3,20 @@
         <div class="section-header">
             <span>محصولات</span>
             <h4 class="h2">محصولات</h4>
-
         </div>
 
         <div class="row gy-4">
 
             <div class="col-lg-4" >
                 <div class="why-box text-center">
-                    <h3>محصولات فروشگاه مرتضوی</h3>
+                    <h3 title="درباره فروشگاه مرتضوی">درباره فروشگاه مرتضوی</h3>
                     <p>
                         فروشگاه ماشینهای اداری مرتضوی با ســابقه ای نزدیک به  20 سال در زمینه فــروش و تعمیرات و خدمات ماشین های اداری در خدمت اصفهانی ای عزیز است.
                         از جمله خدمات صورت گرفته در مجموعه ما ، تعمیر چاپگر در اصفهان ، شارژ کارتریج در اصفهان ، تعمیر پرینتر در اصفهان و تعمیر فتوکپی در اصفهان می باشد.
                         هم چنین همکاری با سازمانـهای دولتـی و غیـردولتی در زمینـه تامین و خدمـات پس از فـروش نیز از افتخـارات این مجموعه است.
                     </p>
                     <div class="text-center">
-                        <a href="#" class="more-btn">اطلاعات بیشتر <i class="bx bx-chevron-right"></i></a>
+                        <a href="{{ asset('/about-us') }}" class="more-btn">اطلاعات بیشتر <i class="bx bx-chevron-right"></i></a>
                     </div>
                 </div>
             </div><!-- End Why Box -->
@@ -28,7 +27,7 @@
                     <div class=" col-xl-4" data-aos="fade-up" data-aos-delay="200">
                         <div class=" icon-box card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" src="theme/img/why1.png" alt="mahsol" />
+                            <img class="card-img-top" src="{{ asset('theme/img/why1.png') }}" alt="تجهیزات فروشگاهی" />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -42,7 +41,7 @@
                     <div class="col-xl-4" data-aos="fade-up" data-aos-delay="200">
                         <div class="icon-box card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" src="theme/img/why2.png" alt="mahsol" />
+                            <img class="card-img-top" src="{{ asset('theme/img/why2.png') }}" alt="انواع پرینتر" />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -56,7 +55,7 @@
                     <div class="col-xl-4" data-aos="fade-up" data-aos-delay="200">
                         <div class="icon-box card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" src="theme/img/why3.png" alt="mahsol" />
+                            <img class="card-img-top" src="{{ asset('theme/img/why3.png') }}" alt="دستگاه های حضور و غیاب" />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">

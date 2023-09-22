@@ -6,9 +6,9 @@
     <nav class="navbar direction-ltr fixed-top header-responsive">
         <div class="container">
             <div class="navbar-translate">
-                <div class="navbar-brand" href="{{ asset('/') }}">
+                <a class="navbar-brand" href="{{ asset('/') }}">
                     <img src="{{ setting_site()->site_logo }}" alt="{{ setting_site()->site_name }}">
-                </div>
+                </a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
                         data-target="#navigation" aria-controls="navigation-index" aria-expanded="false"
                         aria-label="Toggle navigation">
@@ -653,6 +653,7 @@
                     </li>
                     <li class="list-item amazing-item" data-bs-toggle="modal" data-bs-target="#cartModal1">
 
+                        @livewire('user.cart.cart-modal')
                         <div class="modal fade" id="cartModal1" tabindex="-1" aria-labelledby="cartModal1Label" aria-hidden="true">
                             <div class="modal-dialog modal-xl">
                                 <div class="modal-content ">
@@ -677,7 +678,7 @@
                                             <tbody>
                                             <tr>
                                                 <td class="w-25">
-                                                    <img src="{{ asset('theme/img/20221105_224825_227343122.png') }}" class="img-fluid img-thumbnail" alt="mahsol">
+                                                    <img src="{{ asset('theme/img/20221105_224825_227343122.png') }}" class="img-fluid img-thumbnail" alt="محصول">
                                                 </td>
                                                 <td>پرینتر کنون</td>
                                                 <td>500,000 تومان</td>

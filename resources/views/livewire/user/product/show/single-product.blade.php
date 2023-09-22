@@ -18,9 +18,9 @@
                                             <a href="#" class="elevatezoom-gallery active" data-update=""
                                                data-image="https://yasshop.ir/wp-content/uploads/%D8%A7%D9%84%D9%86%DA%AF%D9%88-%D8%B7%D9%84%D8%A7%D8%B1%D9%88%D8%B3-5.jpg"
                                                data-zoom-image="https://yasshop.ir/wp-content/uploads/%D8%A7%D9%84%D9%86%DA%AF%D9%88-%D8%B7%D9%84%D8%A7%D8%B1%D9%88%D8%B3-5.jpg">
-                                                <img
-                                                    src="https://yasshop.ir/wp-content/uploads/%D8%A7%D9%84%D9%86%DA%AF%D9%88-%D8%B7%D9%84%D8%A7%D8%B1%D9%88%D8%B3-5.jpg"
-                                                    width="100"/></a>
+                                                <img src="https://yasshop.ir/wp-content/uploads/%D8%A7%D9%84%D9%86%DA%AF%D9%88-%D8%B7%D9%84%D8%A7%D8%B1%D9%88%D8%B3-5.jpg"
+                                                    width="100"/>
+                                            </a>
                                         </li>
                                         <li>
                                             <a href="#" class="elevatezoom-gallery"
@@ -151,8 +151,8 @@
 
                             @if($product->specialPrice > 1)
                                 <div class="price-value">
-                                    <span> {{ $product-> specialPrice }} </span>
-                                    <span class="price-currency">تومان</span>
+                                    <span> {{ $product->specialPrice }} </span>
+                                    <span class="price-currency">{{ current_pay($product->current )  }}</span>
                                 </div>
                                 <div class="price-discount" data-title="تخفیف">
                                             <span>

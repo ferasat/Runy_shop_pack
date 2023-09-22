@@ -9,7 +9,11 @@ class ServiceController extends Controller
 {
     public function index()
     {
-        return view();
+        $title = 'محصولات';
+        $description = 'مدیریت محصول';
+        $breadcrumbs = ["/dashboard" => " پیشخوان ", "/dashboard/product" => " محصولات  "];
+
+        return view('ProductView::indexServices' , compact('title' , 'breadcrumbs' , 'description'));
     }
 
     public function create()

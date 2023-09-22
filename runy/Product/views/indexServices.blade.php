@@ -22,7 +22,7 @@
             <!-- Title and Top Buttons End -->
 
             <!-- Content Start -->
-            @livewire('admin.product.index-product' , ['description' => $description])
+            @livewire('admin.service.index-service')
             <!-- Content End -->
         </div>
     </div>

@@ -21,9 +21,7 @@ class ProductController extends Controller
         $description = 'مدیریت محصول';
         $breadcrumbs = ["/dashboard" => " پیشخوان ", "/dashboard/product" => " محصولات  "];
 
-        $products = Product::all()->sortByDesc('id');
-
-        return view('ProductView::indexProduct', compact('title', 'description', 'breadcrumbs', 'products'));
+        return view('ProductView::indexProduct', compact('title', 'description', 'breadcrumbs'));
     }
 
     public function create()

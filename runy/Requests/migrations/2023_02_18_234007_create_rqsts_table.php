@@ -16,7 +16,7 @@ class CreateRqstsTable extends Migration
             $table->string('for_id')->nullable();  // برای کاربر مخاطب قرار گرفته
             $table->string('for_department_id')->nullable();  // برای بخش مخاطب قرارگرفته
             $table->string('sponsor_id')->nullable(); // کاربر تعهد کننده یا مسئول پاسخ دهی
-            $table->string('type')->nullable();  // نوع درخواست مثلا مرخصی -اضافه کار و ...
+            $table->enum('type' , ['chat','support','leaveTime','overTime',])->nullable();  // نوع درخواست مثلا مرخصی -اضافه کار و ... گفتگو در خواست اطلاعات
             $table->string('status')->nullable();
             $table->boolean('active')->default(1);
             $table->longText('note')->nullable();

@@ -23,7 +23,7 @@ class CreateProductsTable extends Migration
             $table->bigInteger('price')->nullable();  // قیمت محصول
             $table->bigInteger('specialPrice')->nullable();  // قیمت ویژه محصول
             $table->integer('input_stock')->nullable();  // موجودی
-            $table->enum('current' , ['T' , 'R', '$', 'E'])->nullable();
+            $table->enum('current' , ['T' , 'R', '$', 'TRY', 'AED', '€'])->default('T');
             $table->string('focusKeyword')->nullable();
             $table->string('titleSeo')->nullable();
             $table->integer('numberView')->nullable();  // آمار بازدید این مطلب

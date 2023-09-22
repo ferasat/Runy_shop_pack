@@ -150,6 +150,19 @@ function off_percent($price , $spPrice)
     else return 0 ;
 }
 
+function current_pay($unit){
+    if ($unit == 'T')
+        return 'تومان';
+    elseif ($unit == 'R')
+        return 'ریال';
+    elseif ($unit == '$')
+        return 'دلار';
+    elseif ($unit == 'AED')
+        return 'درهم';
+    elseif ($unit == '€')
+        return 'یورو';
+}
+
 function isValidDiscount($discount)
 {
     $now = now();
