@@ -12,6 +12,7 @@ class EditDiscount extends Component
     $start_time,$end_time,$capacity,$status,$showDate=false,$showTime=false , $user_id;
     public function mount()
     {
+
         $this->showDate=true;
         $this->code=$this->discount->code;
         $this->type=$this->discount->type;

@@ -72,6 +72,11 @@ class ShowCart extends Component
                     $this->dis=$total-$discount->amount;
                     $this->discount_id=$discount->id;
                 }
+                elseif ($discount->type=='percentage')
+                {
+                    $this->dis=$total-(($discount->amount/100)*$total);
+                    $this->discount_id=$discount->id;
+                }
             }else {
 
                 $this->badDiscount = true ;
