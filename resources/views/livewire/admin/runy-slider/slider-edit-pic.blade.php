@@ -2,15 +2,15 @@
     <div class="row g-2 border-bottom pb-3">
         <div class="col-2">
             <label for="name">عنوان تصویر</label>
-            <input type="text" class="form-control" id="name_{{$pic->id}}" name="name" wire:model="name">
+            <input type="text" class="form-control" id="name_{{$pic->id}}" name="name" wire:model.live="name">
         </div>
         <div class="col-md-3">
             <label for="text">متن روی تصویر</label>
-            <input type="text" class="form-control" id="text_{{$pic->id}}" name="text" wire:model="text">
+            <input type="text" class="form-control" id="text_{{$pic->id}}" name="text" wire:model.live="text">
         </div>
         <div class="col-md-2">
             <label for="link">لینک تصویر</label>
-            <input type="text" class="form-control" id="link_{{$pic->id}}" name="link" wire:model="link">
+            <input type="text" class="form-control" id="link_{{$pic->id}}" name="link" wire:model.live="link">
         </div>
 
         <div class="col-md-4 text-center">

@@ -18,14 +18,18 @@ Route::prefix('/dashboard')->middleware('auth')->group( function (){
 
     Route::get('/product/category' , [CategoryProductController::class , 'index'])->name('category.product');
 
-    //discount
+    //----- discount
     Route::get('/discount/', [DiscountController::class , 'index'])->name('discount.index');
     Route::get('/discount/create', [DiscountController::class , 'create'])->name('discount.create');
     Route::get('/discount/edit/{id}', [DiscountController::class , 'edit'])->name('discount.edit');
     Route::post('/discount/edit/{id}', [DiscountController::class , 'update']);
 
+
+    //----- services
     Route::get('/services/', [ServiceController::class , 'index'])->name('service.index');
     Route::get('/service/create', [ServiceController::class , 'create'])->name('service.create');
     Route::get('/service/edit/{id}', [ServiceController::class , 'edit'])->name('service.edit');
+    Route::post('/service/edit/{id}', [ServiceController::class , 'update']);
+    Route::get('/service/category' , [CategoryProductController::class , 'indexService'])->name('category.service');
 });
 

@@ -4,12 +4,12 @@
             <div class="card-body mb-n2 border-last-none h-100">
                 <div class="mb-3">
                     <label class="form-label">عنوان</label>
-                    <input type="text" class="form-control" name="subject" wire:model.lazy="subject">
+                    <input type="text" class="form-control" name="subject" wire:model.blur="subject">
 
                 </div>
                 <div class="mb-3">
                     <label class="form-label">نوع اکشن</label>
-                    <select class="form-control" name="type_action" wire:model.lazy="type_action">
+                    <select class="form-control" name="type_action" wire:model.blur="type_action">
                         <option value="periodic">دوره ای</option>
                         <option value="once">یکبار مصرف</option>
                     </select>
@@ -17,7 +17,7 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label">نوع </label>
-                    <select class="form-control" name="type_item" wire:model.lazy="type_item">
+                    <select class="form-control" name="type_item" wire:model.blur="type_item">
                         <option value="product">محصول</option>
                         <option value="service">خدمات</option>
                         <option value="manual">دستی</option>
@@ -26,7 +26,7 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label">شناسه محصول </label>
-                    <select class="form-control" name="product_id" wire:model.lazy="product_id">
+                    <select class="form-control" name="product_id" wire:model.blur="product_id">
                         @foreach($products as $product)
                             <option value="{{$product->id}}">{{$product->name}}</option>
                         @endforeach
@@ -36,11 +36,11 @@
                 <div class="mb-3">
                     <label class="form-label">متن SMS ارسالی</label>
                     <textarea class="form-control editor" id="editor2"
-                              name="text_sms" wire:model.lazy="text_sms"></textarea>
+                              name="text_sms" wire:model.blur="text_sms"></textarea>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">به مشتری </label>
-                    <select class="form-control" name="customer_id" wire:model.lazy="customer_id">
+                    <select class="form-control" name="customer_id" wire:model.blur="customer_id">
                         <option value=""></option>
                         @foreach($customers as $customer)
                             <option value="{{$customer->id}}">{{$customer->name}}</option>

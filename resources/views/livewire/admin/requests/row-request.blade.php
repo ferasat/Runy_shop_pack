@@ -32,7 +32,7 @@
                                     <div class="row g-3">
                                     <div class="col-md-6">
                                         <label for="inputEmail4" class="form-label">کارمندان</label>
-                                        <select class="form-control" wire:model="employee">
+                                        <select class="form-control" wire:model.live="employee">
                                             @foreach($employees as $employee)
                                                 <option value="{{$employee->id}}">{{ $employee->name.' '.$employee->family }}</option>
                                             @endforeach

@@ -1,10 +1,10 @@
 <div class="row ">
     <div class="col-xl-8 mb-5">
         <section class="scroll-section" id="listPost">
-            @foreach($products as $product)
+            @foreach($services as $service)
                 <div class="card mb-2 shadow">
                     <div class="card-body">
-                        @livewire('admin.product.row-product' , ['product' => $product]  , key($product->id))
+                        @livewire('admin.product.row-product' , ['service' => $service]  , key($product->id))
                     </div>
                 </div>
             @endforeach
@@ -16,35 +16,24 @@
             <div class="card-header bg-runy-secend">دسترسی محصولات</div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">
-                    <a href="{{ asset(route('product.index')) }}">
+                    <a href="{{ asset(route('service.index')) }}" class="active">
                         <i class="fa-solid color-runy-primary fa-list fa-rotate-180 p-2"></i>
-                        محصولات
+                        خدمات
                     </a>
                 </li>
                 <li class="list-group-item">
-                    <a href="{{ asset(route('product.Create')) }}">
+                    <a href="{{ asset(route('service.create')) }}">
                         <i class="fa-regular color-runy-primary fa-square-plus p-2"></i>
-                        محصول جدید
+                        خدمات جدید
                     </a>
                 </li>
                 <li class="list-group-item">
-                    <a href="{{asset(route('category.product'))}}" class="active">
+                    <a href="{{asset(route('category.service'))}}" >
                         <i class="fa-solid color-runy-primary fa-bars-staggered fa-rotate-180 p-2"></i>
-                        دستبندی محصولات
+                        دستبندی خدمات
                     </a>
                 </li>
-                <li class="list-group-item">
-                    <a href="#">
-                        <i class="fa-solid color-runy-primary fa-notes-medical fa-rotate-180 p-2"></i>
-                        برجسب محصولات
-                    </a>
-                </li>
-                <li class="list-group-item">
-                    <a href="#">
-                        <i class="fa-solid color-runy-primary fa-list-check fa-rotate-180 p-2"></i>
-                        ویژگی های محصولات
-                    </a>
-                </li>
+
             </ul>
         </div>
 

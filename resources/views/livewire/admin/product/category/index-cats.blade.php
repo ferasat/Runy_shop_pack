@@ -5,17 +5,17 @@
             <div class="card-body">
                 <div class="mb-3">
                     <label for="name" class="form-label">نام</label>
-                    <input type="text" class="form-control" wire:model.lazy="name" id="name">
+                    <input type="text" class="form-control" wire:model.blur="name" id="name">
                     @error('name')<div class="text-white bg-danger radius-rounded"> {{ $message }}</div> @enderror
                 </div>
                 <div class="mb-3">
                     <label for="slug" class="form-label">نامک</label>
-                    <input type="text" class="form-control" wire:model.lazy="slug" id="slug">
+                    <input type="text" class="form-control" wire:model.blur="slug" id="slug">
                     @error('slug')<div class="text-white bg-danger radius-rounded"> {{ $message }}</div> @enderror
                 </div>
                 <div class="mb-3">
                     <label for="master_id" class="form-label">سردسته</label>
-                    <select id="master_id" class="form-select" wire:model.lazy="master_id" name="master_id">
+                    <select id="master_id" class="form-select" wire:model.blur="master_id" name="master_id">
                         <option value="0" selected>سردسته</option>
                         @foreach($cats as $cat)
                             <option value="{{ $cat -> id }}"> {{ $cat -> name }} </option>
@@ -25,7 +25,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="description" class="form-label">شرح</label>
-                    <textarea class="form-control" wire:model.lazy="description" id="description"></textarea>
+                    <textarea class="form-control" wire:model.blur="description" id="description"></textarea>
                     @error('description')<div class="text-white bg-danger radius-rounded"> {{ $message }}</div> @enderror
                 </div>
             </div>

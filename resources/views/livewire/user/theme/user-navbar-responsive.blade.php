@@ -772,7 +772,7 @@
     function k() {
         window.onload;
     }
-    document.addEventListener('livewire:load', function () {
+    document.addEventListener('livewire:init', function () {
         Livewire.on('refreshHeader', function () {
             Livewire.hook('message.sent', () => {
                 Livewire.emit('refreshHeader');

@@ -12,17 +12,17 @@
 
                     <div class="mb-3">
                         <label class="form-label">عنوان</label>
-                        <input type="text" class="form-control" wire:model.lazy="name">
+                        <input type="text" class="form-control" wire:model.blur="name">
                         @error('name') <span class="text-danger">{{ $message }}</span>@enderror
                     </div>
                     <div class="mb-3">
                         <label class="form-label">نامک</label>
-                        <input type="text" class="form-control" wire:model.lazy="slug">
+                        <input type="text" class="form-control" wire:model.blur="slug">
                         @error('slug') <span class="text-danger">{{ $message }}</span>@enderror
                     </div>
                     {{--<div class="mb-3">
                         <label for="editor" class="form-label">متن</label>
-                        <div class="form-control editor" id="editor" wire:model.lazy="texts" wire.ignore="texts"></div>
+                        <div class="form-control editor" id="editor" wire:model.blur="texts" wire.ignore="texts"></div>
                         @error('texts') <span class="text-danger">{{ $message }}</span>@enderror
                     </div>--}}
 
@@ -33,12 +33,12 @@
                 <div class="card-body">
                     <div class="mb-3">
                         <label class="form-label">عنوان سئو</label>
-                        <input type="text" class="form-control" wire:model.lazy="titleSeo">
+                        <input type="text" class="form-control" wire:model.blur="titleSeo">
                         @error('titleSeo') <span class="text-danger">{{ $message }}</span>@enderror
                     </div>
                     <div class="mb-3">
                         <label class="form-label">کلمه کانونی</label>
-                        <input type="text" class="form-control" wire:model.lazy="focusKeyword">
+                        <input type="text" class="form-control" wire:model.blur="focusKeyword">
                         @error('focusKeyword') <span class="text-danger">{{ $message }}</span>@enderror
                     </div>
                     <div class="mb-3 text-center" >

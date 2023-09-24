@@ -41,7 +41,7 @@
 
                             <button class="btn btn-danger w-100" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#replayToRqst" aria-expanded="false" aria-controls="replayToRqst"
-                                    wire:click.prefetch="toggleContent">
+                                    wire:click="toggleContent">
                                 پاسخ
                             </button>
 
@@ -57,7 +57,7 @@
                     @csrf
                     <div class="card-header p-3">پاسخ به در خواست</div>
                     <div class="card-body">
-                        <textarea class="form-control texts" wire:model.lazy="texts" id="texts"
+                        <textarea class="form-control texts" wire:model.blur="texts" id="texts"
                                   name="texts"></textarea>
                     </div>
                     <div class="card-footer">

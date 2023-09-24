@@ -26,7 +26,7 @@
                 </div>
                 <div class="mb-3 filled ">
                     <label for="status{{$cart->id}}">وضعیت</label>
-                    <select class="form-select" id="status{{$cart->id}}" wire:model="status">
+                    <select class="form-select" id="status{{$cart->id}}" wire:model.live="status">
                         <option value="in_process">در حال پردازش</option>
                         <option value="apply">رسیدگی شد</option>
                         <option value="posted">ارسال شد</option>

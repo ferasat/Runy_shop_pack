@@ -13,12 +13,12 @@
             <div class="row g-2">
                 <div class="col-8">
                     <label for="name">نام اسلایدشو</label>
-                    <input type="text" class="form-control" id="name" name="name" wire:model.lazy="name">
+                    <input type="text" class="form-control" id="name" name="name" wire:model.blur="name">
                     @error('name') <span class="text-danger">{{ $message }}</span> @enderror
                 </div>
                 <div class="col">
                     <label for="slug">نام یکتا</label>
-                    <input type="text" class="form-control" id="slug" name="slug" wire:model.lazy="slug">
+                    <input type="text" class="form-control" id="slug" name="slug" wire:model.blur="slug">
                     @error('slug') <span class="text-danger">{{ $message }}</span> @enderror
                 </div>
 

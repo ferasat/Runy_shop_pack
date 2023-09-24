@@ -42,7 +42,7 @@
 
                             <button class="btn btn-danger w-100" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#replayToRqst" aria-expanded="false" aria-controls="replayToRqst"
-                                    wire:click.prefetch="toggleContent">
+                                    wire:click="toggleContent">
                                 پاسخ
                             </button>
 
@@ -58,7 +58,7 @@
                     @csrf
                     <div class="card-header p-3">پاسخ به در خواست</div>
                     <div class="card-body">
-                        <textarea class="form-control texts" wire:model.lazy="texts" id="texts"
+                        <textarea class="form-control texts" wire:model.blur="texts" id="texts"
                                   name="texts"></textarea>
                     </div>
                     <div class="card-footer">
@@ -104,7 +104,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="sponsor_id" class="form-label">کارمند مسئول</label>
-                    <select class="form-control" id="sponsor_id" wire:model="sponsor_id">
+                    <select class="form-control" id="sponsor_id" wire:model.live="sponsor_id">
                         <option>بدون مسئول رسیدگی</option>
                         @foreach($employees as $employee)
                             <option value="{{$employee->id}}">{{fullName($employee->id)}}</option>
@@ -113,7 +113,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="status" class="form-label">وضعیت در خواست</label>
-                    <select type="text" class="form-control" id="status" wire:model="status">
+                    <select type="text" class="form-control" id="status" wire:model.live="status">
                         <option value="در حال بررسی">در حال بررسی</option>
                         <option value="مشخص شدن مشکل">مشخص شدن مشکل</option>
                         <option value="صدور فاکتور">صدور فاکتور</option>

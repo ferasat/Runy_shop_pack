@@ -12,12 +12,12 @@
 
                     <div class="mb-3">
                         <label class="form-label">عنوان</label>
-                        <input type="text" class="form-control" wire:model.lazy="name">
+                        <input type="text" class="form-control" wire:model.blur="name">
                         @error('name') <span class="text-danger">{{ $message }}</span>@enderror
                     </div>
                     <div class="mb-3">
                         <label class="form-label">نامک</label>
-                        <input type="text" class="form-control" wire:model.lazy="description">
+                        <input type="text" class="form-control" wire:model.blur="description">
                         @error('slug') <span class="text-danger">{{ $message }}</span>@enderror
                     </div>
 

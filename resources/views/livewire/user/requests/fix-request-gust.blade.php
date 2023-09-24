@@ -10,29 +10,29 @@
                             @csrf
                             <div class="col-md-4">
                                 <label for="name" class="form-label">نام</label>
-                                <input type="text" class="form-control" id="name" name="name" wire:model="name" required>
+                                <input type="text" class="form-control" id="name" name="name" wire:model.live="name" required>
                                 @error('name') <span class="bg-danger p-1 rounded-3">{{ $message }}</span> @enderror
                             </div>
                             <div class="col-md-4">
                                 <label for="family" class="form-label">نام خانوادگی</label>
-                                <input type="text" class="form-control" id="family" name="family" wire:model="family">
+                                <input type="text" class="form-control" id="family" name="family" wire:model.live="family">
                                 @error('family') <span class="bg-danger p-1 rounded-3">{{ $message }}</span> @enderror
                             </div>
                             <div class="col-md-4">
                                 <label for="cell" class="form-label">شماره تماس</label>
-                                <input type="text" class="form-control" id="cell" name="cell" wire:model="cell">
+                                <input type="text" class="form-control" id="cell" name="cell" wire:model.live="cell">
                                 @error('cell') <span class="bg-danger p-1 rounded-3">{{ $message }}</span> @enderror
                             </div>
                             <div class="col-12">
                                 <label for="address" class="form-label">آدرس</label>
                                 <input type="text" class="form-control" id="address" name="address" placeholder="اصفهان"
-                                       wire:model="address">
+                                       wire:model.live="address">
                                 @error('address') <span class="bg-danger p-1 rounded-3">{{ $message }}</span> @enderror
                             </div>
 
                             <div class="col-md-4">
                                 <label for="department" class="form-label">بخش</label>
-                                <select id="department" class="form-select" name="department" wire:model="department">
+                                <select id="department" class="form-select" name="department" wire:model.live="department">
                                     @foreach($departments as $department)
                                         <option value="{{$department->id}}">{{ $department->name }}</option>
                                     @endforeach
@@ -42,19 +42,19 @@
 
                             <div class="col-md-2">
                                 <label for="pic" class="form-label">تصویر دستگاه</label>
-                                <input type="file" class="form-control" id="pic" name="pic" wire:model="pic">
+                                <input type="file" class="form-control" id="pic" name="pic" wire:model.live="pic">
                                 @error('pic') <span class="bg-danger p-1 rounded-3">{{ $message }}</span> @enderror
                             </div>
 
                             <div class="col-md-12">
                                 <label for="title" class="form-label">عنوان</label>
-                                <input type="text" class="form-control" id="title" name="title" wire:model="title">
+                                <input type="text" class="form-control" id="title" name="title" wire:model.live="title">
                                 @error('title') <span class="bg-danger p-1 rounded-3">{{ $message }}</span> @enderror
                             </div>
 
                             <div class="col-md-12">
                                 <label for="description" class="form-label">توضیحات</label>
-                                <textarea class="form-control" id="description" name="description" wire:model="description"></textarea>
+                                <textarea class="form-control" id="description" name="description" wire:model.live="description"></textarea>
                                 @error('description') <span class="bg-danger p-1 rounded-3">{{ $message }}</span> @enderror
                             </div>
 
@@ -143,7 +143,7 @@
 
                 <div class="mb-3">
                     <label for="get_info" class="form-label">پیگیری سفارش</label>
-                    <input type="text" class="form-control" id="get_info" wire:model="get_code" placeholder="شماره پیگیری را وارد کنید.">
+                    <input type="text" class="form-control" id="get_info" wire:model.live="get_code" placeholder="شماره پیگیری را وارد کنید.">
                     <button class="btn btn-outline-primary" wire:click.prevent="get_rqs_info">جستجو</button>
                 </div>
 

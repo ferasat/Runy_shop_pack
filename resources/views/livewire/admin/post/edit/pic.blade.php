@@ -12,7 +12,7 @@
                 <img src="{{$pic->temporaryUrl()}}" class="card-img-top sh-19" alt="post">
             @endif
             <label class="form-label">تصویر شاخص</label>
-            <input type="file" class="form-control" wire:model="pic" name="pic">
+            <input type="file" class="form-control" wire:model.live="pic" name="pic">
             @error('pic') <span class="text-danger">{{ $message }}</span>@enderror
             <button wire:click.privent="uploadPhoto" class="btn btn-secondary">بارگزاری</button>
             <div class="d-block text-success" wire:loading wire:target="pic">در حال بارگزاری...</div>
