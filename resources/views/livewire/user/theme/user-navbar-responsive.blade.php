@@ -653,7 +653,7 @@
                     </li>
                     <li class="list-item amazing-item" data-bs-toggle="modal" data-bs-target="#cartModal1">
 
-                        @livewire('user.cart.cart-modal')
+{{--                        @livewire('user.cart.cart-modal')--}}
                         <div class="modal fade" id="cartModal1" tabindex="-1" aria-labelledby="cartModal1Label" aria-hidden="true">
                             <div class="modal-dialog modal-xl">
                                 <div class="modal-content ">
@@ -677,14 +677,22 @@
                                             </thead>
                                             <tbody>
 
-                                            <tr>
+                                            @php $total = 0 @endphp
+                                            @if(session('cart'))
+
+                                                @foreach(session('cart') as  $productInfo=> $details )
+                                                    @php $total += $details['price'] * $details['quantity'] @endphp
+                                                    <tr>
                                                 <td class="w-25">
-                                                    <img src="{{ asset('theme/img/20221105_224825_227343122.png') }}" class="img-fluid img-thumbnail" alt="محصول">
+                                                    @if(isset($details['pic']))
+                                                        <img src="{{ asset($details['pic']) }}"
+                                                             class="img-fluid img-thumbnail" alt="محصول"/>
+                                                    @endif
                                                 </td>
-                                                <td>پرینتر کنون</td>
-                                                <td>500,000 تومان</td>
-                                                <td class="qty"><label for="input1"></label><input type="text" class="form-control" id="input1" value="1"></td>
-                                                <td>500,000 تومان</td>
+                                                <td>{{$details['name']}}</td>
+                                                <td>{{$details['price']}}</td>
+                                                <td class="qty"><label for="input1"></label><input type="text" class="form-control" id="input1" value="{{ $details['quantity'] }}"></td>
+                                                <td>{{ $details['price'] * $details['quantity'] }}</td>
                                                 <td>
                                                     <a href="#" class=" btn-sm">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
@@ -693,10 +701,12 @@
                                                     </a>
                                                 </td>
                                             </tr>
+                                                @endforeach
                                             </tbody>
+                                            @endif
                                         </table>
                                         <div class="d-flex justify-content-end">
-                                            <h6>Total: <span class="price text-success">500,000 تومان</span></h6>
+                                            <h6>Total: <span class="price text-success">{{$total}}</span></h6>
                                         </div>
                                     </div>
                                     <div class="modal-footer border-top-0 d-flex justify-content-between">
