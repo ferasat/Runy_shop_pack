@@ -12,12 +12,12 @@
 
                     <div class="mb-3">
                         <label class="form-label">عنوان</label>
-                        <input type="text" class="form-control" wire:model.blur="name">
+                        <input type="text" class="form-control" wire:model.live.blur="name">
                         @error('name') <span class="text-danger">{{ $message }}</span>@enderror
                     </div>
                     <div class="mb-3">
                         <label class="form-label">نامک</label>
-                        <input type="text" class="form-control" wire:model.blur="description">
+                        <input type="text" class="form-control" wire:model.live.blur="description">
                         @error('slug') <span class="text-danger">{{ $message }}</span>@enderror
                     </div>
 

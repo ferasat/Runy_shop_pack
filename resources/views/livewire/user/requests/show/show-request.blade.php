@@ -57,7 +57,7 @@
                     @csrf
                     <div class="card-header p-3">پاسخ به در خواست</div>
                     <div class="card-body">
-                        <textarea class="form-control texts" wire:model.blur="texts" id="texts"
+                        <textarea class="form-control texts" wire:model.live.blur="texts" id="texts"
                                   name="texts"></textarea>
                     </div>
                     <div class="card-footer">

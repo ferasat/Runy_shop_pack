@@ -85,7 +85,8 @@ class PostController extends \App\Http\Controllers\Controller
 
         $post = Post::find($request->post_id);
         $post->texts = $request->texts ;
-        if ($request->pic !== null) {
+
+        if ($request->pic !== null and $request->pic_copy == null ) {
             $file = new FileManager();
             $file->filename =  'post';
             $file->where =  'post';
@@ -101,9 +102,12 @@ class PostController extends \App\Http\Controllers\Controller
             $file->save();
 
             $post->pic = $file->path;
+        }elseif ( $request->pic_copy != null ){
+            $post->pic = $request->pic_copy;
         }
 
         $post->save();
+
         return redirect(asset('dashboard/post/edit/'.$post->id));
     }
 
@@ -162,8 +166,8 @@ class PostController extends \App\Http\Controllers\Controller
         $title = $post->name ;
         $description= $post->titleSeo .' | '. $post->focusKeyword;
         $breadcrumbs = ["/"=>" خانه " , "/blog" => " وبلاگ  ", "/post/".$post->slug => $post->name ];
-
-
+        $post->numberView = $post->numberView + 1 ;
+        $post->save();
 
         return view('PostView::showPost' , compact('title' , 'description' ,'breadcrumbs' , 'post'));
     }

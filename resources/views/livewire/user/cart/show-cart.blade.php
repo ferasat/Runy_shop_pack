@@ -48,7 +48,7 @@
                 <div class="row">
                     <div class="col-md-4 my-2">
                         <label for="code" class="form-label">کد تخفیف</label>
-                        <input type="text" class="form-control" wire:model.blur="code">
+                        <input type="text" class="form-control" wire:model.live.blur="code">
                     </div>
                     <div class="col-md-4">
                         <button id="btn" class="btn btn-success" wire:click.prevent="apply({{$total}})">اعمال</button>

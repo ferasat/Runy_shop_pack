@@ -1,0 +1,16 @@
+{
+    "app": "runy-shop-mortazavi",
+    "laravel": {
+      "buildAssets": true
+    },
+    "disks": [
+        {
+            "name": "storage",
+            "mountTo": "storage"
+        },
+        {
+            "name": "uploads",
+            "mountTo": "public/uploads"
+        }
+    ]
+}

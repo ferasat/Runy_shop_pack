@@ -109,3 +109,8 @@ function role_name($role){
         return 'بدون نقش';
     }
 }
+
+/// برای شمارش ورودی
+function countUserViews($number) {
+
+}

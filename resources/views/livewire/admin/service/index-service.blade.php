@@ -4,7 +4,7 @@
             @foreach($services as $service)
                 <div class="card mb-2 shadow">
                     <div class="card-body">
-                        @livewire('admin.product.row-product' , ['service' => $service]  , key($product->id))
+                        @livewire('admin.service.row-service' , ['service' => $service]  , key($service->id))
                     </div>
                 </div>
             @endforeach

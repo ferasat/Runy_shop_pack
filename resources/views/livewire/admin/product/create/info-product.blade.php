@@ -4,19 +4,19 @@
         <div class="row">
             <div class="col-3">
                 <label for="price" class="form-label">قیمت محصول</label>
-                <input type="number" class="form-control" wire:model.blur="price">
+                <input type="number" class="form-control" wire:model.live.blur="price">
             </div>
             <div class="col-3">
                 <label for="specialPrice" class="form-label">قیمت فروش ویژه</label>
-                <input type="number" class="form-control" wire:model.blur="specialPrice">
+                <input type="number" class="form-control" wire:model.live.blur="specialPrice">
             </div>
             <div class="col-3">
                 <label for="input_stock" class="form-label">تعداد موجودی محصول</label>
-                <input type="number" class="form-control" wire:model.blur="input_stock">
+                <input type="number" class="form-control" wire:model.live.blur="input_stock">
             </div>
             <div class="col-3">
                 <label for="input_stock" class="form-label">دوره خدمات  جانبی</label>
-                <select class="form-control" wire:model.blur="action_periodic">
+                <select class="form-control" wire:model.live.blur="action_periodic">
                     <option value="0">بدون دوره خدمات</option>
                     <option value="1_mon">یک ماه بعد از خرید</option>
                     <option value="2_mon">2 ماه بعد از خرید</option>

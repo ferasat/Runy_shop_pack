@@ -2,12 +2,12 @@
     <div class="card-body mb-n2 border-last-none h-100">
         <div class="mb-3">
             <label class="form-label">عنوان</label>
-            <input type="text" class="form-control" wire:model.blur="name_">
+            <input type="text" class="form-control" wire:model.live.blur="name_">
             @error('name_') {{$message}} @enderror
         </div>
         <div class="mb-3">
             <label class="form-label">لینک</label>
-            <input type="text" class="form-control" wire:model.blur="slug">
+            <input type="text" class="form-control" wire:model.live.blur="slug">
 
         </div>
         <div class="d-flex justify-content-end">

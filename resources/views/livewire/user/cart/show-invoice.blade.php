@@ -9,22 +9,22 @@
                     <div class="row">
                         <div class="form-group col-6">
                             <label for="name">نام</label>
-                            <input type="text" class="form-control" name="name" id="name" wire:model.blur="name">
+                            <input type="text" class="form-control" name="name" id="name" wire:model.live.blur="name">
                         </div>
                         <div class="form-group col-6">
                             <label for="last_name">نام خانوادگی</label>
-                            <input type="text" class="form-control" name="last_name" id="last_name" wire:model.blur="family">
+                            <input type="text" class="form-control" name="last_name" id="last_name" wire:model.live.blur="family">
                         </div>
                     </div>
 
                     <div class="row my-2">
                         <div class="form-group col-6">
                             <label for="email">ایمیل</label>
-                            <input type="email" class="form-control " id="email" wire:model.blur="email">
+                            <input type="email" class="form-control " id="email" wire:model.live.blur="email">
                         </div>
                         <div class="form-group col-6">
                             <label for="cellPhone">شماره تلفن</label>
-                            <input type="text" class="form-control " name="tel" id="cellPhone" wire:model.blur="cellPhone">
+                            <input type="text" class="form-control " name="tel" id="cellPhone" wire:model.live.blur="cellPhone">
                         </div>
 
                     </div>
@@ -32,13 +32,13 @@
 
                     <div class="form-group">
                         <label for="address">آدرس</label>
-                        <input type="text" class="form-control" name="address" id="address" wire:model.blur="address">
+                        <input type="text" class="form-control" name="address" id="address" wire:model.live.blur="address">
                     </div>
 
                 {{--                    <div class="row my-2">--}}
                 {{--                        <div class="form-group col-6">--}}
                 {{--                            <label for="codeposti">کد پستی</label>--}}
-                {{--                            <input type="text" class="form-control" name="code_posti" id="codeposti" wire:model.blur="codeposti">--}}
+                {{--                            <input type="text" class="form-control" name="code_posti" id="codeposti" wire:model.live.blur="codeposti">--}}
                 {{--                        </div>--}}
                 {{--                    </div>--}}
                 </div>

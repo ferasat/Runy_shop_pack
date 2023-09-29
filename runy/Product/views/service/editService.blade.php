@@ -43,11 +43,11 @@
                                       name="texts">{!! $service->texts !!}</textarea>
                             </div>
                         </div>
-                        @livewire('admin.service.create.info-service' , ['product' => $service ] )
+                        @livewire('admin.service.create.info-service' , ['service' => $service ] )
                     </section>
                 </div>
                 <div class="col-xl-4 mb-5">
-                    @livewire('admin.service.create.sidebar-service' , ['product' => $service ] )
+                    @livewire('admin.service.create.sidebar-service' , ['service' => $service ] )
                     <div class="card mt-5">
                         <div class="card-body">
                             @if($service->pic !== null )

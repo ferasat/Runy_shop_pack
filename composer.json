@@ -2,7 +2,11 @@
     "name": "runy/shop",
     "type": "project",
     "description": "Runy Shop Package.",
-    "keywords": ["RunyShop", "Shop", "Shop Cms"],
+    "keywords": [
+        "RunyShop",
+        "Shop",
+        "Shop Cms"
+    ],
     "license": "MIT",
     "require": {
         "php": "^8.1",
@@ -16,7 +20,8 @@
         "laravel/tinker": "^2.8",
         "livewire/livewire": "^3.0",
         "phpmailer/phpmailer": "^6.8",
-        "shetabit/payment": "^5.4"
+        "shetabit/payment": "^5.4",
+        "ext-http": "*"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

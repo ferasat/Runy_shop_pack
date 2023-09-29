@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Product\Controllers\CategoryProductController;
 use Product\Controllers\ProductController;
+use Product\Controllers\ServiceController;
 
 
 Route::prefix('/product')->group( function (){
@@ -13,3 +14,7 @@ Route::prefix('/product')->group( function (){
 });
 
 Route::get('/shop/', [ProductController::class , 'shop']);
+
+Route::prefix('/service')->group( function (){
+    Route::get('/{product:slug}/', [ServiceController::class , 'show']);
+});

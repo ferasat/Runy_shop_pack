@@ -3,7 +3,10 @@
 namespace Product\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Taxonomy;
+use FilesManager\Models\FileManager;
 use Illuminate\Support\Facades\Auth;
+use Product\Models\CategoryProduct;
 use Product\Models\Product;
 use Illuminate\Http\Request;
 
@@ -38,7 +41,8 @@ class ServiceController extends Controller
         $description = 'ویرایش خدمات';
         $breadcrumbs = ["/dashboard" => " پیشخوان ", "/dashboard/product" => " خدمات  "];
 
-        dd($id);
+        //dd($id);
+        $service = $id;
         $ckeditor = true;
 
         return view('ProductView::service.editService', compact('title', 'description',
@@ -47,6 +51,58 @@ class ServiceController extends Controller
 
     public function update(Request $request)
     {
+        $mytime = time();
 
+        $pro = Product::query()->find($request->service_id);
+
+        $pro->shortDescription = $request->shortDescription;
+        $pro->texts = $request->texts;
+
+        $pro->save();
+
+        if ($request->picture !== null) {
+            $file = new FileManager();
+            $file->filename = 'service';
+            $file->where = 'service';
+            $file->where_id = $pro->id;
+            $file->user_id = Auth::id();
+            $file->save();
+
+            $filename = $file->id . '.' . $request->file('picture')->getClientOriginalExtension();
+            $pathAdress = "uploads/service/" . date("Y", $mytime) . "/user_" . Auth::id();
+            $request->file('picture')->move(public_path($pathAdress), $filename);
+            $file->path = $pathAdress . '/' . $filename;
+            $path_picture = $pathAdress . '/' . $filename;
+            $file->save();
+
+            $pro->pic = $file->path;
+        }
+
+
+        $pro->save();
+
+        return back();
+
+    }
+
+    public function show(Product $product)
+    {
+        $title = $product->name;
+        $description = $product->titleSeo . ' | ' . $product->focusKeyword;
+        //$breadcrumbs = ["/"=>" خانه " , "/shop" => "فروشگاه", "/product/".$product->slug => $product->name ];
+        $breadcrumbs = '<ul class="breadcrumb">
+                            <li>
+                                <a href="'.asset('/').'" title=""><span>خانه</span></a>
+                            </li>
+                            <li>
+                                <a href="'.asset('/shop').'" title="فروشگاه"><span>فروشگاه</span></a>
+                            </li>
+                            <li>
+                                <a href="'.asset('/product/'.$product->slug).'" title="'.$product->name.'"><span>'.$product->name.'</span></a>
+                            </li>
+                        </ul>';
+
+
+        return view('ProductView::show', compact('product', 'title', 'description' , 'breadcrumbs'));
     }
 }

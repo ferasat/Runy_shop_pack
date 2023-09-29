@@ -10,34 +10,34 @@
             <div class="modal-body">
                 <div>
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="name" wire:model.blur="name" placeholder="نام">
+                        <input type="text" class="form-control" id="name" wire:model.live.blur="name" placeholder="نام">
                         <label for="name">نام</label>
                         @error('name') <span class="text-danger">{{ $message }}</span>@enderror
                     </div>
 
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="family" wire:model.blur="family" placeholder="نام خانوادگی">
+                        <input type="text" class="form-control" id="family" wire:model.live.blur="family" placeholder="نام خانوادگی">
                         <label for="family">نام خانوادگی</label>
                         @error('family') <span class="text-danger">{{ $message }}</span>@enderror
                     </div>
 
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="cell" wire:model.blur="cell" placeholder="تلفن همراه">
+                        <input type="text" class="form-control" id="cell" wire:model.live.blur="cell" placeholder="تلفن همراه">
                         <label for="cell">تلفن همراه</label>
                     </div>
 
 
                     <div class="form-floating mb-3">
-                        <input type="email" class="form-control" wire:model.blur="email" id="email" placeholder="ایمیل">
+                        <input type="email" class="form-control" wire:model.live.blur="email" id="email" placeholder="ایمیل">
                         <label for="email">ایمیل</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <textarea class="form-control" wire:model.blur="address" id="address" placeholder="آدرس" rows="3"></textarea>
+                        <textarea class="form-control" wire:model.live.blur="address" id="address" placeholder="آدرس" rows="3"></textarea>
                         <label for="address">آدرس</label>
                     </div>
 
                     <div class="form-floating mb-3">
-                        <input type="password" class="form-control" wire:model.blur="password" id="password" placeholder="رمز">
+                        <input type="password" class="form-control" wire:model.live.blur="password" id="password" placeholder="رمز">
                         <label for="password">رمز</label>
                     </div>
 

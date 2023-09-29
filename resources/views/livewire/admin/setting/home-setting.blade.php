@@ -39,19 +39,19 @@
             <div class="row">
                 <div class="col-md-4">
                     <label for="name" class="form-label"> نامک slug (به انگلیسی وارد شود برای برنامه نویس) </label>
-                    <input type="text" class="form-control" id="name" wire:model.blur="name">
+                    <input type="text" class="form-control" id="name" wire:model.live.blur="name">
                     @error('name')
                     <div class="form-text">{{ $message }}</div> @enderror
                 </div>
                 <div class="col-md-4">
                     <label for="name_text" class="form-label"> نام (به فارسی وارد شود) </label>
-                    <input type="text" class="form-control" id="name_text" wire:model.blur="name_text">
+                    <input type="text" class="form-control" id="name_text" wire:model.live.blur="name_text">
                     @error('name_text')
                     <div class="form-text">{{ $message }}</div> @enderror
                 </div>
                 <div class="col-md-4">
                     <label for="texts" class="form-label"> مقدار ( می توانید HTML وارد کنید) </label>
-                    <textarea type="text" class="form-control text-lg-start" dir="ltr" id="texts" wire:model.blur="value"></textarea>
+                    <textarea type="text" class="form-control text-lg-start" dir="ltr" id="texts" wire:model.live.blur="value"></textarea>
                     @error('value')
                     <div class="form-text">{{ $message }}</div>
                     @enderror

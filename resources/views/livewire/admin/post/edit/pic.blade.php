@@ -16,6 +16,9 @@
             @error('pic') <span class="text-danger">{{ $message }}</span>@enderror
             <button wire:click.privent="uploadPhoto" class="btn btn-secondary">بارگزاری</button>
             <div class="d-block text-success" wire:loading wire:target="pic">در حال بارگزاری...</div>
+            <br>
+            <label class="form-label">تصویر کپی شده را اینجا پیس دهید</label>
+            <input type="text" class="form-control" wire:model.live="pic_copy" name="pic_copy">
         </div>
     </div>
 </div>

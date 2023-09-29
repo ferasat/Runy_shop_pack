@@ -15,7 +15,7 @@ class HomePageController extends Controller
         SEOTools::setTitle(setting_site()->site_name);
         SEOTools::setDescription(setting_site()->site_short_description);
         SEOTools::opengraph()->setUrl(setting_site()->site_url);
-        SEOTools::setCanonical('https://codecasts.com.br/lesson');
+        SEOTools::setCanonical('https://tarahsite.net.');
         SEOTools::opengraph()->addProperty('type', 'shop');
         SEOTools::twitter()->setSite('@aminferasat');
         SEOTools::jsonLd()->addImage(setting_site()->site_logo);

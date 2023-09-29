@@ -17,7 +17,8 @@
                     <a class="btn btn-outline-secondary btn-sm ms-1"  href="{{ asset('/dashboard/'.$post->typePost.'/edit/'.$post->id) }}" type="button">ویرایش</a>
                     <a class="btn btn-outline-warning btn-sm ms-1"  href="{{ asset('/dashboard/'.$post->typePost.'/clone/'.$post->id) }}" type="button">رو نوشت</a>
                     <a class="btn btn-outline-danger btn-sm ms-1"  href="{{ asset('/dashboard/'.$post->typePost.'/delete/'.$post->id) }}" type="button">حذف</a>
-                    <a class="btn btn-outline-info btn-sm ms-1"  href="{{ setting_site()->site_url.'blog?'.$post->typePost.'='.$post->slug }}" type="button" target="_blank">دیدن</a>
+                    <a class="btn btn-outline-info btn-sm ms-1"  href="{{ setting_site()->site_url.$post->typePost.'/'.$post->slug }}" type="button" target="_blank">دیدن</a>
+                    <span class="badge p-2 ms-1 text-black" >بازدید {{ $post->numberView }}</span>
                 </div>
             </div>
         </div>

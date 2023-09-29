@@ -13,7 +13,7 @@ use Post\Models\Post;
 class Pic extends Component
 {
     use WithFileUploads;
-    public $post , $pic , $startUp = false ;
+    public $post , $pic , $startUp = false , $pic_copy;
 
     public function mount()
     {

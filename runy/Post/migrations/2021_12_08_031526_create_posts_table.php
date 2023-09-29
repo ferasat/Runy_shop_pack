@@ -24,7 +24,7 @@ class CreatePostsTable extends Migration
             $table->string('metaDescription')->nullable();
             $table->string('focusKeyword')->nullable();
             $table->string('titleSeo')->nullable();
-            $table->integer('numberView')->nullable();  // آمار بازدید این مطلب
+            $table->integer('numberView')->default(0);  // آمار بازدید این مطلب
             $table->integer('cat_id')->nullable();  // دستبندی
             $table->string('slug')->unique()->nullable();
             $table->string('redirect')->nullable();

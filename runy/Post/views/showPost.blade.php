@@ -1,6 +1,6 @@
 @extends('layouts.runyApp',['title'=>$title,'description'=>$description])
 @section('content')
-    @include('layouts.main-header')
+    @livewire('user.theme.user-navbar-responsive')
     <!-- main -->
     <main class="single-product default">
         <div class="container">
@@ -8,21 +8,12 @@
                 <div class="col-12">
                     <nav>
                         <ul class="breadcrumb">
-                            <li>
-                                <a href="#"><span>فروشگاه اینترنتی دیجی کالا</span></a>
-                            </li>
-                            <li>
-                                <a href="#"><span>کالای دیجیتال</span></a>
-                            </li>
-                            <li>
-                                <a href="#"><span>موبایل</span></a>
-                            </li>
-                            <li>
-                                <a href="#"><span>گوشی موبایل</span></a>
-                            </li>
-                            <li>
-                                <span>گوشی موبایل اپل مدل iPhone X ظرفیت 256 گیگابایت</span>
-                            </li>
+                            @foreach($breadcrumbs as $index=>$breadcrumb)
+                                <li>
+                                    <a href="{{ asset($index) }}"><span>{{ $breadcrumb }}</span></a>
+                                </li>
+                            @endforeach
+
                         </ul>
                     </nav>
                 </div>
@@ -55,5 +46,7 @@
         </div>
     </main>
     <!-- main -->
-    @include('layouts.main-footer')
+    @livewire('user.post.recent-post' , ['place'=>'post'])
+    @livewire('user.home.category-service')
+    @livewire('user.theme.user-footer')
 @endsection

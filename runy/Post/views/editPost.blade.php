@@ -28,7 +28,7 @@
                     <div class="card-body">
                         <div class="mb-3">
                             <label for="texts" class="form-label">متن</label>
-                            <textarea class="form-control editor" id="texts" name="texts">{!! $post->texts !!}</textarea>
+                            <textarea class="form-control editor" id="editor1" name="texts">{!! $post->texts !!}</textarea>
                             @error('texts') <span class="text-danger">{{ $message }}</span>@enderror
                         </div>
                     </div>
