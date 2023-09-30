@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('Signature')->nullable()->default('theme/img/avatar-1.png');
             $table->string('codeMeli')->nullable()->unique();
             $table->longText('about')->nullable();
+            $table->longText('address')->nullable();
             $table->enum('gender' , ['male','female'])->nullable()->default('male');
             $table->string('passport')->nullable();
             $table->date('passportExpDate')->nullable();

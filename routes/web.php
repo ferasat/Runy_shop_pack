@@ -2,12 +2,13 @@
 
 use App\Http\Controllers\CKEditorController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\RunySliderVueController;
+
 use App\Http\Controllers\SettingController;
 use App\Models\RunySliderVue;
 use FilesManager\Models\FileManager;
 use HomePage\HomePageController;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -23,7 +24,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomePageController::class , 'index']);
-Route::get('/slider', [RunySliderVueController::class , 'pics' ]);
+Route::get('/dashboard/users', [\App\Http\Controllers\UserController::class , 'index']);
+Route::get('/dashboard/new-user', [\App\Http\Controllers\UserController::class , 'create']);
 
 
 Route::get('/home', [DashboardController::class , 'index' ])->middleware('auth');

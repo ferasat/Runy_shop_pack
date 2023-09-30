@@ -15,7 +15,7 @@ class EditUser extends Component
         //dd($this->user->name);
         $this->name = $this->user->name;
         $this->family = $this->user->family;
-        $this->cell = $this->user->cell;
+        $this->cell = $this->user->cellPhone;
         $this->address = $this->user->address;
         $this->email = $this->user->email;
         $this->role = $this->user->role;
@@ -57,7 +57,7 @@ class EditUser extends Component
         $up_user = User::query()->find($this->user->id);
         $up_user->name = $this->name ;
         $up_user->family = $this->family ;
-        $up_user->cell = $this->cell ;
+        $up_user->cellPhone = $this->cell ;
         $up_user->address = $this->address ;
         $up_user->email = $this->email ;
         if (count_chars($this->password) > 7){

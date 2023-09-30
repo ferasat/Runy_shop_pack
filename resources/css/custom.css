@@ -478,89 +478,6 @@ header.main-header .main-menu .list .amazing-item {
 
 /* ----------------- End Main-Menu */
 
-nav.header-responsive {
-    display: none;
-    background-color: #fff;
-    height: 110px;
-}
-
-nav.header-responsive ul {
-    direction: rtl;
-    text-align: right;
-}
-
-nav.header-responsive .navbar-translate {
-    direction: ltr;
-}
-
-nav.header-responsive .search-nav {
-    position: absolute;
-    top: 50px;
-    height: 40px;
-    -webkit-transition: all 300ms ease 0s;
-    -moz-transition: all 300ms ease 0s;
-    -o-transition: all 300ms ease 0s;
-    -ms-transition: all 300ms ease 0s;
-    transition: all 300ms ease 0s;
-}
-
-nav.header-responsive form {
-    position: relative;
-    direction: rtl;
-    float: right;
-    width: 70%;
-    height: 40px;
-}
-
-nav.header-responsive form input {
-    width: 100%;
-    height: 100%;
-    padding: 10px 10px 9px;
-    line-height: 1.833;
-    font-family: iranyekan, serif;
-    font-weight: 300;
-    font-size: .857rem;
-    border-radius: 7px;
-    background-color: #eceff1;
-    border: 1px solid #d5dadd;
-    color: black;
-    outline: none;
-}
-
-nav.header-responsive form button {
-    width: 60px;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    border: none;
-    border-radius: 7px 0 0 7px;
-    background-color: #ce1212;
-    cursor: pointer;
-    outline: none;
-}
-
-nav.header-responsive form button img {
-    width: 25px;
-}
-
-nav.header-responsive .search-nav ul {
-    width: 30%;
-    float: left;
-    text-align: left;
-}
-
-nav.header-responsive .search-nav ul li {
-    float: left;
-    text-align: center;
-}
-
-nav.header-responsive .search-nav ul li a {
-    font-size: 16px;
-    color: #212121 !important;
-    background: transparent;
-}
 
 
 /* header */
@@ -3897,9 +3814,6 @@ h1.text-empty {
 
 @media (max-width: 1077px) {
 
-    nav.header-responsive {
-        display: block;
-    }
 
     .sidebar-collapse .navbar-collapse {
         position: absolute;
@@ -4001,26 +3915,6 @@ h1.text-empty {
     .sidebar-collapse .navbar .dropdown-menu .dropdown-item:focus,
     .sidebar-collapse .navbar .dropdown-menu .dropdown-item:hover {
         color: #FFFFFF;
-    }
-
-    .sidebar-collapse .navbar .navbar-translate {
-        width: 100%;
-        position: relative;
-        display: flex;
-        -ms-flex-pack: justify !important;
-        justify-content: space-between !important;
-        -ms-flex-align: center;
-        align-items: center;
-        -webkit-transform: translate3d(0px, 0, 0);
-        -moz-transform: translate3d(0px, 0, 0);
-        -o-transform: translate3d(0px, 0, 0);
-        -ms-transform: translate3d(0px, 0, 0);
-        transform: translate3d(0px, 0, 0);
-        -webkit-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
-        -moz-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
-        -o-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
-        -ms-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
-        transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
     }
 
     .sidebar-collapse .navbar .navbar-toggler-bar {
@@ -4165,28 +4059,12 @@ h1.text-empty {
         transform: translate3d(-150px, 0, 0);
     }
 
-    .nav-open .sidebar-collapse .navbar-translate {
-        -webkit-transform: translate3d(-280px, 0, 0);
-        -moz-transform: translate3d(-280px, 0, 0);
-        -o-transform: translate3d(-280px, 0, 0);
-        -ms-transform: translate3d(-280px, 0, 0);
-        transform: translate3d(-280px, 0, 0);
-    }
-
     .nav-open .sidebar-collapse.menu-on-left .navbar-collapse {
         -webkit-transform: translate3d(0px, 0, 0);
         -moz-transform: translate3d(0px, 0, 0);
         -o-transform: translate3d(0px, 0, 0);
         -ms-transform: translate3d(0px, 0, 0);
         transform: translate3d(0px, 0, 0);
-    }
-
-    .nav-open .sidebar-collapse.menu-on-left .navbar-translate {
-        -webkit-transform: translate3d(300px, 0, 0);
-        -moz-transform: translate3d(300px, 0, 0);
-        -o-transform: translate3d(300px, 0, 0);
-        -ms-transform: translate3d(300px, 0, 0);
-        transform: translate3d(300px, 0, 0);
     }
 
     .nav-open .sidebar-collapse.menu-on-left .wrapper {
@@ -4255,26 +4133,6 @@ h1.text-empty {
     .bootstrap-collapse .navbar .dropdown-menu .dropdown-item:focus,
     .bootstrap-collapse .navbar .dropdown-menu .dropdown-item:hover {
         color: #FFFFFF;
-    }
-
-    .bootstrap-collapse .navbar .navbar-translate {
-        width: 100%;
-        position: relative;
-        display: flex;
-        -ms-flex-pack: justify !important;
-        justify-content: space-between !important;
-        -ms-flex-align: center;
-        align-items: center;
-        -webkit-transform: translate3d(0px, 0, 0);
-        -moz-transform: translate3d(0px, 0, 0);
-        -o-transform: translate3d(0px, 0, 0);
-        -ms-transform: translate3d(0px, 0, 0);
-        transform: translate3d(0px, 0, 0);
-        -webkit-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
-        -moz-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
-        -o-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
-        -ms-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
-        transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
     }
 
     .bootstrap-collapse .navbar .navbar-toggler-bar {
@@ -4382,118 +4240,6 @@ h1.text-empty {
         margin: 20px 0;
     }
 
-    nav.header-responsive > ul {
-        position: relative;
-        padding: 0;
-    }
-
-    nav.header-responsive > ul li {
-        float: right;
-        width: 100%;
-    }
-
-    nav.header-responsive ul ul {
-        display: none;
-        padding: 0;
-        direction: ltr;
-        background-color: #eeeeee;
-    }
-
-    nav.header-responsive ul ul li a {
-        background-color: transparent;
-    }
-
-    nav.header-responsive > ul > li > a {
-        font-size: 16px;
-        display: block;
-        padding: 7px 22px;
-        background: #fff;
-        color: #ff1744;
-    }
-
-    .navbar a:not(.btn):not(.dropdown-item) {
-        color: #ff1744;
-    }
-
-    nav.header-responsive a {
-        cursor: pointer;
-        background-color: #fff;
-        display: block;
-    }
-
-    nav.header-responsive ul > li > ul > li {
-        position: relative;
-    }
-
-    nav.header-responsive ul > li > ul > li::before {
-        position: absolute;
-        right: 20px;
-        top: 10px;
-        color: #ce1212;
-        font-size: 18px;
-    }
-
-    nav.header-responsive ul > li > ul > li > a:hover {
-        color: #ce1212;
-    }
-
-    nav.header-responsive ul > li > ul > li > a {
-        font-size: 14px;
-        display: block;
-        padding: 7px 35px;
-        line-height: 44px;
-        color: #ce1212;
-    }
-
-    nav.header-responsive ul > li.sub-menu {
-        position: relative;
-    }
-
-    nav.header-responsive ul > li.sub-menu::before {
-        content: '';
-        position: absolute;
-        left: 26px;
-        top: 15px;
-        width: 18px;
-        height: 18px;
-        border: 1px solid #ff1744;
-        border-radius: 50%;
-    }
-
-    nav.header-responsive ul > li.sub-menu > a::before {
-        position: absolute;
-        content: "";
-        width: 10px;
-        height: 2px;
-        background: #ff1744;
-        left: 30px;
-        top: 23px;
-        z-index: 99;
-        transition: all 0.1s ease-out;
-    }
-
-    nav.header-responsive ul > li.sub-menu > a::after {
-        position: absolute;
-        content: "";
-        width: 2px;
-        height: 10px;
-        background: #ff1744;
-        left: 34px;
-        top: 19px;
-        transition: all 0.1s ease-out;
-    }
-
-    nav.header-responsive ul > li.sub-menu.open > a::before {
-        transform: rotate(45deg);
-    }
-
-    nav.header-responsive ul > li.sub-menu.open > a::after {
-        transform: rotate(45deg);
-    }
-
-    nav.header-responsive ul a {
-        padding: 10px;
-    }
 
     main.main,
     main.cart,
@@ -5357,6 +5103,7 @@ select {
 
 
 @media (max-width: 640px) {
+
     .section-header h2 {
         font-size: 28px;
         margin-bottom: 15px;
@@ -6716,7 +6463,9 @@ main.single-product .breadcrumb {
     opacity: 1;
     bottom: 8px;
 }
-
+.w-70px {
+    width: 70px !important;
+}
 @media screen and (max-width: 1200px) {
     .product-grid {
         margin: 0 0 30px;
@@ -6724,13 +6473,6 @@ main.single-product .breadcrumb {
 }
 
 @media (max-width: 1077px) {
-    header.main-header {
-        display: none;
-    }
-
-    nav.header-responsive {
-        display: block;
-    }
 
     .sidebar-collapse .navbar-collapse {
         position: absolute;
@@ -6832,26 +6574,6 @@ main.single-product .breadcrumb {
     .sidebar-collapse .navbar .dropdown-menu .dropdown-item:focus,
     .sidebar-collapse .navbar .dropdown-menu .dropdown-item:hover {
         color: #FFFFFF;
-    }
-
-    .sidebar-collapse .navbar .navbar-translate {
-        width: 100%;
-        position: relative;
-        display: flex;
-        -ms-flex-pack: justify !important;
-        justify-content: space-between !important;
-        -ms-flex-align: center;
-        align-items: center;
-        -webkit-transform: translate3d(0px, 0, 0);
-        -moz-transform: translate3d(0px, 0, 0);
-        -o-transform: translate3d(0px, 0, 0);
-        -ms-transform: translate3d(0px, 0, 0);
-        transform: translate3d(0px, 0, 0);
-        -webkit-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
-        -moz-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
-        -o-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
-        -ms-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
-        transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
     }
 
     .sidebar-collapse .navbar .navbar-toggler-bar {
@@ -6996,28 +6718,12 @@ main.single-product .breadcrumb {
         transform: translate3d(-150px, 0, 0);
     }
 
-    .nav-open .sidebar-collapse .navbar-translate {
-        -webkit-transform: translate3d(-280px, 0, 0);
-        -moz-transform: translate3d(-280px, 0, 0);
-        -o-transform: translate3d(-280px, 0, 0);
-        -ms-transform: translate3d(-280px, 0, 0);
-        transform: translate3d(-280px, 0, 0);
-    }
-
     .nav-open .sidebar-collapse.menu-on-left .navbar-collapse {
         -webkit-transform: translate3d(0px, 0, 0);
         -moz-transform: translate3d(0px, 0, 0);
         -o-transform: translate3d(0px, 0, 0);
         -ms-transform: translate3d(0px, 0, 0);
         transform: translate3d(0px, 0, 0);
-    }
-
-    .nav-open .sidebar-collapse.menu-on-left .navbar-translate {
-        -webkit-transform: translate3d(300px, 0, 0);
-        -moz-transform: translate3d(300px, 0, 0);
-        -o-transform: translate3d(300px, 0, 0);
-        -ms-transform: translate3d(300px, 0, 0);
-        transform: translate3d(300px, 0, 0);
     }
 
     .nav-open .sidebar-collapse.menu-on-left .wrapper {
@@ -7086,26 +6792,6 @@ main.single-product .breadcrumb {
     .bootstrap-collapse .navbar .dropdown-menu .dropdown-item:focus,
     .bootstrap-collapse .navbar .dropdown-menu .dropdown-item:hover {
         color: #FFFFFF;
-    }
-
-    .bootstrap-collapse .navbar .navbar-translate {
-        width: 100%;
-        position: relative;
-        display: flex;
-        -ms-flex-pack: justify !important;
-        justify-content: space-between !important;
-        -ms-flex-align: center;
-        align-items: center;
-        -webkit-transform: translate3d(0px, 0, 0);
-        -moz-transform: translate3d(0px, 0, 0);
-        -o-transform: translate3d(0px, 0, 0);
-        -ms-transform: translate3d(0px, 0, 0);
-        transform: translate3d(0px, 0, 0);
-        -webkit-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
-        -moz-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
-        -o-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
-        -ms-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
-        transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
     }
 
     .bootstrap-collapse .navbar .navbar-toggler-bar {
@@ -7213,118 +6899,10 @@ main.single-product .breadcrumb {
         margin: 20px 0;
     }
 
-    nav.header-responsive > ul {
-        position: relative;
-        padding: 0;
-    }
-
-    nav.header-responsive > ul li {
-        float: right;
-        width: 100%;
-    }
-
-    nav.header-responsive ul ul {
-        display: none;
-        padding: 0;
-        direction: ltr;
-        background-color: #eeeeee;
-    }
-
-    nav.header-responsive ul ul li a {
-        background-color: transparent;
-    }
-
-    nav.header-responsive > ul > li > a {
-        font-size: 16px;
-        display: block;
-        padding: 7px 22px;
-        background: #fff;
-        color: #ff1744;
-    }
-
     .navbar a:not(.btn):not(.dropdown-item) {
         color: #ff1744;
     }
 
-    nav.header-responsive a {
-        cursor: pointer;
-        background-color: #fff;
-        display: block;
-    }
-
-    nav.header-responsive ul > li > ul > li {
-        position: relative;
-    }
-
-    nav.header-responsive ul > li > ul > li::before {
-        position: absolute;
-        right: 20px;
-        top: 10px;
-        color: #ce1212;
-        font-size: 18px;
-    }
-
-    nav.header-responsive ul > li > ul > li > a:hover {
-        color: #ce1212;
-    }
-
-    nav.header-responsive ul > li > ul > li > a {
-        font-size: 14px;
-        display: block;
-        padding: 7px 35px;
-        line-height: 44px;
-        color: #ce1212;
-    }
-
-    nav.header-responsive ul > li.sub-menu {
-        position: relative;
-    }
-
-    nav.header-responsive ul > li.sub-menu::before {
-        content: '';
-        position: absolute;
-        left: 26px;
-        top: 15px;
-        width: 18px;
-        height: 18px;
-        border: 1px solid #ff1744;
-        border-radius: 50%;
-    }
-
-    nav.header-responsive ul > li.sub-menu > a::before {
-        position: absolute;
-        content: "";
-        width: 10px;
-        height: 2px;
-        background: #ff1744;
-        left: 30px;
-        top: 23px;
-        z-index: 99;
-        transition: all 0.1s ease-out;
-    }
-
-    nav.header-responsive ul > li.sub-menu > a::after {
-        position: absolute;
-        content: "";
-        width: 2px;
-        height: 10px;
-        background: #ff1744;
-        left: 34px;
-        top: 19px;
-        transition: all 0.1s ease-out;
-    }
-
-    nav.header-responsive ul > li.sub-menu.open > a::before {
-        transform: rotate(45deg);
-    }
-
-    nav.header-responsive ul > li.sub-menu.open > a::after {
-        transform: rotate(45deg);
-    }
-
-    nav.header-responsive ul a {
-        padding: 10px;
-    }
 
     main.main,
     main.cart,
@@ -7343,20 +6921,34 @@ main.single-product .breadcrumb {
     .page-404 {
         padding: 28px 0;
     }
+}
 
-    .brand-slider .owl-carousel .owl-nav .owl-prev {
-        display: none;
-        transition: all 0.3s ease-in-out;
-    }
+/*-- Header Amin --*/
+.mobile_header {
+    display: none; /* پیش فرض: عدم نمایش کلاس */
+}
+/* موبایل: تا یک حداکثر عرض ۷۶۷ پیکسل */
+@media only screen and (max-width: 767px) {
 
-    .brand-slider .owl-carousel .owl-nav .owl-next {
-        display: none;
-        transition: all 0.3s ease-in-out;
-    }
-
-    .brand-slider .owl-carousel:hover .owl-nav .owl-prev,
-    .brand-slider .owl-carousel:hover .owl-nav .owl-next {
+    .mobile_header {
         display: block;
+    }
+    .main-header {
+        display: none;
     }
 }
 
+/* تبلت: از ۷۶۸ پیکسل تا ۹۹۹ پیکسل */
+@media only screen and (min-width: 768px) and (max-width: 999px) {
+    /* قوانین CSS برای حالت تبلت */
+}
+
+/* لپ‌تاپ: از ۱۰۰۰ پیکسل تا ۱۲۷۹ پیکسل */
+@media only screen and (min-width: 1000px) and (max-width: 1279px) {
+    /* قوانین CSS برای حالت لپ‌تاپ */
+}
+
+/* مانیتور بزرگ: از ۱۲۸۰ پیکسل به بالا */
+@media only screen and (min-width: 1280px) {
+    /* قوانین CSS برای حالت مانیتور بزرگ */
+}
