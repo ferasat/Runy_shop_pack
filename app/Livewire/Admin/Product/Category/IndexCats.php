@@ -16,7 +16,8 @@ class IndexCats extends Component
 
     public function updated()
     {
-        $this->slug = catSlug($this-> slug) ;
+        $this->slug = catSlug($this->slug) ;
+
         $this->showSave = false ;
     }
 
@@ -45,6 +46,22 @@ class IndexCats extends Component
         }
         $cat -> save() ;
         $this -> showSave = true ;
+        $this->reset();
         $this -> render();
+
+    }
+
+    public function deleteCatOnly($cat_id)
+    {
+        $subCats = CategoryProduct::query()->where('master_id' , $cat_id)->get();
+        if (count($subCats) > 0){
+            foreach ($subCats as $cat){
+                $subCatUpdate = CategoryProduct::query()->find($cat->id);
+                $subCatUpdate->master_id = 0 ;
+                $subCatUpdate->save() ;
+            }
+        }
+        CategoryProduct::query()->find($cat_id)->delete();
+        $this->render();
     }
 }

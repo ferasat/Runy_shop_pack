@@ -14,23 +14,24 @@ function replaySlug($data)
 function productSlug($data)
 {
     $slug_ = replaySlug($data);
-    foreach (Product::all() as $product) {
-        if ($slug_ == $product->slug)
-            return $product->slug . '-' . $product->id;
-        else
-            return $slug_;
-    }
+    $use_product_slug = Product::query()->where('slug' , $slug_)->first();
+    if ($use_product_slug)
+        return $use_product_slug->slug.'-'.$use_product_slug->id.'-'.rand(1,999);
+    else
+        return $slug_ ;
+
 }
 
 function catSlug($data)
 {
     $slug_ = replaySlug($data);
-    foreach (CategoryProduct::all() as $cat) {
-        if ($slug_ == $cat->slug)
-            return $cat->slug . '-' . $cat->id;
-        else
-            return $slug_;
-    }
+
+    $use_slug = CategoryProduct::query()->where('slug' , $slug_)->first();
+    if ($use_slug)
+        return $use_slug->slug.'-'.$use_slug->id.'-'.rand(1,999) ;
+    else
+        return $slug_ ;
+
 }
 
 function recentProducts($num)

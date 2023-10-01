@@ -146,7 +146,7 @@ class ProductController extends Controller
         }*/
 
 
-        if ($request->picture !== null) {
+        if ($request->picture !== null and $request->pic_update == null) {
             $file = new FileManager();
             $file->filename = 'product';
             $file->where = 'product';
@@ -162,6 +162,8 @@ class ProductController extends Controller
             $file->save();
 
             $pro->pic = $file->path;
+        }elseif($request->pic_update != null ){
+            $pro->pic = $request->pic_update ;
         }
 
 

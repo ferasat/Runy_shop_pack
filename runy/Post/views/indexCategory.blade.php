@@ -1,4 +1,5 @@
 @extends('layouts.runyApp',[ 'title'=>'پست ها', 'description'=>'' ])
+
 @section('content')
 
     <div class="wrapper default">
@@ -20,5 +21,5 @@
             <!-- Content End -->
         </div>
     </div>
-    @include('layouts.cp-footer')
+    @livewire('admin.theme.admin-footer' , ['menu'=>'cp'])
 @endsection

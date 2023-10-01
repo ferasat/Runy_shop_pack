@@ -12,9 +12,14 @@ h3 {
 
 /*------ Panel Style ----*/
 .icon-svg-panel {
-    width: 40px;
+    width: 40px !important;
 }
-
+.hover-li-primary:hover{
+    background-color: #ecfbfe;
+}
+.left-0 {
+    left: 0 !important;
+}
 /*-----------------*/
 .input-group-text {
     display: flex;

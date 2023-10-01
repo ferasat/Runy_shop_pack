@@ -1,7 +1,7 @@
 @extends('layouts.runyApp',['title'=>$title,'description'=>$description])
 @section('content')
     <!-- responsive-header For mobile-->
-    @livewire('admin.theme.admin-navbar-responsive' , ['menu'=>'cp'])
+
     <!-- responsive-header -->
     <div class="wrapper default">
         @livewire('admin.theme.admin-cp-header' , ['menu'=>'cp'])

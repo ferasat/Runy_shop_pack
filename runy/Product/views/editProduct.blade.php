@@ -55,6 +55,10 @@
                             @endif
                             <label class="form-label">تصویر شاخص</label>
                             <input type="file" class="form-control" name="picture">
+                                <br>
+
+                                <label class="form-label">آدرس تصویر را وارد کنید </label>
+                            <input type="text" class="form-control" name="pic_update">
                         </div>
                     </div>
 
