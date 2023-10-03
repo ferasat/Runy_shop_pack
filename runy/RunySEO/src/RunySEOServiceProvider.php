@@ -13,6 +13,11 @@ class RunySEOServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(
             __DIR__.'/Config/config.php', 'RunySeoConfig'
         );
+
+        $RunySEOHelper = base_path('runy/RunySEO/src/RunySEOHelper.php');
+        if (file_exists($RunySEOHelper)){
+            require_once ($RunySEOHelper) ;
+        }
     }
 
 

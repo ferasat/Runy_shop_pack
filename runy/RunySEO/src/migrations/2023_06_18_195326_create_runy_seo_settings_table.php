@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-
     public function up(): void
     {
         Schema::create('runy_seo_settings', function (Blueprint $table) {
@@ -20,7 +19,7 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        DB::table('users')->insert( [
+        DB::table('runy_seo_settings')->insert( [
             'site_name' => '' ,
             'name_home_page' => '' ,
             'description_home_page' => '' ,
@@ -29,7 +28,6 @@ return new class extends Migration
         ]);
 
     }
-
 
     public function down(): void
     {
