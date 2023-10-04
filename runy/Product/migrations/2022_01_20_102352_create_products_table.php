@@ -26,10 +26,12 @@ class CreateProductsTable extends Migration
             $table->enum('current' , ['T' , 'R', '$', 'TRY', 'AED', '€'])->default('T');
             $table->string('focusKeyword')->nullable();
             $table->string('titleSeo')->nullable();
+            $table->string('descriptionSeo')->nullable();
             $table->integer('numberView')->nullable();  // آمار بازدید این مطلب
             $table->string('slug')->unique()->nullable();
             $table->string('redirect')->nullable();
             $table->string('action_periodic')->nullable(); // دوره ای که عملی باید انجام شود
+            $table->integer('number_of_days_to_expiry')->nullable(); //  انقضای خدمت بعد از زمان خرید به تعداد روز  محاسبه می شود
             $table->foreignId('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();

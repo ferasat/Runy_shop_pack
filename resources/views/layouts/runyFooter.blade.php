@@ -35,7 +35,11 @@
 @if(isset($editor))
 {{-- CkEditor --}}
 <script>
-    CKEDITOR.replace( 'editor1' );
-    CKEDITOR.replace( 'editor2' );
+    CKEDITOR.replace( 'editor1',{
+        cloudServicesEnabled: false
+    } );
+    CKEDITOR.replace( 'editor2', {
+        cloudServicesEnabled: false
+    } );
 </script>
 @endif

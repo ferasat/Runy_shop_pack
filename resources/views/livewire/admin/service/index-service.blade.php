@@ -12,7 +12,7 @@
         </section>
     </div>
     <div class="col-xl-4 mb-5">
-        <div class="product-menu card border-color-runy-secend">
+        <div class="service-menu card border-runy-service">
             <div class="card-header bg-runy-secend">دسترسی محصولات</div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">

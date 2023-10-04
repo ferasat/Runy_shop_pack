@@ -109,6 +109,15 @@ function catsInProLink($pro_id) // دستبندی هایی که در این مح
     }
 }
 
+function count_sub_cats($cat_id){
+    $cats = CategoryProduct::query()->where('master_id' , $cat_id)->get();
+    return count($cats);
+}
+
+function sub_cats($cat_id){
+    return CategoryProduct::query()->where('master_id' , $cat_id)->get();
+}
+
 function isOrNot_pro($cat_id, $pro_id)
 {
     $tax_is = DB::table('taxonomies')->where([

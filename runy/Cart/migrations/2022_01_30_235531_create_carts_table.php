@@ -19,6 +19,7 @@ class CreateCartsTable extends Migration
             $table->string('address')->nullable();
             $table->string('user_id')->nullable();
             $table->string('status',25)->default('in_process'); // in_process  - being_packaged - ready_to_send - posted - delivered - defective_information - lack_of_goods - returned - 'apply'
+            $table->string('total_price')->nullable();
             $table->timestamps();
         });
     }

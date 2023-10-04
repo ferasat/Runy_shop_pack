@@ -9,17 +9,13 @@
             <div class="container mt-5">
                 <div class="row">
                     <div class="profile-page col-xl-9 col-lg-8 col-md-12 order-2">
-                        <div class="row">
-                            <div class="col-12 col-md-7">
-                                <h3 class="mb-0 py-2" id="title">{{ 'تنظیمات عمومی سئو' }}</h3>
-                            </div>
-                        </div>
                         <div class="row ">
                             <div class="col-xl-12 mb-5">
                                 <form class="scroll-section" method="post" action="{{ asset(route('runy_seo_save')) }}">
                                     @csrf
 
                                     <div class="card mb-3">
+                                        <div class="card-header">{{ __('تنظیمات عمومی سئو') }}</div>
                                         <div class="card-body mb-n2 border-last-none h-100">
 
                                             <div class="row mb-3">
@@ -76,12 +72,10 @@
                                                 <label for="site_scripts" class="col-sm-2 col-form-label">اسکریپت
                                                     ها</label>
                                                 <div class="col-sm-10">
-                                        <textarea type="text" class="form-control"
-                                                  id="site_scripts"
-                                                  name="site_scripts" dir="ltr"
-                                                  style="text-align: left ; direction: ltr;">
-                                            {!! $seo_public->site_scripts !!}
-                                        </textarea>
+                                                    <textarea type="text" class="form-control text-left" id="site_scripts"
+                                                              name="site_scripts" dir="ltr">
+                                                        {!! $seo_public->site_scripts !!}
+                                                    </textarea>
                                                 </div>
                                             </div>
 
@@ -97,28 +91,12 @@
                         </div>
                     </div>
 
-                    @livewire('admin.theme.sidebar-admin')
+                    @livewire('admin.theme.sidebar.sidebar-admin-setting')
 
                 </div>
             </div>
         </main>
 
-
-        <div class="container">
-            <!-- Title and Top Buttons Start -->
-            <div class="page-title-container">
-                <div class="row">
-                    <!-- Title Start -->
-
-                    <!-- Title End -->
-                </div>
-            </div>
-            <!-- Title and Top Buttons End -->
-
-            <!-- Content Start -->
-
-            <!-- Content End -->
-        </div>
     </div>
     @livewire('admin.theme.admin-footer' , ['menu'=>'cp'])
 @endsection

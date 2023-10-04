@@ -3734,30 +3734,6 @@ ul.gallery-options li:hover .tooltip-option {
     letter-spacing: -.5px;
 }
 
-.profile-box-tabs {
-    border-top: 1px solid #f1f1f1;
-    background-color: #fcfcfc;
-    min-height: 47px;
-    text-align: center;
-}
-
-.profile-box-tabs a.profile-box-tab {
-    display: inline-block;
-    max-width: 50%;
-    padding: 10px;
-    font-weight: 500;
-    letter-spacing: -.3px;
-    font-size: 12px;
-    font-size: .857rem;
-    line-height: 1.833;
-    color: #7b7b7b;
-    position: relative;
-}
-
-.profile-box-tabs a.profile-box-tab:first-child {
-    border-left: 1px solid #ebebeb;
-}
-
 .profile-box-tabs i {
     display: block;
 }
@@ -3795,7 +3771,6 @@ main.profile-user-page .profile-menu-header {
     font-weight: 700;
     letter-spacing: .2px;
     color: #535353;
-    font-size: 13px;
     font-size: .929rem;
     line-height: 1.692;
 }
@@ -3819,12 +3794,6 @@ main.profile-user-page .profile-menu-items li a i {
     position: absolute;
     right: 20px;
     top: 18px;
-}
-
-main.profile-user-page .profile-menu-items li a.active,
-main.profile-user-page .profile-menu-items li a:hover {
-    background-color: #f6ffff;
-    color: #009ec9;
 }
 
 main.profile-user-page h1.title-tab-content {

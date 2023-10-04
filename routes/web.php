@@ -12,17 +12,6 @@ use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
 Route::get('/', [HomePageController::class , 'index']);
 Route::get('/dashboard/users', [\App\Http\Controllers\UserController::class , 'index']);
 Route::get('/dashboard/new-user', [\App\Http\Controllers\UserController::class , 'create']);
@@ -32,6 +21,7 @@ Route::get('/home', [DashboardController::class , 'index' ])->middleware('auth')
 Route::get('/dashboard', [DashboardController::class , 'index' ])->middleware('auth')->name('dashboard');
 Route::post('/dashboard/editor_upload', [CKEditorController::class , 'upload' ])->name('editor.upload');
 Route::get('/dashboard/settings', [SettingController::class , 'index'])->middleware('auth')->name('setting.index');
+Route::get('/dashboard/settings_home', [SettingController::class , 'index'])->middleware('auth')->name('setting.home');
 
 Route::post('/upload-image', function(Request $request) {
     dd($request->all());

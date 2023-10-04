@@ -2,28 +2,20 @@
 
 @section('content')
 
-    <div class="wrapper default">
+    <div class="wrapper">
         @livewire('admin.theme.admin-cp-header' , ['menu'=>'cp'])
+        <main class="dashboard-setting-page ">
+        <div class="container  mt-5">
 
-        <div class="container">
-            <!-- Title and Top Buttons Start -->
-            <div class="page-title-container">
-                <div class="row">
-                    <!-- Title Start -->
-                    <div class="col-12 col-md-7">
-                        <h1 class="mb-0 pb-0 display-4" id="title">{{ $title }}</h1>
-
-                    </div>
-                    <!-- Title End -->
+        <div class="row">
+            <div class="profile-page col-xl-9 col-lg-8 col-md-12 order-2">
+                <div class="row ">
+                    <!-- public-setting Start -->
+                    @livewire('admin.setting.public-setting')
+                    <!-- public-setting End -->
                 </div>
             </div>
-            <!-- Title and Top Buttons End -->
-
-        <!-- Content Start -->
-        <div class="row">
-            <!-- public-setting Start -->
-            @livewire('admin.setting.public-setting')
-            <!-- public-setting End -->
+            @livewire('admin.theme.sidebar.sidebar-admin-setting')
         </div>
 
         <div class="row">
@@ -34,6 +26,7 @@
             @livewire('admin.setting.theme-setting')
         </div>
         </div>
+        </main>
     </div>
     @livewire('admin.theme.admin-footer' , ['menu'=>'cp'])
 @endsection

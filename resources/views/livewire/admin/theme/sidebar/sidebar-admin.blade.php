@@ -4,19 +4,19 @@
             <div class="profile-box-avatar">
                 <img src="{{ asset(Auth::user()->pic) }}" alt="{{ fullName(Auth::user()->id) }}">
             </div>
-            <button data-bs-toggle="modal" data-bs-target="#myModal" class="profile-box-btn-edit">
+            <button data-bs-toggle="modal" data-bs-target="#myProfile" class="profile-box-btn-edit">
                 <i class="fa fa-pencil"></i>
             </button>
             <!-- Modal Core -->
-            <div class="modal-share modal-width-custom modal fade" id="myModal" tabindex="-1"
-                 role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-share modal-width-custom modal fade" id="myProfile" tabindex="-1"
+                 role="dialog" aria-labelledby="myProfileLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal"
                                     aria-hidden="true">×
                             </button>
-                            <h4 class="modal-title" id="myModalLabel">تغییر نمایه کاربری شما</h4>
+                            <h4 class="modal-title" id="myProfileLabel">تغییر نمایه کاربری شما</h4>
                         </div>
                         <div class="modal-body">
                             <ul class="profile-avatars default text-center">
@@ -38,11 +38,13 @@
                 <i class="now-ui-icons ui-1_lock-circle-open"></i>
                 تغییر رمز
             </a>
-            <a href="{{ asset(route('logout')) }}"
-               class="profile-box-tab profile-box-tab--sign-out">
-                <i class="now-ui-icons media-1_button-power"></i>
-                خروج از حساب
-            </a>
+            <form action="{{ asset(route('logout')) }}" method="post">
+                @csrf
+                <button type="submit" class="profile-box-tab profile-box-tab--sign-out">
+                    <i class="now-ui-icons media-1_button-power"></i>
+                    خروج از حساب
+                </button>
+            </form>
         </div>
     </div>
     <div class="responsive-profile-menu show-md">
@@ -85,31 +87,31 @@
             <li>
                 <i class="fa fa-navicon"></i>
                 <a href="#">
-                    <i class="now-ui-icons users_single-02"></i>
+                    <i class="fa fa-navicon"></i>
                     فروش جدید
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <i class="now-ui-icons shopping_basket"></i>
+                    <i class="fa fa-navicon"></i>
                     سرویس جدید
                 </a>
             </li>
             <li>
                 <a href="#" class="active">
-                    <i class="now-ui-icons files_single-copy-04"></i>
+                    <i class="fa fa-navicon"></i>
                     درخواست مرجوعی
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <i class="now-ui-icons ui-2_favourite-28"></i>
+                    <i class="fa fa-navicon"></i>
                     سرویس پیامک
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <i class="now-ui-icons business_badge"></i>
+                    <i class="fa fa-navicon"></i>
                     باشگاه مشتریان
                 </a>
             </li>

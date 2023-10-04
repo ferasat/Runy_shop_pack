@@ -28,18 +28,18 @@
 
                         @livewire('admin.service.create.name-service' , ['service' => $service ] )
 
-                        <div class="card mb-3">
-                            <div class="card-header">معرفی کوتاه</div>
+                        <div class="card mb-3 border-runy-service">
+                            <div class="card-header border-runy-service">معرفی کوتاه</div>
                             <div class="card-body">
                             <textarea class="form-control editor" id="editor2"
                                       name="shortDescription">{!! $service->shortDescription !!}</textarea>
                             </div>
                         </div>
 
-                        <div class="card mb-3">
-                            <div class="card-header">توضیحات محصول</div>
+                        <div class="card mb-3 border-runy-service">
+                            <div class="card-header border-runy-service">توضیحات خدمت</div>
                             <div class="card-body">
-                            <textarea class="form-control editor" id="editor"
+                            <textarea class="form-control editor" id="editor1"
                                       name="texts">{!! $service->texts !!}</textarea>
                             </div>
                         </div>
@@ -48,13 +48,14 @@
                 </div>
                 <div class="col-xl-4 mb-5">
                     @livewire('admin.service.create.sidebar-service' , ['service' => $service ] )
-                    <div class="card mt-5">
+                    <div class="card mt-5 border-runy-service">
+                        <div class="card-header border-runy-service">تصویر شاخص</div>
                         <div class="card-body">
                             @if($service->pic !== null )
                                 <img src="{{asset($service->pic)}}" class="card-img-top sh-19" alt="تصویر شاخص">
                             @endif
                             <label class="form-label">تصویر شاخص</label>
-                            <input type="file" class="form-control" name="picture">
+                            <input type="file" class="form-control border-runy-service" name="picture">
                         </div>
                     </div>
 

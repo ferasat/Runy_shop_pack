@@ -1,19 +1,20 @@
-<div class="card mb-3">
+<div class="card mb-3 border-runy-service">
+    <div class="card-header border-runy-service">عنوان خدمت</div>
     <div class="card-body mb-n2 border-last-none h-100">
         <div class="mb-3">
             <label class="form-label">عنوان</label>
-            <input type="text" class="form-control" wire:model.live.blur="name_">
+            <input type="text" class="form-control border-runy-service" wire:model.live.blur="name_">
             @error('name_') {{$message}} @enderror
         </div>
         <div class="mb-3">
             <label class="form-label">لینک</label>
-            <input type="text" class="form-control" wire:model.live.blur="slug">
+            <input type="text" class="form-control border-runy-service" wire:model.live.blur="slug">
 
         </div>
         <div class="d-flex justify-content-end">
             <a href="{{ asset('/service/'.$slug) }}" target="_blank" class="btn btn-icon btn-icon-end btn-tertiary active-scale-up" type="button">
                 <span >دیدن خدمت</span>
-                <svg class="icon-svg-panel" viewBox="0 0 32 32" enable-background="new 0 0 32 32" id="Filled_Line" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M16,7C9.934,7,4.798,10.776,3,16c1.798,5.224,6.934,9,13,9s11.202-3.776,13-9 C27.202,10.776,22.066,7,16,7z" fill="#FFFFFF" id="XMLID_937_"></path><path d="M6,16c1.647-4.787,6.1-8.348,11.5-8.913C17.006,7.036,16.508,7,16,7 C9.934,7,4.798,10.776,3,16c1.798,5.224,6.934,9,13,9c0.508,0,1.006-0.036,1.5-0.087C12.1,24.348,7.647,20.787,6,16z" fill="#dec2ff" id="XMLID_368_"></path><path d="M16,7c-2.142,0-4.164,0.479-5.968,1.318C10.989,8.115,11.979,8,13,8 c6.066,0,11.202,3.776,13,9c-1.163,3.379-3.727,6.145-7.032,7.682C23.696,23.68,27.505,20.346,29,16C27.202,10.776,22.066,7,16,7z" fill="#dec2ff" id="XMLID_369_"></path><path d=" M16,7C9.934,7,4.798,10.776,3,16c1.798,5.224,6.934,9,13,9s11.202-3.776,13-9C27.202,10.776,22.066,7,16,7z" fill="none" id="XMLID_830_" stroke="#6c429a" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"></path><circle cx="16" cy="16" fill="#6c429a" id="XMLID_826_" r="5"></circle><path d="M16.312,20.494c-2.761,0-5-2.239-5-5c0-0.884,0.249-1.702,0.652-2.423 C11.364,13.896,11,14.902,11,16c0,2.761,2.239,5,5,5c1.877,0,3.493-1.047,4.348-2.577C19.439,19.673,17.976,20.494,16.312,20.494z" fill="#6c429a" id="XMLID_439_"></path><path d="M16,11c-1.636,0-3.075,0.797-3.988,2.012C12.848,12.385,13.875,12,15,12 c2.761,0,5,2.239,5,5c0,1.125-0.385,2.152-1.012,2.988C20.203,19.075,21,17.636,21,16C21,13.239,18.761,11,16,11z" fill="#4D3F80" id="XMLID_440_"></path><circle cx="17" cy="15" fill="#FFFFFF" r="1.5"></circle></g></svg>
+                <svg class="icon-svg-panel-sm" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M15.7281 3.88396C17.1624 2.44407 19.2604 2.41383 20.4219 3.57981C21.5856 4.74798 21.5542 6.85922 20.1189 8.30009L17.6951 10.7333C17.4028 11.0268 17.4037 11.5017 17.6971 11.794C17.9906 12.0863 18.4655 12.0854 18.7578 11.7919L21.1816 9.35869C23.0929 7.43998 23.3329 4.37665 21.4846 2.5212C19.6342 0.663551 16.5776 0.905664 14.6653 2.82536L9.81768 7.69182C7.90639 9.61053 7.66643 12.6739 9.5147 14.5293C9.80702 14.8228 10.2819 14.8237 10.5754 14.5314C10.8688 14.2391 10.8697 13.7642 10.5774 13.4707C9.41376 12.3026 9.4451 10.1913 10.8804 8.75042L15.7281 3.88396Z" fill="#6c429a"></path> <path opacity="0.5" d="M14.4846 9.4707C14.1923 9.17724 13.7174 9.17632 13.4239 9.46864C13.1305 9.76097 13.1296 10.2358 13.4219 10.5293C14.5856 11.6975 14.5542 13.8087 13.1189 15.2496L8.27129 20.1161C6.83696 21.556 4.73889 21.5862 3.57742 20.4202C2.41376 19.2521 2.4451 17.1408 3.8804 15.6999L6.30424 13.2666C6.59657 12.9732 6.59565 12.4983 6.30219 12.206C6.00873 11.9137 5.53386 11.9146 5.24153 12.208L2.81769 14.6413C0.906387 16.56 0.666428 19.6234 2.5147 21.4788C4.36518 23.3365 7.42173 23.0944 9.334 21.1747L14.1816 16.3082C16.0929 14.3895 16.3329 11.3262 14.4846 9.4707Z" fill="#6c429a"></path> </g></svg>
             </a>
         </div>
     </div>
