@@ -28,6 +28,9 @@
                     <li class="nav-item">
                         <a class="nav-link text-white" href="{{asset(route('discount.index'))}}">تخفیف ها</a>
                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link text-white" href="{{asset(route('poll.index'))}}">نظرسنجی</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" href="{{asset(route('discount.index'))}}">باشگاه مشرتریان</a>
                     </li>

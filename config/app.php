@@ -99,6 +99,7 @@ return [
         RunySEO\RunySEOServiceProvider::class,
         SendMessages\SendMessagesServiceProvider::class,
         SiteLogs\SiteLogsServiceProvider::class,
+        Poll\PollServiceProvider::class,
 
 
         /*

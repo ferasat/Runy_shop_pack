@@ -241,6 +241,19 @@
                                         @livewire('user.comment.add-comment' , ['type'=>'product' , 'item'=>$product ])
                                     </div>
                             </div>
+                            @if($question)
+                            <div class="card my-2 ">
+                                <div class="card-header">
+                                    <h3>نظرسنجی</h3>
+                                </div>
+                                <div class="card-body">
+                                    @livewire('user.poll.show-poll' , ['type'=>'product' , 'item'=>$product ,'question'=>$question])
+                                </div>
+                                <div class="card-footer">
+
+                                </div>
+                            </div>
+                            @endif
                         </div>
                     </div>
                 </div>

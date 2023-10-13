@@ -36,7 +36,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <label for="duration" class="form-label">نوع یازه</label>
-                    <select id="duration" class="form-select" wire:model.blur="duration" name="duration">
+                    <select id="duration" class="form-select" wire:model.live="duration" name="duration">
                         <option value="date">تاریخ</option>
                         <option value="time">زمان</option>
 

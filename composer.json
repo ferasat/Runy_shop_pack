@@ -47,6 +47,7 @@
             "RunySEO\\": "runy/RunySEO/src/",
             "SendMessages\\": "runy/SendMessages",
             "SiteLogs\\": "runy/SiteLogs",
+            "Poll\\": "runy/Poll",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
         }
