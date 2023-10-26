@@ -114,3 +114,8 @@ function role_name($role){
 function countUserViews($number) {
 
 }
+function text_summary($text , $count=120){
+    $text = strip_tags($text);
+    $text = mb_convert_encoding($text , 'UTF-8', 'UTF-8');
+    return substr($text , 0 , $count);
+}

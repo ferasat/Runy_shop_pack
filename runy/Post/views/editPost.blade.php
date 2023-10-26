@@ -51,7 +51,7 @@
     </div>
 
 
-    <script>
+<!--    <script>
         $('#texts').summernote({
             placeholder: 'سلام به رانی خوش آمدید',
             tabsize: 2,
@@ -65,6 +65,17 @@
                 ['insert', ['link', 'picture', 'video']],
                 ['view', ['fullscreen', 'codeview', 'help']]
             ]
+        });
+    </script>-->
+
+    <script>
+        // Replace the <textarea id="editor1"> with a CKEditor 4
+        // instance, using default configuration.
+        var editor = CKEDITOR.replace('texts', {
+            language: 'fa',
+            filebrowserUploadUrl: "{{route('uploadCK' , ['_token' => csrf_token()])}}",
+            filebrowserBrowseUrl: '/browser/',
+            filebrowserUploadMethod: "form"
         });
     </script>
 

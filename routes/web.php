@@ -23,6 +23,8 @@ Route::post('/dashboard/editor_upload', [CKEditorController::class , 'upload' ])
 Route::get('/dashboard/settings', [SettingController::class , 'index'])->middleware('auth')->name('setting.index');
 Route::get('/dashboard/settings_home', [SettingController::class , 'index'])->middleware('auth')->name('setting.home');
 
+Route::post('/dashboard/editor_upload', [CKEditorController::class , 'upload' ])->name('uploadCK');
+
 Route::post('/upload-image', function(Request $request) {
     dd($request->all());
     $file = $request->file('upload');

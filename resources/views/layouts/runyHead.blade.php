@@ -1,6 +1,7 @@
 {{-- ckeditor --}}
 @if(isset($editor))
-    <script src="{{ asset('theme/plugins/CkEditor/ckeditor.js') }}"></script>
+    <script src="//cdn.ckeditor.com/4.22.1/full/ckeditor.js"></script>
+<!--    <script src="{{ asset('theme/plugins/CkEditor/ckeditor.js') }}"></script>-->
 @endif
 
 @if(isset($owl_carousel))
