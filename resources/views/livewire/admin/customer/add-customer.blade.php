@@ -10,6 +10,29 @@
             <div class="modal-body">
                 <div>
                     <div class="form-floating mb-3">
+                        <select class="form-control" id="type" wire:model.live.blur="type">
+                            <option value="تامین کننده">تامین کننده</option>
+                            <option value="عمده فروش">عمده فروش</option>
+                            <option value="خرده فروش">خرده فروش</option>
+                            <option value="مشتری">مشتری</option>
+                        </select>
+
+                        <label for="type">نوع مشتری</label>
+                        @error('type') <span class="text-danger">{{ $message }}</span>@enderror
+                    </div>
+                    <div class="form-floating mb-3">
+                        <select class="form-control" id="type" wire:model.live.blur="customer_user_id">
+                            <option value="">عضو نیست و حسابی ندارد</option>
+                            <option value="create">براش حساب بساز</option>
+                            @foreach($users as $user)
+                                <option value="{{ $user->id }}">{{ $user->id }}</option>
+                            @endforeach
+                        </select>
+
+                        <label for="type">عضو سایت ؟</label>
+                        @error('type') <span class="text-danger">{{ $message }}</span>@enderror
+                    </div>
+                    <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="name" wire:model.live.blur="name" placeholder="نام">
                         <label for="name">نام</label>
                         @error('name') <span class="text-danger">{{ $message }}</span>@enderror
@@ -45,7 +68,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">لغو
                 </button>
-                <button type="button" class="btn btn-primary" wire:click.privent="save">ذخیره</button>
+                <button type="button" class="btn btn-primary" wire:click="save">ذخیره</button>
             </div>
         </div>
     </div>

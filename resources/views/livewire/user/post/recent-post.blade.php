@@ -12,14 +12,13 @@
                         <img src="{{ asset($post->pic) }}" alt="{{ $post->name }}">
                     </div>
                     <div class="detail-box">
-                        <a href="{{ asset('/') }}" title="{{ $post->name }}">
+                        <a href="{{ asset($post->slug) }}" title="{{ $post->name }}">
                             {{ $post->name }}
                         </a>
-                        <div class="expert_position h6"> <span> 25 خرداد 1402 </span> </div>
+                        <div class="expert_position h6"> <span>{{ verta($post->updated_at)->format('%d %B %Y') }}</span> </div>
 
-                        <p> اساسی ترین مزیت دستگاه حضور و غیاب برای کسب و کار شما ، صرف زمان کمتر جهت ثبت زمان تردد ورود
-                            و
-                            خروج، ردیابی و پردازش زمان می باشد ...
+                        <p>
+                            {{ text_summary($post->texts) }}
                         </p>
                     </div>
                 </div>

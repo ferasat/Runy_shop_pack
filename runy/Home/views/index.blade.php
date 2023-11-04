@@ -4,7 +4,7 @@
 
     @livewire('user.theme.user-navbar-responsive')
 
-    @livewire('user.home.slide.slide-show')
+    @livewire('user.home.slide.slide-show' , ['homePage'=>$homePage])
     @livewire('user.home.why-us')
     @livewire('user.home.recent-category-products')
     @livewire('user.home.features')

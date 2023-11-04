@@ -15,12 +15,11 @@ class CustomerController extends Controller
 
     public function index()
     {
-        $html_tag_data = ["override" => '{ "attributes" : { "placement" : "horizontal", "layout":"boxed" }, "storagePrefix" : "starter-project", "showSettings" : false }'];
         $title = 'مشتریان';
         $description = 'مدیریت مشتریان';
         $breadcrumbs = ["/dashboard" => " پیشخوان ", "/dashboard/customer" => " مدیریت مشتریان  "];
 
-        return view('CustomerView::indexCustomers', compact( 'html_tag_data', 'title', 'description', 'breadcrumbs'));
+        return view('CustomerView::indexCustomers', compact( 'title', 'description', 'breadcrumbs'));
     }
 
 
@@ -36,15 +35,22 @@ class CustomerController extends Controller
     }
 
 
-    public function show(Customer $customer)
+    public function show(Customer $id)
     {
-        //
+        //dd($id);
+        $customer = $id ;
+        $title = 'دیدن :'.$id->name.' '.$id->family ;
+        $breadcrumbs = ["/dashboard" => " پیشخوان ", "/dashboard/customer" => " مدیریت مشتریان  ", "/dashboard/customer/edit/".$id->id => "ویرایش مشتری"];
+        return view('CustomerView::showCustomer', compact( 'title',  'breadcrumbs' , 'customer'));
     }
 
 
-    public function edit(Customer $customer)
+    public function edit(Customer $id)
     {
-        //
+        //dd($id);
+        $title = 'ویرایش :'.$id->name.' '.$id->family ;
+        $breadcrumbs = ["/dashboard" => " پیشخوان ", "/dashboard/customer" => " مدیریت مشتریان  ", "/dashboard/customer/edit/".$id->id => "ویرایش مشتری"];
+        return view('CustomerView::editCustomer', compact( 'title',  'breadcrumbs'));
     }
 
 

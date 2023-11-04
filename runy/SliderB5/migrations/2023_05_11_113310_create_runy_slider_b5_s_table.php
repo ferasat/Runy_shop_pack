@@ -14,7 +14,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('text')->nullable();
             $table->string('urlpic')->nullable();
-            $table->string('slug')->nullable();
+            $table->string('slug')->nullable()->unique();
             $table->timestamps();
         });
 

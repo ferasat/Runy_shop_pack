@@ -2,43 +2,33 @@
     <div class="row">
         <div id="carouselHomePage" class="carousel slide">
             <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselHomePage" data-bs-slide-to="0" class="active"
-                        aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselHomePage" data-bs-slide-to="1"
-                        aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselHomePage" data-bs-slide-to="2"
-                        aria-label="Slide 3"></button>
+                @php $x=0; @endphp
+                @foreach($pics as $pic)
+                    <button type="button" data-bs-target="#carouselHomePage" data-bs-slide-to="{{ $x }}"
+                            @if($x == 1 ) class="active" @endif
+                            aria-current="true" aria-label="Slide {{ $x++ }}"></button>
+
+                @endforeach
             </div>
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="theme/img/s1.jpg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-<!--                        <h5>First slide label</h5>
-                        <p>Some representative placeholder content for the first slide.</p>-->
+                @php $y=0; @endphp
+                @foreach($pics as $pic)
+                    <div class="carousel-item @if($y == 0) active @endif ">
+                        <img src="{{ asset($pic->urlpic) }}" class="d-block w-100" alt="{{ $pic->name }}">
+                        <div class="carousel-caption d-none d-md-block">
+                            {{$pic->text}}
+                        </div>
                     </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="theme/img/s2.jpg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-<!--                        <h5>Second slide label</h5>
-                        <p>Some representative placeholder content for the second slide.</p>-->
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="theme/img/s1.jpg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-<!--                        <h5>Third slide label</h5>
-                        <p>Some representative placeholder content for the third slide.</p>-->
-                    </div>
-                </div>
+                    @php $y++ @endphp
+                @endforeach
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselHomePage" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
+                <span class="visually-hidden">قبلی</span>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#carouselHomePage" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
+                <span class="visually-hidden">بعدی</span>
             </button>
         </div>
         <!-- =======End slider ======= -->

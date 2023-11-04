@@ -13,13 +13,14 @@ class CreateCustomersTable extends Migration
             $table->string('name');
             $table->string('family');
             $table->bigInteger('customer_user_id')->nullable();
-            $table->string('cell')->nullable();
-            $table->string('phone')->nullable();
+            $table->string('cell')->nullable()->unique();
+            $table->string('cellphone')->nullable();
+            $table->string('pic')->default('theme/img/default-avatar.png');
             $table->string('address')->nullable();
-            $table->string('email')->nullable();
+            $table->string('email')->nullable()->unique();
             $table->string('company')->nullable();
             $table->string('city')->nullable();
-            $table->enum('type' , ['Wholesale','retail'])->default('retail');
+            $table->enum('type' , ['عمده فروش','خرده فروش','تامین کننده','مشتری'])->default('مشتری');
             $table->integer('commission' )->nullable();
             $table->timestamps();
         });

@@ -11,15 +11,15 @@ class SliderB5ServiceProvider extends ServiceProvider
 {
     public function register()
     {
-/*        $SmsHelper = base_path('runy/SMSMarketing/Helpers/SmsHelper.php');
-        if (file_exists($SmsHelper)){
-            require_once ($SmsHelper) ;
-        }*/
+        $helper = base_path('runy/SliderB5/runy-slider-helper.php');
+        if (file_exists($helper)){
+            require_once ($helper) ;
+        }
     }
 
     public function boot()
     {
-        $this->loadViewsFrom(base_path('runy/SliderB5/views') , 'SmsView');
+        $this->loadViewsFrom(base_path('runy/SliderB5/views') , 'RunySliderView');
 
         $this->loadMigrationsFrom([
             base_path('runy/SliderB5/migrations')

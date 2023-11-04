@@ -6,6 +6,6 @@
             <input class="form-check-input" type="checkbox" wire:model.live.blur="autoload" @if($setting->autoload == 1) checked @endif>
         </div>
     </td>
-    <td><textarea class="form-control text-lg-start" type="text" wire:model.live.blur="value" dir="ltr">{!! $setting->value !!}</textarea></td>
-    <td><button class="btn btn-success" wire:click.privent="save({{$setting->id}})">ذخیره</button></td>
+    <td><textarea class="form-control text-lg-start text-left" type="text" wire:model="value" dir="ltr">{!! $setting->value !!}</textarea></td>
+    <td><button class="btn btn-success" wire:click="save({{$setting->id}})">ذخیره</button></td>
 </tr>

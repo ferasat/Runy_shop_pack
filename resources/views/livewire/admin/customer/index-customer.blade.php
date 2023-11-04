@@ -16,14 +16,20 @@
             <div class="card ">
                 <div class="card-header">دسترسی ها</div>
                 <div class="card-body mb-n2 border-last-none">
-
-                    <!-- Button Trigger -->
-                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
-                            data-bs-target="#addCustomer">
-                        اضافه کردن مشتری
-                    </button>
-                    <!-- Modal  Launch static backdrop modal-->
-                    @livewire('admin.customer.add-customer' )
+                    <ul>
+                        <li class="p-2 my-2">
+                            <!-- Button Trigger -->
+                            <button type="button" class="btn btn-outline-primary d-block " data-bs-toggle="modal"
+                                    data-bs-target="#addCustomer">
+                                اضافه کردن مشتری
+                            </button>
+                            <!-- Modal  Launch static backdrop modal-->
+                            @livewire('admin.customer.add-customer' )
+                        </li>
+                        <li class="p-2 my-2">
+                            <button class="d-block btn btn-outline-primary " wire:click="syncUsers()">همسان کردن</button>
+                        </li>
+                    </ul>
 
                 </div>
             </div>
