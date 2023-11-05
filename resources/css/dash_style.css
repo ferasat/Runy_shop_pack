@@ -1,0 +1,93 @@
+.color-primary {
+    color: #673AB7;
+}
+.icon-svg-panel {
+    width: 40px!important;
+}
+.icon-svg-panel-lg {
+    width: 80px!important;
+}
+.loading-box {
+    position: relative;
+    margin: -53px auto;
+    border-radius: 13px;
+    text-align: center;
+}
+
+.icon-svg-loading {
+    transform: rotate(360deg);
+    animation: rotate 2s linear infinite;
+    background: #ffffffbd;
+    border-radius: 50%;
+    margin: 0px auto;
+    padding: 3px;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.boarder-success {
+    border-color: #1abc9c !important;
+}
+/*-- Header Amin --*/
+.mobile_header {
+    display: none; /* پیش فرض: عدم نمایش کلاس */
+}
+.show-md {
+    display: none;
+}
+.show-sm {
+    display: none;
+}
+/* موبایل: تا یک حداکثر عرض ۷۶۷ پیکسل */
+@media only screen and (max-width: 767px) {
+
+    .mobile_header {
+        display: block;
+    }
+    .main-header {
+        display: none;
+    }
+    .show-md {
+        display: none;
+    }
+    .show-sm {
+        display: block;
+    }
+}
+
+/* تبلت: از ۷۶۸ پیکسل تا ۹۹۹ پیکسل */
+@media only screen and (min-width: 768px) and (max-width: 999px) {
+    /* قوانین CSS برای حالت تبلت */
+    .show-sm {
+        display: block;
+    }
+}
+
+/* لپ‌تاپ: از ۱۰۰۰ پیکسل تا ۱۲۷۹ پیکسل */
+@media only screen and (min-width: 1000px) and (max-width: 1279px) {
+    /* قوانین CSS برای حالت لپ‌تاپ */
+    .show-md {
+        display: block;
+    }
+    .show-sm {
+        display: none;
+    }
+}
+
+/* مانیتور بزرگ: از ۱۲۸۰ پیکسل به بالا */
+@media only screen and (min-width: 1280px) {
+    /* قوانین CSS برای حالت مانیتور بزرگ */
+    .show-md {
+        display: block;
+    }
+    .show-sm {
+        display: none;
+    }
+}

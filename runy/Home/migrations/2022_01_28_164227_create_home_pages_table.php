@@ -6,24 +6,15 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateHomePagesTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('home_pages', function (Blueprint $table) {
             $table->id();
+            $table->integer('slideshow_id')->default(0);
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('home_pages');
