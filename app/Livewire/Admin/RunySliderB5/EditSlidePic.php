@@ -72,8 +72,8 @@ class EditSlidePic extends Component
 
         }
 
-        $size = $file->getSize();
-        $extension = $file->getClientOriginalExtension();
+       /* $size = $file->getSize();
+        $extension = $file->getClientOriginalExtension();*/
 
 
 
