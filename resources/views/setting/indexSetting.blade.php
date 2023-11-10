@@ -8,22 +8,18 @@
             <div class="container  mt-5">
 
                 <div class="row">
-                    <div class="profile-page col-xl-9 col-lg-8 col-md-12 order-2">
-                        <div class="row ">
-                            <!-- public-setting Start -->
-                            @livewire('admin.setting.public-setting')
-                            <!-- public-setting End -->
-                        </div>
-                    </div>
+                    @livewire('admin.setting.public-setting')
                     @livewire('admin.theme.sidebar.sidebar-admin-setting')
                 </div>
 
                 <div class="row">
                     @livewire('admin.setting.home-setting' , key(time()) )
+                    @livewire('admin.theme.sidebar.sidebar-admin-setting')
                 </div>
 
                 <div class="row">
                     @livewire('admin.setting.theme-setting')
+                    @livewire('admin.theme.sidebar.sidebar-admin-setting')
                 </div>
             </div>
         </main>

@@ -21,6 +21,7 @@ Route::get('/home', [DashboardController::class , 'index' ])->middleware('auth')
 Route::get('/dashboard', [DashboardController::class , 'index' ])->middleware('auth')->name('dashboard');
 Route::post('/dashboard/editor_upload', [CKEditorController::class , 'upload' ])->name('editor.upload');
 Route::get('/dashboard/settings', [SettingController::class , 'index'])->middleware('auth')->name('setting.index');
+Route::post('/dashboard/setting/saveLogoIcon', [SettingController::class , 'saveLogoIcon'])->middleware('auth')->name('saveLogoIcon');
 Route::get('/dashboard/settings_home', [SettingController::class , 'index'])->middleware('auth')->name('setting.home');
 
 Route::post('/dashboard/editor_upload', [CKEditorController::class , 'upload' ])->name('uploadCK');

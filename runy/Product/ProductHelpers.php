@@ -66,7 +66,7 @@ function subCats($cat_id)
 
 function infoCatPro($cat_id)
 {
-    return CategoryProduct::query()->findOrFail($cat_id);
+    return CategoryProduct::query()->find($cat_id);
 }
 
 function catsInPro($pro_id) // دستبندی هایی که در این محصول هستند

@@ -1,4 +1,4 @@
-<div class="col-12 col-lg-12 mb-5">
+<div class="col-xl-9 col-lg-8 col-md-6 mb-5 order-2">
     <div class="card">
         <div class="card-header">تنظیمات صفحه اول</div>
         <div class="card-body my-2 d-flex justify-content-center">

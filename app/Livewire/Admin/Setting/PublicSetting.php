@@ -8,7 +8,7 @@ use Livewire\Component;
 class PublicSetting extends Component
 {
     public $site_name, $site_url, $site_short_description, $mobile_phone, $office_phone , $dash_url , $have_ssl , $disableBTN = false
-    , $showMessage = false;
+    , $showMessage = false , $logo , $icon;
 
     public function mount()
     {
@@ -20,6 +20,8 @@ class PublicSetting extends Component
         $this->mobile_phone = $setting->mobile_phone;
         $this->office_phone = $setting->office_phone;
         $this->dash_url = $setting->dash_url;
+        $this->logo = $setting->site_logo;
+        $this->icon = $setting->site_icon;
     }
 
     public function render()

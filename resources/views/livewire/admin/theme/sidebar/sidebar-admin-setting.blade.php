@@ -1,4 +1,4 @@
-<div class="profile-page-aside col-xl-3 col-lg-4 col-md-6 center-section order-1">
+<div class="profile-page-aside col-xl-3 col-lg-4 col-md-6 order-1">
     <div class="profile-box">
         <div class="profile-box-header bg-runy-primary">
             <div class="profile-box-avatar">

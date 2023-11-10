@@ -16,6 +16,8 @@ class CreateFileManagersTable extends Migration
             $table->integer('where_id')->nullable()->index(); // برای چه بخشی آپلود شده است
             $table->string('path')->nullable();
             $table->string('description')->nullable();
+            $table->string('size')->nullable();
+            $table->string('extension')->nullable();
             $table->timestamps();
         });
     }

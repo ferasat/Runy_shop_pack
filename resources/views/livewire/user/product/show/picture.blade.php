@@ -23,7 +23,13 @@
                     <div class="d-inline-block">
                         @if($cats = catsInPro($product->id))
                         @foreach(catsInPro($product->id) as $tanx )
-                            <div class="text-white">{{ infoCatPro($tanx->item_id)->name }}</div>
+                            <div class="text-white">
+                                @if(infoCatPro($tanx->item_id)->name)
+                                {{infoCatPro($tanx->item_id)->name}}
+                                @else
+                                نداریم
+                                @endif
+                            </div>
                         @endforeach
                         @endif
                     </div>

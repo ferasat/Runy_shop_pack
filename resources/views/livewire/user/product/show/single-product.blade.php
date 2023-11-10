@@ -85,7 +85,13 @@
                                     @if($cats = catsInPro($product->id))
                                         @foreach($cats as $tanx )
                                             <li>
-                                                <a class="mb-1 d-inline-block text-small">{{ infoCatPro($tanx->item_id)->name }}</a>
+                                                <a class="mb-1 d-inline-block text-small">
+                                                    @if(infoCatPro($tanx->item_id) != null)
+                                                        {{infoCatPro($tanx->item_id)->name}}
+                                                    @else
+                                                        نداریم
+                                                    @endif
+                                                </a>
                                             </li>
                                         @endforeach
                                     @endif
