@@ -17,10 +17,14 @@ class SingleProduct extends Component
         if ($this->features->count() > 0){
             $this->is_feature = true ;
         }
+
+        /*
+         * یک شرط براش تعیین بشود که در صورتی که این حصول را خرید کرده بود نظر سنجی براش اشکار بشود
         $this->question=Question::query()->where([
             'for_type'=>'product',
             'for_type_id'=>$this->product->id
         ])->first();
+        */
 
 
     }

@@ -13,38 +13,7 @@
                                      alt="{{ $product->name }}"/>
 
                                 <div id="gallery_01f" style="width:500px;float:left;">
-                                    <ul class="gallery-items">
-                                        <li>
-                                            <a href="#" class="elevatezoom-gallery active" data-update=""
-                                               data-image="https://yasshop.ir/wp-content/uploads/%D8%A7%D9%84%D9%86%DA%AF%D9%88-%D8%B7%D9%84%D8%A7%D8%B1%D9%88%D8%B3-5.jpg"
-                                               data-zoom-image="https://yasshop.ir/wp-content/uploads/%D8%A7%D9%84%D9%86%DA%AF%D9%88-%D8%B7%D9%84%D8%A7%D8%B1%D9%88%D8%B3-5.jpg">
-                                                <img src="https://yasshop.ir/wp-content/uploads/%D8%A7%D9%84%D9%86%DA%AF%D9%88-%D8%B7%D9%84%D8%A7%D8%B1%D9%88%D8%B3-5.jpg"
-                                                    width="100"/>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="elevatezoom-gallery"
-                                               data-image="https://yasshop.ir/wp-content/uploads/2204246-1660-1.jpg"
-                                               data-zoom-image="https://yasshop.ir/wp-content/uploads/2204246-1660-1.jpg"><img
-                                                    src="https://yasshop.ir/wp-content/uploads/2204246-1660-1.jpg"
-                                                    width="100"/></a>
-                                        </li>
-                                        <li>
-                                            <a href="tester" class="elevatezoom-gallery"
-                                               data-image="assets/img/product/1335154.jpg"
-                                               data-zoom-image="assets/img/product/1335154.jpg">
-                                                <img src="assets/img/product/1335154.jpg" width="100"/>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="elevatezoom-gallery"
-                                               data-image="https://yasshop.ir/wp-content/uploads/2204246-1660-2.jpg"
-                                               data-zoom-image="https://yasshop.ir/wp-content/uploads/2204246-1660-2.jpg"
-                                               class="slide-content"><img
-                                                    src="https://yasshop.ir/wp-content/uploads/2204246-1660-2.jpg"
-                                                    height="68"/></a>
-                                        </li>
-                                    </ul>
+
                                 </div>
                             </div>
                             <ul class="gallery-options">
@@ -241,19 +210,7 @@
                                         @livewire('user.comment.add-comment' , ['type'=>'product' , 'item'=>$product ])
                                     </div>
                             </div>
-                            @if($question)
-                            <div class="card my-2 ">
-                                <div class="card-header">
-                                    <h3>نظرسنجی</h3>
-                                </div>
-                                <div class="card-body">
-                                    @livewire('user.poll.show-poll' , ['type'=>'product' , 'item'=>$product ,'question'=>$question])
-                                </div>
-                                <div class="card-footer">
 
-                                </div>
-                            </div>
-                            @endif
                         </div>
                     </div>
                 </div>
