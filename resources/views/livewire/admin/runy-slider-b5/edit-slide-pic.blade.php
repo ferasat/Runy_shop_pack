@@ -26,7 +26,7 @@
         @endif
         <div class="d-block w-100">
             <input type="file" class="form-control" wire:model.live.blur="previewPic" name="previewPic">
-            @error('previewPic') <span class="error">{{ $message }}</span> @enderror
+            @error('previewPic') <span class="text-danger">{{ $message }}</span> @enderror
             {{ $previewPic }}
         </div>
     </div>

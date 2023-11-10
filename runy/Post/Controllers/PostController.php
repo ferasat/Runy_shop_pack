@@ -168,8 +168,13 @@ class PostController extends \App\Http\Controllers\Controller
         $breadcrumbs = ["/"=>" خانه " , "/blog" => " وبلاگ  ", "/post/".$post->slug => $post->name ];
         $post->numberView = $post->numberView + 1 ;
         $post->save();
+        $owl_carousel = true;
+        $posts = Post::query()->where([
+            'statusPublish' => 'publish',
+            'typePost' => 'post',
+        ])->orderByDesc('id')->take(8)->get();
 
-        return view('PostView::showPost' , compact('title' , 'description' ,'breadcrumbs' , 'post'));
+        return view('PostView::showPost' , compact('title' , 'description' ,'breadcrumbs' , 'post', 'posts' , 'owl_carousel'));
     }
 
     public function showCat()

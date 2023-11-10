@@ -4,7 +4,7 @@
         <h5 class="h2">مجله فناوری</h5>
     </div>
     <div class="row">
-        <div class=" owl-carousel">
+        <div class="owl-carousel">
 
             @foreach($posts as $post)
                 <div class="box">

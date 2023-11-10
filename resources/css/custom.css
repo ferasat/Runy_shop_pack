@@ -4262,45 +4262,8 @@ hr {
     object-fit: cover;
 }
 
-
-.post-title {
-    font-size: 22px;
-    line-height: 32px;
-}
-
-.post-title a {
-    color: #292931;
-    transition: 0.2s all;
-}
-
-.post-title.title-xl {
-    font-size: 26px;
-    line-height: 30px;
-    margin-top: 15px;
-    margin-bottom: 0px;
-}
-
-.post-title.title-large {
-    font-size: 22px;
-    line-height: 32px;
-    margin-bottom: 10px;
-    margin-top: 0px;
-}
-
-.post-title.title-medium {
-    font-size: 16px;
-    line-height: 22px;
-    font-weight: 600;
-}
-
-.post-title.title-sm {
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 24px;
-}
-
-.title-large {
-    font-size: 22px;
+.img-box img{
+    max-width: 100% !important;
 }
 
 

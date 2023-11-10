@@ -14,7 +14,7 @@
         },
         {
             "name": "wp-content",
-            "mountTo": "wp-content"
+            "mountTo": "public/wp-content"
         }
     ]
 }
