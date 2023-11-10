@@ -33,84 +33,53 @@
             <!-- Modal Core -->
         </div>
         <div class="profile-box-username">{{ fullName(Auth::user()->id) }}</div>
-        <div class="profile-box-tabs">
-            <a href="#" class="profile-box-tab profile-box-tab-access">
-                <i class="now-ui-icons ui-1_lock-circle-open"></i>
+        <div class="d-flex justify-content-between">
+            <a href="#" class="btn btn-warning p-2"  style="font-size: 18px !important;">
                 تغییر رمز
             </a>
-            <form action="{{ asset(route('logout')) }}" method="post" class="d-inline">
+            <form action="{{ asset(route('logout')) }}" method="post" >
                 @csrf
-                <button type="submit" class="profile-box-tab profile-box-tab--sign-out">
-                    <i class="now-ui-icons media-1_button-power"></i>
+                <button type="submit" class="btn btn-danger" style="font-size: 18px !important;">
                     خروج از حساب
                 </button>
             </form>
         </div>
     </div>
-    <div class="responsive-profile-menu show-md">
 
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-runy-primary dropdown-toggle w-100" data-bs-toggle="modal"
-                data-bs-target="#staticBackdrop">
-            دسترسی سریع
-        </button>
-
-        <!-- Modal -->
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-             aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        ...
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Understood</button>
-                    </div>
-                </div>
-            </div>
+    <div class="card">
+        <div class="card-body">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <a href="{{ asset(route('setting.index')) }}">
+                        <i class="fa fa-navicon"></i>
+                        تنظیمات عمومی
+                    </a>
+                </li>
+                <li class="list-group-item">
+                    <a href="{{ asset( route('setting.home')) }}">
+                        <i class="fa fa-navicon"></i>
+                        تنظیمات صفحه اول
+                    </a>
+                </li>
+                <li class="list-group-item">
+                    <a href="{{ asset( route('runy_seo')) }}">
+                        <i class="fa fa-navicon"></i>
+                        تنظیمات سئو
+                    </a>
+                </li>
+                <li class="list-group-item">
+                    <a href="{{ asset( route('sms_setting')) }}">
+                        <i class="fa fa-navicon"></i>
+                        تنظیمات سامانه پیامک
+                    </a>
+                </li>
+                <li class="list-group-item">
+                    <a href="{{ asset( route('customer.setting')) }}">
+                        <i class="fa fa-navicon"></i>
+                        تنظیمات باشگاه مشتریان
+                    </a>
+                </li>
+            </ul>
         </div>
-
-
-    </div>
-    <div class="profile-menu hidden-md">
-        <div class="profile-menu-header">حساب کاربری شما</div>
-        <ul class="profile-menu-items">
-            <li>
-
-                <a href="{{ asset(route('setting.index')) }}">
-                    <i class="fa fa-navicon"></i>
-                    تنظیمات عمومی
-                </a>
-            </li>
-            <li>
-                <a href="{{ asset( route('setting.home')) }}">
-                    <i class="fa fa-navicon"></i>
-                    تنظیمات صفحه اول
-                </a>
-            </li>
-            <li>
-                <a href="{{ asset( route('runy_seo')) }}" >
-                    <i class="fa fa-navicon"></i>
-                    تنظیمات سئو
-                </a>
-            </li>
-            <li>
-                <a href="{{ asset( route('sms_setting')) }}">
-                    <i class="fa fa-navicon"></i>
-                    تنظیمات سامانه پیامک
-                </a>
-            </li>
-            <li>
-                <a href="{{ asset( route('customer.setting')) }}">
-                    <i class="fa fa-navicon"></i>
-                    تنظیمات باشگاه مشتریان
-                </a>
-            </li>
-        </ul>
     </div>
 </div>

@@ -11,6 +11,10 @@
         {
             "name": "uploads",
             "mountTo": "public/uploads"
+        },
+        {
+            "name": "wp-content",
+            "mountTo": "wp-content"
         }
     ]
 }
