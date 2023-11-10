@@ -1,3 +1,5 @@
+<link rel="icon" type="image/png" sizes="60x60" href="{{ asset('theme/img/icon.png') }}">
+
 {{-- ckeditor --}}
 @if(isset($editor))
     <script src="//cdn.ckeditor.com/4.22.1/full/ckeditor.js"></script>

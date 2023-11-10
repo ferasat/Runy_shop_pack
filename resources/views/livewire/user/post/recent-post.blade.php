@@ -9,10 +9,12 @@
             @foreach($posts as $post)
                 <div class="box">
                     <div class="img-box">
+                        <a href="{{ asset('post/'.$post->slug) }}" title="{{ $post->name }}">
                         <img src="{{ asset($post->pic) }}" alt="{{ $post->name }}">
+                        </a>
                     </div>
                     <div class="detail-box">
-                        <a href="{{ asset($post->slug) }}" title="{{ $post->name }}">
+                        <a href="{{ asset('post/'.$post->slug) }}" title="{{ $post->name }}">
                             {{ $post->name }}
                         </a>
                         <div class="expert_position h6"> <span>{{ verta($post->updated_at)->format('%d %B %Y') }}</span> </div>
@@ -28,7 +30,7 @@
     </div>
     <div class="row btn-box ">
         <div class="col-12 text-center">
-            <a class="btn btn-outline-primary w-25" href="#">
+            <a class="btn btn-outline-primary w-25" href="{{ asset('/blog') }}">
                 مطالب بیشتر در مجله فناوری
             </a>
         </div>

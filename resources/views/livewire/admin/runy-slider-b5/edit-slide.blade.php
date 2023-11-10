@@ -1,4 +1,4 @@
-<div class="row ">
+<div class="row justify-content-center">
     <div class="col-xl-8 mb-5">
         <section class="scroll-section" id="editSlide">
 
@@ -38,12 +38,5 @@
                 </div>
             </div>
         </section>
-    </div>
-    <div class="col-xl-4 mb-5">
-        <div class="product-menu card border-color-runy-secend">
-            <div class="card-header bg-runy-secend">دسترسی محصولات</div>
-
-        </div>
-
     </div>
 </div>
