@@ -15,14 +15,13 @@ class PageController extends Controller
     public function index()
     {
         //dd('44');
-        $html_tag_data = ["override"=>'{ "attributes" : { "placement" : "horizontal", "layout":"boxed" }, "storagePrefix" : "starter-project", "showSettings" : false }'];
         $title = 'برگه ها';
         $description= 'مدیریت برگه ها';
         $breadcrumbs = ["/dashboard"=>" پیشخوان " , "/dashboard/post" => " برگه ها " ];
 
         $type = 'page';
 
-        return view('PostView::indexPosts' , compact('html_tag_data' , 'title' , 'description' , 'breadcrumbs' , 'type'));
+        return view('PostView::indexPosts' , compact('title' , 'description' , 'breadcrumbs' , 'type'));
     }
 
     public function create()
@@ -98,14 +97,18 @@ class PageController extends Controller
 
     public function show(Post $post)
     {
-        $html_tag_data = ["override"=>'{ "attributes" : { "placement" : "horizontal", "layout":"boxed" }, "storagePrefix" : "starter-project", "showSettings" : false }'];
         $title = $post->name ;
         $description= $post->titleSeo .' | '. $post->focusKeyword;
-        $breadcrumbs = ["/"=>" خانه " , "/blog" => " وبلاگ  ", "/post/".$post->slug => $post->name ];
+        $breadcrumbs = ["/"=>" خانه " , "/blog" => " وبلاگ  ", "/page/".$post->slug => $post->name ];
+        $post->numberView = $post->numberView + 1 ;
+        $post->save();
+        $owl_carousel = true;
+        $posts = Post::query()->where([
+            'statusPublish' => 'publish',
+            'typePost' => 'post',
+        ])->orderByDesc('id')->take(8)->get();
 
-
-
-        return view('PostView::showPost' , compact('html_tag_data' , 'title' , 'description' ,
+        return view('PostView::showPost' , compact('title' , 'description' ,
             'breadcrumbs' , 'post'));
     }
 
@@ -116,14 +119,13 @@ class PageController extends Controller
 
     public function blog()
     {
-        $html_tag_data = ["override"=>'{ "attributes" : { "placement" : "horizontal", "layout":"boxed" }, "storagePrefix" : "starter-project", "showSettings" : false }'];
         $title = 'مجله' ;
-        $description= 'مجله آموزشی هیدروجم ';
+        $description= 'مجله آموزشی  ';
         $breadcrumbs = ["/"=>" خانه " , "/blog" => " وبلاگ  " ];
 
 
 
-        return view('PostView::blogPost' , compact('html_tag_data' , 'title' , 'description' ,
+        return view('PostView::blogPost' , compact('title' , 'description' ,
             'breadcrumbs' ));
     }
 
