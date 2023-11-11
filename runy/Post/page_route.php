@@ -16,4 +16,4 @@ Route::prefix('/dashboard')->group( function (){
 
 });
 
-Route::get('/page/{post:slug}', [PageController::class , 'clone'])->name('page.clone');
+Route::get('/page/{post:slug}', [PageController::class , 'show']);

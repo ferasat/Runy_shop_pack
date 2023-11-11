@@ -16,7 +16,7 @@
                 <div class="col-lg-1 col-md-1 col-sm-2 col-3">
                     <div class="logo-area default">
                         <a href="{{ asset('/') }}">
-                            <img src="{{ setting_site()->site_logo }}" alt="{{ setting_site()->site_name }}">
+                            <img src="{{ asset(setting_site()->site_logo) }}" alt="{{ setting_site()->site_name }}">
                         </a>
                     </div>
                 </div>
@@ -28,32 +28,56 @@
 
 
                             <button type="submit">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                     class="bi bi-search" viewBox="0 0 16 16">
+                                    <path
+                                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
                                 </svg>
                             </button>
                         </form>
                     </div>
                 </div>
+                <div class="col-md-5 d-flex flex-row-reverse align-items-center">
 
+
+                        <a class="m-2" href="#"> {{$totalQuantity}}
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                 class="bi bi-cart3" viewBox="0 0 16 16">
+                                <path
+                                    d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                            </svg>
+                        </a>
+
+
+                        <a class="border border-2 p-2 rounded m-2" href="#">
+                            <svg class="icon-svg-panel-sm" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" transform="matrix(-1, 0, 0, 1, 0, 0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M2.00098 11.999L16.001 11.999M16.001 11.999L12.501 8.99902M16.001 11.999L12.501 14.999" stroke="#707070" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path opacity="0.5" d="M9.00195 7C9.01406 4.82497 9.11051 3.64706 9.87889 2.87868C10.7576 2 12.1718 2 15.0002 2L16.0002 2C18.8286 2 20.2429 2 21.1215 2.87868C22.0002 3.75736 22.0002 5.17157 22.0002 8L22.0002 16C22.0002 18.8284 22.0002 20.2426 21.1215 21.1213C20.2429 22 18.8286 22 16.0002 22H15.0002C12.1718 22 10.7576 22 9.87889 21.1213C9.11051 20.3529 9.01406 19.175 9.00195 17" stroke="#707070" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
+                            ورود | ثبت نام
+                        </a>
+
+
+                </div>
             </div>
         </div>
-        <nav class="main-menu">
+        <nav class="main-menu ">
             <div class="container">
-                <ul class="list float-right">
+                <ul class="list d-flex justify-content-center   ">
                     <li class="list-item list-item-has-children mega-menu mega-menu-col-5">
-                        <a class="nav-link" >دسته بندی کالا</a>
+                        <a class="nav-link text-black">
+                            <svg class="icon-svg-panel-sm" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M20 7L4 7" stroke="#343a40" stroke-width="1.5" stroke-linecap="round"></path> <path opacity="0.5" d="M20 12L4 12" stroke="#343a40" stroke-width="1.5" stroke-linecap="round"></path> <path d="M20 17L4 17" stroke="#343a40" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
+                            دسته بندی کالا</a>
                         <ul class="sub-menu nav">
                             <li class="list-item list-item-has-children">
                                 <i class="now-ui-icons arrows-1_minimal-left"></i>
-                                <a class="main-list-item nav-link" href="{{ asset('/shop') }}" >همه محصولات</a>
+                                <a class="main-list-item nav-link" href="{{ asset('/shop') }}">همه محصولات</a>
                             </li>
                             <li class="list-item list-item-has-children">
-                                <i class="now-ui-icons arrows-1_minimal-left"></i><a class="main-list-item nav-link" >تحهیزات اداری و فروشگاهی</a>
+                                <i class="now-ui-icons arrows-1_minimal-left"></i><a class="main-list-item nav-link">تحهیزات
+                                    اداری و فروشگاهی</a>
 
                                 <ul class="sub-menu nav">
                                     <li class="list-item">
-                                        <i class="now-ui-icons arrows-1_minimal-left"></i><a class="main-list-item nav-link" >پرینتر</a>
+                                        <i class="now-ui-icons arrows-1_minimal-left"></i><a
+                                            class="main-list-item nav-link">پرینتر</a>
                                     </li>
                                     <li class="list-item">
                                         <a class="nav-link" href="#">پرینتر لیزری</a>
@@ -90,7 +114,8 @@
                                     </li>
 
                                     <li class="list-item list-item-has-children">
-                                        <i class="now-ui-icons arrows-1_minimal-left"></i><a class="main-list-item nav-link" href="#">جهیزات اداری-پزشکی</a>
+                                        <i class="now-ui-icons arrows-1_minimal-left"></i><a
+                                            class="main-list-item nav-link" href="#">جهیزات اداری-پزشکی</a>
                                         <ul class="sub-menu nav">
                                             <li class="list-item">
                                                 <a class="nav-link" href="#">مچ بند شناسایی بیمار</a>
@@ -103,10 +128,13 @@
                                 </ul>
                             </li>
                             <li class="list-item list-item-has-children">
-                                <i class="now-ui-icons arrows-1_minimal-left"></i><a class="main-list-item nav-link" href="#">تجهیزات فروشگاهی و بانکی</a>
+                                <i class="now-ui-icons arrows-1_minimal-left"></i><a class="main-list-item nav-link"
+                                                                                     href="#">تجهیزات فروشگاهی و
+                                    بانکی</a>
                                 <ul class="sub-menu nav">
                                     <li class="list-item">
-                                        <i class="now-ui-icons arrows-1_minimal-left"></i><a class="main-list-item nav-link" >بارکدخوان</a>
+                                        <i class="now-ui-icons arrows-1_minimal-left"></i><a
+                                            class="main-list-item nav-link">بارکدخوان</a>
 
                                     </li>
                                     <li class="list-item">
@@ -119,13 +147,15 @@
                                         <a class="nav-link" href="#">بارکدخوان همراه</a>
                                     </li>
                                     <li class="list-item">
-                                        <i class="now-ui-icons arrows-1_minimal-left"></i><a class="main-list-item nav-link" >لیبل پرینتر</a>
+                                        <i class="now-ui-icons arrows-1_minimal-left"></i><a
+                                            class="main-list-item nav-link">لیبل پرینتر</a>
                                     </li>
                                     <li class="list-item">
                                         <a class="nav-link" href="#">لوازم جانبی لیبل پرینتر</a>
                                     </li>
                                     <li class="list-item">
-                                        <i class="now-ui-icons arrows-1_minimal-left"></i><a class="main-list-item nav-link" >فیش پرینتر</a>
+                                        <i class="now-ui-icons arrows-1_minimal-left"></i><a
+                                            class="main-list-item nav-link">فیش پرینتر</a>
                                     </li>
                                     <li class="list-item">
                                         <a class="nav-link" href="#">فیش پرینتر</a>
@@ -148,10 +178,12 @@
                                 </ul>
                             </li>
                             <li class="list-item list-item-has-children">
-                                <i class="now-ui-icons arrows-1_minimal-left"></i><a class="nav-link" href="#">مواد مصرفی</a>
+                                <i class="now-ui-icons arrows-1_minimal-left"></i><a class="nav-link" href="#">مواد
+                                    مصرفی</a>
                                 <ul class="sub-menu nav">
                                     <li class="list-item">
-                                        <i class="now-ui-icons arrows-1_minimal-left"></i><a class="main-list-item nav-link" >کارتریج</a>
+                                        <i class="now-ui-icons arrows-1_minimal-left"></i><a
+                                            class="main-list-item nav-link">کارتریج</a>
                                     </li>
                                     <li class="list-item">
                                         <a class="nav-link" href="#">کارتریج لیزری رنگی</a>
@@ -163,7 +195,8 @@
                                         <a class="nav-link" href="#">کارتریج جوهرافشان</a>
                                     </li>
                                     <li class="list-item">
-                                        <i class="now-ui-icons arrows-1_minimal-left"></i><a class="main-list-item nav-link" >ریبون</a>
+                                        <i class="now-ui-icons arrows-1_minimal-left"></i><a
+                                            class="main-list-item nav-link">ریبون</a>
                                     </li>
                                     <li class="list-item">
                                         <a class="nav-link" href="#">ریبون پرینتر سوزنی</a>
@@ -197,11 +230,9 @@
                                     </li>
 
 
-
                                 </ul>
                             </li>
                             <li class="list-item list-item-has-children">
-
 
 
                                 <ul class="sub-menu nav">
@@ -216,7 +247,6 @@
                                     </li>
 
 
-
                                     <li class="list-item">
                                         <a class="nav-link" href="#">مرکب ریسوگراف</a>
                                     </li>
@@ -227,7 +257,8 @@
                                         <a class="nav-link" href="#">کاربن فکس</a>
                                     </li>
                                     <li class="list-item">
-                                        <i class="now-ui-icons arrows-1_minimal-left"></i><a class="main-list-item nav-link" >قطعات</a>
+                                        <i class="now-ui-icons arrows-1_minimal-left"></i><a
+                                            class="main-list-item nav-link">قطعات</a>
                                     </li>
 
                                     <li class="list-item">
@@ -244,7 +275,7 @@
                                         <a class="nav-link" href="#"> مگنت </a>
                                     </li>
                                     <li class="list-item">
-                                        <a class="nav-link" href="#">فرم رولر  </a>
+                                        <a class="nav-link" href="#">فرم رولر </a>
                                     </li>
                                     <li class="list-item">
                                         <a class="nav-link" href="#"> فیوزینگ</a>
@@ -258,8 +289,6 @@
                                     <li class="list-item">
                                         <a class="nav-link" href="#"> برد پاور</a>
                                     </li>
-
-
 
 
                                 </ul>
@@ -277,7 +306,7 @@
                                         <a class="nav-link" href="#"> هات رول</a>
                                     </li>
                                     <li class="list-item">
-                                        <a class="nav-link" href="#">  کاغذ کش</a>
+                                        <a class="nav-link" href="#"> کاغذ کش</a>
                                     </li>
 
 
@@ -285,7 +314,7 @@
                                         <a class="nav-link" href="#"> سپریشن پد </a>
                                     </li>
                                     <li class="list-item">
-                                        <a class="nav-link" href="#">  سینی خروجی</a>
+                                        <a class="nav-link" href="#"> سینی خروجی</a>
                                     </li>
                                     <li class="list-item">
                                         <a class="nav-link" href="#"> سینی ورودی</a>
@@ -328,7 +357,7 @@
                         </ul>
                     </li>
                     <li class="list-item list-item-has-children mega-menu mega-menu-col-5">
-                        <a class="nav-link" >کالای استوک</a>
+                        <a class="nav-link">کالای استوک</a>
                         <ul class="sub-menu nav">
                             <li class="list-item list-item-has-children">
                                 <ul class="sub-menu nav">
@@ -342,13 +371,13 @@
                                         <a class="nav-link" href="#">لیبل پرینتر استوک</a>
                                     </li>
                                     <li class="list-item">
-                                        <a class="nav-link" href="#">بارکدخوان استوک  </a>
+                                        <a class="nav-link" href="#">بارکدخوان استوک </a>
                                     </li>
                                     <li class="list-item">
                                         <a class="nav-link" href="#">فیش پرینتر کارکرده </a>
                                     </li>
                                     <li class="list-item">
-                                        <a class="nav-link" href="#">موبایل پرینتر استوک  </a>
+                                        <a class="nav-link" href="#">موبایل پرینتر استوک </a>
                                     </li>
 
                                 </ul>
@@ -361,49 +390,52 @@
                         <a class="nav-link" href="">خدمات</a>
                         <ul class="sub-menu nav">
                             <li class="list-item list-item-has-children">
-                                <i class="now-ui-icons arrows-1_minimal-left"></i><a class="main-list-item nav-link" >تعمیر تجهیزات فروشگاهی</a>
+                                <i class="now-ui-icons arrows-1_minimal-left"></i><a class="main-list-item nav-link">تعمیر
+                                    تجهیزات فروشگاهی</a>
                                 <ul class="sub-menu nav">
                                     <li class="list-item">
-                                        <a class="nav-link" >تعمیر دستگاه فیش زن</a>
+                                        <a class="nav-link">تعمیر دستگاه فیش زن</a>
                                     </li>
                                     <li class="list-item">
-                                        <a class="nav-link" >تعمیر دستگاه لیبل زن</a>
+                                        <a class="nav-link">تعمیر دستگاه لیبل زن</a>
                                     </li>
                                     <li class="list-item">
-                                        <a class="nav-link" >تعمیر دستگاه بارکد خوان</a>
+                                        <a class="nav-link">تعمیر دستگاه بارکد خوان</a>
                                     </li>
 
 
                                 </ul>
                             </li>
                             <li class="list-item list-item-has-children">
-                                <i class="now-ui-icons arrows-1_minimal-left"></i><a class="main-list-item nav-link" >تعمیر پرینتر و تعمیر دستگاه کپی</a>
+                                <i class="now-ui-icons arrows-1_minimal-left"></i><a class="main-list-item nav-link">تعمیر
+                                    پرینتر و تعمیر دستگاه کپی</a>
                                 <ul class="sub-menu nav">
                                     <li class="list-item">
-                                        <a class="nav-link" >تعمیر دستگاه کپی</a>
+                                        <a class="nav-link">تعمیر دستگاه کپی</a>
                                     </li>
                                     <li class="list-item">
-                                        <a class="nav-link" >تعمیر پرینترهای کانن</a>
+                                        <a class="nav-link">تعمیر پرینترهای کانن</a>
                                     </li>
                                     <li class="list-item">
-                                        <a class="nav-link" >تعمیر پرینترهای اپسون</a>
+                                        <a class="nav-link">تعمیر پرینترهای اپسون</a>
                                     </li>
                                 </ul>
                             </li>
                             <li class="list-item list-item-has-children ">
-                                <i class="now-ui-icons arrows-1_minimal-left"></i><a class="nav-link" >شارژ کارتریج و دستگاه کپی</a>
+                                <i class="now-ui-icons arrows-1_minimal-left"></i><a class="nav-link">شارژ کارتریج و
+                                    دستگاه کپی</a>
                                 <ul class="sub-menu nav">
                                     <li class="list-item">
-                                        <a class="nav-link" >شارژ کارتریج HP</a>
+                                        <a class="nav-link">شارژ کارتریج HP</a>
                                     </li>
                                     <li class="list-item">
-                                        <a class="nav-link" >شارژ کارتریج Canon</a>
+                                        <a class="nav-link">شارژ کارتریج Canon</a>
                                     </li>
                                     <li class="list-item">
-                                        <a class="nav-link" >شارژ کارتریج سامسونگ</a>
+                                        <a class="nav-link">شارژ کارتریج سامسونگ</a>
                                     </li>
                                     <li class="list-item">
-                                        <a class="nav-link" >شارژ کارتریج در محل</a>
+                                        <a class="nav-link">شارژ کارتریج در محل</a>
                                     </li>
 
                                 </ul>
@@ -416,10 +448,13 @@
                         <a class="nav-link" href="#">نمایندگی برادر</a>
                     </li>
                     <li class="list-item">
-                        <a class="nav-link" href="http://localhost:63342/mortazavi-bootstrap/drivers.html?_ijt=ucfrq60mf07i33i51jis2ngb4d&_ij_reload=RELOAD_ON_SAVE"> درایور و نرم افزار </a>
+                        <a class="nav-link"
+                           href="http://localhost:63342/mortazavi-bootstrap/drivers.html?_ijt=ucfrq60mf07i33i51jis2ngb4d&_ij_reload=RELOAD_ON_SAVE">
+                            درایور و نرم افزار </a>
                     </li>
                     <li class="list-item">
-                        <a class="nav-link" href="http://localhost:63342/mortazavi-bootstrap/articles.html?_ijt=ucfrq60mf07i33i51jis2ngb4d&_ij_reload=RELOAD_ON_SAVE">آموزش</a>
+                        <a class="nav-link"
+                           href="http://localhost:63342/mortazavi-bootstrap/articles.html?_ijt=ucfrq60mf07i33i51jis2ngb4d&_ij_reload=RELOAD_ON_SAVE">آموزش</a>
                     </li>
                     <li class="list-item">
                         <a class="nav-link" href="#">سامانه تعمیرات</a>
@@ -427,127 +462,7 @@
                     <li class="list-item">
                         <a class="nav-link" href="#">مقالات</a>
                     </li>
-                    <li class="list-item amazing-item" data-bs-toggle="modal" data-bs-target="#cartModal1">
 
-{{--                        @livewire('user.cart.cart-modal')--}}
-                        <div class="modal fade" id="cartModal1" tabindex="-1" aria-labelledby="cartModal1Label" aria-hidden="true">
-                            <div class="modal-dialog modal-xl">
-                                <div class="modal-content ">
-                                    <div class="modal-header">
-                                        <div class="modal-title h5" id="cartModal1Label">
-                                            سبد خرید شما{{$totalQuantity}}
-                                        </div>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <table class="table table-image">
-                                            <thead>
-                                            <tr>
-                                                <th scope="col"></th>
-                                                <th scope="col">محصول</th>
-                                                <th scope="col">قیمت</th>
-                                                <th scope="col">تعداد</th>
-                                                <th scope="col">قیمت کل</th>
-                                                <th scope="col">عمل</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-
-                                            @php $total = 0 @endphp
-                                            @if(session('cart'))
-
-                                                @foreach(session('cart') as  $productInfo=> $details )
-                                                    @php $total += $details['price'] * $details['quantity'] @endphp
-                                                    <tr>
-                                                <td class="w-25">
-                                                    @if(isset($details['pic']))
-                                                        <img src="{{ asset($details['pic']) }}"
-                                                             class="img-fluid img-thumbnail" alt="محصول"/>
-                                                    @endif
-                                                </td>
-                                                <td>{{$details['name']}}</td>
-                                                <td>{{$details['price']}}</td>
-                                                <td class="qty"><label for="input1"></label><input type="text" class="form-control" id="input1" value="{{ $details['quantity'] }}"></td>
-                                                <td>{{ $details['price'] * $details['quantity'] }}</td>
-                                                <td>
-                                                    <a href="#" class=" btn-sm">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-                                                            <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
-                                                        </svg>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                                @endforeach
-                                            </tbody>
-                                            @endif
-                                        </table>
-                                        <div class="d-flex justify-content-end">
-                                            <h6>Total: <span class="price text-success">{{$total}}</span></h6>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer border-top-0 d-flex justify-content-between">
-                                        <button type="button" class="btn btn-primary" data-dismiss="modal">بررسی</button>
-                                        <button type="button" class="btn btn-forth">خروج</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <a class="nav-link" href="#"> سبد خرید{{$totalQuantity}}
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
-                                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-                            </svg>
-                        </a>
-
-                    </li>
-                    <li class="list-item amazing-item"  data-bs-toggle="modal" data-bs-target="#loginModal">
-
-                        <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-body">
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        <div class="bg-white">
-                                            <div class="logo-nav-res default text-center">
-                                                <a href="">
-                                                    <img src="{{ setting_site()->site_logo }}" height="36px" alt="">
-                                                </a>
-                                            </div>
-                                            <h3 class="text-center">ورود / ثبت نام </h3>
-                                            <p class="text-center">سلام! به فروشگاه مرتضوی خوش آمدید...</p>
-                                            <form method="post" action="{{ asset('/login') }}">
-                                                <div class="mb-3 mt-4">
-                                                    <label for="exampleInputEmail1" class="form-label">ایمیل خود را وارد کنید</label>
-                                                    <input type="email" class="form-control" id="exampleInputEmail1" >
-                                                </div>
-
-                                                <button type="submit" class="btn btn-primary align-items-center mt-3" style="width: 100%">ورود و ثبت نام با رمز یکبار مصرف</button>
-                                                <button type="submit" class="btn btn-forth align-items-center mt-3" style="width: 100%">ورود و ثبت نام با پیامک</button>
-
-                                                <div class="form-check mt-3">
-                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                                    <label class="form-check-label" for="flexCheckDefault">
-                                                        <a href="#">شرایط و قوانین</a>  استفاده از سرویس های سایت فروشگاه مرتضوی را می پذیرم .
-                                                    </label>
-                                                </div>
-
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <a class="nav-link" href="#">ورود | ثبت نام
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-left" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M10 3.5a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 1 1 0v2A1.5 1.5 0 0 1 9.5 14h-8A1.5 1.5 0 0 1 0 12.5v-9A1.5 1.5 0 0 1 1.5 2h8A1.5 1.5 0 0 1 11 3.5v2a.5.5 0 0 1-1 0v-2z"/>
-                                <path fill-rule="evenodd" d="M4.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H14.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
-                            </svg>
-
-
-                        </a>
-
-                    </li>
                 </ul>
             </div>
         </nav>

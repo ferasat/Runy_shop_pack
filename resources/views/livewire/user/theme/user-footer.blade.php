@@ -96,6 +96,14 @@
                     </svg>
                 </i></a>
         </div>
+
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="d-flex justify-content-end text-black">
+                <span>قدرت گرفته از <strong><a href="https://tarahsite.net/">RunY! Shop</a></strong></span>
+            </div>
+        </div>
     </div>
 </footer>
 <!-- =======End Footer ======= -->

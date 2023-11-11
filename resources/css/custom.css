@@ -11,8 +11,8 @@ h3 {
 }
 
 /*------ Panel Style ----*/
-.icon-svg-panel {
-    width: 40px !important;
+.icon-svg-home {
+    width: 80px !important;
 }
 .icon-svg-panel-sm {
     width: 20px !important;
@@ -78,7 +78,7 @@ h3 {
 
 /*----- Start style ------*/
 .bg-color-base {
-    background: #ce1212 !important;
+    background: #fc454a !important;
 }
 
 /*----- End style ------*/
@@ -175,9 +175,9 @@ header.main-header .search-area form.search button {
     left: 0;
     top: 0;
     bottom: 0;
-    border: none;
+    border: 1px solid #b6b3b3;
     border-radius: 7px 0 0 7px;
-    background-color: #ce1212;
+    background-color: #eceff1;
     cursor: pointer;
     outline: none;
 }
@@ -269,7 +269,6 @@ header.main-header .cart .dropdown-menu .basket-item:last-of-type {
 header.main-header .main-menu {
     width: 100%;
     float: right;
-    background: #ce1212;
 }
 
 header.main-header .main-menu .list {
@@ -298,13 +297,14 @@ header.main-header .main-menu .list > .list-item {
 
 header.main-header .main-menu .list > .list-item > a,
 header.main-header .main-menu .list > .list-item > span {
-    color: #fff;
+    color: #343a40;
     padding: 10px;
     border-top: 2px solid transparent;
     border-bottom: 2px solid transparent;
     position: relative;
     top: 2px;
-    font-size: 12px;
+    font-size: 14px;
+    font-weight: 800;
 }
 
 header.main-header .main-menu .list > .list-item > a::before {
@@ -3304,18 +3304,6 @@ main.main section.banner img {
     background: #ce1212 !important;
 }
 
-
-.bg-color-base {
-    background: #ce1212 !important;
-}
-
-.d-flex {
-    display: -webkit-box !important;
-    display: -ms-flexbox !important;
-    display: flex !important;
-}
-
-
 .appointment-btn {
     margin-left: 25px;
     color: #fff;
@@ -3369,14 +3357,14 @@ main.main section.banner img {
 .breadcrumbs ol li + li::before {
     display: inline-block;
     padding-right: 10px;
-    color: #ce1212;
+    color: #fc454a;
     content: "/";
 }
 
 
 .why-us .why-box {
     padding: 30px;
-    background: #ce1212;
+    background: #fc454a;
     color: #fff;
     border-radius: 40px;
 }
@@ -3810,18 +3798,6 @@ select {
     color: #ce1212;
 }
 
-.section-header {
-    text-align: center;
-    padding: 30px 0;
-    position: relative;
-}
-
-
-.section-header {
-    text-align: center;
-    padding: 30px 0;
-    position: relative;
-}
 
 .section-header h2 {
     font-size: 32px;
@@ -4558,158 +4534,6 @@ hr {
     margin-top: 45px;
 }
 
-
-.job_section {
-    background-color: #262872;
-    color: #ffffff;
-}
-
-.job_section .heading_container {
-    margin-bottom: 15px;
-}
-
-.job_section .job_container {
-    margin-top: 45px;
-}
-
-.job_section .job_heading {
-    margin-bottom: 0;
-    text-transform: uppercase;
-}
-
-.job_section .box {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -moz-box-orient: vertical;
-    -moz-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    padding: 20px;
-    border: 1px solid #a4a4a4;
-    margin-top: 25px;
-    -webkit-transition: all .3s;
-    -o-transition: all .3s;
-    -moz-transition: all .3s;
-    transition: all .3s;
-    border-radius: 5px;
-}
-
-.job_section .box .job_content-box {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -moz-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-}
-
-.job_section .box .img-box {
-    width: 100px;
-    height: 100px;
-
-    display: flex;
-
-    padding: 10px;
-    margin-right: 10px;
-
-}
-
-.job_section .box .img-box img {
-    width: 100%;
-}
-
-.job_section .box .detail-box h5 {
-    font-weight: 600;
-}
-
-.job_section .box .detail-box .detail-info {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
-}
-
-.job_section .box .detail-box .detail-info {
-    margin: 0;
-    margin-right: 15px;
-}
-
-.job_section .box .option-box {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
-    margin-left: auto;
-}
-
-.job_section .box .option-box .fav-btn {
-    margin-right: 25px;
-    border: none;
-    background: none;
-    outline: none;
-    font-size: 20px;
-    color: inherit;
-}
-
-.job_section .box .option-box .apply-btn {
-    display: inline-block;
-    padding: 5px 15px;
-    background-color: #ce1212;
-    color: #ffffff;
-    border-radius: 5px;
-    -webkit-transition: all .3s;
-    -o-transition: all .3s;
-    -moz-transition: all .3s;
-    transition: all .3s;
-    border: 1px solid #ce1212;
-    outline: none;
-}
-
-.job_section .box .option-box .apply-btn:hover {
-    background-color: white;
-    color: #ce1212;
-}
-
-.job_section .box .option-box .apply-btn:hover {
-    color: #ffffff;
-}
-
-.job_section .btn-box {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -moz-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    margin-top: 45px;
-}
-
-.job_section .btn-box a {
-    display: inline-block;
-    padding: 10px 45px;
-    background-color: #ce1212;
-    color: #ffffff;
-    border-radius: 5px;
-    -webkit-transition: all .3s;
-    -o-transition: all .3s;
-    -moz-transition: all .3s;
-    transition: all .3s;
-    border: 1px solid #ce1212;
-    outline: none;
-}
-
-.job_section .btn-box a:hover {
-    background-color: transparent;
-    color: #ce1212;
-}
 
 main.single-product .breadcrumb {
     font-size: 10px;

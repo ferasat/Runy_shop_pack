@@ -109,7 +109,7 @@ class PageController extends Controller
         ])->orderByDesc('id')->take(8)->get();
 
         return view('PostView::showPost' , compact('title' , 'description' ,
-            'breadcrumbs' , 'post'));
+            'breadcrumbs' , 'post' , 'posts'));
     }
 
     public function showCat()
