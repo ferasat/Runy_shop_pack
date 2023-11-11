@@ -15,12 +15,12 @@ class AddCustomer extends Component
 
     public function mount()
     {
-        $this->users =User::query()->where('levelUser', 'شرکت')->orWhere('levelUser', 'مشتری')->get();
+
     }
 
     public function render()
     {
-        //dd($this->users);
+        $this->users = User::query()->where('levelPermission' , '<' , 3)->get();
         return view('livewire.admin.customer.add-customer');
     }
 

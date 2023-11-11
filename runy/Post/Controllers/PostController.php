@@ -184,14 +184,12 @@ class PostController extends \App\Http\Controllers\Controller
 
     public function blog()
     {
-        $html_tag_data = ["override"=>'{ "attributes" : { "placement" : "horizontal", "layout":"boxed" }, "storagePrefix" : "starter-project", "showSettings" : false }'];
         $title = 'مجله' ;
-        $description= 'مجله آموزشی هیدروجم ';
+        $description= 'مجله آموزشی  ';
         $breadcrumbs = ["/"=>" خانه " , "/blog" => " وبلاگ  " ];
 
 
 
-        return view('PostView::blogPost' , compact('html_tag_data' , 'title' , 'description' ,
-            'breadcrumbs' ));
+        return view('PostView::blogPost' , compact( 'title' , 'description' ,'breadcrumbs' ));
     }
 }

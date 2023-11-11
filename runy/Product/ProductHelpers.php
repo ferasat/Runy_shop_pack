@@ -36,7 +36,10 @@ function catSlug($data)
 
 function recentProducts($num)
 {
-    $products = DB::table('products')->where('statusPublish', 'publish')->take($num)->orderBy('id', 'desc')->get();
+    $products = DB::table('products')->where([
+        'statusPublish' => 'publish',
+        'formatProduct' => 'normal',
+    ])->take($num)->orderBy('id', 'desc')->get();
 
     return $products;
 }

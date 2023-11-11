@@ -25,7 +25,7 @@
                             <option value="">عضو نیست و حسابی ندارد</option>
                             <option value="create">براش حساب بساز</option>
                             @foreach($users as $user)
-                                <option value="{{ $user->id }}">{{ $user->id }}</option>
+                                <option value="{{ $user->id }}">{{ $user->id .' - '.$user->name.' '.$user->family }}</option>
                             @endforeach
                         </select>
 

@@ -22,4 +22,8 @@
             </div>
         </div>
     </section>
+
+    <div class="container">
+        @livewire('user.post.blog.blog')
+    </div>
 @endsection

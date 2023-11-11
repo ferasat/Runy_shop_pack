@@ -49,7 +49,7 @@
                     </div>
                     <div class="col-9 col-sm-9">
                         <div class="d-flex flex-column">
-                            <h4 title="{{$repost->name}}"><a class="heading mb-0 pe-2" href="{{asset('post/'.$repost->slug)}}">{{$repost->name}}</a></h4>
+                            <h4 title="{{$repost->name}}"><a class="heading mb-0 pe-2" href="{{asset('product/'.$repost->slug)}}">{{$repost->name}}</a></h4>
                         </div>
                     </div>
                 </div>
