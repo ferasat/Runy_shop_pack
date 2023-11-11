@@ -52,6 +52,7 @@ Route::post('/upload-image', function(Request $request) {
     return response()->json($response);
 });
 
+
 //// ---------------
 
 Route::group(['prefix' => '/Artisan'], function () {
@@ -92,3 +93,4 @@ Route::group(['prefix' => '/Artisan'], function () {
     });
 
 });
+
