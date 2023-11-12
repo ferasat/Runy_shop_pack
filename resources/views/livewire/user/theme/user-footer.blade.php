@@ -3,7 +3,7 @@
 
     <div class="container-fluid footer-top">
         <div class="container">
-            <div class="row">
+            <div class="row text-center">
 
                 <div class="col-lg-3 col-md-6 footer-links">
                     <h4>آدرس</h4>
@@ -33,25 +33,8 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6 footer-newsletter">
-                    <h4>تازه ها</h4>
-                    <div class=" mb-4 ">
-                        <div class="block-21 mb-4 d-flex">
-                            <a class="img mb-4 rounded" style="background-image: url(theme/img/200x200_1.jpg);"></a>
-                            <div class="text">
-                                <h3 class="heading m-3">
-                            <span class="text-danger">عکس های ارسالی
-                        </span>
-                                </h3>
-                            </div>
-                        </div>
-                        <div class="block-21 mb-4 d-flex">
-                            <a class="img mr-4 rounded" style="background-image: url(theme/img/200x200_1.jpg);"></a>
-                            <div class="text">
-                                <h3 class="heading m-3 text-danger"><span >رضایت مشتری</span></h3>
+                    <h4>مجوز ها</h4>
 
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
 

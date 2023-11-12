@@ -26,7 +26,7 @@
                         <div class="card mb-3">
                             <img src="{{asset($post->pic)}}" class="card-img-top" alt="{{$post->name}}">
                             <div class="card-header">
-                                <h1 class="entry-title h1" title="{{$post->name}}">
+                                <h1 class="entry-title h3" title="{{$post->name}}">
                                     {{$post->name}}
                                 </h1>
                             </div>

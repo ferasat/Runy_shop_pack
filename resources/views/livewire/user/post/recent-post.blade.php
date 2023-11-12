@@ -7,21 +7,17 @@
         <div class="owl-carousel">
 
             @foreach($posts as $post)
-                <div class="box">
-                    <div class="img-box">
+                <div class="card">
+                    <div class="card-img">
                         <a href="{{ asset('post/'.$post->slug) }}" title="{{ $post->name }}">
                         <img src="{{ asset($post->pic) }}" alt="{{ $post->name }}">
                         </a>
                     </div>
-                    <div class="detail-box">
+                    <div class="card-body">
                         <a href="{{ asset('post/'.$post->slug) }}" title="{{ $post->name }}">
                             {{ $post->name }}
                         </a>
                         <div class="expert_position h6"> <span>{{ verta($post->updated_at)->format('%d %B %Y') }}</span> </div>
-
-                        <p>
-                            {{ text_summary($post->texts) }}
-                        </p>
                     </div>
                 </div>
             @endforeach

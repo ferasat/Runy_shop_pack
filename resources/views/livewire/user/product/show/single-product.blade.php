@@ -16,7 +16,7 @@
 
                                 </div>
                             </div>
-                            <ul class="gallery-options">
+<!--                            <ul class="gallery-options">
                                 <li>
                                     <button class="add-favorites"><i class="fa fa-heart"></i></button>
                                     <span class="tooltip-option">افزودن به علاقمندی</span>
@@ -26,7 +26,7 @@
                                             class="fa fa-share-alt"></i></button>
                                     <span class="tooltip-option">اشتراک گذاری</span>
                                 </li>
-                            </ul>
+                            </ul>-->
                             <!-- Modal Core -->
                             <div class="modal-share modal fade" id="shareModal" tabindex="-1" aria-labelledby="shareModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">

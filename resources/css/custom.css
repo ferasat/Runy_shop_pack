@@ -81,6 +81,23 @@ h3 {
     background: #fc454a !important;
 }
 
+.bg-color-secend{
+    background-color: #6ec1e4 !important;
+}
+
+
+.parallax-service-box {
+    /* The image used */
+    background-image: url("https://runy-disk-mortazavi.storage.iran.liara.space/shop/brother-laser-printer.webp");
+    /* Full height */
+    height: 100%;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 /*----- End style ------*/
 /*----- style5------*/
 
@@ -3152,29 +3169,6 @@ main.main section.banner img {
     position: relative;
 }
 
-#footer {
-    color: white;
-    font-size: 14px;
-}
-
-#footer .footer-top {
-    padding: 60px 0 30px 0;
-    background: #262872;
-    box-shadow: 0px 2px 15px #191a4f;
-}
-
-#footer .footer-top .footer-links {
-    margin-bottom: 30px;
-}
-
-#footer .footer-top h4 {
-    font-size: 16px;
-    font-weight: bold;
-    color: #ce1212;
-    position: relative;
-    padding-bottom: 12px;
-}
-
 .block-21 .img {
     display: block;
     height: 80px;
@@ -3464,7 +3458,6 @@ main.main section.banner img {
 
 .features .features-item h3 {
     font-weight: 600;
-    font-size: 26px;
     color: #ce1212;
 }
 
@@ -3629,15 +3622,14 @@ textarea.form-control {
 
 
 #footer {
-    color: white;
     font-size: 14px;
-    background: white;
+    background: rgb(224,224,224);
+    background: linear-gradient(90deg, rgba(224,224,224,1) 0%, rgba(182,179,179,1) 35%, rgba(238,238,238,1) 100%);
 }
 
 #footer .footer-top {
     padding: 60px 0 30px 0;
-    background: #262872;
-    box-shadow: 0px 2px 15px #191a4f;
+    box-shadow: 0 2px 15px #afafaf;
 }
 
 #footer .footer-top .footer-contact {
@@ -4462,66 +4454,6 @@ hr {
 }
 
 /*------- mag ---------*/
-.expert_section .box {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -moz-box-orient: vertical;
-    -moz-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    background-color: #262872;
-    border-radius: 10px;
-    overflow: hidden;
-    margin-top: 45px;
-}
-
-.expert_section .box .img-box {
-    width: 100%;
-}
-
-.expert_section .box .img-box img {
-    width: 100%;
-}
-
-.expert_section .box .detail-box {
-    width: 100%;
-    color: #ffffff;
-    padding: 25px 15px;
-}
-
-.expert_section .box .detail-box a {
-    color: inherit;
-    font-size: 18px;
-}
-
-.expert_section .box .detail-box .expert_position {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -moz-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    margin: 10px 0;
-}
-
-.expert_section .box .detail-box .expert_rating {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
-    margin-bottom: 15px;
-}
-
-.expert_section .box .detail-box p {
-    margin-bottom: 0;
-}
-
 .expert_section .btn-box {
     display: -webkit-box;
     display: -moz-box;

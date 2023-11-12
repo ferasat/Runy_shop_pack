@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand " href="#">
-                <img class="w-70px" src="{{ setting_site()->site_logo }}" alt="{{ setting_site()->site_name }}">
+                <img class="w-70px" src="{{ asset(setting_site()->site_logo) }}" alt="{{ setting_site()->site_name }}">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMobailHeader" aria-controls="navbarMobailHeader" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -30,8 +30,8 @@
 
                 </ul>
                 <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                    <input class="form-control me-2" type="search" placeholder="جستجو در محصولات" aria-label="جستجو در محصولات">
+                    <button class="btn btn-outline-success" type="submit">جستجو</button>
                 </form>
             </div>
         </div>
