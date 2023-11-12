@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Post\Models\Post;
 
 Route::get('/', [HomePageController::class , 'index']);
 Route::get('/dashboard/users', [\App\Http\Controllers\UserController::class , 'index']);
@@ -94,3 +95,21 @@ Route::group(['prefix' => '/Artisan'], function () {
 
 });
 
+Route::get('/نمایندگی-برادر-در-اصفهان', function (){
+    $post = Post::find(256);
+
+    $title = $post->name ;
+    $description= $post->titleSeo .' | '. $post->focusKeyword;
+    $breadcrumbs = ["/"=>" خانه " , "/blog" => " وبلاگ  ", "/page/".$post->slug => $post->name ];
+    $post->numberView = $post->numberView + 1 ;
+    $post->save();
+    $owl_carousel = true;
+    $posts = Post::query()->where([
+        'statusPublish' => 'publish',
+        'typePost' => 'post',
+    ])->orderByDesc('id')->take(8)->get();
+
+
+    return view('PostView::showPost' , compact('title' , 'description' ,
+        'breadcrumbs' , 'post' , 'posts'));
+});
