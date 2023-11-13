@@ -5,17 +5,21 @@
     <main class="single-post">
         <div class="container">
             <div class="row">
-                <div class="col-12">
-                    <nav>
-                        <ul class="breadcrumb">
-                            @foreach($breadcrumbs as $index=>$breadcrumb)
-                                <li>
-                                    <a href="{{ asset($index) }}"><span>{{ $breadcrumb }}</span></a>
-                                </li>
-                            @endforeach
 
-                        </ul>
-                    </nav>
+                <div class="col-12 pt-5">
+                    @php $x=1; $y=count($breadcrumbs) @endphp
+                    <ul class="breadcrumb">
+                        @foreach($breadcrumbs as $index=>$breadcrumb)
+                        <li class="breadcrumb__item @if($x == 1) breadcrumb__item-firstChild @elseif($x == $y) breadcrumb__item-lastChild @endif">
+                            <a href="#">
+                            <span class="breadcrumb__inner">
+                            <span class="breadcrumb__title">{{ $breadcrumb }}</span>
+                            </span>
+                            </a>
+                        </li>
+                            @php $x++; @endphp
+                        @endforeach
+                    </ul>
                 </div>
             </div>
 

@@ -1,7 +1,7 @@
 <header class="mobile_header">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand " href="#">
+            <a class="navbar-brand " href="{{ asset('/') }}">
                 <img class="w-70px" src="{{ asset(setting_site()->site_logo) }}" alt="{{ setting_site()->site_name }}">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMobailHeader" aria-controls="navbarMobailHeader" aria-expanded="false" aria-label="Toggle navigation">
