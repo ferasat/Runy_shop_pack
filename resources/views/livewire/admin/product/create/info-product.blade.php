@@ -1,5 +1,8 @@
-<div class="card mb-3">
-    <div class="card-header">اطلاعات محصول</div>
+<div class="card mb-3 border-color-runy-primary">
+    <div class="card-header border-color-runy-primary">
+        <svg class="icon-svg-panel" viewBox="0 0 32 32" id="OBJECT" xmlns="http://www.w3.org/2000/svg" fill="#6c429a"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs><style>.cls-1{fill:#ea9adf;}</style></defs><title></title><path class="cls-1" d="M28,9H4a1,1,0,0,0-1,1V28a3,3,0,0,0,3,3H26a3,3,0,0,0,3-3V10A1,1,0,0,0,28,9Z"></path><path d="M20,14H12a3,3,0,0,0,0,6h8a3,3,0,0,0,0-6Z"></path><path d="M24,28H18a1,1,0,0,1,0-2h6a1,1,0,0,1,0,2Z"></path><path d="M24,25H21a1,1,0,0,1,0-2h3a1,1,0,0,1,0,2Z"></path><path d="M30,1H2A1,1,0,0,0,1,2V8a3,3,0,0,0,3,3H28a3,3,0,0,0,3-3V2A1,1,0,0,0,30,1Z"></path></g></svg>
+        اطلاعات محصول
+    </div>
     <div class="card-body">
         <div class="row">
             <div class="col-3">

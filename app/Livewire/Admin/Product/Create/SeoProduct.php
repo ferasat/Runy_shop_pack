@@ -7,7 +7,7 @@ use Product\Models\Product;
 
 class SeoProduct extends Component
 {
-    public $product , $titleSeo, $focusKeyword, $descriptionSeo ;
+    public $product , $titleSeo, $focusKeyword, $descriptionSeo , $saveStatus=false;
 
     public function mount()
     {
@@ -43,5 +43,19 @@ class SeoProduct extends Component
         $this->product->titleSeo = $this->titleSeo ;
         $this->product->focusKeyword = $this->focusKeyword ;
         $this->product->save();
+    }
+
+    public function save()
+    {
+        if ($this->validate()){
+            $this->saveStatus = true ;
+            $this->product->descriptionSeo = $this->descriptionSeo ;
+            $this->product->titleSeo = $this->titleSeo ;
+            $this->product->focusKeyword = $this->focusKeyword ;
+            $this->product->save();
+        }else{
+
+        }
+
     }
 }

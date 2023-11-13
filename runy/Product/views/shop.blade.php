@@ -4,7 +4,7 @@
 
     @livewire('user.theme.user-navbar-responsive')
 
-    @livewire('user.product.shop' )
+    @livewire('user.product.shop' , compact('breadcrumbs') )
 
     @livewire('user.theme.user-footer')
 

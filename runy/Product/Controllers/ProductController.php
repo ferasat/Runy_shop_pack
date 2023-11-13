@@ -195,9 +195,9 @@ class ProductController extends Controller
         $setting = Setting::query()->first();
         $title = $setting->site_name;
         $description = $setting->site_short_description ;
+        $breadcrumbs = ["/"=>" خانه " , "/shop" => "فروشگاه"];
 
-
-        return view('ProductView::shop', compact(  'title', 'description' ));
+        return view('ProductView::shop', compact(  'title', 'description' , 'breadcrumbs' ));
     }
 
 }

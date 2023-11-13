@@ -14,21 +14,17 @@ class Shop extends Component
 
     public function mount()
     {
-        $this->breadcrumbs = '<ul class="breadcrumb">
-                            <li>
-                                <a href="'.asset('/').'" title=""><span>خانه</span></a>
-                            </li>
-                            <li>
-                                <a href="'.asset('/shop').'" title="فروشگاه"><span>فروشگاه</span></a>
-                            </li>
-                        </ul>';
+
     }
     protected $paginationTheme = 'bootstrap';
 
     public function render()
     {
         return view('livewire.user.product.shop' , [
-            'products' => Product::query()->orderByDesc('id')->paginate(20),
+            'products' => Product::query()->where([
+                'statusPublish' => 'publish' ,
+                'formatProduct' => 'normal' ,
+            ])->orderByDesc('id')->paginate(20),
         ]);
     }
 }

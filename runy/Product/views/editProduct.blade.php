@@ -55,7 +55,8 @@
                 </div>
                 <div class="col-xl-4 mb-5">
                     @livewire('admin.product.create.sidebar-product' , ['product' => $product ] )
-                    <div class="card mt-5">
+                    <div class="card mt-5 border-color-runy-primary">
+                        <div class="card-header border-color-runy-primary">تصویر شاخص</div>
                         <div class="card-body">
                             @if($product->pic !== null )
                                 <img src="{{asset($product->pic)}}" class="card-img-top sh-19" alt="تصویر شاخص">
