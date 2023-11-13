@@ -182,18 +182,9 @@ class ProductController extends Controller
     {
         $title = $product->name;
         $description = $product->titleSeo . ' | ' . $product->focusKeyword;
-        //$breadcrumbs = ["/"=>" خانه " , "/shop" => "فروشگاه", "/product/".$product->slug => $product->name ];
-        $breadcrumbs = '<ul class="breadcrumb">
-                            <li>
-                                <a href="'.asset('/').'" title=""><span>خانه</span></a>
-                            </li>
-                            <li>
-                                <a href="'.asset('/shop').'" title="فروشگاه"><span>فروشگاه</span></a>
-                            </li>
-                            <li>
-                                <a href="'.asset('/product/'.$product->slug).'" title="'.$product->name.'"><span>'.$product->name.'</span></a>
-                            </li>
-                        </ul>';
+        $breadcrumbs = ["/"=>" خانه " , "/shop" => "فروشگاه", "/product/".$product->slug => $product->name ];
+        $product->numberView = $product->numberView + 1 ;
+        $product->save();
 
 
         return view('ProductView::show', compact('product', 'title', 'description' , 'breadcrumbs'));

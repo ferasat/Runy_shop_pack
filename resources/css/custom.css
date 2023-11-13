@@ -5095,8 +5095,11 @@ hr {
 
 
 .breadcrumb__item:hover {
-    background: #490099;
-    color: #FFF;
+     background: #fc454a;
+     color: #FFF;
+ }
+.breadcrumb__item:hover a{
+    color: #fff;
 }
 
 
