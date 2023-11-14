@@ -62,8 +62,8 @@ class CartController extends Controller
     /// For Customer
     public function my_cart()
     {
-        $title = 'kjj';
-        $description = 'kk' . ' | ' . 'kkj';
+        $title = 'سبد خرید';
+        $description = 'سبد خرید';
         //$breadcrumbs = ["/"=>" خانه " , "/shop" => "فروشگاه", "/product/".$product->slug => $product->name ];
         $breadcrumbs = '<ul class="breadcrumb">
                             <li>

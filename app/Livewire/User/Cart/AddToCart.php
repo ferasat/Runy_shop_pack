@@ -33,7 +33,8 @@ class AddToCart extends Component
 
     public function addToCart($product_id)
     {
-        // dd('yes');
+
+
         $product = Product::find($product_id);
 
         if ($product->specialPrice > 1) {
@@ -79,6 +80,7 @@ class AddToCart extends Component
                     "price" => $priceProduct,
                     "pic" => $product->pic
                 ];
+
                 session()->put('cart', $cart);
                 session()->put('success_add', 'محصول به سبد خرید اضافه شد!');
 
@@ -89,12 +91,18 @@ class AddToCart extends Component
 
         }
 
+
+        //dd($totalQuantity);
+
+
         $this->showModal=true;
+        $this->dispatch('rendercart');
 
     }
 
     public function hiddenModal()
     {
+
         $this->showModal = false ;
     }
 
@@ -102,6 +110,7 @@ class AddToCart extends Component
     {
         $this->cart[$productId]['quantity']++;
         session(['cart' => $this->cart]);
+        $this->dispatch('rendercart');
     }
 
     public function decreaseQuantity($productId)
@@ -110,11 +119,14 @@ class AddToCart extends Component
             $this->cart[$productId]['quantity']--;
             session(['cart' => $this->cart]);
         }
+        $this->dispatch('rendercart');
     }
     public function removeFromCart($productId)
     {
+
         unset($this->cart[$productId]);
         session(['cart' => $this->cart]);
+        $this->dispatch('rendercart');
     }
     public function checkout($total)
     {

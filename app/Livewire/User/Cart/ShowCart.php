@@ -39,18 +39,21 @@ class ShowCart extends Component
     {
         unset($this->cart[$productId]);
         session(['cart' => $this->cart]);
+        $this->dispatch('rendercart');
     }
 
     public function updateQuantity($productId, $quantity)
     {
         $this->cart[$productId]['quantity'] = $quantity;
         session(['cart' => $this->cart]);
+        $this->dispatch('rendercart');
     }
 
     public function increaseQuantity($productId)
     {
         $this->cart[$productId]['quantity']++;
         session(['cart' => $this->cart]);
+        $this->dispatch('rendercart');
     }
 
     public function decreaseQuantity($productId)
@@ -59,6 +62,7 @@ class ShowCart extends Component
             $this->cart[$productId]['quantity']--;
             session(['cart' => $this->cart]);
         }
+        $this->dispatch('rendercart');
     }
     public function apply($total)
     {
@@ -86,6 +90,7 @@ class ShowCart extends Component
 
             $this->badDiscount = true ;
         }
+        $this->dispatch('rendercart');
     }
 
     public function checkout($total)
