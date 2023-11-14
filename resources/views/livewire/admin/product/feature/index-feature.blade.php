@@ -1,10 +1,10 @@
 <div class="row ">
     <div class="col-xl-8 mb-5">
         <section class="scroll-section" id="listPost">
-            @foreach($products as $product)
+            @foreach($features as $feature)
                 <div class="card mb-2 shadow">
                     <div class="card-body">
-                        @livewire('admin.product.row-product' , ['product' => $product]  , key($product->id))
+                        @livewire('admin.product.feature.row-feature' , ['feature' => $feature]  , key($feature->id))
                     </div>
                 </div>
             @endforeach
@@ -40,7 +40,7 @@
                     </a>
                 </li>
                 <li class="list-group-item">
-                    <a href="{{ asset(route('feature.index')) }}">
+                    <a href="{{ asset('feature.index') }}">
                         <i class="fa-solid color-runy-primary fa-list-check fa-rotate-180 p-2"></i>
                         ویژگی های محصولات
                     </a>

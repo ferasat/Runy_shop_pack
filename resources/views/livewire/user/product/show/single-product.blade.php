@@ -75,28 +75,17 @@
                             </div>
                             <!-- Modal Core -->
                         </div>
-                        <div class="col-lg-4 col-md-6 col-sm-12">
+
+                        <div class="col-lg-4 col-md-6 col-sm-12 center-breakpoint">
                             <div class="product-title">
                                 <h1 title="{{ $product-> name }}" class="mb-4 h3">{{ $product-> name }}</h1>
                             </div>
-                            <div class="product-directory  d-block">
-                                <ul>
-                                    <span>دسته‌بندی</span> :
-                                    @if($cats = catsInPro($product->id))
-                                        @foreach($cats as $tanx )
-                                            <li>
-                                                <a class="mb-1 d-inline-block text-small">
-                                                    @if(infoCatPro($tanx->item_id) != null)
-                                                        {{infoCatPro($tanx->item_id)->name}}
-                                                    @else
-                                                        نداریم
-                                                    @endif
-                                                </a>
-                                            </li>
-                                        @endforeach
-                                    @endif
+                            @livewire('user.product.show.short-description' , ['product'=>$product])
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
 
-                                </ul>
+                            <div class="product-directory  d-block">
+
                             </div>
 
                             @if($is_feature)
@@ -144,12 +133,6 @@
 
                             @livewire('user.cart.add-to-cart' , compact('product'))
 
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-12 center-breakpoint">
-
-                            <div class="product-params ">
-                                @livewire('user.product.show.short-description' , ['product'=>$product])
-                            </div>
                         </div>
                     </div>
                 </article>

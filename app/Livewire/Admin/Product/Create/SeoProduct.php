@@ -7,7 +7,7 @@ use Product\Models\Product;
 
 class SeoProduct extends Component
 {
-    public $product , $titleSeo, $focusKeyword, $descriptionSeo , $saveStatus=false;
+    public $product , $titleSeo, $focusKeyword, $descriptionSeo , $saveStatus=false, $messageError =null;
 
     public function mount()
     {
@@ -37,6 +37,7 @@ class SeoProduct extends Component
 
     public function updated()
     {
+        $this->messageError = null ;
         $this->validate();
 
         $this->product->descriptionSeo = $this->descriptionSeo ;
@@ -53,8 +54,10 @@ class SeoProduct extends Component
             $this->product->titleSeo = $this->titleSeo ;
             $this->product->focusKeyword = $this->focusKeyword ;
             $this->product->save();
-        }else{
 
+            $this->saveStatus = false ;
+        }else{
+            $this->messageError = 'در وارد کردن اطلاعات اشتباهی رخ داده لطفا اطلاعات ورودی را چک کنید';
         }
 
     }

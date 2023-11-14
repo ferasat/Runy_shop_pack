@@ -1,11 +1,19 @@
 <div>
     <div class="product-add">
         <div class="parent-btn overflow-hidden">
-            <a href="#" class="dk-btn dk-btn-info" data-bs-toggle="modal"
-               data-bs-target="#staticAddToCart" wire:click.privent="addToCart({{$product->id}})">
-                افزودن به سبد خرید
-                <i class="now-ui-icons shopping_cart-simple"></i>
-            </a>
+            @if($product->price == 0 or $product->price == null )
+                <a href="tel:02188310838" class="dk-btn dk-btn-info" data-bs-toggle="modal"
+                   data-bs-target="#staticAddToCart" >
+                    تماس بگیرید
+                    <i class="now-ui-icons shopping_cart-simple"></i>
+                </a>
+            @else
+                <a href="#" class="dk-btn dk-btn-info" data-bs-toggle="modal"
+                   data-bs-target="#staticAddToCart" wire:click.privent="addToCart({{$product->id}})">
+                    افزودن به سبد خرید
+                    <i class="now-ui-icons shopping_cart-simple"></i>
+                </a>
+            @endif
         </div>
     </div>
 

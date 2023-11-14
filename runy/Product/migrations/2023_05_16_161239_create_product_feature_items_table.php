@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -15,8 +16,16 @@ return new class extends Migration
             $table->string('name');
             $table->string('value')->nullable();
             $table->text('description')->nullable();
+            $table->integer('add_price')->nullable();
             $table->timestamps();
         });
+
+        DB::table('product_feature_items')->insert([
+            'product_id'=> 1,
+            'product_feature_id'=> 1,
+            'name' => 'Color',
+            'value' => 'Black',
+        ]);
     }
 
     public function down(): void

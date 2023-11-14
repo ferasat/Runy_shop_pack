@@ -20,7 +20,7 @@
 
             <!-- Content Start -->
             <form class="row " method="post" action="{{ asset('dashboard/product/edit/'.$product->id) }}"
-                  enctype="multipart/form-data">
+                  enctype="multipart/form-data" >
                 @csrf
                 <input type="hidden" name="product_id" value="{{$product->id}}">
                 <div class="col-xl-8 mb-5">
@@ -50,6 +50,7 @@
                             </div>
                         </div>
                         @livewire('admin.product.create.info-product' , ['product' => $product ] )
+                        @livewire('admin.product.create.product-feature' , ['product' => $product ] )
                         @livewire('admin.product.create.seo-product' , ['product' => $product ] )
                     </section>
                 </div>

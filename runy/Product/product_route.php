@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Product\Controllers\CategoryProductController;
 use Product\Controllers\DiscountController;
 use Product\Controllers\ProductController;
+use Product\Controllers\ProductFeaturesController;
 use Product\Controllers\ServiceController;
 
 
@@ -13,6 +14,8 @@ Route::prefix('/dashboard')->middleware('auth')->group( function (){
     Route::get('/product/edit/{id}', [ProductController::class , 'edit'])->name('product.edit');
     Route::post('/product/edit/{id}', [ProductController::class , 'update']);
     Route::get('/product/delete/{id}', [ProductController::class , 'destroy']);
+
+    Route::get('/product/feature/index', [ProductFeaturesController::class , 'index'])->name('feature.index');
 
     Route::post('/product/editor_image_upload', [ProductController::class , 'picInPost'])->name('product.image.upload');
 

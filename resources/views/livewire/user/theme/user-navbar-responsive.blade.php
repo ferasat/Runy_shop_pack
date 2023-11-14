@@ -58,7 +58,7 @@
                 </div>
             </div>
         </div>
-        <nav class="main-menu ">
+        <nav class="main-menu main-menu-boarder-bottom shadow-sm">
             <div class="container">
                 <ul class="list d-flex justify-content-center   ">
                     <li class="list-item list-item-has-children mega-menu mega-menu-col-5">

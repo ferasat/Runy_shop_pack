@@ -5151,3 +5151,8 @@ hr {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
+/*--- ---*/
+.main-menu-boarder-bottom {
+    border-bottom: 1px solid #e7e7e7!important;
+}

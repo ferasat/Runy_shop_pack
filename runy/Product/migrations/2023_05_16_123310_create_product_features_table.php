@@ -16,9 +16,9 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        DB::table()->insert([
+        DB::table('product_features')->insert([
             'product_id'=> 1,
-            'name' => 'send message periodic'
+            'name' => 'Color'
         ]);
     }
 
