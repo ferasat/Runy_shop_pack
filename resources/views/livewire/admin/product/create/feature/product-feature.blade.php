@@ -12,26 +12,10 @@
         ویژگی های محصول
     </div>
     <div class="card-body">
+        @livewire('admin.product.create.feature.add-feature' , compact('product'))
         @foreach($featuresItem as $item)
-            <ul>
-                <li>{{ $item->value }}</li>
-            </ul>
+            @livewire('admin.product.create.feature.feature-item' , [ 'feature'=>$item ] , key($item->id.rand(9,100)))
         @endforeach
-
-            <div class="row g-3">
-                <div class="col-sm-4">
-                    <input type="text" class="form-control" value="" >
-                </div>
-                <div class="col-sm-4">
-                    <input type="text" class="form-control" placeholder="مقدار ویژگی" >
-                </div>
-                <div class="col-sm">
-                    <input type="text" class="form-control" placeholder="توضیحات">
-                </div>
-                <div class="col-sm">
-                    <input type="button" class="btn btn-primary"  value="ذخیره کن" wire:click="save()">
-                </div>
-            </div>
     </div>
     <div class="card-footer border-color-runy-primary">
         @if($saveStatus)

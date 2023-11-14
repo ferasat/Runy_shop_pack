@@ -88,25 +88,7 @@
 
                             </div>
 
-                            @if($is_feature)
-                                <div class="product-variants  d-block">
-                                    <h6>انتخاب رنگ: </h6>
-                                    <div class="d-inline p-2">
-                                        <input type="radio" name="radio1" id="radio1" value="option1">
-                                        <label for="radio1">
-                                            خاکستری
-                                        </label>
-                                    </div>
 
-                                    <div class="d-inline p-2">
-                                        <input type="radio" name="radio1" id="radio2" value="option2" checked="">
-                                        <label for="radio2">
-                                            نقره ای
-                                        </label>
-                                    </div>
-
-                                </div>
-                            @endif
 
                             <div class="product-guarantee d-block">
                                 <i class="fa fa-check-circle"></i>
