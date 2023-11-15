@@ -124,31 +124,27 @@
             <div class="container">
                 <div class="col-12  no-padding">
                     <div class="product-tabs ">
-                        <div class="box-tabs ">
+                        <div class="box-tabs mt-4">
                             <ul class="nav" >
-                                <li class="box-tabs-tab">
-                                    <a class="active" data-toggle="tab" href="#desc" role="tab"
-                                       aria-expanded="true">
+                                <li class="box-tab box-shadow-soft-1 bg-white rounded p-2 m-2 rounded-top">
+                                    <a class="active" href="#desc" >
                                         <i class="now-ui-icons objects_umbrella-13"></i> نقد و بررسی
                                     </a>
                                 </li>
-                                <li class="box-tabs-tab">
-                                    <a data-toggle="tab" href="#params" role="tab" aria-expanded="false">
+                                <li class="box-tab box-shadow-soft-1 bg-white rounded p-2 m-2 rounded-top">
+                                    <a class="" href="#params">
                                         <i class="now-ui-icons shopping_cart-simple"></i> مشخصات
                                     </a>
                                 </li>
-                                <li class="box-tabs-tab">
-                                    <a data-toggle="tab" href="#comments" role="tab" aria-expanded="false">
+                                <li class="box-tab box-shadow-soft-1 bg-white rounded p-2 m-2 rounded-top">
+                                    <a class="" href="#comments">
                                         <i class="now-ui-icons shopping_shop"></i> نظرات کاربران
                                     </a>
                                 </li>
-                                <li class="box-tabs-tab">
-                                    <a data-toggle="tab" href="#questions" role="tab" aria-expanded="false">
-                                        <i class="now-ui-icons ui-2_settings-90"></i> پرسش و پاسخ
-                                    </a>
-                                </li>
+
                             </ul>
-                            <div class="card ">
+                        </div>
+                            <div class="card mb-3 box-shadow-soft-1">
                                 <!-- Tab panes -->
                                     <div class="card-body" id="desc" >
                                         <article>
@@ -159,6 +155,8 @@
                                             </div>
                                         </article>
                                     </div>
+                            </div>
+                            <div class="card mb-3 box-shadow-soft-1">
                                     <div class="card-body" id="params" >
                                         <article>
                                             <h4 class="param-title">
@@ -168,21 +166,14 @@
                                             {!! $product->technical_info !!}
                                         </article>
                                     </div>
+                            </div>
+                            <div class="card mb-3 box-shadow-soft-1">
                                     <div class="card-body" id="comments" >
-                                        <article>
-                                            <h2 class="param-title">
-                                                نظرات کاربران
-                                                <span>۱۲۳ نظر</span>
-                                            </h2>
-
-                                        </article>
-                                    </div>
-                                    <div class="card-body" id="questions" >
                                         @livewire('user.comment.add-comment' , ['type'=>'product' , 'item'=>$product ])
                                     </div>
                             </div>
 
-                        </div>
+
                     </div>
                 </div>
             </div>

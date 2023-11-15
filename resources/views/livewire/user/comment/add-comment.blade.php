@@ -1,8 +1,14 @@
 <article>
-    <h2 class="param-title">
+
+    <div class="param-title">
+        نظرات کاربران
+        <span>۱۲۳ نظر</span>
+    </div>
+
+    <div class="param-title">
         افزودن نظر
         <span>نظر خود را در مورد محصول مطرح نمایید</span>
-    </h2>
+    </div>
     <form action="" class="comment">
                                                     <textarea class="form-control" placeholder="نظر"
                                                               rows="5"></textarea>

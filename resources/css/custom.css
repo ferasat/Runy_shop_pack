@@ -93,54 +93,6 @@ h3 {
 /*----- End style ------*/
 /*----- style5------*/
 
-.dk-btn {
-    font-size: 1.286rem;
-    padding: 18px 80px;
-    border-radius: 8px;
-    background-color: #262872;
-    color: #fff;
-    text-align: center;
-    display: inline-block;
-    border: none;
-    cursor: pointer;
-    position: relative;
-    white-space: nowrap;
-    line-height: 22px;
-    text-decoration: none;
-    margin-top: 5px;
-
-}
-
-button.dk-btn {
-    cursor: pointer;
-    outline: none;
-}
-
-.dk-btn:hover {
-    color: #fff;
-}
-
-.dk-btn:before {
-    transition: all .3s ease-in-out;
-    width: 21%;
-    height: 150%;
-    position: absolute;
-    right: -11px;
-    top: -17px;
-    background: hsla(0, 0%, 100%, .21);
-    content: "";
-    border-radius: 50%;
-}
-
-.dk-btn:not(.disabled):not(.is-inactive):not([disabled]):hover:before {
-    width: 900px;
-    height: 900px;
-    right: -450px;
-    top: -450px;
-    transform: unset;
-}
-
-
 @media (min-width: 1200px) {
 }
 
@@ -5155,4 +5107,9 @@ hr {
 /*--- ---*/
 .main-menu-boarder-bottom {
     border-bottom: 1px solid #e7e7e7!important;
+}
+
+/*----*/
+.box-shadow-soft-1 {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
 }
