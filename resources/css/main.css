@@ -1236,51 +1236,6 @@ footer.main-footer .copyright p {
     align-items: center;
 }
 
-.price-value {
-    font-size: 15px;
-    font-size: 1.071rem;
-    line-height: 26px;
-    color: #fb3449;
-    letter-spacing: .8px;
-}
-
-.price-value--plp {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -ms-flex-pack: end;
-    justify-content: flex-end;
-}
-
-.price-value {
-    font-size: 20px;
-    font-size: 1.429rem;
-    line-height: 35px;
-}
-
-.price-value-wrapper {
-    width: 100%;
-    color: #000;
-    letter-spacing: 0;
-    font-weight: 700;
-    font-size: 20px;
-    font-size: 1.429rem;
-    line-height: 1.1;
-    text-align: left;
-}
-
-.price-currency {
-    font-size: 13px;
-    font-size: .929rem;
-    line-height: 1.692;
-}
-
-.price-currency {
-    font-size: 17px;
-    font-size: 1.214rem;
-    line-height: 1.294;
-}
 
 .price-value-wrapper .price-currency {
     font-weight: 400;

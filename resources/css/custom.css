@@ -10,22 +10,34 @@ h3 {
     font-size: 1.3rem;
 }
 
+.font-weight-bolder {
+    font-weight: bolder !important;
+}
 /*------ Panel Style ----*/
 .icon-svg-home {
     width: 80px !important;
 }
+
 .icon-svg-panel-sm {
     width: 20px !important;
 }
-.hover-li-primary:hover{
+
+.hover-li-primary:hover {
     background-color: #ecfbfe;
 }
+
 .left-0 {
     left: 0 !important;
 }
+
+.text-left {
+    text-align: left !important
+}
+
 .list-group-2 {
     padding: 0.75rem 3.25rem !important;
 }
+
 /*-----------------*/
 .input-group-text {
     display: flex;
@@ -73,7 +85,7 @@ h3 {
     background: #fc454a !important;
 }
 
-.bg-color-secend{
+.bg-color-secend {
     background-color: #6ec1e4 !important;
 }
 
@@ -458,7 +470,6 @@ header.main-header .main-menu .list .amazing-item {
 
 
 /* ----------------- End Main-Menu */
-
 
 
 /* header */
@@ -1563,13 +1574,6 @@ main.main section.banner img {
     align-items: center;
 }
 
-.price-value {
-    font-size: 15px;
-    font-size: 1.071rem;
-    line-height: 26px;
-    color: #fb3449;
-    letter-spacing: .8px;
-}
 
 .price-value--plp {
     display: -ms-flexbox;
@@ -1580,11 +1584,7 @@ main.main section.banner img {
     justify-content: flex-end;
 }
 
-.price-value {
-    font-size: 20px;
-    font-size: 1.429rem;
-    line-height: 35px;
-}
+
 
 .price-value-wrapper {
     width: 100%;
@@ -3446,8 +3446,8 @@ textarea.form-control {
 
 #footer {
     font-size: 14px;
-    background: rgb(224,224,224);
-    background: linear-gradient(90deg, rgba(224,224,224,1) 0%, rgba(182,179,179,1) 35%, rgba(238,238,238,1) 100%);
+    background: rgb(224, 224, 224);
+    background: linear-gradient(90deg, rgba(224, 224, 224, 1) 0%, rgba(182, 179, 179, 1) 35%, rgba(238, 238, 238, 1) 100%);
 }
 
 #footer .footer-top {
@@ -3666,8 +3666,6 @@ select {
 }
 
 
-
-
 .bg-primary {
     background: #ce1212 !important;
 }
@@ -3832,7 +3830,6 @@ hr {
     border-radius: 5px;
     border-color: #6c429a;
 }
-
 
 
 /*---------------------------------------
@@ -4001,9 +3998,7 @@ hr {
 }
 
 
-
-
-.img-box img{
+.img-box img {
     max-width: 100% !important;
 }
 
@@ -4183,8 +4178,6 @@ hr {
 }
 
 
-
-
 /*---- Labafi Modal -----*/
 .modal_runy {
     display: flex;
@@ -4305,6 +4298,7 @@ hr {
 .bg-runy-service {
     background-color: #f39c12 !important;
 }
+
 .border-runy-service {
     border-color: #f39c12 !important;
 }
@@ -4519,9 +4513,11 @@ hr {
     opacity: 1;
     bottom: 8px;
 }
+
 .w-70px {
     width: 70px !important;
 }
+
 @media screen and (max-width: 1200px) {
     .product-grid {
         margin: 0 0 30px;
@@ -4983,12 +4979,14 @@ hr {
 .mobile_header {
     display: none; /* پیش فرض: عدم نمایش کلاس */
 }
+
 /* موبایل: تا یک حداکثر عرض ۷۶۷ پیکسل */
 @media only screen and (max-width: 767px) {
 
     .mobile_header {
         display: block;
     }
+
     .main-header {
         display: none;
     }
@@ -5039,7 +5037,7 @@ hr {
     align-items: center;
     font-size: 16px;
     transform: skew(-21deg);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.26);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
     margin: 5px;
     padding: 0 40px;
     cursor: pointer;
@@ -5047,10 +5045,11 @@ hr {
 
 
 .breadcrumb__item:hover {
-     background: #fc454a;
-     color: #FFF;
- }
-.breadcrumb__item:hover a{
+    background: #fc454a;
+    color: #FFF;
+}
+
+.breadcrumb__item:hover a {
     color: #fff;
 }
 
@@ -5076,9 +5075,10 @@ hr {
         height: 35px;
     }
 
-    .breadcrumb__title{
+    .breadcrumb__title {
         font-size: 11px;
     }
+
     .breadcrumb__item {
         padding: 0 30px;
     }
@@ -5088,6 +5088,7 @@ hr {
     .breadcrumb {
         height: 30px;
     }
+
     .breadcrumb__item {
         padding: 0 20px;
     }
@@ -5100,13 +5101,17 @@ hr {
 }
 
 @keyframes spinsvg {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /*--- ---*/
 .main-menu-boarder-bottom {
-    border-bottom: 1px solid #e7e7e7!important;
+    border-bottom: 1px solid #e7e7e7 !important;
 }
 
 /*----*/
