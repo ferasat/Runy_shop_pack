@@ -8,6 +8,7 @@ use Poll\Models\Answer;
 class AddAnswer extends Component
 {
     public $answer,$question,$x,$option;
+
     public function mount()
     {
       //  dd($this->answer);
@@ -21,7 +22,7 @@ class AddAnswer extends Component
     }
     public function updated()
     {
-        $upAnswer=Answer::query()->find($this->answer->id);
+        $upAnswer = Answer::query()->find($this->answer->id);
         $upAnswer->option=$this->option;
         $upAnswer->save();
     }

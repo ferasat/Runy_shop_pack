@@ -63,11 +63,11 @@
 
                     <button class="btn btn-runy-primary" wire:click="addOption()" >
                         <i class="fa fa-plus-circle"></i>
-                        Add
+                        اضافه کردن
                     </button>
                     <button class="btn btn-runy-danger" wire:click="removeOption()">
                         <i class="fa fa-minus-circle"></i>
-                        Delete
+                        حذف کردن
                     </button>
 
                 </div>

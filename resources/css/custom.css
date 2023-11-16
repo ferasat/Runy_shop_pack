@@ -110,18 +110,6 @@ h3 {
 
 /* ----------------- Start Header */
 
-
-header.main-header .logo-area a {
-    display: block;
-}
-
-header.main-header .logo-area a img {
-    height: 80px;
-    float: right;
-    margin-top: 2px;
-    width: 80px;
-}
-
 header.main-header .search-area form.search {
     position: relative;
 }
@@ -2931,15 +2919,6 @@ main.main section.banner img {
     }
 
 
-    main.main,
-    main.cart,
-    main.page-404,
-    main.cart-page,
-    main.search-page,
-    main.single-product {
-        margin-top: 125px;
-    }
-
     .shopping-page main.cart-page {
         margin-top: 0;
     }
@@ -4956,15 +4935,7 @@ hr {
     }
 
 
-    main.main,
-    main.cart,
-    main.page-404,
-    main.cart-page,
-    main.search-page,
-    main.single-product,
-    main.profile-user-page {
-        margin-top: 125px;
-    }
+
 
     .shopping-page main.cart-page {
         margin-top: 0;
@@ -5010,16 +4981,14 @@ hr {
 
 /*------breadcrumb ---------------*/
 .breadcrumb {
-    display: flex;
     border-radius: 10px;
-    margin: auto;
-    text-align: center;
+    text-align: right;
     top: 50%;
     width: 100%;
     height: 40px;
     transform: translateY(-50%);
     z-index: 1;
-    justify-content: center;
+    justify-content: right;
 }
 
 
@@ -5038,8 +5007,8 @@ hr {
     font-size: 16px;
     transform: skew(-21deg);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
-    margin: 5px;
-    padding: 0 40px;
+    margin: 4px;
+    padding: 0 20px;
     cursor: pointer;
 }
 
@@ -5086,7 +5055,7 @@ hr {
 
 @media all and (max-width: 710px) {
     .breadcrumb {
-        height: 30px;
+        height: 27px;
     }
 
     .breadcrumb__item {
@@ -5117,4 +5086,15 @@ hr {
 /*----*/
 .box-shadow-soft-1 {
     box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+}
+
+/*-----Table ------------*/
+table.table_product {
+    width: 100%;
+}
+table.table_product tr {
+    border: 1px solid #eee;
+}
+table.table_product tr td {
+    border-right: 1px solid #eee;
 }

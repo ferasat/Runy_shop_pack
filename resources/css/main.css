@@ -156,7 +156,6 @@ header.main-header .logo-area {
     -ms-flex: 0 0 155px;
     flex: 0 0 155px;
     max-width: 155px;
-    padding-right: 25px;
     max-height: 100%;
 }
 
@@ -164,7 +163,7 @@ header.main-header .logo-area a {
     display: block;
 }
 
-header.main-header .logo-area a img {
+header.main-header .logo-area img {
     height: 56px;
     float: right;
     margin-top: 2px;

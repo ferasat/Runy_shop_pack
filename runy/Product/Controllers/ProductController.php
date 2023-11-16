@@ -71,6 +71,7 @@ class ProductController extends Controller
         $pro = Product::find($request->product_id);
         $pro->texts = $request->texts;
         $pro->shortDescription = $request->shortDescription;
+        $pro->technical_info = $request->technical_info;
         $pro->save();
 
 
@@ -110,41 +111,6 @@ class ProductController extends Controller
 
             }
         }
-
-        /*foreach ($categoreis as $cat) {
-            $cid = 'ch_' . $cat->id;
-            //dd($request->$cid);
-            //dd(isOrNot($request->$cid , $pro->id));
-            if ($cat->id == $request->$cid) {
-
-                if (isTax_pro($request->$cid, $pro->id) == false) {
-                    $newTax = new Taxonomy();
-                    $newTax->type = 'product';
-                    $newTax->type_id = $pro->id;
-                    $newTax->item = 'cat';
-                    $newTax->item_id = $cat->id;
-                    $newTax->is = 1;
-                    $newTax->save();
-                } else {
-                    foreach (catsInPro($pro->id) as $tax) {
-                        if ($tax->item_id == $request->$cid) {
-                            //dd($tax->id);
-                            $updateTax = Taxonomy::query()->findOrFail($tax->id);
-                            $updateTax->is = 1;
-                            $updateTax->save();
-                            //dd($updateTax);
-                        } else {
-                            //dd('ssd');
-                            $updateTax = Taxonomy::query()->findOrFail($tax->id);
-                            $updateTax->is = 0;
-                            $updateTax->save();
-                        }
-                    }
-                }
-
-            }
-        }*/
-
 
         if ($request->picture !== null and $request->pic_update == null) {
             $file = new FileManager();

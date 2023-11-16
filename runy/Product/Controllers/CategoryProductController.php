@@ -60,10 +60,8 @@ class CategoryProductController extends Controller
     public function show(CategoryProduct $category_product)
     {
         $cat= $category_product;
-        //dd($cat);
-        $html_tag_data = ["override"=>'{ "attributes" : { "placement" : "horizontal", "layout":"boxed" }, "storagePrefix" : "starter-project", "showSettings" : false }'];
         $breadcrumbs = ["/"=>" خانه " , "/product" => " محصولات  ", "/product/category" => " دستبندی محصولات  " ];
-
-        return view('ProductView::category.showCat' , compact('cat', 'html_tag_data' , 'breadcrumbs')) ;
+        dd($cat);
+        return view('ProductView::category.showCat' , compact('cat', 'breadcrumbs')) ;
     }
 }

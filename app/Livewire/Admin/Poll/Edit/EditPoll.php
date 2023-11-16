@@ -11,13 +11,15 @@ class EditPoll extends Component
 {
     public $question,$forType,$products,$title,$poll_type,$for_type_id,$statusPublish;
     public $answers = [],$answer;
+
     public function mount()
     {
         $this->title=$this->question->title;
         $this->products=Product::query()->get();
-        $this->for_type_id=$this->products->first();
+        $this->for_type_id = $this->products->first()->id;
         $this->answers=Answer::query()->where('question_id',$this->question->id)->get();
     }
+
     public function addOption()
     {
 

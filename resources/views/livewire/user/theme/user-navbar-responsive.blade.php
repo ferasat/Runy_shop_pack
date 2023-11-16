@@ -10,23 +10,20 @@
 
 
     <!-- header -->
-    <header class="main-header ">
+    <header class="main-header bg-white">
         <div class="container">
             <div class="row">
-                <div class="col-lg-1 col-md-1 col-sm-2 col-3">
-                    <div class="logo-area default">
-                        <a href="{{ asset('/') }}">
-                            <img src="{{ asset(setting_site()->site_logo) }}" alt="{{ setting_site()->site_name }}">
-                        </a>
-                    </div>
+                <div class="col-lg-1 col-md-1 col-sm-2 col-3 d-flex flex-row-reverse align-items-center">
+
+                    <a href="{{ asset('/') }}" class="logo-area ">
+                        <img class="w-100" src="{{ asset(setting_site()->site_logo) }}" alt="{{ setting_site()->site_name }}">
+                    </a>
+
                 </div>
-                <div class="col-lg-6 col-md-5 col-sm-8 col-7">
-                    <div class="search-area default">
-                        <form action="" class="search mt-4">
-
+                <div class="col-lg-6 col-md-5 col-sm-8 col-7 d-flex align-items-center">
+                    <div class="search-area  w-100">
+                        <form action="" class="search w-100">
                             <input type="text" placeholder="نام کالا، برند و یا دسته مورد نظر خود را جستجو کنید…">
-
-
                             <button type="submit">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                      class="bi bi-search" viewBox="0 0 16 16">
@@ -38,26 +35,45 @@
                     </div>
                 </div>
                 <div class="col-md-5 d-flex flex-row-reverse align-items-center">
-
-
                     @livewire('user.theme.cart-header' )
-
-
-                        <a class="border border-2 p-2 rounded m-2" href="#">
-                            <svg class="icon-svg-panel-sm" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" transform="matrix(-1, 0, 0, 1, 0, 0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M2.00098 11.999L16.001 11.999M16.001 11.999L12.501 8.99902M16.001 11.999L12.501 14.999" stroke="#707070" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path opacity="0.5" d="M9.00195 7C9.01406 4.82497 9.11051 3.64706 9.87889 2.87868C10.7576 2 12.1718 2 15.0002 2L16.0002 2C18.8286 2 20.2429 2 21.1215 2.87868C22.0002 3.75736 22.0002 5.17157 22.0002 8L22.0002 16C22.0002 18.8284 22.0002 20.2426 21.1215 21.1213C20.2429 22 18.8286 22 16.0002 22H15.0002C12.1718 22 10.7576 22 9.87889 21.1213C9.11051 20.3529 9.01406 19.175 9.00195 17" stroke="#707070" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
-                            ورود | ثبت نام
-                        </a>
-
-
+                    <a class="border border-2 p-2 rounded m-2" href="#">
+                        <svg class="icon-svg-panel-sm" viewBox="0 0 24 24" fill="none"
+                             xmlns="http://www.w3.org/2000/svg" transform="matrix(-1, 0, 0, 1, 0, 0)">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <path
+                                    d="M2.00098 11.999L16.001 11.999M16.001 11.999L12.501 8.99902M16.001 11.999L12.501 14.999"
+                                    stroke="#707070" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round"></path>
+                                <path opacity="0.5"
+                                      d="M9.00195 7C9.01406 4.82497 9.11051 3.64706 9.87889 2.87868C10.7576 2 12.1718 2 15.0002 2L16.0002 2C18.8286 2 20.2429 2 21.1215 2.87868C22.0002 3.75736 22.0002 5.17157 22.0002 8L22.0002 16C22.0002 18.8284 22.0002 20.2426 21.1215 21.1213C20.2429 22 18.8286 22 16.0002 22H15.0002C12.1718 22 10.7576 22 9.87889 21.1213C9.11051 20.3529 9.01406 19.175 9.00195 17"
+                                      stroke="#707070" stroke-width="1.5" stroke-linecap="round"></path>
+                            </g>
+                        </svg>
+                        ورود | ثبت نام
+                    </a>
                 </div>
             </div>
         </div>
-        <nav class="main-menu main-menu-boarder-bottom shadow-sm">
+        <nav class="main-menu main-menu-boarder-bottom shadow-sm bg-white">
             <div class="container">
                 <ul class="list d-flex justify-content-center   ">
                     <li class="list-item list-item-has-children mega-menu mega-menu-col-5">
                         <a class="nav-link text-black">
-                            <svg class="icon-svg-panel-sm" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M20 7L4 7" stroke="#343a40" stroke-width="1.5" stroke-linecap="round"></path> <path opacity="0.5" d="M20 12L4 12" stroke="#343a40" stroke-width="1.5" stroke-linecap="round"></path> <path d="M20 17L4 17" stroke="#343a40" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
+                            <svg class="icon-svg-panel-sm" viewBox="0 0 24 24" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <path d="M20 7L4 7" stroke="#343a40" stroke-width="1.5"
+                                          stroke-linecap="round"></path>
+                                    <path opacity="0.5" d="M20 12L4 12" stroke="#343a40" stroke-width="1.5"
+                                          stroke-linecap="round"></path>
+                                    <path d="M20 17L4 17" stroke="#343a40" stroke-width="1.5"
+                                          stroke-linecap="round"></path>
+                                </g>
+                            </svg>
                             دسته بندی کالا</a>
                         <ul class="sub-menu nav">
                             <li class="list-item list-item-has-children">
