@@ -62,7 +62,7 @@
                         </div>
 
                         @livewire('admin.product.create.info-product' , ['product' => $product ] )
-                        <livewire:admin.product.create.feature.product-feature :product="$product" />
+<!--                        <livewire:admin.product.create.feature.product-feature :product="$product" />-->
                         @livewire('admin.product.create.seo-product' , ['product' => $product ] )
                     </section>
                 </div>
