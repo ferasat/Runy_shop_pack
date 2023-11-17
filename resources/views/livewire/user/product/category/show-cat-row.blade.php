@@ -1,4 +1,4 @@
-<div class="card h-100">
+<div class="card">
     <img src="{{ asset($product->pic) }}" class="card-img-top sh-19" alt="card image">
     <div class="card-body">
         <h5 class="heading mb-3">

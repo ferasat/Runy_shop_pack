@@ -21,47 +21,11 @@ class CategoryProductController extends Controller
         return view('ProductView::category.catsProduct' , compact('title' , 'description' , 'breadcrumbs' , 'categoris'));
     }
 
-    public function create()
-    {
-        //
-    }
-
-
-    public function store(Request $request)
-    {
-        //
-    }
-
-
-    public function edit(CategoryProduct $categoryProduct)
-    {
-        //
-    }
-
-
-    public function update(Request $request, CategoryProduct $categoryProduct)
-    {
-        //
-    }
-
-
-    public function destroy(CategoryProduct $categoryProduct)
-    {
-        //
-    }
-
-    ///
-
-    public function products_in_cat(CategoryProduct $id)
-    {
-
-    }
-
     public function show(CategoryProduct $category_product)
     {
         $cat= $category_product;
-        $breadcrumbs = ["/"=>" خانه " , "/product" => " محصولات  ", "/product/category" => " دستبندی محصولات  " ];
-        dd($cat);
+        $breadcrumbs = ["/"=>" خانه " , "/product" => "فروشگاه", "/product-category/".$cat->slug => $cat->name ];
+        //dd($cat);
         return view('ProductView::category.showCat' , compact('cat', 'breadcrumbs')) ;
     }
 }

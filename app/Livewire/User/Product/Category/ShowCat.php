@@ -7,7 +7,7 @@ use Livewire\Component;
 
 class ShowCat extends Component
 {
-    public $cat ;
+    public $cat , $breadcrumbs;
     public function render()
     {
         $taxs = Taxonomy::query()->where([

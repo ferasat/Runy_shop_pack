@@ -52,7 +52,8 @@
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                             data-bs-target="#collapse{{ $cat->id }}" aria-expanded="false"
                                             aria-controls="collapse{{ $cat->id }}">
-                                        {{ $cat->name }}
+                                        <strong class="d-block">{{ $cat->name }} </strong>: ( {{ $cat->slug }} )
+
                                     </button>
                                     <button class="btn btn-danger btn-sm left-0"
                                             wire:click="deleteCatOnly({{ $cat->id }})">حذف
@@ -61,13 +62,13 @@
                                 <div id="collapse{{ $cat->id }}" class="accordion-collapse collapse"
                                      aria-labelledby="heading{{ $cat->id }}" data-bs-parent="#accordionCat">
                                     <div class="accordion-body">
-
+                                        <a target="_blank" href="{{ asset('/product-category/'.$cat->slug) }}">{{ $cat->name }}</a>
                                         @if(subCats($cat->id) !== null )
                                             <ul class="list-group list-group-flush">
                                                 @foreach(subCats($cat->id) as $sCat)
                                                     <li class="list-group-item d-flex  justify-content-between border rounded">
-                                                        <div>{{ $sCat->name }}</div>
-                                                        <button class="btn btn-sm btn-danger" wire:click="deleteCatOnly({{ $cat->id }})">حذف</button>
+                                                        <div> <a target="_blank" href="{{ asset('/product-category/'.$sCat->slug) }}">{{ $sCat->name }}</a> </div>
+                                                        <button class="btn btn-sm btn-danger" wire:click="deleteCatOnly({{ $sCat->id }})">حذف</button>
                                                     </li>
                                                 @endforeach
                                             </ul>
