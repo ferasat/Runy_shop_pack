@@ -3805,12 +3805,6 @@ hr {
 }
 
 
-.form-group .form-control {
-
-    border: 1px solid transparent;
-    height: 50px;
-}
-
 .form-group .form-control:focus {
 
     border-radius: 5px;
@@ -5104,4 +5098,9 @@ table.table_product tr {
 }
 table.table_product tr td {
     border-right: 1px solid #eee;
+}
+/*----- podt */
+.textBodyRuny img {
+    max-width: 100% !important;
+    height: auto !important;
 }

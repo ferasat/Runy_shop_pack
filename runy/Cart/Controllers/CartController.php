@@ -64,18 +64,7 @@ class CartController extends Controller
     {
         $title = 'سبد خرید';
         $description = 'سبد خرید';
-        //$breadcrumbs = ["/"=>" خانه " , "/shop" => "فروشگاه", "/product/".$product->slug => $product->name ];
-        $breadcrumbs = '<ul class="breadcrumb">
-                            <li>
-                                <a href="'.asset('/').'" title=""><span>خانه</span></a>
-                            </li>
-                            <li>
-                                <a href="'.asset('/cart').'" title="فروشگاه"><span>فروشگاه</span></a>
-                            </li>
-                            <li>
-                                <a href="'.asset('/cart').'" title="j"><span>j</span></a>
-                            </li>
-                        </ul>';
+        $breadcrumbs = ["/"=>" خانه " , "/cart" => "سب خرید" ];
 
 
         return view('CartView::user.showCart' ,compact('title', 'description' , 'breadcrumbs'));
@@ -86,9 +75,8 @@ class CartController extends Controller
         $title='صورت حساب';
         $description = '';
         $dataTable = true;
-        $html_tag_data = ["override"=>'{ "attributes" : { "placement" : "horizontal", "layout":"boxed" }, "storagePrefix" : "starter-project", "showSettings" : false }'];
-        $breadcrumbs = ["/dashboard" => " پیشخوان ", "/dashboard/carts" => "سفارش ها" ];
+        $breadcrumbs = ["/dashboard" => " پیشخوان ", "/cart" => "سفارش ها" ];
 
-        return view('CartView::user.showInvoice' , compact( 'html_tag_data' , 'breadcrumbs' , 'title' , 'description' , 'dataTable','cart_id')) ;
+        return view('CartView::user.showInvoice' , compact( 'breadcrumbs' , 'title' , 'description' , 'dataTable','cart_id')) ;
     }
 }

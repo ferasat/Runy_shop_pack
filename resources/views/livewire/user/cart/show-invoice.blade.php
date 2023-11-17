@@ -30,6 +30,16 @@
                     </div>
 
 
+                    <div class="row my-2">
+                        <div class="form-group col-6">
+                            <label for="zip_code">کدپستی</label>
+                            <input type="text" class="form-control " id="zip_code" wire:model.live.blur="zip_code">
+                        </div>
+
+
+                    </div>
+
+
                     <div class="form-group">
                         <label for="address">آدرس</label>
                         <input type="text" class="form-control" name="address" id="address" wire:model.live.blur="address">

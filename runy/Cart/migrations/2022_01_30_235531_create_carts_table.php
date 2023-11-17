@@ -17,7 +17,8 @@ class CreateCartsTable extends Migration
             $table->string('cell' , 11)->nullable();
             $table->string('note_customer')->nullable();
             $table->string('address')->nullable();
-            $table->string('user_id')->nullable();
+            $table->string('zip_code')->nullable();
+            $table->string('user_id')->nullable(); // ایدی کاربری که این سبد به نام اون خرید می شود
             $table->string('status',25)->default('in_process'); // in_process  - being_packaged - ready_to_send - posted - delivered - defective_information - lack_of_goods - returned - 'apply'
             $table->string('total_price')->nullable();
             $table->timestamps();

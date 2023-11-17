@@ -6,9 +6,12 @@ use App\Http\Controllers\Controller;
 use Cart\Models\Invoice;
 use Cart\Models\Transaction;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Request;
 use Shetabit\Multipay\Exceptions\InvalidPaymentException;
 use Shetabit\Multipay\Exceptions\PurchaseFailedException;
 use Shetabit\Payment\Facade\Payment;
+use SiteLogs\Models\SiteLogs;
 
 class InvoiceController extends Controller
 {
@@ -63,7 +66,7 @@ class InvoiceController extends Controller
                 $newLogs->event = 'تراکنش ناموفق';
                 $newLogs->save();
 
-                log::alert('تراکنش مشکل برخورد شماره تراکنش : '.$newTransaction->id);
+                log::alert('تراکنش مشکل برخورد. شماره تراکنش : '.$newTransaction->id);
 
                 return redirect(route('pay.fail') . '/?transaction_id=' . $newTransaction->id);
             }

@@ -19,6 +19,7 @@ class Blog extends Component
             'typePost' => 'post',
             'statusPublish' => 'publish'
         ])->orderBy('id', 'desc')->paginate(18);
+
         $post3 = Post::where([
             'typePost' => 'post',
             'statusPublish' => 'publish',

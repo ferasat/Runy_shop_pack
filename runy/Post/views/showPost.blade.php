@@ -34,7 +34,7 @@
                                     {{$post->name}}
                                 </h1>
                             </div>
-                            <div class="card-body">
+                            <div class="card-body textBodyRuny">
                                 <p class="card-text">
                                     {!! $post->texts !!}
                                 </p>

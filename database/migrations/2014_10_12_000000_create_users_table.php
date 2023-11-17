@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('codeMeli')->nullable()->unique();
             $table->longText('about')->nullable();
             $table->longText('address')->nullable();
+            $table->string('zip_code')->nullable();
             $table->enum('gender' , ['male','female'])->nullable()->default('male');
             $table->string('passport')->nullable();
             $table->date('passportExpDate')->nullable();

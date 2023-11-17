@@ -1,6 +1,7 @@
 <?php
 
 use Cart\Controllers\CartController;
+use Cart\Controllers\InvoiceController;
 use Illuminate\Support\Facades\Route;
 use Product\Controllers\CategoryProductController;
 use Product\Controllers\ProductController;
@@ -19,4 +20,6 @@ Route::prefix('/dashboard')->group( function (){
 
 Route::get('/cart/', [CartController::class , 'my_cart'])->name('cart');
 Route::get('/invoice/', [CartController::class , 'invoice'])->name('invoice');
-
+Route::get('/pay_invoice/{id}', [InvoiceController::class, 'pay'])->name('pay.invoice');
+Route::get('/in_pay/result/', 'InvoiceController@result')->name('pay.result');
+Route::post('/in_pay/result/', 'InvoiceController@result');
