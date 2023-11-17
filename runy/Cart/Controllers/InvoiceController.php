@@ -54,6 +54,8 @@ class InvoiceController extends Controller
                 return $pay->pay()->render();
 
             } catch (PurchaseFailedException | Exception | SoapFault $e) {
+
+                dd(($e));
                 $newTransaction->transaction_result = $e;
                 $newTransaction->status = 0;
                 $newTransaction->save();
