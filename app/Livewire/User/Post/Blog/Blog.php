@@ -9,14 +9,25 @@ use Post\Models\Post;
 class Blog extends Component
 {
     use WithPagination;
+
     protected $paginationTheme = 'bootstrap';
-    public $show = false ;
+    public $show = false, $statusShowPosts = 'st1', $i = 1, $countSlide = 0;
+
     public function render()
     {
         $posts = Post::where([
             'typePost' => 'post',
             'statusPublish' => 'publish'
-        ])->orderBy('id' , 'desc')->paginate(16);
-        return view('livewire.user.post.blog.blog' , compact('posts'));
+        ])->orderBy('id', 'desc')->paginate(18);
+        $post3 = Post::where([
+            'typePost' => 'post',
+            'statusPublish' => 'publish',
+            'specialPin' => 1
+        ])->orderBy('id', 'desc')->take(3)->get();
+
+        $dl_drivers = Post::query()->where('statusPublish' , 'publish',)->where('name', 'LIKE', '%' . 'دانلود درایور' . "%")->get();
+        //dd($dl_driver);
+        $this->countSlide = count($post3);
+        return view('livewire.user.post.blog.blog', compact('posts', 'post3' , 'dl_drivers'));
     }
 }

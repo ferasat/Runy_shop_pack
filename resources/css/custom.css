@@ -13,6 +13,9 @@ h3 {
 .font-weight-bolder {
     font-weight: bolder !important;
 }
+.smaller-Text{
+    font-size: 8px !important;
+}
 /*------ Panel Style ----*/
 .icon-svg-home {
     width: 80px !important;
@@ -39,6 +42,10 @@ h3 {
 }
 
 /*-----------------*/
+.carousel-caption{
+    background: #0000007a;
+    border-radius: 9px;
+}
 .input-group-text {
     display: flex;
     align-items: center;

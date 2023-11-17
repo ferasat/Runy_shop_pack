@@ -7,12 +7,13 @@ use Post\Models\Post;
 
 class Status extends Component
 {
-    public $post , $statusPublish , $typePost;
+    public $post , $statusPublish , $typePost , $specialPin;
 
     public function mount()
     {
         $this->statusPublish = $this->post->statusPublish ;
         $this->typePost = $this->post->typePost ;
+        $this->specialPin = $this->post->specialPin ;
     }
     public function render()
     {
@@ -24,6 +25,7 @@ class Status extends Component
         $post = Post::find($this->post->id);
         $post -> statusPublish = $this->statusPublish ;
         $post -> typePost = $this->typePost ;
+        $post -> specialPin = $this->specialPin ;
         $post -> save() ;
     }
 }
