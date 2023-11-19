@@ -6,19 +6,25 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+    /**
+     * Run the migrations.
+     */
     public function up(): void
     {
-        Schema::create('answers', function (Blueprint $table) {
+        Schema::create('poll_question_answers', function (Blueprint $table) {
             $table->id();
             $table->integer('question_id');
-            $table->string('option')->nullable();
+            $table->string('name')->nullable();
             $table->integer('vote_count')->default(0);
             $table->timestamps();
         });
     }
 
+    /**
+     * Reverse the migrations.
+     */
     public function down(): void
     {
-        Schema::dropIfExists('answers');
+        Schema::dropIfExists('poll_question_answers');
     }
 };

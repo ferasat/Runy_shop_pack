@@ -1,10 +1,10 @@
 <div class="row ">
     <div class="col-xl-8 mb-5">
         <section class="scroll-section" id="listPost">
-            @foreach($questions as $question)
+            @foreach($polls as $poll)
                 <div class="card mb-2 shadow">
                     <div class="card-body">
-                        @livewire('admin.poll.row-poll' , ['question' => $question]  , key($question->id))
+                        @livewire('admin.poll.row-poll' , ['poll' => $poll]  , key($poll->id))
                     </div>
                 </div>
             @endforeach

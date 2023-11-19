@@ -11,8 +11,10 @@ class CreateOptionalSettingsTable extends Migration
     {
         Schema::create('optional_settings', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique()->index();
+            $table->string('name')->unique()->index()->nullable();
             $table->string('name_text')->nullable(); // نام فیلد که در ترجمه نمایش در میاد
+            $table->string('settingName')->nullable(); // نام فیلد که در ترجمه نمایش در میاد
+            $table->string('settingTextName')->nullable(); // نام فیلد که در ترجمه نمایش در میاد
             $table->longText('value')->nullable();
             $table->boolean('autoload')->default(1);
             $table->string('type')->default('public');

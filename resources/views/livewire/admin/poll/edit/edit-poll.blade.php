@@ -10,8 +10,8 @@
                 <div class="card-body mb-n2 border-last-none h-100">
                     <div class="mb-3">
                         <label class="form-label">عنوان نظرسنجی</label>
-                        <input type="text" class="form-control border-color-runy-primary" wire:model.blur="title">
-                        @error('title') {{$message}} @enderror
+                        <input type="text" class="form-control border-color-runy-primary" wire:model.blur="subject">
+                        @error('subject') {{$message}} @enderror
                     </div>
 
                 </div>
@@ -27,23 +27,10 @@
                                 <option value="multiple_choice">چند انتخابی</option>
                             </select>
                         </div>
-                        <div class="col-3">
-                            <label for="for_type" class="form-label">نمایش در</label>
-                            <select class="form-control" name="forType" id="forType" wire:model.live="forType">
-                                <option value="product">محصولات</option>
-                                <option value="service">خدمات</option>
-                            </select>
-                        </div>
-                        <div class="col-3">
-                            <label for="price" class="form-label">برای</label>
-                            <select class="form-control" wire:model.live.blur="for_type_id">
-
-                            @if($forType == 'product' || $question->for_type=='product')
-                                @foreach($products as $product)
-                                    <option value="{{ $product->id }}">{{ $product->name }}</option>
-                                @endforeach
-                            @endif
-                            </select>
+                        <div class="col-8">
+                            <label class="form-label">سوال</label>
+                            <input type="text" class="form-control border-color-runy-primary" wire:model.blur="title">
+                            @error('title') {{$message}} @enderror
                         </div>
                     </div>
                     <div class="row hr mt-3">
@@ -61,11 +48,11 @@
                 @endforeach
                 <div class="card-footer">
 
-                    <button class="btn btn-runy-primary" wire:click="addOption()" >
+                    <button class="btn btn-runy-primary" wire:click="addAnswer()" >
                         <i class="fa fa-plus-circle"></i>
                         اضافه کردن
                     </button>
-                    <button class="btn btn-runy-danger" wire:click="removeOption()">
+                    <button class="btn btn-runy-danger" wire:click="removeAnswer()">
                         <i class="fa fa-minus-circle"></i>
                         حذف کردن
                     </button>
@@ -80,18 +67,6 @@
         <div class="card border-color-runy-primary">
             <div class="card-header border-color-runy-primary">
                 انتشار
-            </div>
-            <div class="card-body">
-                <label class="visually-hidden" for="autoSizingInputGroup">وضعیت انتشار</label>
-                <div class="input-group">
-                    <div class="input-group-text border-color-runy-primary">وضعیت انتشار</div>
-                    <select id="statusPublish" wire:model.live.blur="statusPublish"
-                            class="form-select border-color-runy-primary" aria-hidden="true">
-                        <option value="forCheck">برای بررسی</option>
-                        <option value="draft">پیش نویس</option>
-                        <option value="publish">انتشار</option>
-                    </select>
-                </div>
             </div>
             <div class="card-footer text-center border-color-runy-primary">
                 <button class="btn btn-runy-primary mb-1" wire:click.prevent="save">ذخیره</button>

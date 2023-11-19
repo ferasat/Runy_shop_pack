@@ -17,7 +17,7 @@
                 </div>
             </div>
             <!-- Title and Top Buttons End -->
-            @livewire('admin.poll.edit.edit-poll' , ['question' => $question ] )
+            @livewire('admin.poll.edit.edit-poll' , ['poll' => $poll ,'question'=>$question] )
 
             <!-- Content Start -->
 

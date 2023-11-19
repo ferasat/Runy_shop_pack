@@ -4,6 +4,7 @@ namespace App\Livewire\Admin\Poll\Edit;
 
 use Livewire\Component;
 use Poll\Models\Answer;
+use Poll\Models\PollQuestionAnswer;
 
 class AddAnswer extends Component
 {
@@ -12,7 +13,7 @@ class AddAnswer extends Component
     public function mount()
     {
       //  dd($this->answer);
-        $this->answer=Answer::query()->find($this->answer->id);
+     $this->answer=PollQuestionAnswer::query()->find($this->answer->id);
      $this->option=$this->answer->option;
 
     }
@@ -22,7 +23,7 @@ class AddAnswer extends Component
     }
     public function updated()
     {
-        $upAnswer = Answer::query()->find($this->answer->id);
+        $upAnswer = PollQuestionAnswer::query()->find($this->answer->id);
         $upAnswer->option=$this->option;
         $upAnswer->save();
     }

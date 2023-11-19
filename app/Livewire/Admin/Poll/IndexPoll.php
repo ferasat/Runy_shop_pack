@@ -3,11 +3,12 @@
 namespace App\Livewire\Admin\Poll;
 
 use Livewire\Component;
-use Poll\Models\Question;
+use Poll\Models\Poll;
+
 
 class IndexPoll extends Component
 {
-    public $questions;
+    public $polls;
     public function mount()
     {
 
@@ -15,7 +16,7 @@ class IndexPoll extends Component
     public function render()
     {
 
-        $this->questions=Question::all();
+        $this->polls=Poll::all();
         return view('livewire.admin.poll.index-poll');
     }
 }

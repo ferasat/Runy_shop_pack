@@ -3,14 +3,14 @@
 namespace App\Livewire\Admin\Poll;
 
 use Livewire\Component;
-use Poll\Models\Answer;
+use Poll\Models\PollQuestionAnswer;
 
 class RowPoll extends Component
 {
-    public $question,$answers;
+    public $poll,$question,$answers;
     public function mount()
     {
-        $this->answers=Answer::query()->where('question_id',$this->question->id)->get();
+       // $this->answers=PollQuestionAnswer::query()->where('question_id',$this->question->id)->get();
     }
     public function render()
     {

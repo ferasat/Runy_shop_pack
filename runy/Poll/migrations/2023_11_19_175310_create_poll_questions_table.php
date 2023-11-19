@@ -11,17 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('questions', function (Blueprint $table) {
+        Schema::create('poll_questions', function (Blueprint $table) {
             $table->id();
+            $table->integer('poll_id');
             $table->string('title');
             $table->longText('users')->nullable();
             $table->integer('session_id')->nullable();
             $table->integer('cookie_id')->nullable();
             $table->integer('total_vote_count')->default(0);
-            $table->enum('poll_type', [ 'single_choice' ,'multiple_choice'])->default('single_choice')->nullable();
+            $table->enum('poll_type', [ 'single_choice' ,'multiple_choice','box_text'])->default('single_choice')->nullable();
             $table->enum('for_type', [ 'product' ,'service'])->default('product')->nullable();
-            $table->integer('for_type_id')->nullable();
-            $table->enum('statusPublish', [ 'draft' ,'publish'])->default('draft')->nullable();
             $table->timestamps();
         });
     }
@@ -31,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('questions');
+        Schema::dropIfExists('poll_questions');
     }
 };
