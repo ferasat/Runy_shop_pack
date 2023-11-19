@@ -22,12 +22,12 @@ class PollController extends Controller
     public function create()
     {
         $new=new Poll();
-        $new->subject="";
+        $new->subject="بدون عنوان";
         $new->save();
 
 
         $newQuestion = new PollQuestion();
-        $newQuestion->title = '';
+        $newQuestion->title = 'سوال ؟';
         $newQuestion->poll_id = $new->id;
 
         $newQuestion->save();
@@ -40,11 +40,10 @@ class PollController extends Controller
         $description = 'ویرایش نظرسنجی';
         $breadcrumbs = ["/dashboard" => " پیشخوان ", "/dashboard/poll" => " نظرسنجی ها  "];
 
-        $ckeditor = true;
         $poll = $id;
-        $question=PollQuestion::query()->where('poll_id',$poll->id)->first();
+
 
         return view('PollView::editPoll', compact('title', 'description',
-            'breadcrumbs', 'poll', 'question','ckeditor'));
+            'breadcrumbs', 'poll'));
     }
 }

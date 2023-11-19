@@ -17,20 +17,28 @@
                 </div>
             </div>
             <div class="card mb-3">
-                <div class="card-header">اطلاعات نظرسنجی</div>
+                <div class="card-header">ایجاد سوال</div>
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-3">
-                            <label for="poll_type" class="form-label">نوع نظرسنجی</label>
+                        <div class="col-2">
+                            <label for="poll_type" class="form-label">نوع سوال</label>
                             <select class="form-control" wire:model.live.blur="poll_type">
                                 <option value="single_choice">تک انتخابی</option>
                                 <option value="multiple_choice">چند انتخابی</option>
+                                <option value="box_text">متنی</option>
                             </select>
                         </div>
                         <div class="col-8">
-                            <label class="form-label">سوال</label>
+                            <label class="form-label">عنوان سوال</label>
                             <input type="text" class="form-control border-color-runy-primary" wire:model.blur="title">
                             @error('title') {{$message}} @enderror
+                        </div>
+                        <div class="col-2">
+                            <label class="form-label text-white">.</label>
+                            <button class="btn btn-runy-primary" wire:click="addQuestion()">
+                                <svg class="icon-svg-panel-sm" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g opacity="0.4"> <path d="M8 12H16" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12 16V8" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g> <path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                                اضافه کن
+                            </button>
                         </div>
                     </div>
                     <div class="row hr mt-3">
@@ -40,12 +48,19 @@
             </div>
 
             <div class="card mb-3">
-                <div class="card-header">گزینه های نظرسنجی</div>
-                @php $x=1 ; @endphp
-                @foreach($answers as $answer)
-                    @livewire('admin.poll.edit.add-answer' , compact('answer' , 'question' , 'x') , key($answer->id.rand(1,999).$x))
+                <div class="card-header">سوالات</div>
+                <div class="card-body">
+                    @foreach($questions as $question)
+                        @livewire('admin.poll.edit.show-poll-questions' , compact( 'question' ) , key($question->id.rand(1,999)))
+                    @endforeach
+                </div>
+
+
+                {{--@php $x=1 ; @endphp
+                @foreach($questions as $question)
+                    @livewire('admin.poll.edit.add-answer' , compact( 'question' , 'x') , key($answer->id.rand(1,999).$x))
                     @php $x++ ; @endphp
-                @endforeach
+                @endforeach--}}
                 <div class="card-footer">
 
                     <button class="btn btn-runy-primary" wire:click="addAnswer()" >

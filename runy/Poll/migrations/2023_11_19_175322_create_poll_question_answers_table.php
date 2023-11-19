@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('question_id');
             $table->string('name')->nullable();
-            $table->integer('vote_count')->default(0);
+            $table->string('vote_count')->default(0);
             $table->timestamps();
         });
     }

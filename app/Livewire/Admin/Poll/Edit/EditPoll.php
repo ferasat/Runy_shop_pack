@@ -3,22 +3,40 @@
 namespace App\Livewire\Admin\Poll\Edit;
 
 use Livewire\Component;
-use Poll\Models\Answer;
+
+use Poll\Models\PollQuestion;
 use Poll\Models\PollQuestionAnswer;
-use Poll\Models\Question;
+
 use Product\Models\Product;
 
 class EditPoll extends Component
 {
-    public $poll,$question,$title,$question_type;
-    public $answers = [],$answer;
+    public $poll, $questions , $title, $poll_type;
 
     public function mount()
     {
-        //$this->title=$this->question->title;
-        $this->answers=PollQuestionAnswer::query()->where('question_id',$this->question->id)->get();
+
     }
 
+    public function render()
+    {
+        $this->questions = PollQuestion::query()->where('poll_id',$this->poll->id)->orderByDesc('id')->get();
+        //dd($this->questions);
+        return view('livewire.admin.poll.edit.edit-poll');
+    }
+
+    public function addQuestion()
+    {
+        $newQues = new PollQuestion();
+        $newQues->poll_id = $this->poll->id ;
+        $newQues->title = $this->title ;
+        $newQues->poll_type = $this->poll_type ;
+        $newQues->save() ;
+
+        $this->render();
+    }
+
+/*
     public function addAnswer()
     {
 
@@ -41,10 +59,7 @@ class EditPoll extends Component
         $this->answers = PollQuestionAnswer::where('question_id', $this->question->id)->get();
     }
 
-    public function render()
-    {
-        return view('livewire.admin.poll.edit.edit-poll');
-    }
+
 
     public function save()
     {
@@ -55,6 +70,6 @@ class EditPoll extends Component
 
         return $this->redirect(route('poll.index'));
 
-    }
+    }*/
 
 }
