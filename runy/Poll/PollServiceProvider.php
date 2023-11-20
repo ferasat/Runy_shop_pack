@@ -26,5 +26,7 @@ class PollServiceProvider extends ServiceProvider
         ]);
 
         Route::middleware('web')->group(base_path('runy/Poll/poll_route.php'));
+        Route::middleware('web')->group(base_path('runy/Poll/poll_show_route.php'));
+
     }
 }

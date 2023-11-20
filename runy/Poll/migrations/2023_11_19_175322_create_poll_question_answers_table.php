@@ -16,6 +16,8 @@ return new class extends Migration
             $table->integer('question_id');
             $table->string('name')->nullable();
             $table->string('vote_count')->default(0);
+            $table->boolean('vote_answer')->default(0);
+            $table->text('vote_answer_text')->nullable();
             $table->timestamps();
         });
     }

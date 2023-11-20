@@ -16,7 +16,7 @@ return new class extends Migration
             $table->integer('session_id')->nullable();
             $table->integer('cookie_id')->nullable();
             $table->integer('total_vote_count')->default(0);
-            $table->enum('poll_type', [ 'single_choice' ,'multiple_choice','box_text'])->default('single_choice')->nullable();
+            $table->enum('question_type', [ 'single_choice' ,'multiple_choice','box_text'])->default('single_choice')->nullable();
             $table->enum('for_type', [ 'product' ,'service'])->default('product')->nullable();
             $table->timestamps();
         });

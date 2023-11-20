@@ -23,14 +23,15 @@ class PollController extends Controller
     {
         $new=new Poll();
         $new->subject="بدون عنوان";
+        $new->status="draft";
         $new->save();
 
 
-        $newQuestion = new PollQuestion();
-        $newQuestion->title = 'سوال ؟';
-        $newQuestion->poll_id = $new->id;
-
-        $newQuestion->save();
+//        $newQuestion = new PollQuestion();
+//        $newQuestion->title = 'سوال ؟';
+//        $newQuestion->poll_id = $new->id;
+//
+//        $newQuestion->save();
 
         return redirect()->to('dashboard/poll/edit/' . $new->id);
     }
@@ -45,5 +46,12 @@ class PollController extends Controller
 
         return view('PollView::editPoll', compact('title', 'description',
             'breadcrumbs', 'poll'));
+    }
+    public function show(Poll $id)
+    {
+        $poll= $id;
+        $breadcrumbs = ["/"=>" خانه " , "/poll" => "نظرسنجی" ];
+        //dd($cat);
+        return view('PollView::showPoll' , compact('poll', 'breadcrumbs')) ;
     }
 }

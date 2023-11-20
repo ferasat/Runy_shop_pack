@@ -16,7 +16,7 @@ class HomeSetting extends Component
     {
         $this->homePage = HomePage::query()->first();
         $this->slides = RunySliderB5::all();
-        $this->slideshow_id = $this->homePage->slideshow_id ;
+       // $this->slideshow_id = $this->homePage->slideshow_id ;
     }
 
     public function loadItems()
