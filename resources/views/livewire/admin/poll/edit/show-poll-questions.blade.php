@@ -12,10 +12,13 @@
             <button wire:click="deleteQuestion" class="btn btn-outline-primary">حذف کردن سوال</button>
         </div>
     </div>
+    @if($question->question_type!="box_text")
     <div class="row">
         <div class="col-md-6">
             <label for="answer_name" class="form-label">جواب</label>
             <input type="text" class="form-control" wire:model.blur="answer_name" id="answer_name">
+            @error('answer_name')<span class="text-danger">عنوان جواب را لطفا وارد کنید</span>  @enderror
+
         </div>
         <div class="col-md-3">
             <label for="answer_name"  class="text-white d-block">.</label>
@@ -23,6 +26,7 @@
         </div>
 
     </div>
+
 
     <div class="row">
         <div class="col-12">
@@ -35,4 +39,5 @@
             </ul>
         </div>
     </div>
+    @endif
 </div>

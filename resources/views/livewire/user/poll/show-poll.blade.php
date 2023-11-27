@@ -2,8 +2,9 @@
     <div class="row">
         <div class="col-md-6 mx-auto my-4">
             @if($show_success)
-                <span class="alert alert-success">نظر شما با موفقیت ثبت شد</span>
+                <span class="alert alert-success">  نظر شما با موفقیت ثبت شد</span>
             @else
+
                 <div class="card">
                     <div class="card-header">
                         <h3 class="mb-2">{{$poll->subject}}</h3>
@@ -16,6 +17,8 @@
                                 <ul class="list-group" wire:key="{{ $question->id }}">
                                     @if ($question->question_type == 'box_text')
                                         @php $x = 1; @endphp
+
+
                                         @foreach(answers_of_question($question->id) as $answer)
                                             <li class="list-group-item">
                                                 <textarea class="form-control" wire:model.defer="selectedAnswers.box_text.{{$answer->id}}"></textarea>
@@ -50,6 +53,11 @@
                         @endforeach
                     </div>
                     <div class="card-footer text-center">
+                        @if($errors->has('selectedAnswers.single_choice') || $errors->has('selectedAnswers.multiple_choice') ||$errors->has('selectedAnswers.box_text'))
+                        <div class="alert alert-danger">لطفا به تمامی سوالات پاسخ دهید</div>
+                        @endif
+
+
                         <button class="btn btn-lg btn-primary" wire:click="saveAnswers">ذخیره</button>
                     </div>
                 </div>

@@ -11,7 +11,7 @@
                     <div class="mb-3">
                         <label class="form-label">عنوان نظرسنجی</label>
                         <input type="text" class="form-control border-color-runy-primary" wire:model.blur="subject">
-                        @error('subject') {{$message}} @enderror
+                        @error('subject')<span class="text-danger">عنوان نظرسنجی را لطفا وارد کنید</span>  @enderror
                     </div>
 
 
@@ -32,7 +32,7 @@
                         <div class="col-8">
                             <label class="form-label">عنوان سوال</label>
                             <input type="text" class="form-control border-color-runy-primary" wire:model.blur="title">
-                            @error('title') {{$message}} @enderror
+                            @error('title')<span class="text-danger">عنوان سوال را وارد کنید</span>  @enderror
                         </div>
                         <div class="col-2">
                             <label class="form-label text-white">.</label>

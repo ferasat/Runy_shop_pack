@@ -37,6 +37,9 @@ class EditPoll extends Component
 
     public function addQuestion()
     {
+        $this->validate([
+           'title'=>'required'
+        ]);
         $newQues = new PollQuestion();
         $newQues->poll_id = $this->poll->id ;
         $newQues->title = $this->title ;
@@ -56,7 +59,7 @@ class EditPoll extends Component
 
     public function save()
     {
-
+        $this->validate(['subject'=>'required']);
         $this->poll->subject=$this->subject;
         $this->poll->poll_type=$this->poll_type;
         $this->poll->save();
@@ -66,22 +69,29 @@ class EditPoll extends Component
     }
     public function sendSMS()
     {
-
+        $customer=Customer::query()->find($this->customer_id);
+        $poll_id=$this->poll->id;
+        $this->SMS_text="$customer->name $customer->family عزیز لطفا در نظر سنجی زیر شرکت کنید لینک نظر سنجی https://mortazavistore.ir/poll/show/$poll_id ";
+        //$this->SMS_text="$customer->name $customer->family ";
+        $phone=$customer->cell;
+//        $api = new GhasedakApi('01b0b9662b2eeafb88e875a4ec39d7d3096dc85c8fa4f99c19074d92ab13a70d');
+//        $api->SendSimple(
+//            '09908747495',          // receptor
+//            $this->SMS_text,  // message
+//            "300002525"      // choose a line number from your account
+//        );
         if ($this->poll_type=="single_person")
         {
-            $customer=Customer::query()->find($this->customer_id);
-            $poll_id=$this->poll->id;
-            $this->SMS_text="$customer->name $customer->family عزیز لطفا در نظر سنجی زیر شرکت کنید لینک نظر سنجی https://mortazavistore.ir/poll/show/$poll_id ";
-            $phone=$customer->cell;
+
 
             try
             {
-//                $api = new GhasedakApi('46767fce136439dc9cced4f7e10dd78a8f22f171af45d7fc2d9f61c53a0f4522');
-//                $api->SendSimple(
-//                    $phone,          // receptor
-//                    $this->SMS_text,  // message
-//                    "300002525"      // choose a line number from your account
-//                );
+                $api = new GhasedakApi('01b0b9662b2eeafb88e875a4ec39d7d3096dc85c8fa4f99c19074d92ab13a70d');
+                $api->SendSimple(
+                    $phone,          // receptor
+                    $this->SMS_text,  // message
+                    "300002525"      // choose a line number from your account
+                );
                 $this->show_success=true;
             }
             catch(\Ghasedak\Exceptions\ApiException $e){
@@ -106,7 +116,7 @@ class EditPoll extends Component
                 $newPollQ=new PollQuestion();
                 $newPollQ->poll_id=$newPoll->id;
                 $newPollQ->title=$question->title;
-                $newPollQ->question_type=$question->type;
+                $newPollQ->question_type=$question->question_type;
                 $newPollQ->save();
 
                     $old_answers=PollQuestionAnswer::query()->where('question_id',$question->id)->get();
@@ -126,12 +136,12 @@ class EditPoll extends Component
             $phone=$customer->cell;
             try
             {
-//                $api = new GhasedakApi('b267a45bc4bccbbabe99555396023340c9e8e174116fdd1f33a68a63c5835efd');
-//                $api->SendSimple(
-//                    $phone,          // receptor
-//                    $this->SMS_text,  // message
-//                    "300002525"      // choose a line number from your account
-//                );
+                $api = new GhasedakApi('01b0b9662b2eeafb88e875a4ec39d7d3096dc85c8fa4f99c19074d92ab13a70d');
+                $api->SendSimple(
+                    $phone,          // receptor
+                    $this->SMS_text,  // message
+                    "300002525"      // choose a line number from your account
+                );
                 $this->show_success=true;
             }
             catch(\Ghasedak\Exceptions\ApiException $e){

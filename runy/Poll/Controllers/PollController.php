@@ -23,7 +23,7 @@ class PollController extends Controller
     {
         $new=new Poll();
         $new->subject="بدون عنوان";
-        $new->status="draft";
+        $new->status=0;
         $new->save();
 
 
@@ -51,7 +51,13 @@ class PollController extends Controller
     {
         $poll= $id;
         $breadcrumbs = ["/"=>" خانه " , "/poll" => "نظرسنجی" ];
-        //dd($cat);
-        return view('PollView::showPoll' , compact('poll', 'breadcrumbs')) ;
+        if ($poll->status==0)
+        {
+            return view('PollView::showPoll' , compact('poll', 'breadcrumbs')) ;
+        }
+        else{
+            return redirect('/') ;
+
+        }
     }
 }

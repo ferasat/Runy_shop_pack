@@ -9,6 +9,9 @@ use Poll\Models\Poll;
 class IndexPoll extends Component
 {
     public $polls;
+    protected $listeners =[
+        'updatePolls' => 'render',
+    ];
     public function mount()
     {
 

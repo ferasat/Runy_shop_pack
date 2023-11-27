@@ -19,6 +19,9 @@ class ShowPollQuestions extends Component
 
     public function addAnswer()
     {
+        $this->validate([
+            'answer_name'=>'required'
+        ]);
         $newAswer = new PollQuestionAnswer();
         $newAswer->question_id = $this->question->id ;
         $newAswer->name = $this->answer_name ;
