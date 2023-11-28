@@ -3,12 +3,14 @@
 namespace App\Livewire\Admin\Poll;
 
 use Livewire\Component;
+use Livewire\WithPagination;
 use Poll\Models\Poll;
 
 
 class IndexPoll extends Component
 {
-    public $polls;
+    use WithPagination ;
+    protected $polls;
     protected $listeners =[
         'updatePolls' => 'render',
     ];
@@ -18,8 +20,7 @@ class IndexPoll extends Component
     }
     public function render()
     {
-
-        $this->polls=Poll::all();
-        return view('livewire.admin.poll.index-poll');
+        $this->polls = Poll::query()->orderByDesc('id')->paginate(20);
+        return view('livewire.admin.poll.index-poll' , ['polls'=>$this->polls]);
     }
 }

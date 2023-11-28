@@ -22,7 +22,7 @@
             <!-- Title and Top Buttons End -->
 
             <!-- Content Start -->
-        @livewire('admin.poll.index-poll' , ['description' => $description])
+        @livewire('admin.poll.index-poll' , )
         <!-- Content End -->
         </div>
     </div>

@@ -1,11 +1,14 @@
 <div class="row ">
-    <div class="col-md-2 col-sm-12">
-        {{ $poll->id }}
+    <div class="col-md-4 col-sm-12">
+        {{ $poll->id }} : {{ $poll->subject }}<br>
+        {{ $poll->poll_type }}
     </div>
-    <div class="col-md-10">
+    <div class="col-md-8">
         <div class="card-body d-flex pt-0 pb-0 ps-3 pe-0 h-100 align-items-center justify-content-between row">
             <div class="col-md-5 d-flex flex-column">
-                <div>{{ $poll->subject }}</div>
+                <div>
+
+                </div>
             </div>
             <div class="col-md-7 d-flex justify-content-end">
                 <!-- Button trigger modal -->
@@ -49,7 +52,7 @@
 {{--                </div>--}}
 {{--                @endif--}}
 
-                <a class="btn btn-outline-primary btn-sm ms-1" href="{{asset('/poll/show/'.$poll->id)}}"
+                <a target="_blank" class="btn btn-outline-primary btn-sm ms-1" href="{{asset('/poll/show/'.$poll->id)}}"
                    type="button">دیدن</a>
                 <a class="btn btn-outline-warning btn-sm ms-1" href="{{asset('/dashboard/poll/edit/'.$poll->id)}}"
                    type="button">ویرایش</a>
