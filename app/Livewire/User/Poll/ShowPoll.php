@@ -44,7 +44,9 @@ class ShowPoll extends Component
 
             if ($key == "single_choice") {
                 foreach ($selected_answer as $key_question_id => $single_ans) {
-                    //$upQuestion=PollQuestion::query()->find($key_question_id);
+                    $upQuestion=PollQuestion::query()->find($key_question_id);
+                    $upQuestion->total_vote_count++;
+                    $upQuestion->save();
                     $upAnswer = PollQuestionAnswer::query()->find($single_ans);
                     if ($this->poll->poll_type == 'public') {
                         $upAnswer->vote_count = $upAnswer->vote_count + 1;
@@ -57,7 +59,9 @@ class ShowPoll extends Component
             } elseif ($key == "multiple_choice") {
                 foreach ($selected_answer as $key_question_id => $multi_ans) {
                     foreach ($multi_ans as $key_answer_id => $ans) {
-
+                        $upQuestion=PollQuestion::query()->find($key_question_id);
+                        $upQuestion->total_vote_count++;
+                        $upQuestion->save();
                         $upAnswer = PollQuestionAnswer::query()->find($key_answer_id);
                         if ($this->poll->poll_type == 'public') {
                             $upAnswer->vote_count = $upAnswer->vote_count + 1;

@@ -9,8 +9,14 @@ use Poll\Models\PollQuestionAnswer;
 
 class RowPoll extends Component
 {
-    public $poll,$question,$answers;
+    public $poll,$questions,$answers;
     public $showModal = false;
+    public function mount()
+    {
+        //dd($this->poll,$this->question,$this->answers);
+        $this->questions=PollQuestion::query()->where('poll_id',$this->poll->id)->get();
+
+    }
 
     public function render()
     {
