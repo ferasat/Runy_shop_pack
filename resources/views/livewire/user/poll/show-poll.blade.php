@@ -18,7 +18,6 @@
                                     @if ($question->question_type == 'box_text')
                                         @php $x = 1; @endphp
 
-
                                         @foreach(answers_of_question($question->id) as $answer)
                                             <li class="list-group-item">
                                                 <textarea class="form-control" wire:model.defer="selectedAnswers.box_text.{{$answer->id}}"></textarea>

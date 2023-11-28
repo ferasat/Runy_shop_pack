@@ -29,7 +29,7 @@ class ShowPoll extends Component
 
     public function saveAnswers()
     {
-        $this->validate([
+        /*$this->validate([
             'selectedAnswers.box_text' => 'required|array',
             'selectedAnswers.box_text.*' => 'required',
 
@@ -38,7 +38,7 @@ class ShowPoll extends Component
 
             'selectedAnswers.multiple_choice' => 'required|array',
             'selectedAnswers.multiple_choice.*' => 'required',
-        ]);
+        ]);*/
         //dd($this->selectedAnswers);
         foreach ($this->selectedAnswers as $key=>$selected_answer)
         {
