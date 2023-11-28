@@ -87,6 +87,7 @@
                     <select id="statusPublish" wire:model.live.blur="poll_type" class="form-select border-color-runy-primary" aria-hidden="true">
                         <option value="single_person">شخصی</option>
                         <option value="template">قالب</option>
+                        <option value="public">عمومی</option>
                     </select>
                 </div>
             </div>

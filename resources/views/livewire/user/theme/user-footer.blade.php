@@ -4,41 +4,10 @@
     <div class="container-fluid footer-top">
         <div class="container">
             <div class="row text-center">
-
-                <div class="col-lg-3 col-md-6 footer-links">
-                    <h4>آدرس</h4>
-                    <p>
-                        تهران ، خیابان ایرانشهر ، خیابان نجات اللهی<br>
-                        اصفهان ، خیابان نشاط ، روبروی خیابان فرشادی<br>
-                    </p>
-                </div>
-
-                <div class="col-lg-2 col-md-6 footer-links">
-                    <h4>ساعات کاری</h4>
-                    <ul>
-                        <strong>شنبه تا پنج شنبه : </strong> 9 صبح تا 9 شب<br>
-                        <strong> روزهای تعطیل : </strong>  پشتیبانی تلفنی<br>
-                    </ul>
-                </div>
-
-                <div class="col-lg-3 col-md-6 footer-links">
-                    <h4>ارتباط با ما</h4>
-                    <ul>
-                        <strong>تماس : </strong> 09129259317 <br>
-                        <strong> تلفن دفتر : </strong> 02188310838 <br>
-                        <strong>اینستاگرام : </strong>   mortazavistore@ <br>
-                        <strong> ایمیل : </strong>  mortazavistore@gmail.com <br>
-                        <strong>آپارات : </strong> aparat.com/mortazavistore <br>
-                    </ul>
-                </div>
-
-                <div class="col-lg-4 col-md-6 footer-newsletter">
-                    <h4>مجوز ها</h4>
-
-                </div>
-
-
-
+                {!! $footer1->value !!}
+                {!! $footer2->value !!}
+                {!! $footer3->value !!}
+                {!! $footer4->value !!}
             </div>
         </div>
     </div>

@@ -19,11 +19,12 @@ class PollController extends Controller
 
         return view('PollView::indexPoll', compact('title', 'description', 'breadcrumbs'));
     }
+
     public function create()
     {
-        $new=new Poll();
-        $new->subject="بدون عنوان";
-        $new->status=0;
+        $new = new Poll();
+        $new->subject = "بدون عنوان";
+        $new->status = 0;
         $new->save();
 
 
@@ -35,6 +36,7 @@ class PollController extends Controller
 
         return redirect()->to('dashboard/poll/edit/' . $new->id);
     }
+
     public function edit(Poll $id)
     {
         $title = 'ویرایش ' . $id->subject;
@@ -47,17 +49,17 @@ class PollController extends Controller
         return view('PollView::editPoll', compact('title', 'description',
             'breadcrumbs', 'poll'));
     }
+
     public function show(Poll $id)
     {
-        $poll= $id;
-        $breadcrumbs = ["/"=>" خانه " , "/poll" => "نظرسنجی" ];
-        if ($poll->status==0)
-        {
-            return view('PollView::showPoll' , compact('poll', 'breadcrumbs')) ;
-        }
-        else{
-            return redirect('/') ;
-
+        $poll = $id;
+        $breadcrumbs = ["/" => " خانه ", "/poll" => "نظرسنجی"];
+        if ($poll->status == 0) {
+            return view('PollView::showPoll', compact('poll', 'breadcrumbs'));
+        } elseif ($poll->status == 1 and $poll->poll_type == 'public') {
+            return view('PollView::showPoll', compact('poll', 'breadcrumbs'));
+        } else {
+            return redirect('/');
         }
     }
 }

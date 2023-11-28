@@ -8,11 +8,10 @@ use Poll\Models\PollQuestionAnswer;
 
 class ShowPoll extends Component
 {
-    public $poll, $questions, $selectedAnswers,$show_success=false;
+    public $poll, $questions, $selectedAnswers, $show_success = false;
 
     public function mount()
     {
-
         $this->questions = PollQuestion::query()->where('poll_id', $this->poll->id)->get();
         $this->selectedAnswers = [];
     }
@@ -40,53 +39,52 @@ class ShowPoll extends Component
             'selectedAnswers.multiple_choice.*' => 'required',
         ]);*/
         //dd($this->selectedAnswers);
-        foreach ($this->selectedAnswers as $key=>$selected_answer)
-        {
 
-            if ($key=="single_choice")
-            {
-                foreach ($selected_answer as $key_question_id=>$single_ans)
-                {
+        foreach ($this->selectedAnswers as $key => $selected_answer) {
+
+            if ($key == "single_choice") {
+                foreach ($selected_answer as $key_question_id => $single_ans) {
                     //$upQuestion=PollQuestion::query()->find($key_question_id);
-                    $upAnswer=PollQuestionAnswer::query()->find($single_ans);
-                    $upAnswer->vote_answer=1;
+                    $upAnswer = PollQuestionAnswer::query()->find($single_ans);
+                    if ($this->poll->poll_type == 'public') {
+                        $upAnswer->vote_count = $upAnswer->vote_count + 1;
+                    }
+                    $upAnswer->vote_answer = 1;
                     $upAnswer->save();
-                  //  dd($key_question_id,$single_ans,$upQuestion,$upAnswer);
+                    //  dd($key_question_id,$single_ans,$upQuestion,$upAnswer);
                 }
 
-            }elseif ($key=="multiple_choice")
-            {
-                foreach ($selected_answer as $key_question_id=>$multi_ans)
-                {
-                    foreach ($multi_ans as $key_answer_id=>$ans)
-                    {
-                        //$upQuestion=PollQuestion::query()->find($key_question_id);
-                        $upAnswer=PollQuestionAnswer::query()->find($key_answer_id);
-                        $upAnswer->vote_answer=1;
+            } elseif ($key == "multiple_choice") {
+                foreach ($selected_answer as $key_question_id => $multi_ans) {
+                    foreach ($multi_ans as $key_answer_id => $ans) {
+
+                        $upAnswer = PollQuestionAnswer::query()->find($key_answer_id);
+                        if ($this->poll->poll_type == 'public') {
+                            $upAnswer->vote_count = $upAnswer->vote_count + 1;
+                        }
+                        $upAnswer->vote_answer = 1;
                         $upAnswer->save();
-                       // dd($key_question_id,$key_answer_id,$upQuestion,$upAnswer);
+
                     }
 
                 }
 
-            }elseif ($key=="box_text")
-            {
+            } elseif ($key == "box_text") {
 
-                foreach ($selected_answer as $key_answer_id=>$text_ans)
-                {
+                foreach ($selected_answer as $key_answer_id => $text_ans) {
 
-                    $upAnswer=PollQuestionAnswer::query()->find($key_answer_id);
-                    $upAnswer->vote_answer=1;
-                    $upAnswer->vote_answer_text=$text_ans;
+                    $upAnswer = PollQuestionAnswer::query()->find($key_answer_id);
+                    $upAnswer->vote_answer = 1;
+                    $upAnswer->vote_answer_text = $text_ans;
                     $upAnswer->save();
 
                 }
-            }else{
+            } else {
                 dd('error');
             }
         }
-        $this->poll->status=1;
+        $this->poll->status = 1;
         $this->poll->save();
-        $this->show_success=true;
+        $this->show_success = true;
     }
 }

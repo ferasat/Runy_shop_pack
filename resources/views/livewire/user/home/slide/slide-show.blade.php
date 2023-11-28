@@ -15,9 +15,11 @@
                 @foreach($pics as $pic)
                     <div class="carousel-item @if($y == 0) active @endif ">
                         <img src="{{ asset($pic->urlpic) }}" class="d-block w-100" alt="{{ $pic->name }}">
+                        @if($pic->text != null or $pic->text != '')
                         <div class="carousel-caption d-none d-md-block">
                             {{$pic->text}}
                         </div>
+                        @endif
                     </div>
                     @php $y++ @endphp
                 @endforeach

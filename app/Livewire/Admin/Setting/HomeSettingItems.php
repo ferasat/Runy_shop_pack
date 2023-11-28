@@ -7,7 +7,7 @@ use Livewire\Component;
 
 class HomeSettingItems extends Component
 {
-    public $setting , $autoload;
+    public $setting , $autoload , $name , $name_text , $value;
 
     public function mount()
     {
@@ -43,7 +43,7 @@ class HomeSettingItems extends Component
 
     public function save()
     {
-        $this->validate();
+
         $upOp = OptionalSettings::query()->findOrFail($this->setting->id);
         $upOp->autoload = $this->autoload ;
         $upOp->name = $this->name ;
