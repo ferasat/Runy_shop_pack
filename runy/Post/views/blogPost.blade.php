@@ -3,7 +3,11 @@
 @section('content')
     @livewire('user.theme.user-navbar-responsive')
 
-    @livewire('user.post.blog.blog')
+    @if(isset($statusBlog))
+        @livewire('user.post.blog.blog' , ['posts_in_cat'=> $posts_in_cat , 'statusBlog'=> $statusBlog])
+    @else
+        @livewire('user.post.blog.blog')
+    @endif
 
     @livewire('user.theme.user-footer')
 @endsection

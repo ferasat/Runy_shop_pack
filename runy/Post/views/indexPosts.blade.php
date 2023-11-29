@@ -1,4 +1,4 @@
-@extends('layouts.runyApp',[ 'title'=>'پست ها', 'description'=>'' ])
+@extends('layouts.runyApp',[ 'title'=>$title, 'description'=>'' ])
 
 @section('content')
 

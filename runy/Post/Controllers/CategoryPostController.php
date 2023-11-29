@@ -12,7 +12,6 @@ class CategoryPostController extends Controller
 
     public function index()
     {
-        $html_tag_data = ["override"=>'{ "attributes" : { "placement" : "horizontal", "layout":"boxed" }, "storagePrefix" : "starter-project", "showSettings" : false }'];
         $title = 'دستبندی ها';
         $description= 'مدیریت دستبندی ها';
         $breadcrumbs = ["/dashboard"=>" پیشخوان " , "/dashboard/post/cat" => " دستبندی ها " ];
@@ -20,7 +19,7 @@ class CategoryPostController extends Controller
         $categories = CategoryPost::all()->sortByDesc('id');
         $editor = true ;
 
-        return view( 'PostView::indexCategory' , compact('html_tag_data' , 'title' , 'description'
+        return view( 'PostView::indexCategory' , compact( 'title' , 'description'
             , 'editor' , 'breadcrumbs' , 'categories'));
     }
 
@@ -37,9 +36,23 @@ class CategoryPostController extends Controller
     }
 
 
-    public function show(CategoryPost $categoryPost)
+    public function show(CategoryPost $categorypost)
     {
-        //
+        $posts_in_cat = Post::query()->where([
+            'typePost' => 'post',
+            'statusPublish' => 'publish',
+            'cat_id' => $categorypost->id
+        ])->orderByDesc('id')->get();
+
+        //dd($posts_in_cat , $categorypost);
+
+        $title = 'مجله' ;
+        $description= 'مجله آموزشی  ';
+        $breadcrumbs = ["/"=>" خانه " , "/blog" => " وبلاگ  " ];
+        $statusBlog = 'cat';
+
+        return view('PostView::blogPost' , compact( 'title' , 'description' ,'breadcrumbs' ,
+            'posts_in_cat' , 'statusBlog' ));
     }
 
 

@@ -5,7 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>{{ $title }}</title>
-    {!! SEO::generate() !!}
+    <meta name="description" content="چاپگر برادر اصفهان پرینتر برادر اصفهان نمایندگی برادر اصفهان پرینتر HP"/>
+    @if(isset($keywords))
+        <meta name="keywords" content="{{ $keywords }}"/>
+    @else
+        <meta name="keywords" content="Brother | ساعت زن | HP | نمایندگی پرینتر اچ پی | نمایندگی پرینتر برادر | پرینتر اچ پی |پرینتر برادر"/>
+    @endif
+
+    <link rel="alternate" hreflang="fa-IR" href="https://mortazavistore.ir/"/>
+
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @include('layouts.runyHead')

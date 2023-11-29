@@ -34,7 +34,7 @@
                         <a class="nav-link text-white" href="{{asset(route('poll.index'))}}">نظرسنجی</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="{{asset(route('customer.index'))}}">باشگاه مشرتریان</a>
+                        <a class="nav-link text-white" href="{{asset(route('customer.index'))}}">باشگاه مشتریان</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" href="{{asset(route('setting.index'))}}">تنظیمات</a>

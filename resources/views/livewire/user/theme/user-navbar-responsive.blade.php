@@ -363,7 +363,6 @@
 
                             </li>
 
-
                         </ul>
                     </li>
                     <li class="list-item list-item-has-children mega-menu mega-menu-col-5">
@@ -455,22 +454,22 @@
                         </ul>
                     </li>
                     <li class="list-item">
-                        <a class="nav-link" href="#">نمایندگی برادر</a>
+                        <a class="nav-link" href="https://mortazavistore.ir/page/%D9%86%D9%85%D8%A7%DB%8C%D9%86%D8%AF%DA%AF%DB%8C-%D8%A8%D8%B1%D8%A7%D8%AF%D8%B1-%D8%AF%D8%B1-%D8%A7%D8%B5%D9%81%D9%87%D8%A7%D9%86">نمایندگی برادر</a>
                     </li>
                     <li class="list-item">
                         <a class="nav-link"
-                           href="http://localhost:63342/mortazavi-bootstrap/drivers.html?_ijt=ucfrq60mf07i33i51jis2ngb4d&_ij_reload=RELOAD_ON_SAVE">
+                           href="">
                             درایور و نرم افزار </a>
                     </li>
                     <li class="list-item">
                         <a class="nav-link"
-                           href="http://localhost:63342/mortazavi-bootstrap/articles.html?_ijt=ucfrq60mf07i33i51jis2ngb4d&_ij_reload=RELOAD_ON_SAVE">آموزش</a>
+                           href="">آموزش</a>
                     </li>
                     <li class="list-item">
                         <a class="nav-link" href="#">سامانه تعمیرات</a>
                     </li>
                     <li class="list-item">
-                        <a class="nav-link" href="#">مقالات</a>
+                        <a class="nav-link" href="{{ asset('/blog') }}">مقالات</a>
                     </li>
 
                 </ul>
