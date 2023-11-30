@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use Post\Controllers\CategoryPostController;
 use Post\Controllers\PostController;
 
-Route::prefix('/dashboard')->group( function (){
+Route::prefix('/dashboard')->middleware('auth')->group( function (){
     Route::get('/post/', [PostController::class , 'index'])->name('post.index');
     Route::get('/post/create', [PostController::class , 'create'])->name('post.Create');
     Route::get('/post/edit/{id}', [PostController::class , 'edit'])->name('post.edit');

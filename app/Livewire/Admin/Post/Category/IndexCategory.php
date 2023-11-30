@@ -58,13 +58,4 @@ class IndexCategory extends Component
         $this->render() ;
         $this->disableBtn = false ;
     }
-
-    public function deleteCat($cat_id)
-    {
-        $this->disableBtn = true ;
-        CategoryPost::query()->find($cat_id)->delete();
-
-        $this->render() ;
-        $this->disableBtn = false ;
-    }
 }

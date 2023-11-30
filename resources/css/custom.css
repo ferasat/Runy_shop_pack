@@ -5083,7 +5083,9 @@ hr {
 .main-menu-boarder-bottom {
     border-bottom: 1px solid #e7e7e7 !important;
 }
-
+.text-small{
+    font-size: 8px;
+}
 /*----*/
 .box-shadow-soft-1 {
     box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;

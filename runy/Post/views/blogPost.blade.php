@@ -4,7 +4,7 @@
     @livewire('user.theme.user-navbar-responsive')
 
     @if(isset($statusBlog))
-        @livewire('user.post.blog.blog' , ['posts_in_cat'=> $posts_in_cat , 'statusBlog'=> $statusBlog])
+        @livewire('user.post.blog.blog' , ['cat_id'=> $cat_id , 'statusBlog'=> $statusBlog])
     @else
         @livewire('user.post.blog.blog')
     @endif

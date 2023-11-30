@@ -38,21 +38,14 @@ class CategoryPostController extends Controller
 
     public function show(CategoryPost $categorypost)
     {
-        $posts_in_cat = Post::query()->where([
-            'typePost' => 'post',
-            'statusPublish' => 'publish',
-            'cat_id' => $categorypost->id
-        ])->orderByDesc('id')->get();
-
-        //dd($posts_in_cat , $categorypost);
-
         $title = 'مجله' ;
         $description= 'مجله آموزشی  ';
         $breadcrumbs = ["/"=>" خانه " , "/blog" => " وبلاگ  " ];
         $statusBlog = 'cat';
+        $cat_id = $categorypost->id ;
 
         return view('PostView::blogPost' , compact( 'title' , 'description' ,'breadcrumbs' ,
-            'posts_in_cat' , 'statusBlog' ));
+            'cat_id' , 'statusBlog' ));
     }
 
 

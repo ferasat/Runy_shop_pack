@@ -27,13 +27,6 @@
                         خدمات جدید
                     </a>
                 </li>
-                <li class="list-group-item">
-                    <a href="{{asset(route('category.service'))}}" >
-                        <i class="fa-solid color-runy-primary fa-bars-staggered fa-rotate-180 p-2"></i>
-                        دستبندی خدمات
-                    </a>
-                </li>
-
             </ul>
         </div>
 
