@@ -11,7 +11,7 @@ use Product\Models\Discount;
 
 class ShowCart extends Component
 {
-    public $cart,$code,$badDiscount=false,$dis=0,$discount_id;
+    public $cart, $code, $badDiscount = false, $dis = 0, $discount_id;
 
     public function mount()
     {
@@ -64,31 +64,28 @@ class ShowCart extends Component
         }
         $this->dispatch('rendercart');
     }
+
     public function apply($total)
     {
 
-        $discount=Discount::query()->where('code',$this->code)->first();
-        if ($discount)
-        {
+        $discount = Discount::query()->where('code', $this->code)->first();
+        if ($discount) {
             if ($discount->status === 'active' && isValidDiscount($discount)) {
-                if ($discount->type=='fixed')
-                {
-                    $this->dis=$total-$discount->amount;
-                    $this->discount_id=$discount->id;
+                if ($discount->type == 'fixed') {
+                    $this->dis = $total - $discount->amount;
+                    $this->discount_id = $discount->id;
+                } elseif ($discount->type == 'percentage') {
+                    $this->dis = $total - (($discount->amount / 100) * $total);
+                    $this->discount_id = $discount->id;
                 }
-                elseif ($discount->type=='percentage')
-                {
-                    $this->dis=$total-(($discount->amount/100)*$total);
-                    $this->discount_id=$discount->id;
-                }
-            }else {
+            } else {
 
-                $this->badDiscount = true ;
+                $this->badDiscount = true;
             }
 
         } else {
 
-            $this->badDiscount = true ;
+            $this->badDiscount = true;
         }
         $this->dispatch('rendercart');
     }
@@ -109,7 +106,7 @@ class ShowCart extends Component
             $cart->total_price = $total;
             $cart->discount_id = $this->discount_id;
             $cart->save();
-        }else{
+        } else {
             $cart = new Cart();
             if ($this->dis > 0) {
                 $cart->discounted_total_price = $this->dis;
@@ -118,19 +115,19 @@ class ShowCart extends Component
             $cart->discount_id = $this->discount_id;
             $cart->save();
         }
-            foreach (session('cart') as $product) {
+        foreach (session('cart') as $product) {
 
-                $order = new Order();
-                $order->cart_id = $cart->id;
-                $order->product_id = $product['product_id'];
-                $order->product_name = $product['name'];
-                $order->product_price = $product['price'];
-                $order->quantity = $product['quantity'];
-                $order->sum = $product['subtotal'];
-                $order->save();
-            }
-
-        return $this->redirect(route('invoice').'?cart_id='.$cart->id);
+            $order = new Order();
+            $order->cart_id = $cart->id;
+            $order->product_id = $product['product_id'];
+            $order->product_name = $product['name'];
+            $order->product_price = $product['price'];
+            $order->quantity = $product['quantity'];
+            $order->sum = $product['subtotal'];
+            $order->save();
+        }
+//dd(route('invoice') . '?cart_id=' . $cart->id);
+        return $this->redirect(route('invoice') . '?cart_id=' . $cart->id);
 
     }
 }

@@ -23,9 +23,9 @@ class ShowInvoice extends Component
             $this->email = $user->email;
             $this->cellPhone = $user->cellPhone;
             $this->zip_code = $user->zip_code;
-        } else {
+        }/* else {
             return $this->redirect(asset('/login'));
-        }
+        }*/
 
         $this->cart = Cart::query()->find($this->cart_id);
         $this->orders = Order::query()->where('cart_id', $this->cart_id)->get();

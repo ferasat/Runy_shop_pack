@@ -7,7 +7,7 @@ use Product\Controllers\CategoryProductController;
 use Product\Controllers\ProductController;
 
 
-Route::prefix('/dashboard')->group( function (){
+Route::prefix('/dashboard')->middleware('auth')->group( function (){
     Route::get('/carts', [CartController::class , 'index'])->name('index.carts');
     Route::get('/cart/show/{id}', [CartController::class , 'show']);
 

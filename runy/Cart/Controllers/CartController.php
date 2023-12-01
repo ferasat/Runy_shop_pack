@@ -69,6 +69,7 @@ class CartController extends Controller
 
         return view('CartView::user.showCart' ,compact('title', 'description' , 'breadcrumbs'));
     }
+
     public function invoice()
     {
         $cart_id = $_REQUEST['cart_id'];
@@ -76,6 +77,8 @@ class CartController extends Controller
         $description = '';
         $dataTable = true;
         $breadcrumbs = ["/dashboard" => " پیشخوان ", "/cart" => "سفارش ها" ];
+
+        //dd($cart_id , $title , $breadcrumbs);
 
         return view('CartView::user.showInvoice' , compact( 'breadcrumbs' , 'title' , 'description' , 'dataTable','cart_id')) ;
     }
