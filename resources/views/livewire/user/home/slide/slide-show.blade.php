@@ -13,7 +13,7 @@
             <div class="carousel-inner">
                 @php $y=0; @endphp
                 @foreach($pics as $pic)
-                    <div class="carousel-item @if($y == 0) active @endif ">
+                    <div class="carousel-item @if($y == 0) active @endif " data-bs-interval="1000">
                         <img src="{{ asset($pic->urlpic) }}" class="d-block w-100" alt="{{ $pic->name }}">
                         @if($pic->text != null or $pic->text != '')
                         <div class="carousel-caption d-none d-md-block">
@@ -36,3 +36,4 @@
         <!-- =======End slider ======= -->
     </div>
 </div>
+

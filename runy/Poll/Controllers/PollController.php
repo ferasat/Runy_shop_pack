@@ -52,6 +52,9 @@ class PollController extends Controller
 
     public function show(Poll $id)
     {
+        if ($id->id == 12){
+            return redirect('https://mortazavistore.ir/poll/show/15');
+        }
         $poll = $id;
         $breadcrumbs = ["/" => " خانه ", "/poll" => "نظرسنجی"];
         if ($poll->status == 0) {

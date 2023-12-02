@@ -72,7 +72,6 @@
                         </div>
                     </div>
                 @endforeach
-
             @elseif($statusShowPosts == 'st2')
                 <div class="row">
                     @foreach($posts as $post)
