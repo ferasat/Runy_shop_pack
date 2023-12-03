@@ -84,6 +84,7 @@ return [
         SiteLogs\SiteLogsServiceProvider::class,
         Poll\PollServiceProvider::class,
         Regions\RegionServiceProvider::class,
+        RunyFormBuilder\RunyFormBuilderServiceProvider::class,
 
 
         /*

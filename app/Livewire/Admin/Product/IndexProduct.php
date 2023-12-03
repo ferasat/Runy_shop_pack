@@ -3,11 +3,13 @@
 namespace App\Livewire\Admin\Product;
 
 use Livewire\Component;
+use Livewire\WithPagination;
 use Product\Models\Product;
 
 class IndexProduct extends Component
 {
-    public $description , $products ;
+    use WithPagination ;
+    public $description  ;
 
     public function mount()
     {
@@ -15,7 +17,8 @@ class IndexProduct extends Component
     }
     public function render()
     {
-        $this->products = Product::query()->where('formatProduct' , 'normal')->orderByDesc('id')->get();
-        return view('livewire.admin.product.index-product');
+        return view('livewire.admin.product.index-product', [
+            'products'=> Product::query()->where('formatProduct' , 'normal')->orderByDesc('id')->paginate(15) ,
+        ]);
     }
 }

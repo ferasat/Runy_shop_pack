@@ -47,6 +47,7 @@
             "SiteLogs\\": "runy/SiteLogs",
             "Poll\\": "runy/Poll",
             "Regions\\": "runy/Regions",
+            "RunyFormBuilder\\": "runy/RunyFormBuilder",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
         }
