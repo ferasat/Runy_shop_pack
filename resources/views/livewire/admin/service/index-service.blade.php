@@ -27,6 +27,12 @@
                         خدمات جدید
                     </a>
                 </li>
+                <li class="list-group-item">
+                    <a href="{{ asset(route('discount.index')) }}">
+                        <i class="fa-solid color-runy-primary fa-list fa-rotate-180 p-2"></i>
+                        تخفیف ها
+                    </a>
+                </li>
             </ul>
         </div>
 

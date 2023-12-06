@@ -11,6 +11,7 @@ return new class extends Migration
     {
         Schema::create('runy_form_builder_questions', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('runy_form_id');
             $table->bigInteger('where_id');
             $table->string('title')->nullable();
             $table->string('answer_type')->nullable();

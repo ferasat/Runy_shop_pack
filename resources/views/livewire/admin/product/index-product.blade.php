@@ -17,12 +17,7 @@
         <div class="product-menu card border-color-runy-secend">
             <div class="card-header bg-runy-secend">دسترسی محصولات</div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">
-                    <a href="{{ asset(route('product.index')) }}">
-                        <i class="fa-solid color-runy-primary fa-list fa-rotate-180 p-2"></i>
-                        محصولات
-                    </a>
-                </li>
+
                 <li class="list-group-item">
                     <a href="{{ asset(route('product.Create')) }}">
                         <i class="fa-regular color-runy-primary fa-square-plus p-2"></i>
@@ -45,6 +40,12 @@
                     <a href="{{ asset(route('feature.index')) }}">
                         <i class="fa-solid color-runy-primary fa-list-check fa-rotate-180 p-2"></i>
                         ویژگی های محصولات
+                    </a>
+                </li>
+                <li class="list-group-item">
+                    <a href="{{ asset(route('discount.index')) }}">
+                        <i class="fa-solid color-runy-primary fa-list fa-rotate-180 p-2"></i>
+                        تخفیف ها
                     </a>
                 </li>
             </ul>
