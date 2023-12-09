@@ -79,6 +79,12 @@
                         تنظیمات باشگاه مشتریان
                     </a>
                 </li>
+                <li class="list-group-item">
+                    <a href="{{ asset( route('sms_setting')) }}">
+                        <i class="fa fa-navicon"></i>
+                        تنظیمات پنل پیامک
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

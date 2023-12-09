@@ -67,7 +67,7 @@
                         </a>
                         <div class="card-body">
                             <div class="detail-box">
-                                <h4 class="h4">
+                                <h4 class="h4" title="{{ $post->name }}">
                                     <a class="" href="{{ asset('post/'.$post->slug) }}" title="{{ $post->name }}">
                                         {{ $post->name }}
                                     </a>

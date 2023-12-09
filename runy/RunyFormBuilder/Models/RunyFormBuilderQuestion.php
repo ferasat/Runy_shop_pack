@@ -10,6 +10,7 @@ class RunyFormBuilderQuestion extends Model
     use HasFactory;
 
     public function maker($where_id , $title , $answer_type ,$runy_form_id, $answer_count=null){
+        //dd($where_id , $title , $answer_type ,$runy_form_id, $answer_count);
         $newQuestion = new RunyFormBuilderQuestion();
         $newQuestion->where_id = $where_id ;
         $newQuestion->title = $title ;

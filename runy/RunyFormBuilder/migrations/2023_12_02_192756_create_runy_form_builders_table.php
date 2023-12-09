@@ -14,6 +14,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('type')->default('public')->comment('service - product - contact us- ....'); /// همون where
             $table->string('type_id')->nullable();
+            $table->bigInteger('user_id')->nullable();
             $table->timestamps();
         });
     }

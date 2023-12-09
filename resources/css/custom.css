@@ -4263,6 +4263,10 @@ hr {
     border-color: #a881d5 !important;
 }
 
+.border-color-runy-danger {
+    border-color: #e74c3c !important;
+}
+
 .bg-runy-cart {
     background-color: #e74c3c !important;
 }

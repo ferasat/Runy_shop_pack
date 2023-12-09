@@ -2,13 +2,14 @@
 
 namespace App\Livewire\Admin\Service\Create;
 
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use RunyFormBuilder\Models\RunyFormBuilder;
 use RunyFormBuilder\Models\RunyFormBuilderQuestion;
 
 class RunyFormBuilderService extends Component
 {
-    public $service  , $show=false , $question , $answer_type  , $form;
+    public $service  , $show=false , $question , $answer_type='checkbox'  , $form;
     protected $questions ;
 
     public function mount()
@@ -17,6 +18,8 @@ class RunyFormBuilderService extends Component
             'type' => 'service',
             'type_id' => $this->service->id,
         ])->first();
+        //dd($this->form);
+
         if ($this->form != null){
             $this->show = true ;
             $this->questions = RunyFormBuilderQuestion::query()->where([
@@ -37,6 +40,7 @@ class RunyFormBuilderService extends Component
         $this->form->title = $this->service->name;
         $this->form->type = 'service';
         $this->form->type_id = $this->service->id;
+        $this->form->user_id = Auth::id();
         $this->form->save();
 
         $this->show= true;
@@ -45,8 +49,9 @@ class RunyFormBuilderService extends Component
 
     public function addQuestion()
     {
+        //dd($this->service->id, $this->question, $this->form->id, $this->answer_type);
         $question = new RunyFormBuilderQuestion();
-        $question->maker($this->service->id, $this->question, $this->form->id, $this->answer_type);
+        $question->maker($this->service->id, $this->question, $this->answer_type , $this->form->id);
 
         $this->questions = RunyFormBuilderQuestion::query()->where([
             'runy_form_id' => $this->form->id,

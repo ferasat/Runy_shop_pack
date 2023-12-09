@@ -49,8 +49,8 @@ class SmsMarketingController extends Controller
     }
 
 
-    public function destroy(SmsMarketing $smsMarketing)
+    public function setting()
     {
-        //
+        return view('SmsView::settingSms');
     }
 }
