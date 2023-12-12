@@ -13,9 +13,11 @@ h3 {
 .font-weight-bolder {
     font-weight: bolder !important;
 }
-.smaller-Text{
+
+.smaller-Text {
     font-size: 8px !important;
 }
+
 /*------ Panel Style ----*/
 .icon-svg-home {
     width: 80px !important;
@@ -42,10 +44,11 @@ h3 {
 }
 
 /*-----------------*/
-.carousel-caption{
+.carousel-caption {
     background: #0000007a;
     border-radius: 9px;
 }
+
 .input-group-text {
     display: flex;
     align-items: center;
@@ -1578,7 +1581,6 @@ main.main section.banner img {
     -ms-flex-pack: end;
     justify-content: flex-end;
 }
-
 
 
 .price-value-wrapper {
@@ -3432,8 +3434,11 @@ textarea.form-control {
 
 #footer {
     font-size: 14px;
+    color: white;
     background: rgb(224, 224, 224);
-    background: linear-gradient(90deg, rgba(224, 224, 224, 1) 0%, rgba(182, 179, 179, 1) 35%, rgba(238, 238, 238, 1) 100%);
+    /*background: linear-gradient(90deg, rgba(224, 224, 224, 1) 0%, rgba(182, 179, 179, 1) 35%, rgba(238, 238, 238, 1) 100%);*/
+    background: url(https://runy.storage.iran.liara.space/runyshop/runy-footer-back.png) center center/cover no-repeat #444;
+
 }
 
 #footer .footer-top {
@@ -4940,8 +4945,6 @@ hr {
     }
 
 
-
-
     .shopping-page main.cart-page {
         margin-top: 0;
     }
@@ -5087,9 +5090,11 @@ hr {
 .main-menu-boarder-bottom {
     border-bottom: 1px solid #e7e7e7 !important;
 }
-.text-small{
+
+.text-small {
     font-size: 8px;
 }
+
 /*----*/
 .box-shadow-soft-1 {
     box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
@@ -5099,12 +5104,15 @@ hr {
 table.table_product {
     width: 100%;
 }
+
 table.table_product tr {
     border: 1px solid #eee;
 }
+
 table.table_product tr td {
     border-right: 1px solid #eee;
 }
+
 /*----- podt */
 .textBodyRuny img {
     max-width: 100% !important;
@@ -5112,6 +5120,40 @@ table.table_product tr td {
 }
 
 .svg_bg {
-    background-image: url(../theme/img/svg/wave_bg.svg);
+
     animation: gradient 3s linear infinite;
+}
+
+.owl-nav {
+    display: block;
+    float: right;
+    width: 100%;
+    position: absolute;
+    top: 85px;
+}
+
+.owl-nav .owl-prev {
+    border-radius: 50%;
+    float: right;
+}
+
+.owl-nav .owl-prev span {
+    font-size: 75px;
+    color: white !important;
+    background-color: rgba(54, 54, 54, 0.8);
+    padding: 3px;
+    border-radius: 9px;
+}
+
+.owl-nav .owl-next {
+    border-radius: 50%;
+    float: left;
+}
+
+.owl-nav .owl-next span {
+    font-size: 75px;
+    color: white !important;
+    background-color: rgba(54, 54, 54, 0.8);
+    border-radius: 9px;
+    padding: 3px;
 }
