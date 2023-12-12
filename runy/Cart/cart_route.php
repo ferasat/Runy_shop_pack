@@ -23,3 +23,5 @@ Route::get('/invoice/', [CartController::class , 'invoice'])->name('invoice');
 Route::get('/pay_invoice/{id}', [InvoiceController::class, 'pay'])->name('pay.invoice');
 Route::get('/in_pay/result/', 'InvoiceController@result')->name('pay.result');
 Route::post('/in_pay/result/', 'InvoiceController@result');
+
+Route::post('/online_service_reserve/', [CartController::class , 'online_reserve'])->name('online.service.reserve');

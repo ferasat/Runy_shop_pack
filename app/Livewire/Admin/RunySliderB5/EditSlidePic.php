@@ -9,6 +9,7 @@ use Intervention\Image\Facades\Image;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Livewire\Attributes\Rule;
+use RunySliderB5\Models\RunySliderPics;
 
 
 class EditSlidePic extends Component
@@ -34,7 +35,8 @@ class EditSlidePic extends Component
 
     public function deletePic()
     {
-        $this->pic->delete();
+        //dd($this->pic->delete());
+        RunySliderPics::query()->find($this->pic->id)->delete();
         $this->dispatch('pic-delete');
     }
 

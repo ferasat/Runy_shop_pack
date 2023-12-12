@@ -5110,3 +5110,8 @@ table.table_product tr td {
     max-width: 100% !important;
     height: auto !important;
 }
+
+.svg_bg {
+    background-image: url(../theme/img/svg/wave_bg.svg);
+    animation: gradient 3s linear infinite;
+}

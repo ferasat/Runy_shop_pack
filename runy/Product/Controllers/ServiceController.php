@@ -87,12 +87,41 @@ class ServiceController extends Controller
 
     public function show(Product $product)
     {
-        $title = $product->name;
-        $description = $product->titleSeo . ' | ' . $product->focusKeyword;
+        $service = $product ;
+        if ($product->statusPublish != 'publish'){
+            return redirect(route('message_show').'/?message=این مطلب قابل دسترس نیست');
+        }
+        $title = $service->name;
+        $description = $service->titleSeo . ' | ' . $service->focusKeyword;
+        $breadcrumbs = ["/"=>" خانه " , "/services" => "خدمات ماشین های اداری مرتضوی", "/service/".$service->slug => $service->name ];
 
-        $breadcrumbs = ["/" => "خانه ", "/service" => $product->name ];
+
+        return view('ProductView::service.showService', compact('service', 'title', 'description' , 'breadcrumbs'));
+    }
+
+    public function reserve(Product $id)
+    {
+        $service = $id ;
+        $title = 'در خواست : '.$id->name ;
+        $description = 'خدمات ماشین های اداری مرتضوی';
+        $breadcrumbs = ["/"=>" خانه " , "/service/reserve"=>$title ];
 
 
-        return view('ProductView::show', compact('product', 'title', 'description' , 'breadcrumbs'));
+        return view('ProductView::service.reserveService', compact( 'title', 'description' , 'breadcrumbs' , 'service'));
+    }
+
+    public function services()
+    {
+        $title = 'خدمات ماشین های اداری مرتضوی';
+        $description = 'خدمات ماشین های اداری مرتضوی';
+        $breadcrumbs = ["/"=>" خانه " , "/services/"=>"خدمات ماشین های اداری مرتضوی" ];
+
+
+        return view('ProductView::service.services', compact( 'title', 'description' , 'breadcrumbs'));
+    }
+
+    public function show_with_id(Product $id)
+    {
+        return redirect(asset('product/'.$id->slug));
     }
 }

@@ -7,7 +7,7 @@ use Product\Models\Product;
 
 class InfoService extends Component
 {
-    public $service , $price  , $input_stock=0 , $specialPrice , $is_expiry , $number_of_days_to_expiry ;
+    public $service , $price  , $input_stock=0 , $specialPrice , $is_expiry , $number_of_days_to_expiry , $havePrice=0;
 
     public function mount()
     {
@@ -17,6 +17,11 @@ class InfoService extends Component
             $this->is_expiry = 1 ;
         }else{
             $this->is_expiry = 0 ;
+        }
+        if ($this->price > 1){
+            $this->havePrice = 1 ;
+        }else{
+            $this->havePrice = 0 ;
         }
     }
     public function render()
@@ -35,7 +40,6 @@ class InfoService extends Component
 
     public function updated()
     {
-
         $pro = Product::find($this->service->id);
 
         if ($this->price == 0 or $this->price == null or $this->price == ''){
@@ -54,5 +58,7 @@ class InfoService extends Component
         $pro->number_of_days_to_expiry = $this->number_of_days_to_expiry;
 
         $pro->save();
+
+
     }
 }

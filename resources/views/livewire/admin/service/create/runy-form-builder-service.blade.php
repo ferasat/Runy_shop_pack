@@ -52,7 +52,7 @@
             </div>
         </div>
         @if($show)
-            <div class="row">
+            <div class="row ">
                 <div class="col-4 col-md-4">
                     <div class="mb-3">
                         <label for="name" class="form-label">عنوان سوال</label>
@@ -69,6 +69,7 @@
                             <option value="radio">گزینه تک انتخابی (رادیو)</option>
                             <option value="textarea">متنی</option>
                             <option value="select">انتخابی آبشاری</option>
+                            <option value="file">فایل</option>
                         </select>
                         @error('answer_type') <span class="text-danger">{{ $message }}</span>@enderror
                     </div>
@@ -78,7 +79,7 @@
                     <div class="mb-3">
                         <label for="name" class="form-label text-white d-block">.</label>
                         <button class="btn btn-runy-primary" wire:click.prevent="addQuestion()">
-                            <svg class="icon-svg-panel" viewBox="0 0 24 24" fill="none"
+                            <svg class="icon-svg-panel-sm" viewBox="0 0 24 24" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>

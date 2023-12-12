@@ -17,5 +17,8 @@ Route::get('/product-category/{category_product:slug}', [CategoryProductControll
 Route::get('/shop/', [ProductController::class , 'shop']);
 
 Route::prefix('/service')->group( function (){
+    Route::get('/reserve/{id}', [ServiceController::class , 'reserve']);
     Route::get('/{product:slug}/', [ServiceController::class , 'show']);
 });
+
+Route::get('/services', [ServiceController::class , 'services'])->name('services');
