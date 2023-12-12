@@ -1,11 +1,11 @@
-<div class="container-fluid">
+<div class="container-fluid" itemscope itemtype="https://schema.org/Product">
     <main class="single-product">
         <div class="container">
             @livewire('user.theme.breadcrumbs' , compact('breadcrumbs') )
             <div class="row bg-white p-2 rounded">
                 <div class="col-lg-4 col-md-6 col-sm-12 position-relative mb-2">
                     <div class="product-gallery p-2 bg-white rounded shadow-sm">
-                        <img class="w-100" src="{{ asset($product->pic) }}"
+                        <img itemprop="image" class="w-100" src="{{ asset($product->pic) }}"
                              alt="{{ $product->name }}"/>
 
                     </div>
@@ -14,7 +14,7 @@
                 <div class="col-lg-4 col-md-6 col-sm-12 rounded mb-2">
                     <div class="short-description p-2 bg-white rounded shadow-sm">
                         <div class="product-title">
-                            <h1 title="{{ $product-> name }}" class="mb-4 h3">{{ $product-> name }}</h1>
+                            <h1 itemprop="name" title="{{ $product-> name }}" class="mb-4 h3" >{{ $product-> name }}</h1>
                         </div>
                         @livewire('user.product.show.short-description' , ['product'=>$product])
                     </div>
@@ -73,7 +73,7 @@
 
                         @if($product->specialPrice > 1 and $product->specialPrice < $product->price )
 
-                            <div class="price-discount mt-4 text-left" data-title="تخفیف">
+                            <div class="price-discount mt-4 text-left" data-title="تخفیف" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
 
                                 <del>{{ $product->price }}  </del>
                                 <span
@@ -83,11 +83,11 @@
                             </div>
                             <div class="price-value mb-4 text-left">
                                 <strong class="font-weight-bolder"
-                                        style="font-size: 30px"> {{ number_format($product->specialPrice) }} </strong>
-                                <span class="price-currency">{{ current_pay($product->current )  }}</span>
+                                        style="font-size: 30px" itemprop="price" content="{{ number_format($product->specialPrice) }}"> {{ number_format($product->specialPrice) }} </strong>
+                                <span class="price-currency" itemprop="priceCurrency" content="{{ current_pay($product->current )}}">{{ current_pay($product->current )}}</span>
                             </div>
                         @elseif($product->price > 1)
-                            <h5 class="h4">{{ $product->price }} <span> تومان </span></h5>
+                            <h5 class="h4" itemprop="price" content="{{ number_format($product->price) }}">{{ number_format($product->price) }} <span itemprop="priceCurrency" content="{{ current_pay($product->current )}}"> {{ current_pay($product->current )}} </span></h5>
                         @endif
 
                         @livewire('user.cart.add-to-cart' , compact('product'))
@@ -126,7 +126,7 @@
                                 <div class="card-body" id="desc">
                                     <article>
                                         <div class="parent-expert ">
-                                            <div class="content-expert">
+                                            <div class="content-expert" itemprop="description">
                                                 {!! $product->texts !!}
                                             </div>
                                         </div>

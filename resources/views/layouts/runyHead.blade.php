@@ -1,4 +1,3 @@
-<link rel="icon" type="image/png" sizes="60x60" href="{{ setting_site()->site_icon }}">
 
 {{-- ckeditor --}}
 @if(isset($editor))

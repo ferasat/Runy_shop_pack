@@ -12,6 +12,7 @@
         <meta name="keywords" content="Brother | ساعت زن | HP | نمایندگی پرینتر اچ پی | نمایندگی پرینتر برادر | پرینتر اچ پی |پرینتر برادر"/>
     @endif
 
+    <link rel="icon" type="image/png" sizes="60x60" href="{{ asset(setting_site()->site_icon) }}">
     <link rel="alternate" hreflang="fa-IR" href="https://mortazavistore.ir/"/>
 
 

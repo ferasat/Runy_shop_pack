@@ -3438,7 +3438,10 @@ textarea.form-control {
     background: rgb(224, 224, 224);
     /*background: linear-gradient(90deg, rgba(224, 224, 224, 1) 0%, rgba(182, 179, 179, 1) 35%, rgba(238, 238, 238, 1) 100%);*/
     background: url(https://runy.storage.iran.liara.space/runyshop/runy-footer-back.png) center center/cover no-repeat #444;
+}
 
+#footer a {
+    color: white !important;
 }
 
 #footer .footer-top {
