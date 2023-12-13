@@ -177,6 +177,11 @@ class PostController extends \App\Http\Controllers\Controller
         return view('PostView::showPost' , compact('title' , 'description' ,'breadcrumbs' , 'post', 'posts' , 'owl_carousel'));
     }
 
+    public function showById(Post $id)
+    {
+        return redirect(asset('/post/'.$id->slug));
+    }
+
     public function showCat()
     {
 
@@ -187,8 +192,6 @@ class PostController extends \App\Http\Controllers\Controller
         $title = 'مجله' ;
         $description= 'مجله آموزشی  ';
         $breadcrumbs = ["/"=>" خانه " , "/blog" => " وبلاگ  " ];
-
-
 
         return view('PostView::blogPost' , compact( 'title' , 'description' ,'breadcrumbs' ));
     }

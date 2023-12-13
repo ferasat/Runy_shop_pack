@@ -38,12 +38,18 @@
                                 <p class="card-text">
                                     {!! $post->texts !!}
                                 </p>
+
+                            </div>
+                            <div class="card-footer">
                                 <p class="card-text">
                                     <small class="text-body-secondary">آخرین بروزرسانی @if($post->updated_at)
                                             {{$post->updated_at}}
                                         @else
                                             {{$post->created_at}}
-                                        @endif</small>
+                                        @endif
+                                    </small>
+|
+                                    <a target="_blank" href="{{ asset('/p/'.$post->id) }}">لینک کوتاه</a>
                                 </p>
                             </div>
                         </div>

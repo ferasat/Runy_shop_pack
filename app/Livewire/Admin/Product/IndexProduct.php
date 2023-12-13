@@ -8,28 +8,33 @@ use Product\Models\Product;
 
 class IndexProduct extends Component
 {
-    use WithPagination ;
-    public $description , $word=null ;
-    protected $products ;
+    use WithPagination;
+
+    public $description, $word = null;
+    protected $products;
 
     public function mount()
     {
-        $this->products = Product::query()->where('formatProduct' , 'normal')->orderByDesc('id')->paginate(15) ;
+        $this->products = Product::query()->where('formatProduct', 'normal')->orderByDesc('id')->paginate(15);
     }
+
     public function render()
     {
-        return view('livewire.admin.product.index-product', [
-            'products'=> $this->products ,
-        ]);
+        if (strlen($this->word) > 1) {
+            return view('livewire.admin.product.index-product', [
+                'products' => Product::query()->where('formatProduct', 'normal')->where('name', 'LIKE', '%' . $this->word . "%")->orderByDesc('id')->paginate(15) ,
+            ]);
+        } else {
+            return view('livewire.admin.product.index-product', [
+                'products' => Product::query()->where('formatProduct', 'normal')->orderByDesc('id')->paginate(15),
+            ]);
+        }
+
     }
 
     public function updated()
     {
-        if (strlen($this->word) > 2){
-            $this->products = Product::query()->where('formatProduct' , 'normal')->where('name', 'LIKE', '%' . $this->word . "%")->orderByDesc('id')->paginate(15) ;
-            $this->render();
-        }else{
-            $this->products = Product::query()->where('formatProduct' , 'normal')->orderByDesc('id')->paginate(15) ;
+        if (strlen($this->word) > 1) {
             $this->render();
         }
     }
