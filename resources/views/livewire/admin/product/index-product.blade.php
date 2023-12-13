@@ -1,5 +1,10 @@
 <div class="row ">
     <div class="col-xl-8 mb-5">
+        <div class="row mb-3">
+            <div class="col-sm-12">
+                <input type="text" class="form-control" id="" wire:model.live="word" placeholder="برای جستجو حداقل سه حرف وارد کنید">
+            </div>
+        </div>
         <section class="scroll-section" id="listProduct">
             @foreach($products as $product)
                 <div class="card mb-2 shadow">

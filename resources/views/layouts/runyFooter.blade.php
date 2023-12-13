@@ -32,18 +32,6 @@
     </div>
 @endif
 
-{{--@if(isset($editor))
---}}{{-- CkEditor --}}{{--
-<script>
-    CKEDITOR.replace( 'editor1',{
-        cloudServicesEnabled: false
-    } );
-    CKEDITOR.replace( 'editor2', {
-        cloudServicesEnabled: false
-    } );
-</script>
-@endif--}}
-
 @if(isset($editor))
     {{-- CkEditor --}}
     <script>
@@ -196,6 +184,7 @@
     </script>
 @endif
 
+@if(isset($owl_carousel))
 <script>
     $(document).ready(function () {
         $(".owl-carousel").owlCarousel({
@@ -219,4 +208,5 @@
 
     });
 </script>
-
+<script src="{{ asset('theme/plugins/owl_carousel/dist/owl.carousel.min.js') }}"></script>
+@endif
