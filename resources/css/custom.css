@@ -1,15 +1,3 @@
-h1 {
-    font-size: 2rem;
-}
-
-h2 {
-    font-size: 1.6rem;
-}
-
-h3 {
-    font-size: 1.3rem;
-}
-
 .font-weight-bolder {
     font-weight: bolder !important;
 }
@@ -3440,7 +3428,7 @@ textarea.form-control {
     background: url(https://runy.storage.iran.liara.space/runyshop/runy-footer-back.png) center center/cover no-repeat #444;
 }
 
-#footer a {
+#footer .footer-top a {
     color: white !important;
 }
 
@@ -4509,6 +4497,9 @@ hr {
 .w-70px {
     width: 70px !important;
 }
+.h3-sm-w {
+    font-size: 1.75rem;
+}
 
 @media screen and (max-width: 1200px) {
     .product-grid {
@@ -4972,6 +4963,10 @@ hr {
     .main-header {
         display: none;
     }
+
+    .h3-sm-w {
+        font-size: 1rem;
+    }
 }
 
 /* تبلت: از ۷۶۸ پیکسل تا ۹۹۹ پیکسل */
@@ -5159,4 +5154,10 @@ table.table_product tr td {
     background-color: rgba(54, 54, 54, 0.8);
     border-radius: 9px;
     padding: 3px;
+}
+
+/*---------------------------*/
+.sarPage button[type="submit"] {
+    border-radius: var(--border-radius-large) !important;
+    max-width: 150px;
 }

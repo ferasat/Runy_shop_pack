@@ -43,7 +43,7 @@
                             <div class="card-footer">
                                 <p class="card-text">
                                     <small class="text-body-secondary">آخرین بروزرسانی @if($post->updated_at)
-                                            {{$post->updated_at}}
+                                            {{ verta($post->updated_at)->format('%d %B %Y') }}
                                         @else
                                             {{$post->created_at}}
                                         @endif

@@ -40,7 +40,6 @@ class Blog extends Component
 
         $this->countSlide = count($post3);
 
-        //dd($posts);
         return view('livewire.user.post.blog.blog', compact('posts', 'post3' , 'dl_drivers'));
     }
 }
