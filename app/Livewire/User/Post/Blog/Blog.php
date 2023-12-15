@@ -11,7 +11,7 @@ class Blog extends Component
     use WithPagination;
 
     protected $paginationTheme = 'bootstrap';
-    public $show = false, $statusShowPosts = 'st1', $i = 1, $countSlide = 0;
+    public $show = false, $statusShowPosts =0, $i = 1, $countSlide = 0;
     public $statusBlog , $cat_id ;
 
     public function render()
@@ -41,5 +41,14 @@ class Blog extends Component
         $this->countSlide = count($post3);
 
         return view('livewire.user.post.blog.blog', compact('posts', 'post3' , 'dl_drivers'));
+    }
+
+    public function changStatus()
+    {
+        //dd(2222);
+        if ($this->statusShowPosts == 0)
+            $this->statusShowPosts = 1;
+        else $this->statusShowPosts = 0;
+        $this->render();
     }
 }

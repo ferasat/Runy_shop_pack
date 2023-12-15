@@ -9,6 +9,7 @@
         "artesaos/seotools": "^1.1",
         "ghasedak/laravel": "^2.1",
         "guzzlehttp/guzzle": "^7.8.0",
+        "harrygulliford/laravel-firebird": "^3.2",
         "hekmatinasser/verta": "^8.3",
         "imanghafoori/laravel-heyman": "^2.2.55",
         "intervention/image": "^2.7.2",

@@ -51,61 +51,28 @@
         </div>
     </div>
     <div class="container">
-        <div class="row my-5 pt-5">
-            <div class="col-9 col-md-9 col-sm-12">
-                <div id="carouselTopPost" class="carousel slide">
-                    <div class="carousel-indicators">
-                        @for($x=1;$x<=$countSlide;$x++)
-                            <button type="button" data-bs-target="#carouselTopPost" data-bs-slide-to="{{ $x-1 }}"
-                                    @if($x == 1) class="active" @endif  aria-current="true"
-                                    aria-label="Slide {{ $x }}"></button>
-                        @endfor
-                    </div>
-                    <div class="carousel-inner">
-                        @foreach($post3 as $post)
-                            <div class="carousel-item @if($i==1) active @endif ">
-                                <img src="{{ $post->pic }}" class="d-block w-100" alt="{{ $post->name }}">
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h3 title="{{ $post->name }}">{{ $post->name }}</h3>
-                                    <p>{!! text_summary($post->texts) !!}</p>
-                                </div>
-                            </div>
-                            @php $i++ @endphp
-                        @endforeach
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselTopPost"
-                            data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">قبلی</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselTopPost"
-                            data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">ادامه</span>
-                    </button>
-                </div>
-            </div>
-            <div class="col-3 col-md-3 col-sm-12">
-                <div class="card">
-                    <div class="card-header">تازه ترین درایور ها</div>
-                    <ul class="list-group">
-                        @foreach($dl_drivers as $driver)
-                            <li class="list-group-item">
-                                <a href="">
-                                    <h3 class="h4" title="{{ $driver->name }}">{{ $driver->name }}</h3>
-                                    <span
-                                        class="smaller-Text"> بروزرسانی : {{ verta($driver->updated_at)->format('%d %B %Y') }} </span>
-                                </a>
-                            </li>
-                        @endforeach
-                    </ul>
-                </div>
-            </div>
-        </div>
+
         <div class="row">
             <div class="col-md-9">
-                @if($statusShowPosts == 'st1')
-                    @foreach($posts as $post)
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="status">
+                            <button class="btn btn-default" onclick="changStatus()">
+                                @if($statusShowPosts == 0)
+                                    نمایش شبکه ای
+                                @else
+                                    نمایش خطی
+                                @endif
+
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+                @foreach($posts as $post)
+                    <div id="statusShow0">
+                        000
                         <div class="card mb-3">
                             <img src="{{ asset($post->pic) }}" class="card-img card-img-top" alt="{{ $post->name }}">
                             <div class="card-body">
@@ -125,41 +92,54 @@
                                     بیشتر</a>
                             </div>
                         </div>
-                    @endforeach
-                @elseif($statusShowPosts == 'st2')
-                    <div class="row">
-                        @foreach($posts as $post)
-                            <div class="col-md-4">
-                                <div class="cart">
-                                    <img src="{{ asset($post->pic) }}" class="card-img card-img-top"
-                                         alt="{{ $post->name }}">
-                                    <div class="card-body">
-                                        <h4 class="card-title mb-3">
-                                            <a href="{{ asset('post/'.$post->slug) }}" class="stretched-link">
+                    </div>
+
+                    <div id="statusShow1">
+                        111
+                        <div class="col-md-4">
+                            <div class="cart">
+                                <img src="{{ asset($post->pic) }}" class="card-img card-img-top"
+                                     alt="{{ $post->name }}">
+                                <div class="card-body">
+                                    <h4 class="card-title mb-3">
+                                        <a href="{{ asset('post/'.$post->slug) }}" class="stretched-link">
                                         <span class="overflow-hidden">
                                             {{ $post->name }}
                                         </span>
-                                            </a>
-                                        </h4>
-                                        <div class="card-text">
-                                            {!! text_summary($post->texts) !!}
-                                        </div>
-                                    </div>
-                                    <div class="card-footer">
-                                        <a class="btn btn-outline-primary" href="{{ asset('post/'.$post->slug) }}">اطلاعات
-                                            بیشتر</a>
+                                        </a>
+                                    </h4>
+                                    <div class="card-text">
+                                        {!! text_summary($post->texts) !!}
                                     </div>
                                 </div>
+                                <div class="card-footer">
+                                    <a class="btn btn-outline-primary" href="{{ asset('post/'.$post->slug) }}">اطلاعات
+                                        بیشتر</a>
+                                </div>
                             </div>
-                        @endforeach
+                        </div>
                     </div>
-                @endif
+                @endforeach
 
                 <div class="d-block w-100">
                     {{ $posts->links() }}
                 </div>
             </div>
             <div class="col-md-3">
+                <div class="card mb-5 sticky-top">
+                    <div class="card-header">تازه ترین درایور ها</div>
+                    <ul class="list-group">
+                        @foreach($dl_drivers as $driver)
+                            <li class="list-group-item">
+                                <a href="">
+                                    <h3 class="h4" title="{{ $driver->name }}">{{ $driver->name }}</h3>
+                                    <span
+                                        class="smaller-Text"> بروزرسانی : {{ verta($driver->updated_at)->format('%d %B %Y') }} </span>
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
                 <div class="card bg- mb-5 sticky-top">
                     <div class="card-header">محصولات</div>
                     @foreach(recentProducts(5) as $repost)
@@ -200,3 +180,16 @@
         </div>
     </div>
 </div>
+<script>
+    function changStatus(){
+        console.log('test');
+        document.addEventListener('keydown', function(event) {
+            // کد دکمه مد نظر را بررسی کنید
+            if (event.keyCode === 13) { // کد 13 به معنای دکمه Enter است
+                // پیدا کردن تگ div با استفاده از شناسه و مخفی کردن آن
+                var div = document.getElementById('statusShow0');
+                div.style.display = 'none';
+            }
+        });
+    }
+</script>

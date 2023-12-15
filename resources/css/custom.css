@@ -5161,3 +5161,10 @@ table.table_product tr td {
     border-radius: var(--border-radius-large) !important;
     max-width: 150px;
 }
+
+#statusShow0 {
+    display: block ;
+}
+#statusShow1 {
+    display: none ;
+}
