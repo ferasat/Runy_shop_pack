@@ -32,7 +32,7 @@
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-v4compatibility.woff2"
   },
   "resources/css/app.css": {
-    "file": "assets/app-36379d38.css",
+    "file": "assets/app-c2988832.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
@@ -57,7 +57,7 @@
     "src": "resources/fonts/Vazir.woff"
   },
   "resources/js/app.js": {
-    "file": "assets/app-07b03d70.js",
+    "file": "assets/app-50c0d922.js",
     "isEntry": true,
     "src": "resources/js/app.js"
   }

@@ -1,111 +1,42 @@
-<div class="container-fluid">
-    <div class="bg-danger">
+<div class="container-fluid p-0">
+    <div class="bg-">
         <div class="container">
-            <div class="row  py-4 sarPage">
+            <div class="row py-4 sarPage d-flex justify-content-center">
                 <div class="col-md-6 col-sm-12 col-lg-6 text-center pb-4">
-                    <h1 class="text-white h3 h3-sm-w text-center">مجله فناوری ماشین ها اداری مرتضوی</h1>
-                    <p class="text-muted">آموزش ریست کردن انواع پرینتر و دانلود انواع درایور های ماشین های اداری</p>
+                    <h1 class="text-danger h3 h3-sm-w text-center">مجله فناوری ماشین های اداری مرتضوی</h1>
+                    <p class="text-muted py-3">با ما بروز باشید  </p>
                     <form class="custom-form" role="search">
-                        <div class="input-group input-group-lg">
-                            <input name="keyword" type="search" class="form-control" id="keyword"
+                        <div class="input-group input-group-lg mb-2">
+                            <input name="keyword" type="search" class="form-control border-color-runy-danger" id="keyword"
                                    placeholder="دنبال چی میگردی؟" aria-label="Search">
 
-                            <button type="submit" class="btn btn-outline-primary bg-white">جستجو</button>
+                            <button type="submit" class="btn btn-runy-search bg-white">
+                                <svg class="icon-svg-panel" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M11 6C13.7614 6 16 8.23858 16 11M16.6588 16.6549L21 21M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z" stroke="#fd5858" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                            </button>
                         </div>
+                        پیشنهاد : <span class="small-suggest p-1 border rounded border-color-runy-danger-badge mt-2">آموزش ریست کردن پرینتر</span> ، <span class="small-suggest p-1 border rounded border-color-runy-danger-badge mt-2">دانلود درایور</span> ، <span></span>
                     </form>
                 </div>
-                <div class="col-md-6 col-sm-12 col-lg-6 text-center pb-4">
-                    <div id="carouselTopPost" class="carousel slide">
-                        <div class="carousel-indicators">
-                            @for($x=1;$x<=$countSlide;$x++)
-                                <button type="button" data-bs-target="#carouselTopPost" data-bs-slide-to="{{ $x-1 }}"
-                                        @if($x == 1) class="active" @endif  aria-current="true"
-                                        aria-label="Slide {{ $x }}"></button>
-                            @endfor
-                        </div>
-                        <div class="carousel-inner">
-                            @foreach($post3 as $post)
-                                <div class="carousel-item @if($i==1) active @endif ">
-                                    <img src="{{ $post->pic }}" class="d-block w-100" alt="{{ $post->name }}">
-                                    <div class="carousel-caption d-none d-md-block">
-                                        <h3 title="{{ $post->name }}">{{ $post->name }}</h3>
-                                        <p>{!! text_summary($post->texts) !!}</p>
-                                    </div>
-                                </div>
-                                @php $i++ @endphp
-                            @endforeach
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselTopPost"
-                                data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">قبلی</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselTopPost"
-                                data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">ادامه</span>
-                        </button>
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>
     <div class="container">
 
-        <div class="row">
+        <div class="row py-5">
             <div class="col-md-9">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <div class="status">
-                            <button class="btn btn-default" onclick="changStatus()">
-                                @if($statusShowPosts == 0)
-                                    نمایش شبکه ای
-                                @else
-                                    نمایش خطی
-                                @endif
-
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-
+                <div class="row">
                 @foreach($posts as $post)
-                    <div id="statusShow0">
-                        000
-                        <div class="card mb-3">
-                            <img src="{{ asset($post->pic) }}" class="card-img card-img-top" alt="{{ $post->name }}">
-                            <div class="card-body">
-                                <h4 class="card-title mb-3">
-                                    <a href="{{ asset('post/'.$post->slug) }}" class="stretched-link">
-                            <span class="overflow-hidden">
-                                {{ $post->name }}
-                            </span>
-                                    </a>
-                                </h4>
-                                <div class="card-text">
-                                    {!! text_summary($post->texts) !!}
-                                </div>
-                            </div>
-                            <div class="card-footer">
-                                <a class="btn btn-outline-primary" href="{{ asset('post/'.$post->slug) }}">اطلاعات
-                                    بیشتر</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="statusShow1">
-                        111
                         <div class="col-md-4">
-                            <div class="cart">
+                            <div class="card mb-3">
                                 <img src="{{ asset($post->pic) }}" class="card-img card-img-top"
                                      alt="{{ $post->name }}">
                                 <div class="card-body">
                                     <h4 class="card-title mb-3">
                                         <a href="{{ asset('post/'.$post->slug) }}" class="stretched-link">
-                                        <span class="overflow-hidden">
-                                            {{ $post->name }}
-                                        </span>
+                            <span class="overflow-hidden">
+                                {{ $post->name }}
+                            </span>
                                         </a>
                                     </h4>
                                     <div class="card-text">
@@ -113,14 +44,12 @@
                                     </div>
                                 </div>
                                 <div class="card-footer">
-                                    <a class="btn btn-outline-primary" href="{{ asset('post/'.$post->slug) }}">اطلاعات
-                                        بیشتر</a>
+                                    <a class="btn btn-outline-primary" href="{{ asset('post/'.$post->slug) }}"> بیشتر</a>
                                 </div>
                             </div>
                         </div>
-                    </div>
                 @endforeach
-
+                </div>
                 <div class="d-block w-100">
                     {{ $posts->links() }}
                 </div>
@@ -131,7 +60,7 @@
                     <ul class="list-group">
                         @foreach($dl_drivers as $driver)
                             <li class="list-group-item">
-                                <a href="">
+                                <a href="{{ asset('post/'.$driver->slug) }}">
                                     <h3 class="h4" title="{{ $driver->name }}">{{ $driver->name }}</h3>
                                     <span
                                         class="smaller-Text"> بروزرسانی : {{ verta($driver->updated_at)->format('%d %B %Y') }} </span>
@@ -181,9 +110,9 @@
     </div>
 </div>
 <script>
-    function changStatus(){
+    function changStatus() {
         console.log('test');
-        document.addEventListener('keydown', function(event) {
+        document.addEventListener('keydown', function (event) {
             // کد دکمه مد نظر را بررسی کنید
             if (event.keyCode === 13) { // کد 13 به معنای دکمه Enter است
                 // پیدا کردن تگ div با استفاده از شناسه و مخفی کردن آن

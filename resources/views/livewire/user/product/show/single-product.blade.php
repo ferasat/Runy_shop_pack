@@ -125,11 +125,11 @@
                                 <!-- Tab panes -->
                                 <div class="card-body" id="desc">
                                     <article>
-                                        <div class="parent-expert ">
-                                            <div class="content-expert" itemprop="description">
+
+                                            <div class="product-description" itemprop="description">
                                                 {!! $product->texts !!}
                                             </div>
-                                        </div>
+
                                     </article>
                                 </div>
                             </div>
