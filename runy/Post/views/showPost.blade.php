@@ -23,19 +23,21 @@
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row" itemscope itemtype="https://schema.org/BlogPosting" itemid="{{ asset('post/'.$post->slug) }}">
+                <meta itemprop="wordCount" content="{{ str_word_count($post->texts) }}">
                 <div class="container">
                     <div class="col-md-12">
-
-                        <div class="card mb-3">
+                        <div class="card">
                             <img src="{{asset($post->pic)}}" class="card-img-top" alt="{{$post->name}}">
+                        </div>
+                        <div class="card my-3 shadow-sm">
                             <div class="card-header">
-                                <h1 class="entry-title h3" title="{{$post->name}}">
-                                    {{$post->name}}
+                                <h1 class="entry-title h3" title="{{$post->name}}" itemprop="name" >
+                                    <a href="{{ asset('post/'.$post->slug) }}" itemprop="url" >{{$post->name}}</a>
                                 </h1>
                             </div>
                             <div class="card-body textBodyRuny">
-                                <p class="card-text">
+                                <p class="card-text" itemprop="articleBody">
                                     {!! $post->texts !!}
                                 </p>
 
@@ -59,7 +61,7 @@
         </div>
     </main>
     <!-- main -->
-    <div class="container">
+    <div class="container py-5">
         <div class="row section-header ">
             <span>مجله فناوری</span>
             <h5 class="h2">مجله فناوری</h5>

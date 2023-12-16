@@ -188,7 +188,7 @@ header.main-header .cart .dropdown-menu .basket-header {
 header.main-header .cart .dropdown-menu .basket-total {
     font-size: 16px;
     line-height: 20px;
-    color: #ce1212;
+    color: #ff4242;
     direction: rtl;
     text-align: right;
 }
@@ -384,7 +384,7 @@ header.main-header .main-menu .list .list-item.mega-menu.mega-menu-col-5 img {
 
 header.main-header .main-menu .list .list-item.mega-menu .sub-menu .now-ui-icons {
     margin-left: 2px;
-    color: #ce1212;
+    color: #ff4242;
     font-size: 10px;
     line-height: 1.833;
     float: right;
@@ -396,7 +396,7 @@ header.main-header .main-menu .list .list-item.mega-menu .sub-menu a {
 }
 
 header.main-header .main-menu .list .list-item.mega-menu > .sub-menu > li > a {
-    color: #ce1212;
+    color: #ff4242;
     display: inline-block;
     border-bottom: 1px dashed transparent;
     padding-right: 0;
@@ -404,12 +404,12 @@ header.main-header .main-menu .list .list-item.mega-menu > .sub-menu > li > a {
 }
 
 header.main-header .main-menu .list .list-item.mega-menu > .sub-menu > li > a:hover {
-    border-bottom: 1px dashed #ce1212;
+    border-bottom: 1px dashed #ff4242;
     background: 0 0 !important;
 }
 
 header.main-header .main-menu .list .list-item.mega-menu .sub-menu li a.main-list-item {
-    color: #ce1212 !important;
+    color: #ff4242 !important;
     display: inline-block;
     border-bottom: 1px dashed transparent;
     padding-right: 0;
@@ -417,7 +417,7 @@ header.main-header .main-menu .list .list-item.mega-menu .sub-menu li a.main-lis
 }
 
 header.main-header .main-menu .list .list-item.mega-menu .sub-menu li a.main-list-item:hover {
-    border-bottom: 1px dashed #ce1212;
+    border-bottom: 1px dashed #ff4242;
     background: 0 0 !important;
 }
 
@@ -708,14 +708,14 @@ main.main section.banner img {
     padding: 0;
     text-align: center;
     white-space: nowrap;
-    color: #ce1212;
+    color: #ff4242;
     padding: 0;
     line-height: 2;
     font-size: 12px;
 }
 
 .btn-link-border:hover {
-    color: #ce1212;
+    color: #ff4242;
 }
 
 .btn-link-border:after {
@@ -725,7 +725,7 @@ main.main section.banner img {
     margin-top: .85em;
     content: "";
     position: absolute;
-    border-bottom: 1px dashed #ce1212;
+    border-bottom: 1px dashed #ff4242;
 }
 
 .account-box-content .form-account-link {
@@ -808,8 +808,8 @@ main.main section.banner img {
 
 .checkbox-form .input-checkbox:checked + .checkbox-check,
 .checkbox-form input[type=checkbox]:checked + .checkbox-check {
-    background: #ce1212;
-    border: 1px solid #ce1212;
+    background: #ff4242;
+    border: 1px solid #ff4242;
 }
 
 .checkbox-form .input-checkbox:checked + .checkbox-check:before,
@@ -907,7 +907,7 @@ main.main section.banner img {
 .account-box-message-icon::before {
     font-size: 65px;
     line-height: 140px;
-    color: #ce1212;
+    color: #ff4242;
 }
 
 .account-box-message h3 {
@@ -945,7 +945,7 @@ main.main section.banner img {
 }
 
 .account-box-message-links .btn-link-border:hover {
-    color: #ce1212;
+    color: #ff4242;
 }
 
 .checkout-page {
@@ -1431,7 +1431,7 @@ main.main section.banner img {
     position: absolute;
     width: 100%;
     height: 6px;
-    background-color: #ce1212;
+    background-color: #ff4242;
     right: -50%;
     bottom: -20px;
     z-index: 1000000;
@@ -1444,7 +1444,7 @@ main.main section.banner img {
 }
 
 .shopping-page header.header-shopping .checkout-steps li a.active {
-    color: #ce1212;
+    color: #ff4242;
 }
 
 .shopping-page header.header-shopping .checkout-steps li a.active::after {
@@ -1457,7 +1457,7 @@ main.main section.banner img {
     width: 15px;
     height: 15px;
     border-radius: 50%;
-    background-color: #ce1212;
+    background-color: #ff4242;
     z-index: 1000;
 }
 
@@ -1482,7 +1482,7 @@ main.main section.banner img {
     bottom: 0;
     right: -1px;
     position: absolute;
-    background-color: #ce1212;
+    background-color: #ff4242;
     content: "";
 }
 
@@ -1515,7 +1515,7 @@ main.main section.banner img {
     font-size: 12px;
     margin-right: 11px;
     position: relative;
-    color: #ce1212 !important;
+    color: #ff4242 !important;
     border: none;
     border-bottom: 1px dashed #00bfd6;
     background-color: transparent;
@@ -1547,7 +1547,7 @@ main.main section.banner img {
     background-color: #f3feff;
     -webkit-box-shadow: 0 8px 9px 0 rgba(0, 0, 0, .05);
     box-shadow: 0 8px 9px 0 rgba(0, 0, 0, .05);
-    border: 1px solid #ce1212;
+    border: 1px solid #ff4242;
     position: absolute;
     right: -20px;
     top: 50%;
@@ -1556,7 +1556,7 @@ main.main section.banner img {
     border-radius: 50%;
     text-align: center;
     line-height: 41px;
-    color: #ce1212;
+    color: #ff4242;
 }
 
 .shopping-page .checkout-contact-location {
@@ -1606,7 +1606,7 @@ main.main section.banner img {
     top: 9px;
     right: 6px;
     opacity: 1;
-    background-color: #ce1212;
+    background-color: #ff4242;
     border: 0;
 }
 
@@ -1814,7 +1814,7 @@ main.main section.banner img {
 }
 
 .checkout-paymethod-item.is-select-mode:before {
-    color: #ce1212;
+    color: #ff4242;
 }
 
 .checkout-paymethod-title {
@@ -2036,7 +2036,7 @@ main.main section.banner img {
     font-size: 15px;
     border-radius: 8px;
     background-color: #ff1744;
-    border: 1px solid #ce1212;
+    border: 1px solid #ff4242;
     color: #fff;
     font-weight: 700;
     padding: 10px 20px;
@@ -2084,7 +2084,7 @@ main.main section.banner img {
 
 .success-checkout h1 a,
 .warning-checkout h1 a {
-    color: #ce1212;
+    color: #ff4242;
     font-family: sans-serif;
     margin: 0 4px;
 }
@@ -2678,7 +2678,7 @@ main.main section.banner img {
 /* ---- shirvani  ----- */
 .why-us .why-box {
     padding: 30px;
-    background: #ce1212;
+    background: #ff4242;
     color: #fff;
     border-radius: 40px;
 }
@@ -2699,7 +2699,7 @@ main.main section.banner img {
     -ms-flex-align: center;
     align-items: center;
     padding: 35px 15px;
-    background-color: #ce1212;
+    background-color: #ff4242;
     color: #ffffff;
     -webkit-transition: all .3s;
     -o-transition: all .3s;
@@ -2713,7 +2713,7 @@ main.main section.banner img {
     text-transform: uppercase;
     margin-bottom: 20px;
     padding-bottom: 0;
-    color: #ce1212;
+    color: #ff4242;
     position: relative;
     z-index: 2;
 }
@@ -2758,8 +2758,8 @@ main.main section.banner img {
 
 .btn-outline-primary {
     background: transparent;
-    color: #ce1212;
-    border-color: #ce1212;
+    color: #ff4242;
+    border-color: #ff4242;
 }
 
 .sli-head {
@@ -2786,8 +2786,8 @@ main.main section.banner img {
 }
 
 .social-media p a:hover {
-    background: #ce1212;
-    border-color: #ce1212;
+    background: #ff4242;
+    border-color: #ff4242;
 }
 
 .social-media p a:hover span {
@@ -2804,7 +2804,7 @@ main.main section.banner img {
 .searchform .form-control {
     width: calc(100% - 50px);
     border: none;
-    background: #ce1212 !important;
+    background: #ff4242 !important;
     color: rgba(0, 0, 0, 0.7) !important;
     font-size: 14px;
 }
@@ -2837,7 +2837,7 @@ main.main section.banner img {
 .searchform .search {
     width: 50px;
     height: 50px;
-    background: #ce1212 !important;
+    background: #ff4242 !important;
 }
 
 .appointment-btn {
@@ -2900,7 +2900,7 @@ main.main section.banner img {
 }
 
 .why-us .why-box .more-btn:hover {
-    color: #ce1212;
+    color: #ff4242;
     background: #fff;
 
 }
@@ -2919,7 +2919,7 @@ main.main section.banner img {
 }
 
 .why-us .icon-box i {
-    color: #ce1212;
+    color: #ff4242;
     border-radius: 50px;
     font-size: 32px;
     background: #eee;
@@ -2993,19 +2993,19 @@ main.main section.banner img {
 }
 
 .section-title p {
-    color: #ce1212;
+    color: #ff4242;
     font-family: "Poppins", sans-serif;
 }
 
 .btn-main, .btn-small, .btn-transparent {
-    background: #ce1212;
+    background: #ff4242;
 
     transition: all 0.2s ease;
 }
 
 .btn-main:hover, .btn-small:hover, .btn-transparent:hover {
-    background: #ce1212;
-    color: #ce1212;
+    background: #ff4242;
+    color: #ff4242;
 }
 
 .comment-reply-form textarea, .comment-reply-form .btn-main, .comment-reply-form .btn-transparent, .comment-reply-form .btn-small {
@@ -3018,22 +3018,22 @@ main.main section.banner img {
 }
 
 .btn-solid-border {
-    border: 2px solid #ce1212;
+    border: 2px solid #ff4242;
     background: transparent;
-    color: #ce1212;
+    color: #ff4242;
 }
 
 .btn-solid-border:hover {
-    border: 2px solid #ce1212;
-    background: #ce1212;
+    border: 2px solid #ff4242;
+    background: #ff4242;
 }
 
 .pricing .btn-solid-border {
-    border-color: #ce1212;
+    border-color: #ff4242;
 }
 
 .pricing .btn-solid-border:Hover {
-    border-color: #ce1212;
+    border-color: #ff4242;
 }
 
 .btn-round-full {
@@ -3045,7 +3045,7 @@ main.main section.banner img {
 }
 
 .text-color {
-    color: #ce1212;
+    color: #ff4242;
 }
 
 
@@ -3143,13 +3143,13 @@ textarea.form-control {
     line-height: 24px;
     margin-bottom: 0;
     font-family: "Raleway", sans-serif;
-    color: #ce1212;
+    color: #ff4242;
 }
 
 #footer .footer-top h4 {
     font-size: 16px;
     font-weight: bold;
-    color: #ce1212;
+    color: #ff4242;
     position: relative;
     padding-bottom: 12px;
 }
@@ -3166,7 +3166,7 @@ textarea.form-control {
 
 #footer .footer-top .footer-links ul i {
     padding-right: 2px;
-    color: #ce1212;
+    color: #ff4242;
     font-size: 18px;
     line-height: 1;
 }
@@ -3199,7 +3199,7 @@ textarea.form-control {
     font-size: 18px;
     display: inline-block;
     background: #eeeeee;
-    color: #ce1212;
+    color: #ff4242;
     line-height: 1;
     padding: 8px 0;
     margin-right: 4px;
@@ -3211,7 +3211,7 @@ textarea.form-control {
 }
 
 #footer .social-links a:hover {
-    background: #ce1212;
+    background: #ff4242;
     color: black;
     text-decoration: none;
 }
@@ -3249,26 +3249,26 @@ h6, .h6 {
 
 /* Button style */
 .btn-primary {
-    background: #ce1212;
+    background: #ff4242;
     color: #fff;
-    border-color: #ce1212;
+    border-color: #ff4242;
 }
 
 .btn-primary:active, .btn-primary:hover, .btn-primary.focus, .btn-primary.active {
     background: white !important;
-    border-color: #ce1212 !important;
-    color: #ce1212;
+    border-color: #ff4242 !important;
+    color: #ff4242;
 }
 
 .btn-outline-primary {
     background: transparent;
-    color: #ce1212;
-    border-color: #ce1212;
+    color: #ff4242;
+    border-color: #ff4242;
 }
 
 .btn-outline-primary:active, .btn-outline-primary:hover, .btn-outline-primary.focus, .btn-outline-primary.active {
-    background: #ce1212 !important;
-    border-color: #ce1212 !important;
+    background: #ff4242 !important;
+    border-color: #ff4242 !important;
     color: #fff;
 }
 
@@ -3287,7 +3287,7 @@ select {
 }
 
 .post-title:hover {
-    color: #ce1212;
+    color: #ff4242;
 }
 
 
@@ -3297,7 +3297,7 @@ select {
     text-transform: uppercase;
     margin-bottom: 20px;
     padding-bottom: 0;
-    color: #ce1212;
+    color: #ff4242;
     position: relative;
     z-index: 2;
 }
@@ -3344,7 +3344,7 @@ select {
 
 
 .bg-primary {
-    background: #ce1212 !important;
+    background: #ff4242 !important;
 }
 
 
@@ -3394,20 +3394,20 @@ select {
     --bs-pagination-padding-x: 0.75rem;
     --bs-pagination-padding-y: 0.375rem;
     --bs-pagination-font-size: 1rem;
-    --bs-pagination-color: #ce1212;
+    --bs-pagination-color: #ff4242;
     --bs-pagination-bg: #fff;
     --bs-pagination-border-width: 1px;
     --bs-pagination-border-color: #dee2e6;
     --bs-pagination-border-radius: 0.375rem;
-    --bs-pagination-hover-color: #ce1212;
+    --bs-pagination-hover-color: #ff4242;
     --bs-pagination-hover-bg: #e9ecef;
     --bs-pagination-hover-border-color: #dee2e6;
-    --bs-pagination-focus-color: #ce1212;
+    --bs-pagination-focus-color: #ff4242;
     --bs-pagination-focus-bg: #e9ecef;
-    --bs-pagination-focus-box-shadow: 0 0 0 0.25rem #ce1212;
+    --bs-pagination-focus-box-shadow: 0 0 0 0.25rem #ff4242;
     --bs-pagination-active-color: #fff;
-    --bs-pagination-active-bg: #ce1212;
-    --bs-pagination-active-border-color: #ce1212;
+    --bs-pagination-active-bg: #ff4242;
+    --bs-pagination-active-border-color: #ff4242;
     --bs-pagination-disabled-color: #6c757d;
     --bs-pagination-disabled-bg: #fff;
     --bs-pagination-disabled-border-color: #dee2e6;
@@ -3605,7 +3605,7 @@ hr {
     -ms-flex-align: center;
     align-items: center;
     padding: 35px 15px;
-    background-color: #ce1212;
+    background-color: #ff4242;
     color: #ffffff;
     -webkit-transition: all .3s;
     -o-transition: all .3s;
@@ -3848,6 +3848,9 @@ hr {
     margin-top: 45px;
 }
 
+.card {
+    --bs-card-border-color: rgb(167 167 167 / 18%) !important;
+}
 
 /*---- Labafi Modal -----*/
 .modal_runy {
@@ -3902,6 +3905,8 @@ hr {
 
 /*----End Modal----*/
 /*---- Color Runy----*/
+
+
 .btn {
     font-family: Vazir, serif !important;
 }
@@ -4026,7 +4031,7 @@ hr {
 
 .product-grid .product-discount-label {
     color: #fff;
-    background: #ce1212;
+    background: #ff4242;
     font-size: 14px;
     font-weight: 400;
     text-transform: uppercase;
@@ -4075,7 +4080,7 @@ hr {
 
 .product-grid .product-links li a:hover {
     color: #fff;
-    background: #ce1212;
+    background: #ff4242;
     box-shadow: 1px 1px 30px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -4123,7 +4128,7 @@ hr {
 }
 
 .product-grid .rating li {
-    color: #ce1212;
+    color: #ff4242;
     font-size: 14px;
 }
 
@@ -4144,11 +4149,11 @@ hr {
 }
 
 .product-grid .title a:hover {
-    color: #ce1212;
+    color: #ff4242;
 }
 
 .product-grid .price {
-    color: #ce1212;
+    color: #ff4242;
     font-size: 17px;
     font-weight: 600;
     display: block;
@@ -4167,7 +4172,7 @@ hr {
 
 .product-grid .add-to-cart {
     color: #fff;
-    background-color: #ce1212;
+    background-color: #ff4242;
     font-size: 16px;
     font-weight: 500;
     text-transform: uppercase;
