@@ -4626,3 +4626,6 @@ table.table_product tr td {
     border-radius: 9px;
     width: 270px;
 }
+.sidebar_card h4 , .sidebar_card a , .sidebar_card h3{
+    font-family: Vazir , Sans-Serif ;
+}

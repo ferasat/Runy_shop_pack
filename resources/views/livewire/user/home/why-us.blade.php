@@ -142,7 +142,7 @@
                 </a>
             </div>
             <div class="col-4 col-md-2 col-sm-3 mb-3 text-center">
-                <a href="" data-bs-toggle="modal" data-bs-target="#moreBtnService">
+                <a href="{{ asset('/shop') }}" ><!--data-bs-toggle="modal" data-bs-target="#moreBtnService"-->
                     <svg class="icon-svg-home d-block m-auto mb-2" viewBox="-2.4 -2.4 28.80 28.80" fill="none"
                          xmlns="http://www.w3.org/2000/svg">
                         <g id="SVGRepo_bgCarrier" stroke-width="0">
@@ -158,7 +158,7 @@
                     </svg>
                     <span class="d-block w-100">بیشتر</span>
                 </a>
-                <div class="modal fade" id="moreBtnService" data-bs-backdrop="static" data-bs-keyboard="false"
+<!--                <div class="modal fade" id="moreBtnService" data-bs-backdrop="static" data-bs-keyboard="false"
                      tabindex="-1" aria-labelledby="moreBtnServiceLabel" aria-hidden="true">
                     <div class="modal-dialog modal-xl">
                         <div class="modal-content">
@@ -240,7 +240,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>-->
             </div>
         </div>
     </div>
