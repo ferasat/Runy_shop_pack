@@ -21,6 +21,7 @@ class CreateSettingsTable extends Migration
             $table->string('site_short_description')->default('شعار سایت');
             $table->string('mobile_phone')->nullable();
             $table->string('office_phone')->nullable();
+            $table->string('office_mail')->nullable();
             $table->string('front_theme')->nullable()->comment('نام پوسته فرانت');
             $table->string('back_theme')->nullable()->comment('نام پوسته بک');
             $table->timestamps();

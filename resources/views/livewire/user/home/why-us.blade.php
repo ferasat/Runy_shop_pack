@@ -262,9 +262,10 @@
         <div class="row gy-4">
             <div class="col-lg-4">
                 <div class="why-box text-center">
-                    <h3 title="درباره فروشگاه مرتضوی">درباره فروشگاه مرتضوی</h3>
-                    <p>
-                        مجموعه ماشینهای اداری مرتضوی با تجربه درخشان ۲۰ ساله در زمینه فروش و خدمات تخصصی انواع چاپگر و
+                    <h1 class="h3" title="ماشین های اداری مرتضوی" itemprop="name">ماشین های اداری مرتضوی</h1>
+                    <meta itemprop="openingHours" content="Mo,Tu,We,Th,Fr,Sa,Su 08:00-21:00">
+                    <p itemprop="description">
+                        مجموعه ماشین های اداری مرتضوی با تجربه درخشان ۲۰ ساله در زمینه فروش و خدمات تخصصی انواع چاپگر و
                         اتوماسیون اداری در سال ۱۳۹۹ موفق به اخذ نمایندگی رسمی فروش و خدمات Brother ژاپن در استان اصفهان
                         شد. تعمیرات تخصصی انواع برندهای معتبر ماشین های اداری و تجهیزات جانبی نمایندگی فروش و خدمات پس
                         از فروش ماشین های اداری Brother در اصفهان نمایندگی انحصاری کارتریج های هایریک ،کپسو، آفشید و
@@ -302,7 +303,7 @@
             </div><!-- End Why Box -->
 
             <div class="col-lg-8 d-flex align-items-center">
-                <div class="row gy-4">
+                <div class="row gy-4" itemprop="department" itemscope itemtype="https://schema.org/Pharmacy">
 
                     <div class=" col-xl-4" data-aos="fade-up" data-aos-delay="200">
                         <div class=" icon-box card h-100">
@@ -311,11 +312,9 @@
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
-                                    <h5 class="card-title">تجهیزات فروشگاهی</h5>
-                                    <p class="card-text mt-5 ">
-                                        در فروشگاه مرتضوی شما شاهد تمامی دستگاه های
-                                        حضور و غیاب هستید.همچنین میتواند آنها را در تمامی رنگ ها و با تمامی برند های با
-                                        کیفیت جهان انها را تهیه کنید.
+                                    <h5 class="card-title" itemprop="name">تجهیزات فروشگاهی</h5>
+                                    <p class="card-text mt-5 " itemprop="description">
+                                        عرضه دستگاه های لازم برای فروشگاه ها از جمله: فیش پرینتر ، لیبل زن، بارکدخوان، نرم افزار حسابداری و ...
                                     </p>
                                 </div>
                             </div>
@@ -329,11 +328,9 @@
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
-                                    <h5 class="card-title">انواع پرینتر</h5>
-                                    <p class="card-text mt-5 ">
-                                        در فروشگاه مرتضوی شما شاهد تمامی دستگاه های
-                                        حضور و غیاب هستید.همچنین میتواند آنها را در تمامی رنگ ها و با تمامی برند های با
-                                        کیفیت جهان انها را تهیه کنید.
+                                    <h5 class="card-title" itemprop="name">انواع پرینتر</h5>
+                                    <p class="card-text mt-5 " itemprop="description">
+                                        عرضه ی انواع پرینترهای رنگی، حرارتی، چندکاره، لیزری بصورت نو و استوک با پشتیبانی کامل و گرانتی شرکت نیک آسا و ارائه خدمات  شارژ و ..
                                     </p>
                                 </div>
                             </div>
@@ -348,11 +345,9 @@
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
-                                    <h5 class="card-title">دستگاه های حضور و غیاب</h5>
-                                    <p class="card-text mt-5 ">
-                                        در فروشگاه مرتضوی شما شاهد تمامی دستگاه های
-                                        حضور و غیاب هستید.همچنین میتواند آنها را در تمامی رنگ ها و با تمامی برند های با
-                                        کیفیت جهان انها را تهیه کنید.
+                                    <h5 class="card-title" itemprop="name">دستگاه های حضور و غیاب</h5>
+                                    <p class="card-text mt-5 " itemprop="description">
+                                        عرضه دستگاه کنترل تردد، تشخیص اثر انگشت و تشخیص چهره جهت حضور و غیاب و گزارش اطلاعات پرسنل در اتوماسیون اداری
                                     </p>
                                 </div>
                             </div>

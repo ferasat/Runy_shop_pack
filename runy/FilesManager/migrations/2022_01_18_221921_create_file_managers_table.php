@@ -14,6 +14,7 @@ class CreateFileManagersTable extends Migration
             $table->string('filename'); //  نام فایل
             $table->string('where')->nullable(); //  کدام بخش ؟ - post or page
             $table->integer('where_id')->nullable()->index(); // برای چه بخشی آپلود شده است
+            $table->string('for_what')->default('Featured image')->nullable(); // برای چه استفاده ای
             $table->string('path')->nullable();
             $table->string('description')->nullable();
             $table->string('size')->nullable();
