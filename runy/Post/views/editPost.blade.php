@@ -75,24 +75,6 @@
         </div>
     </div>
 
-
-<!--    <script>
-        $('#texts').summernote({
-            placeholder: 'سلام به رانی خوش آمدید',
-            tabsize: 2,
-            height: 320,
-            toolbar: [
-                ['style', ['style']],
-                ['font', ['bold', 'underline', 'clear']],
-                ['color', ['color']],
-                ['para', ['ul', 'ol', 'paragraph']],
-                ['table', ['table']],
-                ['insert', ['link', 'picture', 'video']],
-                ['view', ['fullscreen', 'codeview', 'help']]
-            ]
-        });
-    </script>-->
-
     <script>
         // Replace the <textarea id="editor1"> with a CKEditor 4
         // instance, using default configuration.

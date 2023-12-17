@@ -174,6 +174,15 @@ class PostController extends \App\Http\Controllers\Controller
             'typePost' => 'post',
         ])->orderByDesc('id')->take(8)->get();
 
+        if ($post->formatPost == 'dl-file'){
+            $files = FileManager::query()->where([
+                'where'=>'post',
+                'where_id'=>$post->id,
+                'for_what' => 'for free Download'
+            ])->get();
+            return view('PostView::showDLPost' , compact('title' , 'description' ,'breadcrumbs' , 'post', 'posts' , 'owl_carousel' , 'files'));
+        }
+
         return view('PostView::showPost' , compact('title' , 'description' ,'breadcrumbs' , 'post', 'posts' , 'owl_carousel'));
     }
 

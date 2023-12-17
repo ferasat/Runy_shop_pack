@@ -3992,6 +3992,16 @@ hr {
     background-color: #6c429a !important;
 }
 
+.border-color-runy-mortazavi {
+    border-color: #ee3939 !important;
+}
+.border-color-green {
+    border-color: #00c525 !important;
+}
+.bg-color-green {
+    background-color: #00c52529 !important;
+}
+
 /*-- Border --*/
 .border-radius-primary {
     border-radius: 12% 88% 12% 88% / 88% 20% 80% 12%;
@@ -4604,4 +4614,15 @@ table.table_product tr td {
 }
 #statusShow1 {
     display: none ;
+}
+.boxs_dl {
+    text-align: center;
+}
+.box_dl_driver {
+    display: inline-block;
+    padding: 6px;
+    margin: 4px;
+    border: 1px solid #b5b5b573;
+    border-radius: 9px;
+    width: 270px;
 }
