@@ -4435,85 +4435,59 @@ hr {
 
 /*------breadcrumb ---------------*/
 .breadcrumb {
-    border-radius: 10px;
-    text-align: right;
-    top: 50%;
-    width: 100%;
-    height: 40px;
-    transform: translateY(-50%);
-    z-index: 1;
-    justify-content: right;
+
 }
 
 
 .breadcrumb__item {
-    height: 100%;
-    background-color: white;
-    color: #252525;
-    border-radius: 7px;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
+    flex-shrink: 0;
     position: relative;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 16px;
-    transform: skew(-21deg);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
-    margin: 4px;
-    padding: 0 20px;
-    cursor: pointer;
+    transition-property: -webkit-transform;
+    transition-property: transform;
+    transition-property: transform,-webkit-transform;
 }
 
 
 .breadcrumb__item:hover {
-    background: #fc454a;
-    color: #FFF;
+
 }
 
 .breadcrumb__item:hover a {
-    color: #fff;
+
 }
 
 
 .breadcrumb__inner {
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    z-index: 2;
-    transform: skew(21deg);
+    color: #6c757db5;
+    padding: 6px;
 }
 
 .breadcrumb__title {
-    font-size: 16px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
+    padding: 6px;
 }
 
 
 @media all and (max-width: 1000px) {
     .breadcrumb {
-        height: 35px;
+
     }
 
     .breadcrumb__title {
-        font-size: 11px;
+
     }
 
     .breadcrumb__item {
-        padding: 0 30px;
+
     }
 }
 
 @media all and (max-width: 710px) {
     .breadcrumb {
-        height: 27px;
+        ;
     }
 
     .breadcrumb__item {
-        padding: 0 20px;
+
     }
 
 }

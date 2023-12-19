@@ -35,6 +35,7 @@
                         <div class="card-header">
                             <h1 class="entry-title h3" title="{{$post->name}}" itemprop="name">
                                 <a href="{{ asset('post/'.$post->slug) }}" itemprop="url">{{$post->name}}</a>
+                                @if(Auth::check()) <a class="badge bg-warning smaller-Text text-danger" href="{{ asset('dashboard/post/edit/'.$post->id) }}" >ویرایش</a> @endif
                             </h1>
                         </div>
                         <div class="card-body textBodyRuny">

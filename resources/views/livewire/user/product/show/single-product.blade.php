@@ -14,7 +14,10 @@
                 <div class="col-lg-4 col-md-6 col-sm-12 rounded mb-2">
                     <div class="short-description p-2 bg-white rounded shadow-sm">
                         <div class="product-title">
-                            <h1 itemprop="name" title="{{ $product-> name }}" class="mb-4 h3" >{{ $product-> name }}</h1>
+                            <h1 itemprop="name" title="{{ $product-> name }}" class="mb-4 h3" >
+                                {{ $product-> name }}
+                                @if(Auth::check()) <a class="badge bg-warning smaller-Text text-danger" href="{{ asset('dashboard/product/edit/'.$product->id) }}" >ویرایش</a> @endif
+                            </h1>
                         </div>
                         @livewire('user.product.show.short-description' , ['product'=>$product])
                     </div>
