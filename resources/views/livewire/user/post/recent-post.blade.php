@@ -14,7 +14,7 @@
                         </a>
                     </div>
                     <div class="card-body">
-                        <a href="{{ asset('post/'.$post->slug) }}" title="{{ $post->name }}">
+                        <a class="font-size-12" href="{{ asset('post/'.$post->slug) }}" title="{{ $post->name }}">
                             {{ $post->name }}
                         </a>
                         <div class="expert_position h6"> <span>{{ verta($post->updated_at)->format('%d %B %Y') }}</span> </div>
@@ -24,7 +24,7 @@
 
         </div>
     </div>
-    <div class="row btn-box ">
+    <div class="row btn-box py-4">
         <div class="col-12 text-center">
             <a class="btn btn-outline-primary w-25" href="{{ asset('/blog') }}">
                 مطالب بیشتر در مجله فناوری

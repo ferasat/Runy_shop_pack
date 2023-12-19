@@ -4,9 +4,14 @@
             <a class="navbar-brand " href="{{ asset('/') }}">
                 <img class="w-70px" src="{{ asset(setting_site()->site_logo) }}" alt="{{ setting_site()->site_name }}">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMobailHeader" aria-controls="navbarMobailHeader" aria-expanded="false" aria-label="Toggle navigation">
+
+            <!-- Button trigger modal -->
+            <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#menuManiModal">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
+
+
             <div class="collapse navbar-collapse" id="navbarMobailHeader">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
@@ -27,12 +32,8 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ asset('/blog') }}">مجله فناوری</a>
                     </li>
-
                 </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="جستجو در محصولات" aria-label="جستجو در محصولات">
-                    <button class="btn btn-outline-success" type="submit">جستجو</button>
-                </form>
+
             </div>
         </div>
     </nav>

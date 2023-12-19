@@ -11,7 +11,7 @@ $(document).ready(function () {
         onTranslate: resetProgressBar,
         onTranslated: startProgressBar
     });
-    
+
     function startProgressBar() {
       // apply keyframe animation
       $(".slide-progress").css({
@@ -144,13 +144,24 @@ $(document).ready(function () {
     });
 
     // End scroll
-    
+
     // favorites product
-    
+
     $("ul.gallery-options button.add-favorites").on("click",function () {
         $(this).toggleClass("favorites");
     });
-    
+
     // favorites product
 
+});
+
+
+var navItems = document.querySelectorAll(".mobile-bottom-nav__item");
+navItems.forEach(function(e, i) {
+    e.addEventListener("click", function(e) {
+        navItems.forEach(function(e2, i2) {
+            e2.classList.remove("mobile-bottom-nav__item--active");
+        })
+        this.classList.add("mobile-bottom-nav__item--active");
+    });
 });

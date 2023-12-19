@@ -53,8 +53,8 @@
                         </div>
                         <div class="card-body row d-flex justify-content-center">
                             <div class="col-md-8">
-                                <div class="download_box border border-2 border-color-green rounded">
-                                    <div class="box_title border-bottom bg-color-green p-2">باکس دانلود</div>
+                                <div class="download_box border border-2 border-color-red-mor rounded">
+                                    <div class="box_title border-bottom bg-mute-red-mor p-2">باکس دانلود</div>
                                     <div class="box_body p-2">
                                         <ul class="list-group">
                                             @foreach($files as $file)
@@ -120,7 +120,7 @@
                         </a>
                         <div class="card-body">
                             <div class="detail-box">
-                                <h4 class="h4" title="{{ $post->name }}">
+                                <h4 class="font-size-12" title="{{ $post->name }}">
                                     <a class="" href="{{ asset('post/'.$post->slug) }}" title="{{ $post->name }}">
                                         {{ $post->name }}
                                     </a>

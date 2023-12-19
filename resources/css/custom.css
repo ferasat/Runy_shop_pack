@@ -85,7 +85,7 @@
 }
 
 
-/*----- Start style ------*/
+/*----- Start style Mortazavi ------*/
 .bg-color-base {
     background: #fc454a !important;
 }
@@ -94,7 +94,16 @@
     background-color: #6ec1e4 !important;
 }
 
+.bg-mute-red-mor{
+    background: #f9484740 !important;
+}
 
+.border-color-red-mor {
+    border-color: #fc454a !important;
+}
+.bg-glass-1 {
+    background-color: #ffffffc4 !important;
+}
 .parallax-service-box {
     /* The image used */
     background-image: url("https://runy-disk-mortazavi.storage.iran.liara.space/shop/brother-laser-printer.webp");
@@ -108,18 +117,18 @@
 }
 
 /*----- End style ------*/
-/*----- style5------*/
+
 
 @media (min-width: 1200px) {
 }
 
 /* ----------------- Start Header */
 
-header.main-header .search-area form.search {
+.search-area form.search {
     position: relative;
 }
 
-header.main-header .search-area form.search input {
+.search-area form.search input {
     width: 100%;
     height: 100%;
     padding: 10px 10px 9px;
@@ -134,7 +143,7 @@ header.main-header .search-area form.search input {
     color: black;
 }
 
-header.main-header .search-area form.search button {
+.search-area form.search button {
     width: 60px;
     height: 100%;
     position: absolute;
@@ -148,7 +157,7 @@ header.main-header .search-area form.search button {
     outline: none;
 }
 
-header.main-header .search-area form.search button img {
+.search-area form.search button img {
     width: 25px;
 }
 
@@ -3218,17 +3227,17 @@ textarea.form-control {
 
 
 h1, .h1 {
-    font-size: 52px;
+    font-size: 33px;
     font-family: Vazir-B, serif ;
 }
 
 h2, .h2 {
-    font-size: 36px;
+    font-size: 27px;
     font-family: Vazir-B, serif ;
 }
 
 h3, .h3 {
-    font-size: 24px;
+    font-size: 23px;
     font-family: Vazir-B, serif ;
 }
 
@@ -3243,10 +3252,24 @@ h5, .h5 {
 }
 
 h6, .h6 {
-    font-size: 13px;
+    font-size: 12px;
     font-family: Vazir-B, serif ;
 }
-
+.entry-title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.8;
+}
+/* --- font size ----*/
+.font-size-12 {
+    font-size: 12px !important;
+}
+.font-size-9 {
+    font-size: 9px !important;
+}
+.font-size-14 {
+    font-size: 14px !important;
+}
 /* Button style */
 .btn-primary {
     background: #ff4242;
@@ -4433,6 +4456,11 @@ hr {
 }
 
 
+.navbar-toggler:focus {
+    text-decoration: none;
+    outline: 0;
+    box-shadow: 0 !important;
+}
 /*------breadcrumb ---------------*/
 .breadcrumb {
 
@@ -4603,3 +4631,39 @@ table.table_product tr td {
 .sidebar_card h4 , .sidebar_card a , .sidebar_card h3{
     font-family: Vazir , Sans-Serif ;
 }
+
+/*-------------*/
+
+.mobile-bottom-nav {
+    padding: 4px 0 0 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    will-change: transform;
+    transform: translateZ(0);
+    display: flex;
+    height: 50px;
+    box-shadow: 0 -2px 5px -2px #333;
+    background-color: #ffffffba;
+}
+.mobile-bottom-nav__item {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 12px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-content: center;
+}
+.mobile-bottom-nav__item--active {
+    color: #ff1744;
+}
+.mobile-bottom-nav__item-content {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+

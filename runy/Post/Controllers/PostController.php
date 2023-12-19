@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Intervention\Image\Image;
+use Post\Models\CategoryPost;
 use Post\Models\Post;
 
 class PostController extends \App\Http\Controllers\Controller
@@ -165,7 +166,18 @@ class PostController extends \App\Http\Controllers\Controller
     {
         $title = $post->name ;
         $description= $post->titleSeo .' | '. $post->focusKeyword;
-        $breadcrumbs = ["/"=>" خانه " , "/blog" => " وبلاگ  ", "/post/".$post->slug => $post->name ];
+        if ($post->cat_id !== null or $post->cat_id !== ''){
+            $catPost = CategoryPost::query()->find($post->cat_id);
+            if ( $catPost !== null){
+                $breadcrumbs = ["/"=>" خانه " , "/blog" => " وبلاگ  ", "/post-category/".$catPost->slug => $catPost->name , "/post/".$post->slug => $post->name ];
+            }else{
+                $breadcrumbs = ["/"=>" خانه " , "/blog" => " وبلاگ  " , "/post/".$post->slug => $post->name ];
+            }
+        }else{
+            $breadcrumbs = ["/"=>" خانه " , "/blog" => " وبلاگ  " , "/post/".$post->slug => $post->name ];
+        }
+
+
         $post->numberView = $post->numberView + 1 ;
         $post->save();
         $owl_carousel = true;
