@@ -52,6 +52,20 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
+                                    @if(Auth::check())
+                                        <div class="d-flex justify-content-between">
+                                            <div class="ps-2">
+                                                <div class="textName">{{ fullName(Auth::id()) }}</div>
+                                                <span class="smaller-Text">خوش آمدید</span>
+                                            </div>
+                                            <div class="w-50px">
+                                                <img class="w-100 rounded-circle" src="{{ asset(Auth::user()->pic) }}">
+                                            </div>
+
+
+                                        </div>
+                                    @else
+
                                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                                         <li class="nav-item w-50" role="presentation">
                                             <button class="nav-link w-100 active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">ورود</button>
@@ -81,6 +95,8 @@
                                             @livewire('user.auth.register')
                                         </div>
                                     </div>
+
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -498,7 +514,7 @@
                            href="https://mortazavistore.ir/post-category/learn">آموزش</a>
                     </li>
                     <li class="list-item">
-                        <a class="nav-link" href="#">سامانه تعمیرات</a>
+                        <a class="nav-link" href="{{ asset(route('fix_request')) }}">سامانه تعمیرات</a>
                     </li>
                     <li class="list-item">
                         <a class="nav-link" href="{{ asset('/blog') }}">مقالات</a>
