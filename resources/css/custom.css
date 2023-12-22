@@ -4644,3 +4644,16 @@ table.table_product tr td {
     position: absolute !important;
     top: -25px !important;
 }
+/*-------*/
+.product-description table {
+    max-width: 70%;
+    min-width: 320px;
+    margin: 0 auto;
+}
+.product-description table tbody tr {
+    width: 100%;
+
+}
+.product-description table tbody tr td {
+    border: 1px solid #dadada;
+}
