@@ -26,7 +26,7 @@
     </div>
     <div class="row btn-box py-4">
         <div class="col-12 text-center">
-            <a class="btn btn-outline-primary w-25" href="{{ asset('/blog') }}">
+            <a class="btn btn-outline-primary" href="{{ asset('/blog') }}">
                 مطالب بیشتر در مجله فناوری
             </a>
         </div>

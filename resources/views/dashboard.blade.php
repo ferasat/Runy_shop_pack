@@ -11,6 +11,7 @@
         @endif
 
         <main class="dashboard-user-page ">
+            @if(Auth::user()->levelPermission > 2)
             <div class="container mt-5">
                 <div class="row">
                     <div class="profile-page col-xl-9 col-lg-8 col-md-12 order-2">
@@ -135,6 +136,51 @@
                     </div>
                 </div>
             </div>
+            @else
+                <div class="d-flex justify-content-center">
+                <h1>در حال بروزرسانی هستیم  . از صبر شما متشکریم .</h1>
+                <div class="profile-page-aside col-xl-3 col-lg-4 col-md-6 center-section order-1">
+                    <div class="profile-box">
+                        <div class="profile-box-header bg-runy-primary">
+                            <div class="profile-box-avatar">
+                                <img src="{{ asset(Auth::user()->pic) }}" alt="{{ fullName(Auth::user()->id) }}">
+                            </div>
+                            <button data-bs-toggle="modal" data-bs-target="#myProfile" class="profile-box-btn-edit">
+                                <i class="fa fa-pencil"></i>
+                            </button>
+                            <!-- Modal Core -->
+                            <div class="modal-share modal-width-custom modal fade" id="myProfile" tabindex="-1"
+                                 role="dialog" aria-labelledby="myProfileLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal"
+                                                    aria-hidden="true">×
+                                            </button>
+                                            <h4 class="modal-title" id="myProfileLabel">تغییر نمایه کاربری شما</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <ul class="profile-avatars default text-center">
+                                                <li>
+                                                    <img class="profile-avatars-item"
+                                                         src="{{ asset(Auth::user()->pic) }}">
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Modal Core -->
+                        </div>
+                        <div class="profile-box-username">{{ fullName(Auth::user()->id) }}</div>
+
+                    </div>
+
+
+                </div>
+                </div>
+            @endif
         </main>
     </div>
 

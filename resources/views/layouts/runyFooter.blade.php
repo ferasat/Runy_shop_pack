@@ -1,64 +1,28 @@
-@if(!Auth::check())
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">ورود به سایت</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="loginForm" class="tooltip-end-bottom" novalidate="novalidate"
-                          action="{{ asset('/login') }}" method="post">
-                        @csrf
-                        <div class="mb-3 filled form-group tooltip-end-top">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
-                                 fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                 stroke-linejoin="round" class="cs-icon cs-icon-email">
-                                <path
-                                    d="M18 7L11.5652 10.2174C10.9086 10.5457 10.5802 10.7099 10.2313 10.7505C10.0776 10.7684 9.92238 10.7684 9.76869 10.7505C9.41977 10.7099 9.09143 10.5457 8.43475 10.2174L2 7"></path>
-                                <path
-                                    d="M14.5 4C15.9045 4 16.6067 4 17.1111 4.33706C17.3295 4.48298 17.517 4.67048 17.6629 4.88886C18 5.39331 18 6.09554 18 7.5L18 12.5C18 13.9045 18 14.6067 17.6629 15.1111C17.517 15.3295 17.3295 15.517 17.1111 15.6629C16.6067 16 15.9045 16 14.5 16L5.5 16C4.09554 16 3.39331 16 2.88886 15.6629C2.67048 15.517 2.48298 15.3295 2.33706 15.1111C2 14.6067 2 13.9045 2 12.5L2 7.5C2 6.09554 2 5.39331 2.33706 4.88886C2.48298 4.67048 2.67048 4.48298 2.88886 4.33706C3.39331 4 4.09554 4 5.5 4L14.5 4Z"></path>
-                            </svg>
-                            ایمیل
-                            <input class="form-control pe-7" placeholder="ایمیل" name="email"
-                                   aria-describedby="email-error" aria-invalid="true">
-                            @error('email')
-                            <div id="email-error" class="error">وارد کردن ایمیل ضروری است</div>@enderror
-                        </div>
-                        <div class="mb-3 filled form-group tooltip-end-top">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
-                                 fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                 stroke-linejoin="round" class="cs-icon cs-icon-lock-off">
-                                <path
-                                    d="M5 12.6667C5 12.0467 5 11.7367 5.06815 11.4824C5.25308 10.7922 5.79218 10.2531 6.48236 10.0681C6.73669 10 7.04669 10 7.66667 10H12.3333C12.9533 10 13.2633 10 13.5176 10.0681C14.2078 10.2531 14.7469 10.7922 14.9319 11.4824C15 11.7367 15 12.0467 15 12.6667V13C15 13.9293 15 14.394 14.9231 14.7804C14.6075 16.3671 13.3671 17.6075 11.7804 17.9231C11.394 18 10.9293 18 10 18V18C9.07069 18 8.60603 18 8.21964 17.9231C6.63288 17.6075 5.39249 16.3671 5.07686 14.7804C5 14.394 5 13.9293 5 13V12.6667Z"></path>
-                                <path
-                                    d="M11 15H10 9M13 6V5C13 3.34315 11.6569 2 10 2V2C8.34315 2 7 3.34315 7 5V10"></path>
-                            </svg>
-                            رمز
-                            <input class="form-control pe-7" name="password" type="password" placeholder="رمز">
-                            <a class="text-small  t-3 s-3 p-2" href="">فراموش کردی؟</a>
-                        </div>
-                        <button type="submit" class=" btn btn-primary btn-block hvr-sweep-to-left">ورود</button>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <a href="{{ asset('/register') }}" type="button" class="btn btn-warning">ثبت نام</a>
-                </div>
-            </div>
-        </div>
-    </div>
-@endif
-
 <!-- Modal -->
 <div class="modal fade " id="menuManiModal" tabindex="-1" aria-labelledby="menuManiModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="menuManiModalLabel">فهرست</h1>
+                <div class="modal-title fs-5 " id="menuManiModalLabel">
+                    @if(Auth::check())
+                        <div class="d-flex justify-content-between">
+                            <div class="w-50px">
+                                <img class="w-100 rounded-circle" src="{{ asset(Auth::user()->pic) }}">
+                            </div>
+                            <div class="ps-2">
+                                <div class="textName">{{ fullName(Auth::id()) }}</div>
+                                <span class="smaller-Text">خوش آمدید</span>
+                            </div>
+
+                        </div>
+                    @else
+                        <a href="{{ asset('/register') }}">وارد شوید </a>
+                    @endif
+                </div>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
+
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{{ asset('/') }}">خانه</a>
@@ -73,7 +37,7 @@
                         <a class="nav-link" href="{{ asset('/page/contact-us') }}">تماس با ما</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">سامانه تعمیرات</a>
+                        <a class="nav-link" href="{{ asset(route('fix_request')) }}">سامانه تعمیرات</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ asset('/blog') }}">مجله فناوری</a>
@@ -267,22 +231,20 @@
 <div class="mobile_header">
     <nav class="mobile-bottom-nav ">
         <div class="mobile-bottom-nav__item mobile-bottom-nav__item--active">
-            <a class="mobile-bottom-nav__item-content" href="#">
+            <a class="mobile-bottom-nav__item-content" data-bs-toggle="modal" data-bs-target="#menuManiModal">
                 <svg class="icon-svg-panel-sm" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                     <g id="SVGRepo_iconCarrier">
-                        <path
-                            d="M2.36407 12.9579C1.98463 10.3208 1.79491 9.00229 2.33537 7.87495C2.87583 6.7476 4.02619 6.06234 6.32691 4.69181L7.71175 3.86687C9.80104 2.62229 10.8457 2 12 2C13.1543 2 14.199 2.62229 16.2882 3.86687L17.6731 4.69181C19.9738 6.06234 21.1242 6.7476 21.6646 7.87495C22.2051 9.00229 22.0154 10.3208 21.6359 12.9579L21.3572 14.8952C20.8697 18.2827 20.626 19.9764 19.451 20.9882C18.2759 22 16.5526 22 13.1061 22H10.8939C7.44737 22 5.72409 22 4.54903 20.9882C3.37396 19.9764 3.13025 18.2827 2.64284 14.8952L2.36407 12.9579Z"
-                            stroke="#ff4242" stroke-width="1.5"></path>
-                        <path d="M15 18H9" stroke="#ff4242" stroke-width="1.5" stroke-linecap="round"></path>
+                        <path d="M4 6H20M4 12H20M4 18H20" stroke="#ff1744" stroke-width="2" stroke-linecap="round"
+                              stroke-linejoin="round"></path>
                     </g>
                 </svg>
-                جستجو
+                منو
             </a>
         </div>
         <div class="mobile-bottom-nav__item">
-            <a class="mobile-bottom-nav__item-content" href="">
+            <a class="mobile-bottom-nav__item-content" href="{{ asset('/shop') }}">
                 <svg class="icon-svg-panel-sm" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -303,12 +265,13 @@
         </div>
         <div class="mobile-bottom-nav__item">
             <a class="mobile-bottom-nav__item-content" href="{{ asset('/') }}">
-                <img class="w-70px" src="{{ asset(setting_site()->site_logo) }}" alt="{{ setting_site()->site_name }}">
+                <img class="w-70px logo-menu-bottom " src="{{ asset(setting_site()->site_logo) }}"
+                     alt="{{ setting_site()->site_name }}">
             </a>
         </div>
 
         <div class="mobile-bottom-nav__item">
-            <a class="mobile-bottom-nav__item-content" href="">
+            <a class="mobile-bottom-nav__item-content" href="{{ asset('fix_request') }}">
                 <svg class="icon-svg-panel-sm" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none">
                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -327,7 +290,7 @@
         </div>
 
         <div class="mobile-bottom-nav__item">
-            <a class="mobile-bottom-nav__item-content" href="">
+            <a class="mobile-bottom-nav__item-content" href="tel:02188310838">
                 <svg class="icon-svg-panel-sm" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>

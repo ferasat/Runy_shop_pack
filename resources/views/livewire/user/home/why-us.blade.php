@@ -3,7 +3,7 @@
         <div class="row py-4 my-4 services-svg">
             <div class="col-4 col-md-2 col-sm-3 mb-3 text-center">
                 <a href="https://mortazavistore.ir/product-category/printer" title="پرینتر">
-                    <svg class="icon-svg-home d-block m-auto mb-2" viewBox="-5.28 -5.28 34.56 34.56" fill="none"
+                    <svg class="icon-svg-home d-block m-auto mb-2 shadow-sm rounded-circle" viewBox="-5.28 -5.28 34.56 34.56" fill="none"
                          xmlns="http://www.w3.org/2000/svg" stroke="#d9d9d9">
                         <g id="SVGRepo_bgCarrier" stroke-width="0">
                             <rect x="-5.28" y="-5.28" width="34.56" height="34.56" rx="17.28" fill="#d37d36"
@@ -35,7 +35,7 @@
             </div>
             <div class="col-4 col-md-2 col-sm-3 mb-3 text-center">
                 <a href="https://mortazavistore.ir/product-category/scaner" title="اسکنر">
-                    <svg class="icon-svg-home d-block m-auto mb-2" fill="#ffffff" viewBox="-7.7 -7.7 50.40 50.40"
+                    <svg class="icon-svg-home d-block m-auto mb-2 shadow-sm rounded-circle" fill="#ffffff" viewBox="-7.7 -7.7 50.40 50.40"
                          data-name="Layer 2"
                          id="a23c8b98-967c-4812-aeb3-60f34cc8eeab" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"
                          stroke-width="0.10500000000000001">
@@ -59,7 +59,7 @@
             </div>
             <div class="col-4 col-md-2 col-sm-3 mb-3 text-center">
                 <a href="https://mortazavistore.ir/product-category/barcode-scanner" title="بارکدخوان">
-                    <svg class="icon-svg-home d-block m-auto mb-2" viewBox="-5.28 -5.28 34.56 34.56"
+                    <svg class="icon-svg-home d-block m-auto mb-2 shadow-sm rounded-circle" viewBox="-5.28 -5.28 34.56 34.56"
                          id="meteor-icon-kit__regular-scanner"
                          fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"
                          stroke-width="0.00024000000000000003">
@@ -80,7 +80,7 @@
             </div>
             <div class="col-4 col-md-2 col-sm-3 mb-3 text-center">
                 <a href="https://mortazavistore.ir/product-category/Attendance-device" title="دستگاه حضور غیاب">
-                    <img class="icon-svg-home d-block m-auto mb-2"
+                    <img class="icon-svg-home d-block m-auto mb-2 shadow-sm rounded-circle"
                          src="https://runy-disk-mortazavi.storage.iran.liara.space/shop/face-recognition-1-svgrepo-com.svg"
                          alt="">
                 </a>
@@ -88,7 +88,7 @@
             </div>
             <div class="col-4 col-md-2 col-sm-3 mb-3 text-center">
                 <a href="https://mortazavistore.ir/product-category/Receipt-printer" title="فیش پرینتر">
-                    <svg class="icon-svg-home d-block m-auto mb-2" version="1.1" id="Icons"
+                    <svg class="icon-svg-home d-block m-auto mb-2 shadow-sm rounded-circle" version="1.1" id="Icons"
                          xmlns="http://www.w3.org/2000/svg"
                          xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-7.04 -7.04 46.08 46.08"
                          xml:space="preserve"
@@ -143,7 +143,7 @@
             </div>
             <div class="col-4 col-md-2 col-sm-3 mb-3 text-center">
                 <a href="{{ asset('/shop') }}" ><!--data-bs-toggle="modal" data-bs-target="#moreBtnService"-->
-                    <svg class="icon-svg-home d-block m-auto mb-2" viewBox="-2.4 -2.4 28.80 28.80" fill="none"
+                    <svg class="icon-svg-home d-block m-auto mb-2 shadow-sm rounded-circle" viewBox="-2.4 -2.4 28.80 28.80" fill="none"
                          xmlns="http://www.w3.org/2000/svg">
                         <g id="SVGRepo_bgCarrier" stroke-width="0">
                             <rect x="-2.4" y="-2.4" width="28.80" height="28.80" rx="14.4" fill="#d2d0d0"
@@ -158,89 +158,7 @@
                     </svg>
                     <span class="d-block w-100">بیشتر</span>
                 </a>
-<!--                <div class="modal fade" id="moreBtnService" data-bs-backdrop="static" data-bs-keyboard="false"
-                     tabindex="-1" aria-labelledby="moreBtnServiceLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-xl">
-                        <div class="modal-content">
-                            <div class="modal-body">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-4 col-md-2 col-sm-3 mb-3 text-center">
-                                            <a href="https://mortazavistore.ir/product-category/Receipt-printer"
-                                               title="فیش پرینتر">
-                                                <svg class="icon-svg-home d-block m-auto mb-2" version="1.1" id="Icons"
-                                                     xmlns="http://www.w3.org/2000/svg"
-                                                     xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                     viewBox="-7.04 -7.04 46.08 46.08"
-                                                     xml:space="preserve"
-                                                     fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0">
-                                                        <rect x="-7.04" y="-7.04" width="46.08" height="46.08"
-                                                              rx="23.04" fill="#7ed0ec"
-                                                              strokewidth="0"></rect>
-                                                    </g>
-                                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
-                                                       stroke-linejoin="round"></g>
-                                                    <g id="SVGRepo_iconCarrier">
-                                                        <style type="text/css"> .st0 {
-                                                                fill: none;
-                                                                stroke: #ffffff;
-                                                                stroke-width: 2;
-                                                                stroke-linecap: round;
-                                                                stroke-linejoin: round;
-                                                                stroke-miterlimit: 10;
-                                                            }
 
-                                                            .st1 {
-                                                                fill: none;
-                                                                stroke: #ffffff;
-                                                                stroke-width: 2;
-                                                                stroke-linecap: round;
-                                                                stroke-linejoin: round;
-                                                                stroke-miterlimit: 10;
-                                                                stroke-dasharray: 3;
-                                                            }
-
-                                                            .st2 {
-                                                                fill: none;
-                                                                stroke: #ffffff;
-                                                                stroke-width: 2;
-                                                                stroke-linejoin: round;
-                                                                stroke-miterlimit: 10;
-                                                            }
-
-                                                            .st3 {
-                                                                fill: none;
-                                                            } </style>
-                                                        <path class="st0"
-                                                              d="M11,7L11,7c-1.7,0-3,1.3-3,3v16c0,1.7,1.3,3,3,3h10c1.7,0,3-1.3,3-3V10c0-1.7-1.3-3-3-3h0"></path>
-                                                        <path class="st0"
-                                                              d="M11,5v12h10V5c0-1.1-0.9-2-2-2H9C10.1,3,11,3.9,11,5z"></path>
-                                                        <line class="st0" x1="13" y1="25" x2="19" y2="25"></line>
-                                                        <line class="st0" x1="16" y1="6" x2="16" y2="7"></line>
-                                                        <line class="st0" x1="16" y1="13" x2="16" y2="14"></line>
-                                                        <path class="st0"
-                                                              d="M17,7h-1.5C14.7,7,14,7.7,14,8.5v0c0,0.8,0.7,1.5,1.5,1.5h1c0.8,0,1.5,0.7,1.5,1.5v0c0,0.8-0.7,1.5-1.5,1.5H15"></path>
-                                                        <rect y="-432" class="st3" width="536" height="680"></rect>
-                                                    </g></svg>
-                                                <span class="d-block w-100">فیش پرینتر</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-12 text-left">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">بستن
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>-->
             </div>
         </div>
     </div>
@@ -248,12 +166,16 @@
     <div class="container">
         <div class="row my-4 ">
             <div class="col-md-6 col-lg-6 col-sm-6 py-4">
+                <a href="{{ asset(route('fix_request')) }}">
                 <img class="w-100 rounded" src="https://runy-disk-mortazavi.storage.iran.liara.space/shop/m1.jpg"
                      alt="تعمیر و سرویس دهی پرینتر">
+                </a>
             </div>
             <div class="col-md-6 col-lg-6 col-sm-6 py-4">
+                <a href="https://mortazavistore.ir/page/Installment-purchase-of-printers-and-office-machines">
                 <img class="w-100 rounded" src="https://runy-disk-mortazavi.storage.iran.liara.space/shop/m3.jpg"
                      alt="خرید اقساطی پرینتر">
+                </a>
             </div>
         </div>
     </div>
