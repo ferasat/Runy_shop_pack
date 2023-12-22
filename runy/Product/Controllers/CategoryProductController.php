@@ -24,7 +24,7 @@ class CategoryProductController extends Controller
     public function show(CategoryProduct $category_product)
     {
         $cat= $category_product;
-        $breadcrumbs = ["/"=>" خانه " , "/product" => "فروشگاه", "/product-category/".$cat->slug => $cat->name ];
+        $breadcrumbs = ["/"=>" خانه " , "/shop" => "فروشگاه", "/product-category/".$cat->slug => $cat->name ];
         //dd($cat);
         return view('ProductView::category.showCat' , compact('cat', 'breadcrumbs')) ;
     }

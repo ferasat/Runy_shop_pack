@@ -104,7 +104,7 @@
                             <img class="card-img-top" src="{{ asset($post->pic) }}" alt="{{ $post->name }}">
                         </a>
                         <div class="card-body">
-                            <div class="detail-box">
+                            <div class="mag_box">
                                 <h4 class="font-size-12" title="{{ $post->name }}">
                                     <a class="" href="{{ asset('post/'.$post->slug) }}" title="{{ $post->name }}">
                                         {{ $post->name }}

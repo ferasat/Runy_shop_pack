@@ -102,7 +102,7 @@ class FixRequestGust extends Component
             $newUser = new User();
             $newUser->name = $this->name ;
             $newUser->family = $this->family ;
-            $newUser->cell = $this->cell ;
+            $newUser->cellPhone = $this->cell ;
             $newUser->address = $this->address ;
             $newUser->email = $this->cell.'@ms.ir' ;
             $newUser->password = bcrypt($this->cell) ;

@@ -37,7 +37,9 @@ class NameProduct extends Component
 
         $pro = Product::find($this->product->id);
         $pro->name = $this->name_;
-        $pro->slug = $this->slugCheck($this->slug);
+        if ($pro->slug !== $this->slug ){
+            $pro->slug = $this->slugCheck($this->slug);
+        }
         $pro->save();
 
     }

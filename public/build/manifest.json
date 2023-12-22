@@ -32,9 +32,17 @@
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-v4compatibility.woff2"
   },
   "resources/css/app.css": {
-    "file": "assets/app-bc17ba1d.css",
+    "file": "assets/app-883bbe59.css",
     "isEntry": true,
     "src": "resources/css/app.css"
+  },
+  "resources/fonts/Lalezar-Regular.otf": {
+    "file": "assets/Lalezar-Regular-256b18b5.otf",
+    "src": "resources/fonts/Lalezar-Regular.otf"
+  },
+  "resources/fonts/Lalezar-Regular.ttf": {
+    "file": "assets/Lalezar-Regular-269b87bf.ttf",
+    "src": "resources/fonts/Lalezar-Regular.ttf"
   },
   "resources/fonts/Vazir-Bold.eot": {
     "file": "assets/Vazir-Bold-87189563.eot",

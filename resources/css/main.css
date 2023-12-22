@@ -1,7 +1,6 @@
 @font-face {
     font-family: Vazir;
     font-style: normal;
-    font-weight: bold;
     src: url('../fonts/Vazir.eot');
     src: url('../fonts/Vazir.eot') format('embedded-opentype'),
         /* FF39+,Chrome36+, Opera24+*/
@@ -13,9 +12,20 @@
 @font-face {
     font-family: Vazir-B;
     font-style: normal;
-    font-weight: 300;
+    font-weight: 800;
     src: url('../fonts/Vazir-Bold.ttf');
     src: url('../fonts/Vazir-Bold.eot') format('embedded-opentype');
+}
+
+@font-face {
+    font-family: Lalezar-Regular;
+    font-style: normal;
+    font-weight: 800;
+    src: url('../fonts/Lalezar-Regular.ttf');
+    src: url('../fonts/Lalezar-Regular.otf');
+}
+.font-family-Lalezar-Regular {
+    font-family: Lalezar-Regular !important;
 }
 html{
     overflow-x: hidden;
@@ -61,6 +71,60 @@ li {
 
 .no-padding-right {
     padding-right: 0;
+}
+
+h1, .h1 {
+    font-size: 29px;
+    font-family: Vazir-B , Vazir ;
+}
+
+h2, .h2 {
+    font-size: 25px;
+    font-family: Vazir-B , Vazir  ;
+}
+
+h3, .h3 {
+    font-size: 21px;
+    font-family: Vazir-B , Vazir ;
+}
+
+h4, .h4 {
+    font-size: 18px;
+    font-family: Vazir-B ;
+}
+
+h5, .h5 {
+    font-size: 14px;
+    font-family: Vazir-B ;
+}
+
+h6, .h6 {
+    font-size: 12px;
+    font-family: Vazir-B, serif ;
+}
+.entry-title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.8;
+}
+/* --- font size ----*/
+.font-size-18 {
+    font-size: 18px !important;
+}
+.font-size-16{
+    font-size: 16px !important;
+}
+.font-size-14 {
+    font-size: 14px !important;
+}
+.font-size-12 {
+    font-size: 12px !important;
+}
+.font-size-10 {
+    font-size: 10px !important;
+}
+.font-size-9 {
+    font-size: 9px !important;
 }
 
 .dk-btn {

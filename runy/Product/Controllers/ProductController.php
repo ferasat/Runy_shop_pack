@@ -163,7 +163,12 @@ class ProductController extends Controller
         $description = $setting->site_short_description ;
         $breadcrumbs = ["/"=>" خانه " , "/shop" => "فروشگاه"];
 
-        return view('ProductView::shop', compact(  'title', 'description' , 'breadcrumbs' ));
+        if (isset($_REQUEST['search'])){
+            $search = $_REQUEST['search'];
+            return view('ProductView::shop', compact(  'title', 'description' , 'breadcrumbs' , 'search' ));
+        }else{
+            return view('ProductView::shop', compact(  'title', 'description' , 'breadcrumbs' ));
+        }
     }
 
 }

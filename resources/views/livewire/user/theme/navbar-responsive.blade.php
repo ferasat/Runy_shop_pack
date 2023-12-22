@@ -17,9 +17,9 @@
                     <button type="submit"><img src="{{ asset('theme/img/search.png') }}" alt="runy"></button>
                 </form>
                 <ul>
-                    <li><a href="#"><i class="now-ui-icons users_single-02"></i></a>
+                    <li><a href="#">ddd<i class="now-ui-icons users_single-02"></i></a>
                     </li>
-                    <li><a href="#"><i class="now-ui-icons shopping_basket"></i></a>
+                    <li><a href="#">vvv<i class="now-ui-icons shopping_basket"></i></a>
                     </li>
                 </ul>
             </div>

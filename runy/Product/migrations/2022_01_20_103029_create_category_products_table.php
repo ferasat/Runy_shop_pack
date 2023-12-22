@@ -16,6 +16,7 @@ class CreateCategoryProductsTable extends Migration
             $table->longText('description')->nullable();
             $table->enum('statusMaster' , ['yes' , 'no'])->default('yes');
             $table->integer('master_id')->default(0); // آیدی سر دسته در صورتی که خودش سر دسته است 0 می شود.
+            $table->integer('show_order')->nullable(); // اولویت نمایش.
             $table->string('focusKeyword')->nullable(); // عبارت کلیدی کانونی
             $table->string('titleSeo')->nullable(); // عنوان سئو
             $table->string('metaDescription')->nullable(); // توضیح متا

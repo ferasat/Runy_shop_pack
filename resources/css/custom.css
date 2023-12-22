@@ -89,7 +89,9 @@
 .bg-color-base {
     background: #fc454a !important;
 }
-
+.text-color-mor{
+    color: #fc454a !important;
+}
 .bg-color-secend {
     background-color: #6ec1e4 !important;
 }
@@ -97,7 +99,9 @@
 .bg-mute-red-mor{
     background: #f9484740 !important;
 }
-
+.shadow-03-mor {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
 .border-color-red-mor {
     border-color: #fc454a !important;
 }
@@ -114,6 +118,9 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+.font-tosi {
+    color: #676d72 !important;
 }
 
 /*----- End style ------*/
@@ -3226,50 +3233,6 @@ textarea.form-control {
 }
 
 
-h1, .h1 {
-    font-size: 33px;
-    font-family: Vazir-B, serif ;
-}
-
-h2, .h2 {
-    font-size: 27px;
-    font-family: Vazir-B, serif ;
-}
-
-h3, .h3 {
-    font-size: 23px;
-    font-family: Vazir-B, serif ;
-}
-
-h4, .h4 {
-    font-size: 18px;
-    font-family: Vazir-B, serif ;
-}
-
-h5, .h5 {
-    font-size: 15px;
-    font-family: Vazir-B, serif ;
-}
-
-h6, .h6 {
-    font-size: 12px;
-    font-family: Vazir-B, serif ;
-}
-.entry-title {
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 1.8;
-}
-/* --- font size ----*/
-.font-size-12 {
-    font-size: 12px !important;
-}
-.font-size-9 {
-    font-size: 9px !important;
-}
-.font-size-14 {
-    font-size: 14px !important;
-}
 /* Button style */
 .btn-primary {
     background: #ff4242;
@@ -4455,6 +4418,10 @@ hr {
     /* قوانین CSS برای حالت مانیتور بزرگ */
 }
 
+.mag_box h3 {
+    font-family: Vazir !important;
+    font-size: 18px;
+}
 
 .navbar-toggler:focus {
     text-decoration: none;
@@ -4646,7 +4613,7 @@ table.table_product tr td {
     display: flex;
     height: 50px;
     box-shadow: 0 -2px 5px -2px #333;
-    background-color: #ffffffba;
+    background-color: #ffffff;
 }
 .mobile-bottom-nav__item {
     flex-grow: 1;

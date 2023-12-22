@@ -1,7 +1,7 @@
 <div class="search-area  w-100">
     <form action="" class="search w-100">
-        <input type="text" placeholder="نام کالا، برند و یا دسته مورد نظر خود را جستجو کنید…">
-        <button type="submit">
+        <input type="text" wire:model="search" placeholder="نام کالای مورد نظر خود را جستجو کنید…" class="form-control">
+        <button wire:click.prevent="searchBtn()">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                  class="bi bi-search" viewBox="0 0 16 16">
                 <path

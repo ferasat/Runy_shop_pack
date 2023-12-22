@@ -39,7 +39,10 @@ class NameSlug extends Component
         if ($this->slug == null)
             $this->slug = slug($this->name , $this->post->typePost);
         else {
-            $this->slug = slug($this->slug , $this->post->typePost);
+            if ($post->slug !== $this->slug ){
+                $this->slug = slug($this->slug , $this->post->typePost);
+            }
+
         }
         $post->slug = $this->slug;
         $post->save();

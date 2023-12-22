@@ -32,12 +32,11 @@ class RqstsController extends Controller
 
     public function fix_request()
     {
-        $html_tag_data = ["override"=>'{ "attributes" : { "placement" : "horizontal", "layout":"boxed" }, "storagePrefix" : "starter-project", "showSettings" : false }'];
-        $title = 'تعمیر و سرویس ماشین های اداری اصفهان';
-        $description= 'تعمیر و سرویس ماشین های اداری اصفهان';
-        $breadcrumbs = ["/fix_request"=>" پیشخوان "  ];
+        $title = 'تعمیر و سرویس آنلاین ماشین های اداری اصفهان';
+        $description= 'تعمیر و سرویس آنلاین ماشین های اداری اصفهان';
+        $breadcrumbs = ["/fix_request"=>" تعمیر و سرویس آنلاین ماشین های اداری اصفهان "  ];
 
-        return view('RqstsView::fix_request' , compact('html_tag_data' , 'title' , 'description' , 'breadcrumbs'));
+        return view('RqstsView::fix_request' , compact( 'title' , 'description' , 'breadcrumbs'));
     }
 
     public function fix_request_save(Request $request)

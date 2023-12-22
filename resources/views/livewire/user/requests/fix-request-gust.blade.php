@@ -40,7 +40,7 @@
                                 @error('department') <span class="bg-danger p-1 rounded-3">{{ $message }}</span> @enderror
                             </div>
 
-                            <div class="col-md-2">
+                            <div class="col-md-4">
                                 <label for="pic" class="form-label">تصویر دستگاه</label>
                                 <input type="file" class="form-control" id="pic" name="pic" wire:model.live="pic">
                                 @error('pic') <span class="bg-danger p-1 rounded-3">{{ $message }}</span> @enderror
