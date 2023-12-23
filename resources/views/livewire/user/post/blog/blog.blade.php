@@ -7,14 +7,17 @@
                     <p class="text-muted py-3">با ما بروز باشید  </p>
                     <form class="custom-form" role="search">
                         <div class="input-group input-group-lg mb-2">
-                            <input name="keyword" type="search" class="form-control border-color-runy-danger" id="keyword"
-                                   placeholder="دنبال چی میگردی؟" aria-label="Search">
+                            <input name="keyword" wire:model="search" class="form-control border-color-runy-danger" id="keyword"
+                                   placeholder="دنبال چی میگردی؟" aria-label="Search" >
 
-                            <button type="submit" class="btn btn-runy-search bg-white">
+                            <button type="submit" class="btn btn-runy-search bg-white" wire:click.prevent="searchBtn()">
                                 <svg class="icon-svg-panel" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M11 6C13.7614 6 16 8.23858 16 11M16.6588 16.6549L21 21M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z" stroke="#fd5858" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
                             </button>
                         </div>
-                        پیشنهاد : <span class="small-suggest p-1 border rounded border-color-runy-danger-badge mt-2">آموزش ریست کردن پرینتر</span> ، <span class="small-suggest p-1 border rounded border-color-runy-danger-badge mt-2">دانلود درایور</span> ، <span></span>
+                        پیشنهاد : <span class="small-suggest p-1 border rounded border-color-runy-danger-badge mt-2">
+                            <a href="{{ asset('/blog?search=آموزش+ریست+کردن+پرینتر') }}">آموزش ریست کردن پرینتر</a> </span> ،
+                            <span class="small-suggest p-1 border rounded border-color-runy-danger-badge mt-2">
+                            <a href="{{ asset('/blog?search=دانلود+درایور') }}">دانلود درایور</a></span>
                     </form>
                 </div>
 

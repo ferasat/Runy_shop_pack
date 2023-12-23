@@ -29,8 +29,8 @@ class Shop extends Component
 
     public function loadProducts()
     {
-        $this->statusBrands = false ;
-        $this->search ='';
+
+
         if (strlen($this->search) > 1){
             $this->products = Product::query()->where([
                 'statusPublish' => 'publish',
@@ -42,6 +42,8 @@ class Shop extends Component
                 'formatProduct' => 'normal',
             ])->orderByDesc('id')->paginate(21);
         }
+        $this->statusBrands = false ;
+
     }
 
     public function render()
@@ -73,6 +75,7 @@ class Shop extends Component
             }
 
             $this->products = Product::query()->whereIn('id', $products_ids)->orderByDesc('id')->paginate(21);
+            $this->search ='';
             $this->render();
 
         } else {
@@ -80,6 +83,7 @@ class Shop extends Component
                 'statusPublish' => 'publish',
                 'formatProduct' => 'normal',
             ])->orderByDesc('id')->paginate(21);
+            $this->search ='';
         }
 
     }

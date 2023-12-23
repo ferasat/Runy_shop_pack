@@ -30,9 +30,12 @@
                         </svg>
                     </button>
                 </div>
-                پیشنهاد : <span class="small-suggest p-1 border rounded border-color-runy-danger-badge mt-2">پرینتر لیزری برادر</span>
-                ، <span
-                    class="small-suggest p-1 border rounded border-color-runy-danger-badge mt-2">پرینتر چند کاره Brother</span>
+                پیشنهاد : <span class="small-suggest p-1 border rounded border-color-runy-danger-badge mt-2">
+                        <a href="{{ asset('/shop?search=پرینتر+لیزری+برادر') }}">پرینتر لیزری برادر</a>
+                    </span>
+                ، <span class="small-suggest p-1 border rounded border-color-runy-danger-badge mt-2">
+                    <a href="{{ asset('/shop?search=پرینتر+چند+کاره+Brother') }}">پرینتر چند کاره Brother</a>
+                    پرینتر چند کاره Brother</span>
                 <span></span>
             </form>
         </div>
@@ -88,7 +91,7 @@
         <!-- Side widgets-->
         <div class="col-md-3">
             <!-- Search widget-->
-            <div class="card mb-4">
+            <div class="card mb-4 sticky-top">
                 <div class="card-header">جستجوی محصول</div>
                 <div class="card-body">
                     <div class="input-group">
