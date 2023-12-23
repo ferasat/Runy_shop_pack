@@ -16,7 +16,7 @@ class Shop extends Component
 
     protected $paginationTheme = 'bootstrap';
 
-    public $breadcrumbs, $catsProduct;
+    public $breadcrumbs, $catsProduct , $statusBrands=false;
     #[Url]
     public $search = '';
     protected $products;
@@ -24,6 +24,13 @@ class Shop extends Component
     public function mount()
     {
         $this->catsProduct = CategoryProduct::all();
+        $this->loadProducts();
+    }
+
+    public function loadProducts()
+    {
+        $this->statusBrands = false ;
+        $this->search ='';
         if (strlen($this->search) > 1){
             $this->products = Product::query()->where([
                 'statusPublish' => 'publish',
@@ -35,12 +42,13 @@ class Shop extends Component
                 'formatProduct' => 'normal',
             ])->orderByDesc('id')->paginate(21);
         }
-
-
     }
 
     public function render()
     {
+        if (!$this->statusBrands){
+            $this->loadProducts();
+        }
         return view('livewire.user.product.shop', [
             'products' => $this->products,
         ]);
@@ -49,6 +57,7 @@ class Shop extends Component
     #[On('select-brands')]
     public function updateProductList($brands)
     {
+        $this->statusBrands = true ;
         if (count($brands) > 0) {
             $products_ids = [];
             foreach ($brands as $brand_id) {
