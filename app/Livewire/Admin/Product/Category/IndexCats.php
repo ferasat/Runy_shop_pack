@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Admin\Product\Category;
 
+use App\Models\Taxonomy;
 use Livewire\Component;
 use Product\Models\CategoryProduct;
 
@@ -61,6 +62,10 @@ class IndexCats extends Component
                 $subCatUpdate->save() ;
             }
         }
+        Taxonomy::query()->where([
+            'item'=>'cat',
+            'item_id'=>$cat_id,
+        ])->delete();
         CategoryProduct::query()->find($cat_id)->delete();
         $this->render();
     }

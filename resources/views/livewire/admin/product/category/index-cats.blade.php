@@ -62,13 +62,39 @@
                                 <div id="collapse{{ $cat->id }}" class="accordion-collapse collapse"
                                      aria-labelledby="heading{{ $cat->id }}" data-bs-parent="#accordionCat">
                                     <div class="accordion-body">
-                                        <a target="_blank" href="{{ asset('/product-category/'.$cat->slug) }}">{{ $cat->name }}</a>
+                                        <a target="_blank"
+                                           href="{{ asset('/product-category/'.$cat->slug) }}">{{ $cat->name }}</a>
                                         @if(subCats($cat->id) !== null )
                                             <ul class="list-group list-group-flush">
                                                 @foreach(subCats($cat->id) as $sCat)
                                                     <li class="list-group-item d-flex  justify-content-between border rounded">
-                                                        <div> <a target="_blank" href="{{ asset('/product-category/'.$sCat->slug) }}">{{ $sCat->name }}</a> </div>
-                                                        <button class="btn btn-sm btn-danger" wire:click="deleteCatOnly({{ $sCat->id }})">حذف</button>
+                                                        <div class="d-block-flex gap-1">
+                                                            <a data-bs-toggle="collapse" href="#collapse{{$sCat->id}}"
+                                                               role="button" aria-expanded="false"
+                                                               aria-controls="collapse{{$sCat->id}}">
+                                                                {{ $sCat->name }}
+                                                            </a>
+                                                            <a class="smaller-Text" target="_blank"
+                                                               href="{{ asset('/product-category/'.$sCat->slug) }}">نمایش</a>
+                                                            <div class="collapse" id="collapse{{$sCat->id}}">
+                                                                <div class="card card-body">
+                                                                    @foreach(subCats($sCat->id) as $ssCat)
+                                                                        <div class="d-flex justify-content-between my-2">
+                                                                            {{ $ssCat->name }}
+                                                                            <a class="btn smaller-Text" target="_blank"
+                                                                               href="{{ asset('/product-category/'.$ssCat->slug) }}">نمایش</a>
+                                                                            <button class="btn smaller-Text btn-danger"
+                                                                                    wire:click="deleteCatOnly({{ $ssCat->id }})">
+                                                                                حذف
+                                                                            </button>
+                                                                        </div>
+                                                                    @endforeach
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <button class="btn btn-sm btn-danger"
+                                                                wire:click="deleteCatOnly({{ $sCat->id }})">حذف
+                                                        </button>
                                                     </li>
                                                 @endforeach
                                             </ul>
