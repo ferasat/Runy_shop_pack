@@ -29,8 +29,6 @@ class Shop extends Component
 
     public function loadProducts()
     {
-
-
         if (strlen($this->search) > 1){
             $this->products = Product::query()->where([
                 'statusPublish' => 'publish',

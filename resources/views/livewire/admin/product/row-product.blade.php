@@ -11,6 +11,10 @@
             <div class="col-md-5 d-flex flex-column">
                 <div>{{ $product->name }}</div>
                 <div class="text-small text-muted">{{ statusProduct($product->statusPublish) }}</div>
+                <div class="cats smaller-Text ">
+                    دستبندی : {!! catsInProLink($product->id) !!}
+                </div>
+
             </div>
             <div class="col-md-7 d-flex justify-content-end">
                 <a class="btn btn-outline-primary btn-sm ms-1" href="{{asset('/product/'.$product->slug)}}"
@@ -21,6 +25,8 @@
                     نوشت</a>
                 <a class="btn btn-outline-danger btn-sm ms-1"
                    href="{{ asset('/dashboard/product/delete/'.$product->id) }}" {{--wire:click.privent="deleteProduct({{$product->id}})"--}}>حذف</a>
+
+                <div class="btn btn-outline-info">{{$product->numberView}} تا بازدید</div>
 
             </div>
         </div>

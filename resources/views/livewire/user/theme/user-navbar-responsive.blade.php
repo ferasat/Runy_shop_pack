@@ -138,7 +138,7 @@
                                             class="main-list-item nav-link">پرینتر</a>
                                     </li>
                                     <li class="list-item">
-                                        <a class="nav-link" href="#">پرینتر لیزری</a>
+                                        <a class="nav-link" href="https://mortazavistore.ir/product-category/Laser-printer">پرینتر لیزری</a>
                                     </li>
                                     <li class="list-item">
                                         <a class="nav-link" href="#">پرینتر جوهر افشان</a>
@@ -186,8 +186,8 @@
                                 </ul>
                             </li>
                             <li class="list-item list-item-has-children">
-                                <i class="now-ui-icons arrows-1_minimal-left"></i><a class="main-list-item nav-link"
-                                                                                     href="#">تجهیزات فروشگاهی و
+                                <i class="now-ui-icons arrows-1_minimal-left"></i>
+                                <a class="main-list-item nav-link" href="#">تجهیزات فروشگاهی و
                                     بانکی</a>
                                 <ul class="sub-menu nav">
                                     <li class="list-item">

@@ -100,11 +100,13 @@ function catsInProLink($pro_id) // دستبندی هایی که در این مح
         'is' => '1',
     ])->get();
 
+    //dd($taxs);
 
     if (sizeof($taxs) > 0) {
         $categoris = '';
-        foreach ($taxs as $cat){
-            $categoris = $categoris . '<a target="_blank" title="'.$cat->name.'" href="'.asset('/product/cat/').$cat->slug.'">'.$cat->name.'</a>';
+        foreach ($taxs as $tax){
+            $cat = CategoryProduct::query()->find($tax->item_id);
+            $categoris = $categoris . '<a class="p-1 border rounded" target="_blank" title="'.$cat->name.'" href="'.asset('/product-category/').$cat->slug.'">'.$cat->name.'</a>';
         }
         return $categoris;
     } else {
