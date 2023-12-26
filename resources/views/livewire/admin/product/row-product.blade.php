@@ -10,8 +10,8 @@
         <div class="card-body d-flex pt-0 pb-0 ps-3 pe-0 h-100 align-items-center justify-content-between row">
             <div class="col-md-5 d-flex flex-column">
                 <div>{{ $product->name }}</div>
-                <div class="text-small text-muted">{{ statusProduct($product->statusPublish) }}</div>
-                <div class="cats smaller-Text ">
+                <div class="text-small text-muted">{{ statusProduct($product->statusPublish) }} در {{ verta($product->created_at)->format('%d %B %Y , H:i')  }} - {{ verta($product->created_at)->formatDifference() }}</div>
+                <div class="cats smaller-Text mt-1">
                     دستبندی : {!! catsInProLink($product->id) !!}
                 </div>
 
