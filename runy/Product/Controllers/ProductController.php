@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use Product\Models\CategoryProduct;
 use Product\Models\Product;
 use Illuminate\Http\Request;
+use SiteLogs\Models\SiteLogs;
 
 class ProductController extends Controller
 {
@@ -140,6 +141,14 @@ class ProductController extends Controller
 
     public function destroy(Product $id)
     {
+        $newLog = new SiteLogs();
+        $newLog->log_name = 'حذف کالا';
+        $newLog->description = 'کاربر '.fullName(Auth::id()).'  کالا به نام '.$id->name.' را حذف کرد';
+        $newLog->type = 'Product';
+        $newLog->type_id = $id->id;
+        $newLog->event = 'حذف';
+        $newLog->causer_id = Auth::id();
+        $newLog->save();
         $id->delete();
         return back();
     }

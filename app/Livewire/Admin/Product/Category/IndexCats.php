@@ -3,8 +3,10 @@
 namespace App\Livewire\Admin\Product\Category;
 
 use App\Models\Taxonomy;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Product\Models\CategoryProduct;
+use SiteLogs\Models\SiteLogs;
 
 class IndexCats extends Component
 {
@@ -54,6 +56,16 @@ class IndexCats extends Component
 
     public function deleteCatOnly($cat_id)
     {
+        $cat_selected = CategoryProduct::query()->find($cat_id) ;
+        $newLog = new SiteLogs();
+        $newLog->log_name = 'حذف دستبندی کالا';
+        $newLog->description = 'کاربر '.fullName(Auth::id()).' دستبندی کالا به نام '.$cat_selected->name.' را حذف کرد';
+        $newLog->type = 'CategoryProduct';
+        $newLog->type_id = $cat_selected->id;
+        $newLog->event = 'حذف';
+        $newLog->causer_id = Auth::id();
+        $newLog->save();
+
         $subCats = CategoryProduct::query()->where('master_id' , $cat_id)->get();
         if (count($subCats) > 0){
             foreach ($subCats as $cat){
@@ -66,7 +78,7 @@ class IndexCats extends Component
             'item'=>'cat',
             'item_id'=>$cat_id,
         ])->delete();
-        CategoryProduct::query()->find($cat_id)->delete();
+        $cat_selected->delete();
         $this->render();
     }
 }

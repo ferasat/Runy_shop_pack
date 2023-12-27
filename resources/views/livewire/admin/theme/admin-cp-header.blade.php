@@ -27,9 +27,6 @@
                     <li class="nav-item">
                         <a class="nav-link text-white" href="{{asset(route('page.index'))}}"> برگه ها</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="{{asset(route('discount.index'))}}">تخفیف ها</a>
-                    </li>
                      <li class="nav-item">
                         <a class="nav-link text-white" href="{{asset(route('poll.index'))}}">نظرسنجی</a>
                     </li>
@@ -55,6 +52,7 @@
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="#">تنظیمات درگاه</a></li>
                             <li><a class="dropdown-item" href="{{ asset('/dashboard/users') }}">مدیریت کاربران</a></li>
+                            <li><a class="dropdown-item" href="{{ asset(route('logs.index')) }}">لاگ ها</a></li>
                         </ul>
                     </div>
                 </div>
