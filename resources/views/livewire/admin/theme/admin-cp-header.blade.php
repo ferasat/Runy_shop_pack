@@ -42,19 +42,32 @@
 
                 </ul>
                 <div class="d-flex" >
-                    <div class="btn-group dropstart">
-                        <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            {{ fullName(\Illuminate\Support\Facades\Auth::id()) }}
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">پروفایل</a></li>
-                            <li><a class="dropdown-item" href="#">اعتبار</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">تنظیمات درگاه</a></li>
-                            <li><a class="dropdown-item" href="{{ asset('/dashboard/users') }}">مدیریت کاربران</a></li>
-                            <li><a class="dropdown-item" href="{{ asset(route('logs.index')) }}">لاگ ها</a></li>
-                        </ul>
+                    <div class="dropdown custom-dropdown">
+                        <a href="#" data-toggle="dropdown" class="d-flex align-items-center dropdown-link text-left" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true"  data-offset="0, 20">
+
+                            <div class="profile-info">
+                                <h3 class="text-white">{{ fullName(\Illuminate\Support\Facades\Auth::id()) }}</h3>
+                                <span class="text-white">{{ semat(\Illuminate\Support\Facades\Auth::user()->levelUser) }}</span>
+                            </div>
+                            <div class="profile-pic mr-3">
+                                <img src="{{ asset(Auth::user()->pic) }}" alt="کاربر">
+                            </div>
+
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
+
+                            <a class="dropdown-item" href="#"> <span class="icon icon-dashboard"></span> پروفایل</a>
+                            <a class="dropdown-item" href="#"><span class="icon icon-mail_outline"></span>Inbox <span class="number">3</span></a>
+                            <a class="dropdown-item" href="{{ asset('/dashboard/users') }}"><span class="icon icon-people"></span>مدیریت کاربران</a>
+                            <a class="dropdown-item" href="#"><span class="icon icon-cog"></span>Setting<span>New</span></a>
+                            <a class="dropdown-item" href="{{ asset(route('logs.index')) }}"><span class="icon icon-cog"></span>لاگ ها</a>
+                            <a class="dropdown-item" href="#"><span class="icon icon-sign-out"></span>Log out</a>
+
+                        </div>
                     </div>
+
+
                 </div>
             </div>
         </div>

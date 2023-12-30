@@ -46,8 +46,8 @@
       },
       "url": "https://mortazavistore.ir/",
       "telephone": "09129259317",
-      "priceRange": "$$$",
-      "product": "https://mortazavistore.ir/shop",
+      "priceRange": "$100",
+      "product": "پرینتر و ماشین های اداری",
 
     }
 </script>

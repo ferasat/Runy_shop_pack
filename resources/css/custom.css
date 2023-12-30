@@ -6,29 +6,8 @@
     font-size: 8px !important;
 }
 
-/*------ Panel Style ----*/
-.icon-svg-home {
-    width: 80px !important;
-}
-
-.icon-svg-panel-sm {
-    width: 20px !important;
-}
-
-.hover-li-primary:hover {
-    background-color: #ecfbfe;
-}
-
-.left-0 {
-    left: 0 !important;
-}
-
-.text-left {
-    text-align: left !important
-}
-
-.list-group-2 {
-    padding: 0.75rem 3.25rem !important;
+.w160px {
+    width: 160px !important;
 }
 
 /*-----------------*/
@@ -244,8 +223,13 @@ header.main-header .cart .dropdown-menu .basket-item {
 header.main-header .cart .dropdown-menu .basket-item:last-of-type {
     border-bottom: none;
 }
-
-
+#main-mega-menu a{
+    color: black;
+}
+.nav-pills .nav-link.active {
+    background-color: #fc454a !important;
+    color: white !important;
+}
 /* ----------------- End Header */
 
 
@@ -338,21 +322,6 @@ header.main-header .main-menu .list .list-item-has-children > .sub-menu {
     box-shadow: 0 2px 9px 0 rgba(112, 112, 112, .32);
 }
 
-header.main-header .main-menu .list .list-item-has-children .sub-menu li {
-    display: block;
-    width: 100%;
-    margin-right: 0;
-}
-
-header.main-header .main-menu .list .list-item-has-children .sub-menu a {
-    display: block;
-    padding: 4px 15px;
-    color: #6a6a6a;
-    font-size: 12px;
-    line-height: 2.27;
-    font-weight: 300;
-}
-
 header.main-header .main-menu .list .list-item-has-children:hover > .sub-menu {
     visibility: visible;
     opacity: 1;
@@ -375,7 +344,6 @@ header.main-header .main-menu .list .list-item.mega-menu > .sub-menu {
     padding-top: 15px;
     padding-bottom: 15px;
     min-width: 1077px;
-    width: 1077px;
     z-index: 100000;
 }
 
@@ -390,7 +358,7 @@ header.main-header .main-menu .list .list-item.mega-menu > .sub-menu > li {
 }
 
 header.main-header .main-menu .list .list-item.mega-menu.mega-menu-col-5 li {
-    width: 16.65%;
+
 }
 
 header.main-header .main-menu .list .list-item.mega-menu.mega-menu-col-5 img {
@@ -408,10 +376,6 @@ header.main-header .main-menu .list .list-item.mega-menu .sub-menu .now-ui-icons
     line-height: 1.833;
     float: right;
     margin-top: 8px;
-}
-
-header.main-header .main-menu .list .list-item.mega-menu .sub-menu a {
-    line-height: 26px;
 }
 
 header.main-header .main-menu .list .list-item.mega-menu > .sub-menu > li > a {

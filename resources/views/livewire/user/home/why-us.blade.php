@@ -221,6 +221,7 @@
                             دانلود کاتالوگ معرفی
                         </a>
                     </div>
+                    <input type="hidden" itemprop="address" itemscope itemtype="https://schema.org/address" >
                 </div>
             </div><!-- End Why Box -->
 

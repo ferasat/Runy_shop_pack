@@ -50,6 +50,25 @@ function fullName($id)
     }
     return $full;
 }
+function semat($levelUser)
+{
+
+    if ($levelUser == null) {
+        $full = 'بدون ';
+    } else {
+        if ($levelUser == 'SAdmin')
+            $full = 'مدیر برنامه';
+        elseif ($levelUser == 'Admin')
+            $full = 'مدیر';
+        elseif ($levelUser == 'Seller')
+            $full = 'کارمند فروش';
+        elseif ($levelUser == 'Sales Manager')
+            $full = 'مدیر فروش';
+        elseif ($levelUser == 'Accountants')
+            $full = 'حسابدار';
+    }
+    return $full;
+}
 
 function smsApi()
 {

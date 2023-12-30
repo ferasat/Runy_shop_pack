@@ -28,22 +28,6 @@
 @include('layouts.runyFooter')
 
 @livewireScripts
-<script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "Organization",
-  "name": "{{ setting_site()->site_name }}",
-  "url": "{{ setting_site()->site_url }}",
-  "logo": "{{ setting_site()->site_logo }}",
-  "description": "{{ setting_site()->site_short_description }}",
-  "contactPoint": [
-    {
-      "@type": "ContactPoint",
-      "telephone": "{{ setting_site()->mobile_phone }}",
-      "email": "info@"
-    }
-  ]
-}
-</script>
+
 </body>
 </html>
