@@ -60,12 +60,19 @@ function semat($levelUser)
             $full = 'مدیر برنامه';
         elseif ($levelUser == 'Admin')
             $full = 'مدیر';
+        elseif ($levelUser == 'Counter')
+            $full = 'کارمند';
         elseif ($levelUser == 'Seller')
             $full = 'کارمند فروش';
         elseif ($levelUser == 'Sales Manager')
             $full = 'مدیر فروش';
         elseif ($levelUser == 'Accountants')
             $full = 'حسابدار';
+        elseif ($levelUser == 'company')
+            $full = 'همکار';
+        elseif ($levelUser == 'Company Counter')
+            $full = 'کارمند همکار';
+        else $full = 'بدون سمت';
     }
     return $full;
 }

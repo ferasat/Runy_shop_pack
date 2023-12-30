@@ -29,7 +29,7 @@ return new class extends Migration
             $table->date('passportExpDate')->nullable();
             $table->date('birthDate')->nullable()->comment('تاریخ تولد');
             $table->enum('status', ['active', 'disabled'])->default('active');
-            $table->enum('levelUser' , ['SAdmin','Admin' , 'Seller', 'Editor', 'Sales Manager' , 'Accountants', 'Senior Employee','company', 'Company Counter', 'customer'])->default('customer')->nullable(); // تعریف شرکت  تعریف کانتر شرکت همکار
+            $table->enum('levelUser' , ['SAdmin','Admin' ,'Counter' , 'Seller', 'Editor', 'Sales Manager' , 'Accountants', 'Senior Employee','company', 'Company Counter', 'customer'])->default('customer')->nullable(); // تعریف شرکت  تعریف کانتر شرکت همکار
             $table->string('levelPermission')->default('1')->nullable(); // 1 customer - 2 Company Counter - 2 Company - 3 Seller & Sales Manager  - 4 Editor - 5 Senior Employee - 6 Accountants - 9 Admin - 10 SAdmin
             $table->string('role' )->nullable()->comment('role for As Employee'); /// ['Driver','Admin','Sales','Tour Leader','Driver','Driver','Driver','Driver','Driver','Driver','Driver','Driver',] مخصوص کارمندان بک آفیس
             $table->string('email')->unique();
