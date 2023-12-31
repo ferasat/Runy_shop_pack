@@ -629,17 +629,247 @@
                                 </div>
                                 <span class="badge bg-primary rounded-pill"></span>
                             </li>
+
+                            <li class="list-group-item d-flex justify-content-between align-items-start">
+                                <a class="fw-bold text-danger" href="https://mortazavistore.ir/product-category/Toner">
+                                    <svg class="icon-svg-panel-sm" viewBox="0 0 32 32" data-name="Layer 1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs><style>.cls-1{fill:none;stroke:#fc454a;stroke-linejoin:round;}</style></defs><title></title><path class="cls-1" d="M20.5,10.56V27.5a1,1,0,0,1-1,1h-7a1,1,0,0,1-1-1V10.56a3.05,3.05,0,0,1,2-2.87,3.11,3.11,0,0,1,1.06-.19h2.88a3.11,3.11,0,0,1,1.06.19A3.05,3.05,0,0,1,20.5,10.56Z"></path><path class="cls-1" d="M18.5,3.5V7.69a3.11,3.11,0,0,0-1.06-.19H14.56a3.11,3.11,0,0,0-1.06.19V3.5Z"></path></g></svg>
+                                    تونر
+                                </a>
+                            </li>
+
+                        </ol>
+                    </div>
+                    <div class="col-sm-4 col-md-3">
+                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                            <a class="fw-bold text-danger" href="https://mortazavistore.ir/product-category/label">
+                                <svg class="icon-svg-panel-sm" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>label</title> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="icon" fill="#fc454a" transform="translate(21.333333, 106.666667)"> <path d="M448,2.84217094e-14 L448,298.666667 L106.666667,298.666667 L3.55271368e-15,149.333333 L106.666667,2.84217094e-14 L448,2.84217094e-14 Z M405.333333,42.6666667 L128.597333,42.6666667 L52.416,149.333333 L128.618667,256 L405.333333,256 L405.333333,42.6666667 Z M138.666667,117.333333 C156.339779,117.333333 170.666667,131.660221 170.666667,149.333333 C170.666667,167.006445 156.339779,181.333333 138.666667,181.333333 C120.993555,181.333333 106.666667,167.006445 106.666667,149.333333 C106.666667,131.660221 120.993555,117.333333 138.666667,117.333333 Z M213.333333,170.666667 L362.666667,170.666667 L362.666667,213.333333 L213.333333,213.333333 L213.333333,170.666667 Z M213.333333,85.3333333 L362.666667,85.3333333 L362.666667,128 L213.333333,128 L213.333333,85.3333333 Z" id="Combined-Shape"> </path> </g> </g> </g></svg>
+                                لیبل (برچسب)
+                            </a>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                            <a class="fw-bold text-danger" href="https://mortazavistore.ir/product-category/Printer-label-tape">
+                                <svg class="icon-svg-panel-sm" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>label</title> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="icon" fill="#fc454a" transform="translate(21.333333, 106.666667)"> <path d="M448,2.84217094e-14 L448,298.666667 L106.666667,298.666667 L3.55271368e-15,149.333333 L106.666667,2.84217094e-14 L448,2.84217094e-14 Z M405.333333,42.6666667 L128.597333,42.6666667 L52.416,149.333333 L128.618667,256 L405.333333,256 L405.333333,42.6666667 Z M138.666667,117.333333 C156.339779,117.333333 170.666667,131.660221 170.666667,149.333333 C170.666667,167.006445 156.339779,181.333333 138.666667,181.333333 C120.993555,181.333333 106.666667,167.006445 106.666667,149.333333 C106.666667,131.660221 120.993555,117.333333 138.666667,117.333333 Z M213.333333,170.666667 L362.666667,170.666667 L362.666667,213.333333 L213.333333,213.333333 L213.333333,170.666667 Z M213.333333,85.3333333 L362.666667,85.3333333 L362.666667,128 L213.333333,128 L213.333333,85.3333333 Z" id="Combined-Shape"> </path> </g> </g> </g></svg>
+                                نوار لیبل پرینتر
+                            </a>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                            <a class="fw-bold text-danger" href="https://mortazavistore.ir/product-category/Manual-tape-labeller">
+                                <svg class="icon-svg-panel-sm" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>label</title> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="icon" fill="#fc454a" transform="translate(21.333333, 106.666667)"> <path d="M448,2.84217094e-14 L448,298.666667 L106.666667,298.666667 L3.55271368e-15,149.333333 L106.666667,2.84217094e-14 L448,2.84217094e-14 Z M405.333333,42.6666667 L128.597333,42.6666667 L52.416,149.333333 L128.618667,256 L405.333333,256 L405.333333,42.6666667 Z M138.666667,117.333333 C156.339779,117.333333 170.666667,131.660221 170.666667,149.333333 C170.666667,167.006445 156.339779,181.333333 138.666667,181.333333 C120.993555,181.333333 106.666667,167.006445 106.666667,149.333333 C106.666667,131.660221 120.993555,117.333333 138.666667,117.333333 Z M213.333333,170.666667 L362.666667,170.666667 L362.666667,213.333333 L213.333333,213.333333 L213.333333,170.666667 Z M213.333333,85.3333333 L362.666667,85.3333333 L362.666667,128 L213.333333,128 L213.333333,85.3333333 Z" id="Combined-Shape"> </path> </g> </g> </g></svg>
+                                نوار لیبل زن دستی
+                            </a>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                            <a class="fw-bold text-danger" href="https://mortazavistore.ir/product-category/PVC-card">
+                                <svg class="icon-svg-panel-sm" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>label</title> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="icon" fill="#fc454a" transform="translate(21.333333, 106.666667)"> <path d="M448,2.84217094e-14 L448,298.666667 L106.666667,298.666667 L3.55271368e-15,149.333333 L106.666667,2.84217094e-14 L448,2.84217094e-14 Z M405.333333,42.6666667 L128.597333,42.6666667 L52.416,149.333333 L128.618667,256 L405.333333,256 L405.333333,42.6666667 Z M138.666667,117.333333 C156.339779,117.333333 170.666667,131.660221 170.666667,149.333333 C170.666667,167.006445 156.339779,181.333333 138.666667,181.333333 C120.993555,181.333333 106.666667,167.006445 106.666667,149.333333 C106.666667,131.660221 120.993555,117.333333 138.666667,117.333333 Z M213.333333,170.666667 L362.666667,170.666667 L362.666667,213.333333 L213.333333,213.333333 L213.333333,170.666667 Z M213.333333,85.3333333 L362.666667,85.3333333 L362.666667,128 L213.333333,128 L213.333333,85.3333333 Z" id="Combined-Shape"> </path> </g> </g> </g></svg>
+                                کارت PVC
+                            </a>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                            <a class="fw-bold text-danger" href="https://mortazavistore.ir/product-category/Thermal-roll">
+                                <svg class="icon-svg-panel-sm" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>label</title> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="icon" fill="#fc454a" transform="translate(21.333333, 106.666667)"> <path d="M448,2.84217094e-14 L448,298.666667 L106.666667,298.666667 L3.55271368e-15,149.333333 L106.666667,2.84217094e-14 L448,2.84217094e-14 Z M405.333333,42.6666667 L128.597333,42.6666667 L52.416,149.333333 L128.618667,256 L405.333333,256 L405.333333,42.6666667 Z M138.666667,117.333333 C156.339779,117.333333 170.666667,131.660221 170.666667,149.333333 C170.666667,167.006445 156.339779,181.333333 138.666667,181.333333 C120.993555,181.333333 106.666667,167.006445 106.666667,149.333333 C106.666667,131.660221 120.993555,117.333333 138.666667,117.333333 Z M213.333333,170.666667 L362.666667,170.666667 L362.666667,213.333333 L213.333333,213.333333 L213.333333,170.666667 Z M213.333333,85.3333333 L362.666667,85.3333333 L362.666667,128 L213.333333,128 L213.333333,85.3333333 Z" id="Combined-Shape"> </path> </g> </g> </g></svg>
+                                رول حرارتی
+                            </a>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                            <a class="fw-bold text-danger" href="https://mortazavistore.ir/product-category/Printer-and-plotter-ink">
+                                <svg class="icon-svg-panel-sm" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>label</title> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="icon" fill="#fc454a" transform="translate(21.333333, 106.666667)"> <path d="M448,2.84217094e-14 L448,298.666667 L106.666667,298.666667 L3.55271368e-15,149.333333 L106.666667,2.84217094e-14 L448,2.84217094e-14 Z M405.333333,42.6666667 L128.597333,42.6666667 L52.416,149.333333 L128.618667,256 L405.333333,256 L405.333333,42.6666667 Z M138.666667,117.333333 C156.339779,117.333333 170.666667,131.660221 170.666667,149.333333 C170.666667,167.006445 156.339779,181.333333 138.666667,181.333333 C120.993555,181.333333 106.666667,167.006445 106.666667,149.333333 C106.666667,131.660221 120.993555,117.333333 138.666667,117.333333 Z M213.333333,170.666667 L362.666667,170.666667 L362.666667,213.333333 L213.333333,213.333333 L213.333333,170.666667 Z M213.333333,85.3333333 L362.666667,85.3333333 L362.666667,128 L213.333333,128 L213.333333,85.3333333 Z" id="Combined-Shape"> </path> </g> </g> </g></svg>
+                                جوهر پرینتر و پلاتر
+                            </a>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                            <a class="fw-bold text-danger" href="https://mortazavistore.ir/product-category/Rechargeable-tank-and-cartridge">
+                                <svg class="icon-svg-panel-sm" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>label</title> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="icon" fill="#fc454a" transform="translate(21.333333, 106.666667)"> <path d="M448,2.84217094e-14 L448,298.666667 L106.666667,298.666667 L3.55271368e-15,149.333333 L106.666667,2.84217094e-14 L448,2.84217094e-14 Z M405.333333,42.6666667 L128.597333,42.6666667 L52.416,149.333333 L128.618667,256 L405.333333,256 L405.333333,42.6666667 Z M138.666667,117.333333 C156.339779,117.333333 170.666667,131.660221 170.666667,149.333333 C170.666667,167.006445 156.339779,181.333333 138.666667,181.333333 C120.993555,181.333333 106.666667,167.006445 106.666667,149.333333 C106.666667,131.660221 120.993555,117.333333 138.666667,117.333333 Z M213.333333,170.666667 L362.666667,170.666667 L362.666667,213.333333 L213.333333,213.333333 L213.333333,170.666667 Z M213.333333,85.3333333 L362.666667,85.3333333 L362.666667,128 L213.333333,128 L213.333333,85.3333333 Z" id="Combined-Shape"> </path> </g> </g> </g></svg>
+                                تانک و کارتریج قابل شارژ
+                            </a>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                            <a class="fw-bold text-danger" href="https://mortazavistore.ir/product-category/photo-paper">
+                                <svg class="icon-svg-panel-sm" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>label</title> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="icon" fill="#fc454a" transform="translate(21.333333, 106.666667)"> <path d="M448,2.84217094e-14 L448,298.666667 L106.666667,298.666667 L3.55271368e-15,149.333333 L106.666667,2.84217094e-14 L448,2.84217094e-14 Z M405.333333,42.6666667 L128.597333,42.6666667 L52.416,149.333333 L128.618667,256 L405.333333,256 L405.333333,42.6666667 Z M138.666667,117.333333 C156.339779,117.333333 170.666667,131.660221 170.666667,149.333333 C170.666667,167.006445 156.339779,181.333333 138.666667,181.333333 C120.993555,181.333333 106.666667,167.006445 106.666667,149.333333 C106.666667,131.660221 120.993555,117.333333 138.666667,117.333333 Z M213.333333,170.666667 L362.666667,170.666667 L362.666667,213.333333 L213.333333,213.333333 L213.333333,170.666667 Z M213.333333,85.3333333 L362.666667,85.3333333 L362.666667,128 L213.333333,128 L213.333333,85.3333333 Z" id="Combined-Shape"> </path> </g> </g> </g></svg>
+                                کاغذ عکس
+                            </a>
+                        </li>
+                    </div>
+                    <div class="col-sm-4 col-md-3">
+                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                            <a class="fw-bold text-danger" href="https://mortazavistore.ir/product-category/developer">
+                                <svg class="icon-svg-panel-sm" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>label</title> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="icon" fill="#fc454a" transform="translate(21.333333, 106.666667)"> <path d="M448,2.84217094e-14 L448,298.666667 L106.666667,298.666667 L3.55271368e-15,149.333333 L106.666667,2.84217094e-14 L448,2.84217094e-14 Z M405.333333,42.6666667 L128.597333,42.6666667 L52.416,149.333333 L128.618667,256 L405.333333,256 L405.333333,42.6666667 Z M138.666667,117.333333 C156.339779,117.333333 170.666667,131.660221 170.666667,149.333333 C170.666667,167.006445 156.339779,181.333333 138.666667,181.333333 C120.993555,181.333333 106.666667,167.006445 106.666667,149.333333 C106.666667,131.660221 120.993555,117.333333 138.666667,117.333333 Z M213.333333,170.666667 L362.666667,170.666667 L362.666667,213.333333 L213.333333,213.333333 L213.333333,170.666667 Z M213.333333,85.3333333 L362.666667,85.3333333 L362.666667,128 L213.333333,128 L213.333333,85.3333333 Z" id="Combined-Shape"> </path> </g> </g> </g></svg>
+                                دولوپر
+                            </a>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                            <a class="fw-bold text-danger" href="https://mortazavistore.ir/product-category/Risograph-compound">
+                                <svg class="icon-svg-panel-sm" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>label</title> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="icon" fill="#fc454a" transform="translate(21.333333, 106.666667)"> <path d="M448,2.84217094e-14 L448,298.666667 L106.666667,298.666667 L3.55271368e-15,149.333333 L106.666667,2.84217094e-14 L448,2.84217094e-14 Z M405.333333,42.6666667 L128.597333,42.6666667 L52.416,149.333333 L128.618667,256 L405.333333,256 L405.333333,42.6666667 Z M138.666667,117.333333 C156.339779,117.333333 170.666667,131.660221 170.666667,149.333333 C170.666667,167.006445 156.339779,181.333333 138.666667,181.333333 C120.993555,181.333333 106.666667,167.006445 106.666667,149.333333 C106.666667,131.660221 120.993555,117.333333 138.666667,117.333333 Z M213.333333,170.666667 L362.666667,170.666667 L362.666667,213.333333 L213.333333,213.333333 L213.333333,170.666667 Z M213.333333,85.3333333 L362.666667,85.3333333 L362.666667,128 L213.333333,128 L213.333333,85.3333333 Z" id="Combined-Shape"> </path> </g> </g> </g></svg>
+                                مرکب ریسوگراف
+                            </a>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                            <a class="fw-bold text-danger" href="https://mortazavistore.ir/product-category/battery">
+                                <svg class="icon-svg-panel-sm" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M11 9L9.5 12H13.5L12 15M21 13V11M6.2 18H16.8C17.9201 18 18.4802 18 18.908 17.782C19.2843 17.5903 19.5903 17.2843 19.782 16.908C20 16.4802 20 15.9201 20 14.8V9.2C20 8.0799 20 7.51984 19.782 7.09202C19.5903 6.71569 19.2843 6.40973 18.908 6.21799C18.4802 6 17.9201 6 16.8 6H6.2C5.0799 6 4.51984 6 4.09202 6.21799C3.71569 6.40973 3.40973 6.71569 3.21799 7.09202C3 7.51984 3 8.07989 3 9.2V14.8C3 15.9201 3 16.4802 3.21799 16.908C3.40973 17.2843 3.71569 17.5903 4.09202 17.782C4.51984 18 5.07989 18 6.2 18Z" stroke="#fc454a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                                باتری
+                            </a>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                            <a class="fw-bold text-danger" href="https://mortazavistore.ir/product-category/Carbon-Fix">
+                                <svg class="icon-svg-panel-sm" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>label</title> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="icon" fill="#fc454a" transform="translate(21.333333, 106.666667)"> <path d="M448,2.84217094e-14 L448,298.666667 L106.666667,298.666667 L3.55271368e-15,149.333333 L106.666667,2.84217094e-14 L448,2.84217094e-14 Z M405.333333,42.6666667 L128.597333,42.6666667 L52.416,149.333333 L128.618667,256 L405.333333,256 L405.333333,42.6666667 Z M138.666667,117.333333 C156.339779,117.333333 170.666667,131.660221 170.666667,149.333333 C170.666667,167.006445 156.339779,181.333333 138.666667,181.333333 C120.993555,181.333333 106.666667,167.006445 106.666667,149.333333 C106.666667,131.660221 120.993555,117.333333 138.666667,117.333333 Z M213.333333,170.666667 L362.666667,170.666667 L362.666667,213.333333 L213.333333,213.333333 L213.333333,170.666667 Z M213.333333,85.3333333 L362.666667,85.3333333 L362.666667,128 L213.333333,128 L213.333333,85.3333333 Z" id="Combined-Shape"> </path> </g> </g> </g></svg>
+                                کاربن فکس
+                            </a>
+                        </li>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="Stationery" role="tabpanel" aria-labelledby="Stationery-tab" tabindex="0">
+            <!--      لواز التحریر          -->
+                <div class="row">
+                    <div class="col-sm-4 col-md-3">
+                        <ol class="list-group ">
+                            <li class="list-group-item d-flex justify-content-between align-items-start">
+                                <div class="">
+                                    <a href="https://mortazavistore.ir/product-category/Stationery"
+                                       class="fw-bold text-danger">
+                                        <svg class="icon-svg-panel-sm" fill="#fc454a" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 306.095 306.095" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M171.289,225.186l-40.316-69.828c-0.96-1.664-2.735-2.688-4.654-2.688h-7.171v-17.855c0-2.975-2.409-5.375-5.375-5.375 H58.235c-2.969,0-5.375,2.401-5.375,5.375v17.855h-7.171c-1.918,0-3.698,1.024-4.656,2.688L0.717,225.186 c-0.956,1.67-0.956,3.711,0,5.376l40.315,69.826c0.963,1.665,2.738,2.688,4.656,2.688h80.631c1.918,0,3.698-1.022,4.654-2.688 l40.316-69.826C172.25,228.897,172.25,226.851,171.289,225.186z"></path> <path d="M39.415,123.027h93.177c2.966,0,5.375-2.405,5.375-5.375V98.864c0-2.974-2.41-5.375-5.375-5.375H39.415 c-2.968,0-5.375,2.401-5.375,5.375v18.788C34.04,120.618,36.441,123.027,39.415,123.027z"></path> </g> <path d="M301.836,105.302c-2.451-0.714-5.066,0.373-6.273,2.63c-0.226,0.431-0.473,0.872-0.729,1.323 c6.679-16.197,13.034-37.155,10.809-54.578c-2.608-20.476-12.173-27.242-20.615-33.223c-5.606-3.975-10.445-7.402-13.296-15.014 c-0.85-2.27-3.098-3.548-5.423-3.373c-1.149-0.139-2.347,0.009-3.417,0.651c-2.54,1.533-3.36,4.837-1.821,7.381 c0.247,0.415,0.457,0.855,0.693,1.273c0.515,7.118,0.089,26.651-15.729,50.863c-0.478,0.764-10.702,17.353-1.086,33.987 c-2.052,0.56-4.745-1.113-7.56-4.816c-0.966-1.257-2.436-2.032-4.021-2.113c-1.612-0.113-3.129,0.559-4.204,1.722 c-6.81,7.357-15.524,25.882-2.279,45.24c-1.427,1.191-3.485,2.015-11.004-1.457c-2.418-1.118-5.311-0.291-6.765,1.955 c-0.62,0.958-15.135,23.745-9.318,49.189c3.249,14.242,12.206,26.289,26.505,35.927c-0.379,1.586-0.867,3.14-1.197,4.741 c-8.105,39.291,0.977,70.314,1.365,71.617c0.697,2.33,2.829,3.831,5.149,3.831c0.51,0,1.029-0.072,1.549-0.226 c2.839-0.854,4.456-3.852,3.602-6.692c-0.075-0.278-8.689-29.686-1.124-66.341c0.252-1.224,0.63-2.399,0.908-3.607 c10.058-0.104,41.77-3.974,57.597-46.705c0.798-2.146,0.141-4.565-1.628-6.02c-1.769-1.449-4.269-1.618-6.231-0.426 c-0.016,0.01-0.252,0.158-0.687,0.404c5.517-6.708,10.787-14.719,13.107-22.861c0.199-0.635,4.902-15.843,6.944-39.678 C305.888,108.373,304.282,106.029,301.836,105.302z M210.308,184.656c-3.581-15.523,2.361-30.442,5.747-37.232 c2.883,0.948,5.561,1.42,7.996,1.42c9.879,0,13.722-7.385,14.372-11.299c0.246-1.494-0.142-3.027-1.086-4.212 c-9.658-12.208-6.651-23.153-3.507-29.164c3.239,2.614,6.667,3.935,10.24,3.935c7.497-0.005,12.037-5.89,12.53-6.556 c1.455-1.979,1.387-4.688-0.161-6.591c-9.765-11.956-1.644-25.431-1.345-25.911c8.142-12.465,12.589-23.838,14.992-33.369 c9.408,49.826-18.897,120.396-35.265,161.199l-1.9,4.757c-1.34,3.343-2.478,6.802-3.586,10.268 C219.121,204.261,212.718,195.122,210.308,184.656z M288.424,147.505c-4.836,16.929-26.657,34.751-26.876,34.923 c-1.88,1.524-2.511,4.116-1.545,6.331c0.961,2.21,3.323,3.514,5.687,3.177c4.366-0.629,8.608-1.837,12.361-3.202 c-12.143,21.076-28.852,25.759-38.53,26.563c1.039-3.267,2.12-6.521,3.376-9.676l1.904-4.745 c18.232-45.44,46.882-116.934,35.403-169.667c6.985,5.008,12.886,10.002,14.781,24.822c3.753,29.373-21.89,73.423-22.146,73.864 c-1.01,1.708-0.987,3.837,0.047,5.525c1.039,1.697,2.914,2.682,4.903,2.564c5.326-0.313,10.299-3.531,14.52-7.596 C290.418,141.022,288.486,147.33,288.424,147.505z"></path> </g> </g></svg>
+                                        لواز التحریر
+                                    </a>
+                                    <ul class="list-group">
+                                        <li class="list-item ">
+                                            <a class="nav-link"
+                                               href="https://mortazavistore.ir/product-category/calculator">
+                                                ماشین حساب
+                                            </a>
+                                        </li>
+                                        <li class="list-item">
+                                            <a class="nav-link"
+                                               href="https://mortazavistore.ir/product-category/cutter">
+                                                کاتر
+                                            </a>
+                                        </li>
+                                        <li class="list-item">
+                                            <a class="nav-link"
+                                               href="https://mortazavistore.ir/product-category/Spring-machine">
+                                                دستگاه فنر زنی
+                                            </a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <span class="badge bg-primary rounded-pill"></span>
+                            </li>
+
+                        </ol>
+                    </div>
+                    <div class="col-sm-4 col-md-3">
+
+                    </div>
+                    <div class="col-sm-4 col-md-3">
+                        @if(\Illuminate\Support\Facades\Auth::check()) @endif
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="Shop-and-bank-equipment" role="tabpanel"
+                 aria-labelledby="Shop-and-bank-equipment-tab" tabindex="0">
+                <!--      تجهیزات فروشگاهی و بانکی       -->
+                <div class="row">
+                    <div class="col-sm-4 col-md-3">
+                        <ol class="list-group ">
+                            <li class="list-group-item d-flex justify-content-between align-items-start">
+                                <div class="">
+                                    <a href="https://mortazavistore.ir/product-category/Shop-and-bank-equipment"
+                                       class="fw-bold text-danger">
+                                        <svg class="icon-svg-panel-sm" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12.37 2.14984L21.37 5.74982C21.72 5.88982 22 6.30981 22 6.67981V9.99982C22 10.5498 21.55 10.9998 21 10.9998H3C2.45 10.9998 2 10.5498 2 9.99982V6.67981C2 6.30981 2.28 5.88982 2.63 5.74982L11.63 2.14984C11.83 2.06984 12.17 2.06984 12.37 2.14984Z" stroke="#fc454a" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M22 22H2V19C2 18.45 2.45 18 3 18H21C21.55 18 22 18.45 22 19V22Z" stroke="#fc454a" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path> <path opacity="0.4" d="M4 18V11" stroke="#fc454a" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path> <path opacity="0.4" d="M8 18V11" stroke="#fc454a" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path> <path opacity="0.4" d="M12 18V11" stroke="#fc454a" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path> <path opacity="0.4" d="M16 18V11" stroke="#fc454a" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path> <path opacity="0.4" d="M20 18V11" stroke="#fc454a" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M1 22H23" stroke="#fc454a" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path> <path opacity="0.4" d="M12 8.5C12.8284 8.5 13.5 7.82843 13.5 7C13.5 6.17157 12.8284 5.5 12 5.5C11.1716 5.5 10.5 6.17157 10.5 7C10.5 7.82843 11.1716 8.5 12 8.5Z" stroke="#fc454a" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                                        تجهیزات فروشگاهی و بانکی
+                                    </a>
+                                    <ul class="list-group">
+                                        <li class="list-item ">
+                                            <a class="nav-link"
+                                               href="https://mortazavistore.ir/product-category/Cash-register">
+                                                صندوق فروشگاهی
+                                            </a>
+                                        </li>
+                                        <li class="list-item">
+                                            <a class="nav-link"
+                                               href="https://mortazavistore.ir/product-category/Sales-and-accounting-software">
+                                                نرم افزار فروش و حسابداری
+                                            </a>
+                                        </li>
+                                        <li class="list-item">
+                                            <a class="nav-link"
+                                               href="https://mortazavistore.ir/product-category/Card-printer">
+                                                کارت پرینتر
+                                            </a>
+                                        </li>
+                                        <li class="list-item">
+                                            <a class="nav-link"
+                                               href="https://mortazavistore.ir/product-category/Czech-Perforation">
+                                                پرفراژ چک
+                                            </a>
+                                        </li>
+                                        <li class="list-item">
+                                            <a class="nav-link"
+                                               href="https://mortazavistore.ir/product-category/money-counter">
+                                                پول شمار
+                                            </a>
+                                        </li>
+                                        <li class="list-item">
+                                            <a class="nav-link"
+                                               href="https://mortazavistore.ir/product-category/Banknote-test">
+                                                تست اسکناس
+                                            </a>
+                                        </li>
+                                        <li class="list-item">
+                                            <a class="nav-link"
+                                               href="https://mortazavistore.ir/product-category/Mobile-printer">
+                                                موبایل پرینتر
+                                            </a>
+                                        </li>
+                                        <li class="list-item">
+                                            <a class="nav-link"
+                                               href="https://mortazavistore.ir/product-category/money-drawer">
+                                                کشوی پول
+                                            </a>
+                                        </li>
+
+
+                                    </ul>
+                                </div>
+                                <span class="badge bg-primary rounded-pill"></span>
+                            </li>
                         </ol>
                     </div>
                 </div>
             </div>
-            <div class="tab-pane fade" id="Stationery" role="tabpanel" aria-labelledby="Stationery-tab" tabindex="0">3
-            </div>
-            <div class="tab-pane fade" id="Shop-and-bank-equipment" role="tabpanel"
-                 aria-labelledby="Shop-and-bank-equipment-tab" tabindex="0">4
-            </div>
             <div class="tab-pane fade" id="Office-medical-equipment" role="tabpanel"
-                 aria-labelledby="Office-medical-equipment-tab" tabindex="0">5
+                 aria-labelledby="Office-medical-equipment-tab" tabindex="0">
+                <!--      تجهیزات اداری-پزشکی       -->
+                <div class="row">
+                    <div class="col-sm-4 col-md-3">
+                        <ol class="list-group ">
+                            <li class="list-group-item d-flex justify-content-between align-items-start">
+                                <div class="">
+                                    <a href="https://mortazavistore.ir/product-category/Office-medical-equipment"
+                                       class="fw-bold text-danger">
+                                        <svg class="icon-svg-panel-sm" fill="#fc454a" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <g> <path d="M465.899,128C491.355,128,512,107.355,512,81.899V46.101C512,20.645,491.355,0,465.899,0H46.101 C20.645,0,0,20.645,0,46.101v35.797C0,107.355,20.645,128,46.101,128h17.901v42.667H46.101C20.645,170.667,0,191.311,0,216.768 v249.131C0,491.355,20.645,512,46.101,512h419.797C491.355,512,512,491.355,512,465.899V216.768 c0-25.457-20.645-46.101-46.101-46.101h-17.897V128H465.899z M42.667,81.899V46.101c0-1.893,1.542-3.435,3.435-3.435h419.797 c1.893,0,3.435,1.542,3.435,3.435v35.797c0,1.893-1.542,3.435-3.435,3.435h-39.23h-85.333H170.669H85.335H46.101 C44.209,85.333,42.667,83.791,42.667,81.899z M192.002,170.667V128h128v42.667H192.002z M106.669,128h42.667v42.667h-42.667V128z M469.333,216.768v249.131c0,1.893-1.542,3.435-3.435,3.435H46.101c-1.893,0-3.435-1.542-3.435-3.435V216.768 c0-1.893,1.542-3.435,3.435-3.435h39.234h85.333h170.667h85.333h39.23C467.791,213.333,469.333,214.875,469.333,216.768z M405.336,170.667h-42.667V128h42.667V170.667z"></path> <path d="M320.002,320h-42.667v-42.667c0-11.782-9.551-21.333-21.333-21.333s-21.333,9.551-21.333,21.333V320h-42.667 c-11.782,0-21.333,9.551-21.333,21.333c0,11.782,9.551,21.333,21.333,21.333h42.667v42.667c0,11.782,9.551,21.333,21.333,21.333 s21.333-9.551,21.333-21.333v-42.667h42.667c11.782,0,21.333-9.551,21.333-21.333C341.336,329.551,331.784,320,320.002,320z"></path> </g> </g> </g> </g></svg>
+                                        تجهیزات فروشگاهی و بانکی
+                                    </a>
+                                    <ul class="list-group">
+                                        <li class="list-item ">
+                                            <a class="nav-link"
+                                               href="https://mortazavistore.ir/product-category/Patient-identification-wristband">
+                                                مچ بند شناسایی بیمار
+                                            </a>
+                                        </li>
+                                        <li class="list-item">
+                                            <a class="nav-link"
+                                               href="https://mortazavistore.ir/product-category/Wristband-printer">
+                                                پرینتر مچ بند
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <span class="badge bg-primary rounded-pill"></span>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>

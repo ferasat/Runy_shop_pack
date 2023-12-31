@@ -13,7 +13,8 @@ class IndexCart extends Component
 
     public function render()
     {
-        $carts= Cart::query()->orderBy('id' , 'desc')->paginate(1);
+        $carts= Cart::query()->orderBy('id' , 'desc')->paginate(20);
+        //dd(Cart::query()->orderBy('id' , 'desc')->get());
         return view('livewire.admin.cart.index-cart' , compact('carts'));
     }
 }

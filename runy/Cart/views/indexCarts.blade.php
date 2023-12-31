@@ -35,7 +35,7 @@
                     <div class="btnS">
                         <button class="btn btn-background-alternate mt-n2 shadow">
                             در خواست ها:
-                            <span class="badge bg-danger">15</span>
+                            <span class="badge bg-danger">0</span>
                         </button>
                         <button class="btn btn-background-alternate mt-n2 shadow">
                             سفارش:

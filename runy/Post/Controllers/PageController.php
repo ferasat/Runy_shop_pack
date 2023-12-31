@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Image;
 use Post\Models\Post;
+use SiteLogs\Models\SiteLogs;
 
 class PageController extends Controller
 {
@@ -32,6 +33,15 @@ class PageController extends Controller
         $newPost -> statusPublish  = 'draft';
         $newPost -> user_id  = Auth::id();
         $newPost -> save();
+
+        $newLog = new SiteLogs();
+        $newLog->log_name = 'ایجاد برگه ';
+        $newLog->description = 'کاربر ' . fullName(Auth::id()) . ' برگه ای   به ID ' . $newPost -> id . ' را ایجاد کرد';
+        $newLog->type = 'page';
+        $newLog->type_id = $newPost->id;
+        $newLog->event = 'ایجاد';
+        $newLog->causer_id = Auth::id();
+        $newLog->save();
 
         return redirect(asset('/dashboard/page/edit/'.$newPost->id));
     }
@@ -80,8 +90,28 @@ class PageController extends Controller
 
     public function delete(Post $id)
     {
+        $type = '';
+        if ($id->typePost == 'post')
+            $type = 'نوشته';
+        elseif ($id->typePost == 'page')
+            $type = 'برگه';
+        else
+            $type = '';
+
+        $newLog = new SiteLogs();
+        $newLog->log_name = 'حذف ' . $type;
+        $newLog->description = 'کاربر ' . fullName(Auth::id()) . ' ' . $type . '   به نام ' . $id->name . ' را حذف کرد';
+        $newLog->type = $id->typePost;
+        $newLog->type_id = $id->id;
+        $newLog->event = 'حذف';
+        $newLog->causer_id = Auth::id();
+        $newLog->save();
+
         Post::find($id->id)->delete();
-        return redirect(route('post.index'));
+        if ($type == 'نوشته')
+            return redirect(route('post.index'));
+        elseif ($type == 'برگه')
+            return redirect(route('page.index'));
     }
 
     public function clone(Post $id)
