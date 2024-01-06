@@ -113,3 +113,5 @@ Route::get('/نمایندگی-برادر-در-اصفهان', function (){
     return view('PostView::showPost' , compact('title' , 'description' ,
         'breadcrumbs' , 'post' , 'posts'));
 });
+
+Route::get('/test/movePost', [\App\Http\Controllers\TestController::class , 'postMove' ]);

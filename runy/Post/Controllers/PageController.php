@@ -48,7 +48,6 @@ class PageController extends Controller
 
     public function edit(Post $id)
     {
-        $html_tag_data = ["override"=>'{ "attributes" : { "placement" : "horizontal", "layout":"boxed" }, "storagePrefix" : "starter-project", "showSettings" : false }'];
         $title = 'برگه جدید';
         $description= 'برگه جدید';
         $breadcrumbs = ["/dashboard"=>" پیشخوان " , "/dashboard/page" => " برگه ها ", "/dashboard/page/create" => "برگه جدید" ];
@@ -57,7 +56,7 @@ class PageController extends Controller
         $post = $id;
 
 
-        return view( 'PostView::editPost' , compact('html_tag_data' , 'title' , 'description' ,
+        return view( 'PostView::editPost' , compact('title' , 'description' ,
             'breadcrumbs', 'editor' , 'post'));
     }
 
@@ -85,6 +84,16 @@ class PageController extends Controller
         }
 
         $post->save();
+
+        $newLog = new SiteLogs();
+        $newLog->log_name = 'بروزرسانی برگه ';
+        $newLog->description = 'کاربر ' . fullName(Auth::id()) . ' برگه ای   به ID ' . $post -> id . ' را بروزرسانی کرد';
+        $newLog->type = 'page';
+        $newLog->type_id = $post->id;
+        $newLog->event = 'بروزرسانی';
+        $newLog->causer_id = Auth::id();
+        $newLog->save();
+
         return redirect(asset('dashboard/page/edit/'.$post->id));
     }
 

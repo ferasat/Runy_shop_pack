@@ -35,6 +35,15 @@ class ProductController extends Controller
         $new->price = 0;
         $new->save();
 
+        $newLog = new SiteLogs();
+        $newLog->log_name = 'ایجاد محصول';
+        $newLog->description = 'کاربر '.fullName(Auth::id()).'  کالا به نام '.$new->name.' را ایجاد کرد';
+        $newLog->type = 'Product';
+        $newLog->type_id = $new->id;
+        $newLog->event = 'ایجاد';
+        $newLog->causer_id = Auth::id();
+        $newLog->save();
+
         return redirect()->to('dashboard/product/edit/' . $new->id);
     }
 
@@ -65,7 +74,17 @@ class ProductController extends Controller
 
     public function update(Request $request)
     {
-        //dd($request->all());
+        $pro = Product::find($request->product_id);
+
+        $newLog = new SiteLogs();
+        $newLog->log_name = 'بروزرسانی محصول';
+        $newLog->description = 'کاربر '.fullName(Auth::id()).'  کالا به نام '.$pro->name.' را بروزرسانی کرد';
+        $newLog->type = 'Product';
+        $newLog->type_id = $pro->id;
+        $newLog->event = 'بروزرسانی';
+        $newLog->causer_id = Auth::id();
+        $newLog->save();
+
         $mytime = time();
         $categoreis = CategoryProduct::all();
 

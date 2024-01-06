@@ -28,6 +28,7 @@ class CreatePostsTable extends Migration
             $table->integer('cat_id')->nullable();  // دستبندی
             $table->string('slug')->unique()->nullable();
             $table->string('redirect')->nullable();
+            $table->boolean('comment_status')->default(1);
             $table->foreignId('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
