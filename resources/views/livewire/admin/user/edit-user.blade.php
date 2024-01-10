@@ -1,7 +1,9 @@
 <div class="card" id="edit_{{$user->id}}">
-    <div class="card-header">
-        <h5 class="modal-title">ویرایش اطلاعات کاربر</h5>
-
+    <div class="card-header d-flex justify-content-between">
+        <div class="modal-title h5">ویرایش اطلاعات کاربر</div>
+        <div class="">
+            <button wire:click.prevent="backToIndex()">بازگشت</button>
+        </div>
     </div>
     <div class="card-body">
         <div>

@@ -74,4 +74,9 @@ class EditUser extends Component
     {
         $this->dispatch('status_list');
     }
+
+    public function backToIndex()
+    {
+        
+    }
 }

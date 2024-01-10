@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 use Post\Models\Post;
 
 Route::get('/', [HomePageController::class , 'index']);
-Route::get('/dashboard/users', [\App\Http\Controllers\UserController::class , 'index']);
+Route::get('/dashboard/users', [\App\Http\Controllers\UserController::class , 'index'])->name('users');
 Route::get('/dashboard/new-user', [\App\Http\Controllers\UserController::class , 'create']);
 
 
@@ -114,4 +114,4 @@ Route::get('/نمایندگی-برادر-در-اصفهان', function (){
         'breadcrumbs' , 'post' , 'posts'));
 });
 
-Route::get('/test/movePost', [\App\Http\Controllers\TestController::class , 'postMove' ]);
+//Route::get('/test/movePost', [\App\Http\Controllers\TestController::class , 'postMove' ]);
