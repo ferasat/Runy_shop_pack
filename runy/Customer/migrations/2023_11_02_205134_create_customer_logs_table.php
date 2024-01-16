@@ -12,7 +12,7 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('customer_id');
             $table->string('full_name')->nullable();
-            $table->string('department')->nullable();
+            $table->string('department')->nullable(); // کدام بخش یا دستبندی
             $table->string('log_subject')->nullable();
             $table->longText('note')->nullable();
             $table->date('date')->nullable();

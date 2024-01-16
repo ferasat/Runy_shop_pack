@@ -681,6 +681,78 @@ main.main section.banner img {
     margin-bottom: 25px;
 }
 
+.dk-btn {
+    font-size: 1.286rem;
+    padding: 18px 80px;
+    border-radius: 8px;
+    background-color: #fc454a;
+    color: #fff;
+    text-align: center;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    white-space: nowrap;
+    line-height: 22px;
+    text-decoration: none;
+    margin-top: 5px;
+    font-family: Vazir;
+}
+
+button.dk-btn {
+    cursor: pointer;
+    outline: none;
+}
+
+.dk-btn:hover {
+    color: #fff;
+}
+
+.dk-btn:before {
+    transition: all .3s ease-in-out;
+    width: 21%;
+    height: 150%;
+    position: absolute;
+    right: -11px;
+    top: -17px;
+    background: hsla(0, 0%, 100%, .21);
+    content: "";
+    border-radius: 50%;
+}
+
+.dk-btn:not(.disabled):not(.is-inactive):not([disabled]):hover:before {
+    width: 900px;
+    height: 900px;
+    right: -450px;
+    top: -450px;
+    transform: unset;
+}
+
+.dk-btn-info {
+    background-color: #00bfd6;
+}
+
+.dk-btn-danger {
+    background-color: #e74c3c;
+}
+
+.dk-btn-success {
+    background-color: #2ecc71;
+}
+
+.dk-btn-grey {
+    background-color: #263238;
+}
+
+.dk-btn>i {
+    font-size: 25px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    color: rgba(255, 255, 255, 0.7);
+    font-style: normal;
+}
+
 .btn-link-border {
     display: inline-block;
     background: none;
@@ -2745,6 +2817,12 @@ main.main section.banner img {
     border-color: #ff4242;
 }
 
+.btn-outline-primary:active, .btn-outline-primary:hover, .btn-outline-primary.focus, .btn-outline-primary.active {
+    background: #ff4242 !important;
+    border-color: #ff4242 !important;
+    color: #fff;
+}
+
 .sli-head {
     display: block;
     width: 100%;
@@ -3212,19 +3290,6 @@ textarea.form-control {
     border-color: #ff4242 !important;
     color: #ff4242;
 }
-
-.btn-outline-primary {
-    background: transparent;
-    color: #ff4242;
-    border-color: #ff4242;
-}
-
-.btn-outline-primary:active, .btn-outline-primary:hover, .btn-outline-primary.focus, .btn-outline-primary.active {
-    background: #ff4242 !important;
-    border-color: #ff4242 !important;
-    color: #fff;
-}
-
 
 a,
 a:hover,
@@ -3857,104 +3922,9 @@ hr {
 }
 
 /*----End Modal----*/
-/*---- Color Runy----*/
-
-
-.btn {
-    font-family: Vazir, serif !important;
-}
-
-.btn-runy-primary {
-    --bs-btn-color: #fff;
-    --bs-btn-bg: #6c429a;
-    --bs-btn-border-color: #734aa1;
-    --bs-btn-hover-color: #fff;
-    --bs-btn-hover-bg: #6c429a;
-    --bs-btn-hover-border-color: #734aa1;
-    --bs-btn-focus-shadow-rgb: 49, 132, 253;
-    --bs-btn-active-color: #fff;
-    --bs-btn-active-bg: #6c429a;
-    --bs-btn-active-border-color: #6c429a;
-    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-    --bs-btn-disabled-color: #fff;
-    --bs-btn-disabled-bg: #6c429a;
-    --bs-btn-disabled-border-color: #6c429a;
-}
-
-.bg-runy-primary {
-    background-color: #6c429a !important;
-}
-
-.color-runy-primary {
-    color: #6c429a !important;
-}
-
-.border-color-runy-primary {
-    border-color: #6c429a !important;
-}
-
-.bg-runy-primary-g {
-    background: rgba(169, 76, 157, 1);
-    background: -moz-linear-gradient(top, rgba(169, 76, 157, 1) 0%, rgba(108, 66, 154, 1) 100%);
-    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(169, 76, 157, 1)), color-stop(100%, rgba(108, 66, 154, 1)));
-    background: -webkit-linear-gradient(top, rgba(169, 76, 157, 1) 0%, rgba(108, 66, 154, 1) 100%);
-    background: -o-linear-gradient(top, rgba(169, 76, 157, 1) 0%, rgba(108, 66, 154, 1) 100%);
-    background: -ms-linear-gradient(top, rgba(169, 76, 157, 1) 0%, rgba(108, 66, 154, 1) 100%);
-    background: linear-gradient(to bottom, rgba(169, 76, 157, 1) 0%, rgba(108, 66, 154, 1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a94c9d', endColorstr='#6c429a', GradientType=0);
-}
-
-.bg-runy-secend {
-    background-color: rgb(244 184 236 / 19%) !important;
-}
-
-.border-color-runy-secend {
-    border-color: #a881d5 !important;
-}
-
-.border-color-runy-danger {
-    border-color: #e74c3c !important;
-}
-.border-color-runy-danger-badge {
-    border-color: rgba(231, 76, 60, 0.41) !important;
-}
-
-.bg-runy-cart {
-    background-color: #e74c3c !important;
-}
-
-.bg-runy-post {
-    background-color: #1abc9c !important;
-}
-
-.bg-runy-club {
-    background-color: #6c429a !important;
-}
-
-.bg-runy-service {
-    background-color: #f39c12 !important;
-}
-
-.border-runy-service {
-    border-color: #f39c12 !important;
-}
-
-.dropdown-item-runy.active .dropdown-item-runy:active {
-    color: var(--bs-dropdown-link-active-color);
-    text-decoration: none;
-    background-color: #6c429a !important;
-}
-
 .border-color-runy-mortazavi {
     border-color: #ee3939 !important;
 }
-.border-color-green {
-    border-color: #00c525 !important;
-}
-.bg-color-green {
-    background-color: #00c52529 !important;
-}
-
 /*-- Border --*/
 .border-radius-primary {
     border-radius: 12% 88% 12% 88% / 88% 20% 80% 12%;

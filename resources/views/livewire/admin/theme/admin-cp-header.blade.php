@@ -55,22 +55,20 @@
                         </div>
                         <ul class="dropdown-menu">
                             <li>
-                                <a class="dropdown-item" href="#"> <span class="icon icon-dashboard"></span> پروفایل</a>
+                                <a class="dropdown-item" href="#">  پروفایل</a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="#"><span class="icon icon-mail_outline"></span>Inbox <span class="number">3</span></a>
+                                <a class="dropdown-item" href="#">صندوق پیام <span class="badge p-1 rounded-circle bg-danger">3</span></a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="{{ asset('/dashboard/users') }}"><span class="icon icon-people"></span>مدیریت کاربران</a>
+                                <a class="dropdown-item" href="{{ asset('/dashboard/users') }}">مدیریت کاربران</a>
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item" href="{{ asset(route('logs.index')) }}">لاگ ها</a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="#"><span class="icon icon-cog"></span>Setting<span>New</span></a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="{{ asset(route('logs.index')) }}"><span class="icon icon-cog"></span>لاگ ها</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#"><span class="icon icon-sign-out"></span>Log out</a>
+                                <a class="dropdown-item" href="#">خروج</a>
                             </li>
                         </ul>
                     </div>

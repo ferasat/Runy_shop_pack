@@ -127,79 +127,12 @@ h6, .h6 {
 .font-size-9 {
     font-size: 9px !important;
 }
-
-.dk-btn {
-    font-size: 1.286rem;
-    padding: 18px 80px;
-    border-radius: 8px;
-    background-color: #fc454a;
-    color: #fff;
-    text-align: center;
-    display: inline-block;
-    border: none;
-    cursor: pointer;
-    position: relative;
-    white-space: nowrap;
-    line-height: 22px;
-    text-decoration: none;
-    margin-top: 5px;
-    font-family: Vazir;
+.wrapper {
+    height: 100%;
 }
+footer {
 
-button.dk-btn {
-    cursor: pointer;
-    outline: none;
 }
-
-.dk-btn:hover {
-    color: #fff;
-}
-
-.dk-btn:before {
-    transition: all .3s ease-in-out;
-    width: 21%;
-    height: 150%;
-    position: absolute;
-    right: -11px;
-    top: -17px;
-    background: hsla(0, 0%, 100%, .21);
-    content: "";
-    border-radius: 50%;
-}
-
-.dk-btn:not(.disabled):not(.is-inactive):not([disabled]):hover:before {
-    width: 900px;
-    height: 900px;
-    right: -450px;
-    top: -450px;
-    transform: unset;
-}
-
-.dk-btn-info {
-    background-color: #00bfd6;
-}
-
-.dk-btn-danger {
-    background-color: #e74c3c;
-}
-
-.dk-btn-success {
-    background-color: #2ecc71;
-}
-
-.dk-btn-grey {
-    background-color: #263238;
-}
-
-.dk-btn>i {
-    font-size: 25px;
-    position: absolute;
-    right: 15px;
-    top: 15px;
-    color: rgba(255, 255, 255, 0.7);
-    font-style: normal;
-}
-
 button,
 input,
 optgroup,

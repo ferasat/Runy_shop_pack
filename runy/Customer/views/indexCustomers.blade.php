@@ -1,6 +1,6 @@
 @extends('layouts.runyApp',['title'=>$title,'description'=>$description])
 @section('content')
-    <div class="wrapper">
+    <div class="wrapper h-auto">
         @livewire('admin.theme.admin-cp-header' , ['menu'=>'cp'])
         <div class="container">
             <!-- Title and Top Buttons Start -->
@@ -8,8 +8,7 @@
                 <div class="row">
                     <!-- Title Start -->
                     <div class="col-12 col-md-7">
-                        <h1 class="mb-0 pb-0 display-4" id="title">{{ $title }}</h1>
-
+                        <div class="my-4 h4" id="title">باشگاه مشتریان</div>
                     </div>
                     <!-- Title End -->
                 </div>

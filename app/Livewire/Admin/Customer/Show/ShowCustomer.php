@@ -10,7 +10,9 @@ use Livewire\WithPagination;
 class ShowCustomer extends Component
 {
     use WithPagination ;
-    public $customer , $name , $family , $editStatus=false , $address , $cell , $email , $type , $company , $customer_user_id;
+    public $customer , $name , $family , $editStatus=false , $address , $cell , $email , $type , $company , $customer_user_id
+    , $statusManual;
+    public $log_subject , $note , $department , $date ;
 
     public function mount()
     {
@@ -22,10 +24,11 @@ class ShowCustomer extends Component
         $this->type = $this->customer->type ;
         $this->company = $this->customer->company ;
         $this->customer_user_id = $this->customer->customer_user_id ;
+        $this->statusManual = false ;
     }
     public function render()
     {
-        $customerLogs = CustomerLog::query()->where('customer_id' , $this->customer->id)->paginate(5);
+        $customerLogs = CustomerLog::query()->where('customer_id' , $this->customer->id)->orderByDesc('id')->paginate(3);
         return view('livewire.admin.customer.show.show-customer' , ['customerLogs'=>$customerLogs]);
     }
 
@@ -55,5 +58,30 @@ class ShowCustomer extends Component
         $newLog->save();
 
         $this->editStatus = !$this->editStatus ;
+    }
+
+    public function status_add_manual()
+    {
+        $this->statusManual = !$this->statusManual ;
+    }
+
+    public function saveLog()
+    {
+        $this->validate([
+            'log_subject' => 'required|min:3',
+            'note' => 'required|min:3',
+            'department' => 'required|min:3'
+        ]);
+
+        $newLog = new CustomerLog();
+        $newLog->customer_id = $this->customer->id ;
+        $newLog->full_name = $this->customer->name.' '.$this->customer->family ;
+        $newLog->department = $this->department ;
+        $newLog->log_subject = $this->log_subject ;
+        $newLog->note = $this->note ;
+        $newLog->date = $this->date ;
+        $newLog->save();
+
+        $this->statusManual = !$this->statusManual ;
     }
 }
