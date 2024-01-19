@@ -15,10 +15,9 @@ class CartController extends Controller
         $title = 'سفارش ها';
         $description = '';
         $dataTable = true;
-        $html_tag_data = ["override"=>'{ "attributes" : { "placement" : "horizontal", "layout":"boxed" }, "storagePrefix" : "starter-project", "showSettings" : false }'];
         $breadcrumbs = ["/dashboard" => " پیشخوان ", "/dashboard/carts" => "سفارش ها" ];
 
-        return view('CartView::indexCarts' , compact( 'html_tag_data' , 'breadcrumbs' , 'title' , 'description' , 'dataTable')) ;
+        return view('CartView::indexCarts' , compact( 'breadcrumbs' , 'title' , 'description' , 'dataTable')) ;
     }
 
     public function create()
@@ -44,7 +43,8 @@ class CartController extends Controller
 
     public function edit(Cart $cart)
     {
-        dd($cart);
+        return view('CartView::admin.addCart' , compact(  'cart')) ;
+        //dd($cart);
     }
 
     public function update(Request $request, Cart $cart)

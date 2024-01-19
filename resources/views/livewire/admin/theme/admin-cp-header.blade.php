@@ -28,7 +28,7 @@
                         <a class="nav-link text-white" href="{{asset(route('page.index'))}}"> برگه ها</a>
                     </li>
                      <li class="nav-item">
-                        <a class="nav-link text-white" href="{{asset(route('poll.index'))}}">نظرسنجی</a>
+                        <a class="nav-link text-white" href="{{asset(route('poll.index.temp'))}}">نظرسنجی</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" href="{{asset(route('customer.index'))}}">باشگاه مشتریان</a>

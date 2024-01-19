@@ -6,12 +6,13 @@ use Customer\Models\CustomerLog;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Product\Models\Product;
 
 class ShowCustomer extends Component
 {
     use WithPagination ;
     public $customer , $name , $family , $editStatus=false , $address , $cell , $email , $type , $company , $customer_user_id
-    , $statusManual;
+    , $statusManual , $statusAddProduct , $statusAddService;
     public $log_subject , $note , $department , $date ;
 
     public function mount()
@@ -25,11 +26,16 @@ class ShowCustomer extends Component
         $this->company = $this->customer->company ;
         $this->customer_user_id = $this->customer->customer_user_id ;
         $this->statusManual = false ;
+        $this->statusAddProduct = false ;
+        $this->statusAddService = false ;
+
     }
     public function render()
     {
         $customerLogs = CustomerLog::query()->where('customer_id' , $this->customer->id)->orderByDesc('id')->paginate(3);
-        return view('livewire.admin.customer.show.show-customer' , ['customerLogs'=>$customerLogs]);
+        $services = Product::query()->where('formatProduct' , 'service')->orderByDesc('id')->paginate(5);
+        $products = Product::query()->where('formatProduct' , 'normal')->orderByDesc('id')->paginate(5);
+        return view('livewire.admin.customer.show.show-customer' , ['customerLogs'=>$customerLogs , 'services'=>$services , 'products'=>$products]);
     }
 
     public function editOn()
@@ -63,6 +69,14 @@ class ShowCustomer extends Component
     public function status_add_manual()
     {
         $this->statusManual = !$this->statusManual ;
+    }
+    public function status_add_product()
+    {
+        $this->statusAddProduct = !$this->statusAddProduct ;
+    }
+    public function status_add_service()
+    {
+        $this->statusAddService = !$this->statusAddService ;
     }
 
     public function saveLog()

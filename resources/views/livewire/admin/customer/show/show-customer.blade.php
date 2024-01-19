@@ -87,7 +87,17 @@
                         اضافه کردن فعالیت مشتری بصورت دستی
                     </div>
                     <a href="#" wire:click.prevent="status_add_manual()">
-                        <svg class="icon-svg-panel" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M14.5 9.50002L9.5 14.5M9.49998 9.5L14.5 14.5" stroke="#6c429a" stroke-width="1.5" stroke-linecap="round"></path> <path d="M22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C21.5093 4.43821 21.8356 5.80655 21.9449 8" stroke="#6c429a" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
+                        <svg class="icon-svg-panel" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <path d="M14.5 9.50002L9.5 14.5M9.49998 9.5L14.5 14.5" stroke="#6c429a"
+                                      stroke-width="1.5" stroke-linecap="round"></path>
+                                <path
+                                    d="M22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C21.5093 4.43821 21.8356 5.80655 21.9449 8"
+                                    stroke="#6c429a" stroke-width="1.5" stroke-linecap="round"></path>
+                            </g>
+                        </svg>
                     </a>
                 </div>
                 <div class="card-body">
@@ -112,7 +122,8 @@
                                 <option value="حضور در نمایشگاه">حضور در نمایشگاه</option>
                                 <option value="شرکت در نظر سنجی حضوری">شرکت در نظر سنجی حضوری</option>
                             </datalist>
-                            <input type="text" class="form-control" list="department" autocomplete="off" id="department" wire:model="department">
+                            <input type="text" class="form-control" list="department" autocomplete="off" id="department"
+                                   wire:model="department">
 
                         </div>
 
@@ -133,14 +144,26 @@
                     <div class="">فعالیت مشتری</div>
                     <button class="btn btn-runy-outline-primary" wire:click.prevent="status_add_manual()">
                         افزودن دستی
-                        <svg class="icon-svg-panel-sm" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M15 12L12 12M12 12L9 12M12 12L12 9M12 12L12 15" stroke="#6c429a" stroke-width="1.5" stroke-linecap="round"></path> <path d="M22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C21.5093 4.43821 21.8356 5.80655 21.9449 8" stroke="#6c429a" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
+                        <svg class="icon-svg-panel-sm" viewBox="0 0 24 24" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <path d="M15 12L12 12M12 12L9 12M12 12L12 9M12 12L12 15" stroke="#6c429a"
+                                      stroke-width="1.5" stroke-linecap="round"></path>
+                                <path
+                                    d="M22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C21.5093 4.43821 21.8356 5.80655 21.9449 8"
+                                    stroke="#6c429a" stroke-width="1.5" stroke-linecap="round"></path>
+                            </g>
+                        </svg>
                     </button>
                 </div>
                 <div class="card-body">
                     <ul>
                         @foreach($customerLogs as $log)
                             <li class="border rounded mb-2">
-                                <div class="card-title bg-body-secondary p-2 rounded">{{ $log->log_subject .' در بخش '.$log->department }}</div>
+                                <div
+                                    class="card-title bg-body-secondary p-2 rounded">{{ $log->log_subject .' در بخش '.$log->department }}</div>
                                 <div class="card-text p-2 ">
                                     {!! $log->note !!}
                                 </div>
@@ -150,10 +173,52 @@
                     <div class="text-center">{{ $customerLogs->links() }}</div>
                 </div>
                 <div class="card-footer d-flex justify-content-end">
-                    <button class="btn btn-runy-outline-primary btn-sm" >دیدن فعالیت های بیشتر ...</button>
+                    <button class="btn btn-runy-outline-primary btn-sm">دیدن فعالیت های بیشتر ...</button>
                 </div>
             </div>
         @endif
 
+    </div>
+    <div class="col-md-6 my-5">
+        @if($statusAddService)
+            @livewire('admin.customer.show.add-service')
+        @else
+            <div class="card">
+                <div class="card-header d-flex justify-content-between">
+                    <div class="">تازه ترین خدمات دریافتی</div>
+                    <button class="btn btn-runy-outline-primary" wire:click.prevent="status_add_service()">اضافه کردن دستی خدمات</button>
+                </div>
+                <div class="card-body">
+                    @foreach($services as $service)
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <a href="">{{ $service->name }}</a>
+                            </li>
+                        </ul>
+                    @endforeach
+                </div>
+                <div class="card-footer"></div>
+            </div>
+        @endif
+    </div>
+    <div class="col-md-6 my-5">
+        @if($statusAddProduct)
+            @livewire('admin.customer.show.add-product')
+        @else
+            <div class="card">
+                <div class="card-header d-flex justify-content-between">
+                    <div class="">تازه ترین خرید ها</div>
+                    <button class="btn btn-runy-outline-primary" wire:click.prevent="status_add_product()">اضافه کردن دستی خرید</button>
+                </div>
+                <div class="card-body">
+                    @foreach($products as $product)
+                        <ul class="list-group">
+                            <li class="list-group-item"></li>
+                        </ul>
+                    @endforeach
+                </div>
+                <div class="card-footer"></div>
+            </div>
+        @endif
     </div>
 </div>

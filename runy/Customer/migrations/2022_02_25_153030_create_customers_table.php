@@ -14,7 +14,7 @@ class CreateCustomersTable extends Migration
             $table->string('family');
             $table->bigInteger('customer_user_id')->nullable();
             $table->string('cell')->nullable()->unique();
-            $table->string('cellphone')->nullable();
+            $table->string('telephone')->nullable();
             $table->string('pic')->default('theme/img/default-avatar.png');
             $table->string('address')->nullable();
             $table->string('email')->nullable()->unique();

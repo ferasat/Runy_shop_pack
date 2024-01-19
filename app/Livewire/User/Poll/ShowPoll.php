@@ -4,91 +4,86 @@ namespace App\Livewire\User\Poll;
 
 use Livewire\Component;
 use Poll\Models\PollQuestion;
-use Poll\Models\PollQuestionAnswer;
+use Poll\Models\PollTypeAnswerField;
 
 class ShowPoll extends Component
 {
-    public $poll, $questions, $selectedAnswers, $show_success = false;
+    public $poll, $questions, $currentStep,$maxStep,$result=[],$resultText=[],$show_success=false,$allResult;
+    protected $listeners = ['answerSelected','prevQuestion'];
 
     public function mount()
     {
-        $this->questions = PollQuestion::query()->where('poll_id', $this->poll->id)->get();
-        $this->selectedAnswers = [];
+        $this->maxStep=$this->poll->questions_count;
+        $this->currentStep = 1;
+        $this->loadQuestions();
     }
 
+    public function loadQuestions()
+    {
+        $this->questions = PollQuestion::query()
+            ->where('poll_id', $this->poll->id)
+            ->where('step', $this->currentStep)
+            ->get();
+
+    }
     public function render()
     {
         return view('livewire.user.poll.show-poll');
     }
-
-    public function saveAnswer($questionId, $answerIndex)
+    #[On('prevQuestion')]
+    public function prevQuestion($currentStep)
     {
-        $this->selectedAnswers[$questionId] = $answerIndex;
+        $this->allResult = $this->result + $this->resultText;
+        ksort($this->allResult);
+
+        $this->currentStep = $currentStep;
+        $this->loadQuestions();
     }
 
-    public function saveAnswers()
+    #[On('answerSelected')]
+    public function answerSelected($selectedAnswer,$currentStep,$isText=false)
     {
-        /*$this->validate([
-            'selectedAnswers.box_text' => 'required|array',
-            'selectedAnswers.box_text.*' => 'required',
-
-            'selectedAnswers.single_choice' => 'required|array',
-            'selectedAnswers.single_choice.*' => 'required',
-
-            'selectedAnswers.multiple_choice' => 'required|array',
-            'selectedAnswers.multiple_choice.*' => 'required',
-        ]);*/
-        //dd($this->selectedAnswers);
-
-        foreach ($this->selectedAnswers as $key => $selected_answer) {
-
-            if ($key == "single_choice") {
-                foreach ($selected_answer as $key_question_id => $single_ans) {
-                    $upQuestion=PollQuestion::query()->find($key_question_id);
-                    $upQuestion->total_vote_count++;
-                    $upQuestion->save();
-                    $upAnswer = PollQuestionAnswer::query()->find($single_ans);
-                    if ($this->poll->poll_type == 'public') {
-                        $upAnswer->vote_count = $upAnswer->vote_count + 1;
-                    }
-                    $upAnswer->vote_answer = 1;
-                    $upAnswer->save();
-                    //  dd($key_question_id,$single_ans,$upQuestion,$upAnswer);
-                }
-
-            } elseif ($key == "multiple_choice") {
-                foreach ($selected_answer as $key_question_id => $multi_ans) {
-                    foreach ($multi_ans as $key_answer_id => $ans) {
-                        $upQuestion=PollQuestion::query()->find($key_question_id);
-                        $upQuestion->total_vote_count++;
-                        $upQuestion->save();
-                        $upAnswer = PollQuestionAnswer::query()->find($key_answer_id);
-                        if ($this->poll->poll_type == 'public') {
-                            $upAnswer->vote_count = $upAnswer->vote_count + 1;
-                        }
-                        $upAnswer->vote_answer = 1;
-                        $upAnswer->save();
-
-                    }
-
-                }
-
-            } elseif ($key == "box_text") {
-
-                foreach ($selected_answer as $key_answer_id => $text_ans) {
-
-                    $upAnswer = PollQuestionAnswer::query()->find($key_answer_id);
-                    $upAnswer->vote_answer = 1;
-                    $upAnswer->vote_answer_text = $text_ans;
-                    $upAnswer->save();
-
-                }
-            } else {
-                dd('error');
-            }
+        if ($isText)
+        {
+            $this->resultText[$currentStep]=$selectedAnswer;
         }
-        $this->poll->status = 1;
+        else{
+            $this->result[$currentStep]=$selectedAnswer;
+        }
+
+        $this->currentStep++;
+        $this->loadQuestions();
+
+    }
+    public function send()
+    {
+        //dd($this->result,$this->resultText);
+
+
+
+
+        $resultArray = flattenArray($this->result);
+
+        $answer_fields = PollTypeAnswerField::query()
+            ->whereIn('id', $resultArray)
+            ->get();
+
+        foreach ($answer_fields as $answer_field) {
+            $answer_field->update(['value' => 1]);
+        }
+
+        foreach ($this->resultText as $texts){
+            foreach ($texts as $index=>$text)
+            {
+                $answer_field_text= PollTypeAnswerField::query()->find($index);
+                $answer_field_text->value=$text;
+                $answer_field_text->save();
+            }
+
+        }
+        $this->poll->status=1;
         $this->poll->save();
-        $this->show_success = true;
+        $this->show_success=true;
+
     }
 }
