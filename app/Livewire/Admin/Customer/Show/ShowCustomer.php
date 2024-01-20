@@ -34,6 +34,7 @@ class ShowCustomer extends Component
     {
         $customerLogs = CustomerLog::query()->where('customer_id' , $this->customer->id)->orderByDesc('id')->paginate(3);
         $services = Product::query()->where('formatProduct' , 'service')->orderByDesc('id')->paginate(5);
+///        $customerServices = Cart
         $products = Product::query()->where('formatProduct' , 'normal')->orderByDesc('id')->paginate(5);
         return view('livewire.admin.customer.show.show-customer' , ['customerLogs'=>$customerLogs , 'services'=>$services , 'products'=>$products]);
     }

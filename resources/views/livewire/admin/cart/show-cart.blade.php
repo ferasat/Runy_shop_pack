@@ -39,7 +39,7 @@
                 <a href="#" class="row g-0 sh-10">
                     <div class="col-auto h-100">
                         <img src="{{ asset(infoProduct($order->product_id)->pic) }}" alt="user"
-                             class="card-img card-img-horizontal sw-11"/>
+                             class="card-img w-50px"/>
                     </div>
                     <div class="col">
                         <div
@@ -50,7 +50,7 @@
                             <div class="d-flex flex-row ms-3">
                                 <div class="d-flex flex-column align-items-center  p-2">
                                     <div class="text-muted text-small">تعداد</div>
-                                    <div class="text-alternate">{{ $order->capacity }}</div>
+                                    <div class="text-alternate">{{ $order->quantity }}</div>
                                 </div>
                                 <div class="d-flex flex-column align-items-center ms-3 p-2">
                                     <div class="text-muted text-small">قیمت</div>
