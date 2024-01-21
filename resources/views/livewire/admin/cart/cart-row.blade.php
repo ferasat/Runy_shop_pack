@@ -29,7 +29,7 @@
                     </div>
 
 
-                    <div class="btn btn-outline-secondary btn-sm ms-1">وضعیت: {{ statusCart($cart->status) }}</div>
+                    <div class="btn btn-runy-outline-primary btn-sm ms-1">وضعیت: {{ statusCart($cart->status) }}</div>
                     <button class="btn btn-outline-danger btn-sm ms-1" data-bs-toggle="modal" data-bs-target="#deleteModal{{$cart->id}}">حذف</button>
                     <div class="modal fade" id="deleteModal{{$cart->id}}" tabindex="-1" aria-labelledby="deleteModal{{$cart->id}}Label" aria-hidden="true">
                         <div class="modal-dialog">

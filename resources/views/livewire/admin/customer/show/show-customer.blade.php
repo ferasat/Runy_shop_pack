@@ -186,13 +186,13 @@
             <div class="card">
                 <div class="card-header d-flex justify-content-between">
                     <div class="">تازه ترین خدمات دریافتی</div>
-                    <button class="btn btn-runy-outline-primary" wire:click.prevent="status_add_service()">اضافه کردن دستی خدمات</button>
+                    <a href="{{ asset(route('create.cart')) }}" class="btn btn-runy-outline-primary" >اضافه کردن دستی خدمات</a>
                 </div>
                 <div class="card-body">
-                    @foreach($services as $service)
+                    @foreach($ordersServices as $service)
                         <ul class="list-group">
                             <li class="list-group-item">
-                                <a href="">{{ $service->name }}</a>
+                                <a href="">{{ $service->product_name }}</a>
                             </li>
                         </ul>
                     @endforeach
@@ -208,12 +208,14 @@
             <div class="card">
                 <div class="card-header d-flex justify-content-between">
                     <div class="">تازه ترین خرید ها</div>
-                    <button class="btn btn-runy-outline-primary" wire:click.prevent="status_add_product()">اضافه کردن دستی خرید</button>
+                    <a href="{{ asset(route('create.cart')) }}" class="btn btn-runy-outline-primary" >اضافه کردن دستی خرید</a>
                 </div>
                 <div class="card-body">
-                    @foreach($products as $product)
+                    @foreach($ordersProducts as $product)
                         <ul class="list-group">
-                            <li class="list-group-item"></li>
+                            <li class="list-group-item">
+                                <a href="">{{ $product->product_name }}</a>
+                            </li>
                         </ul>
                     @endforeach
                 </div>

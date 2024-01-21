@@ -22,6 +22,9 @@
                         <a class="nav-link text-white" href="{{ asset(route('service.index')) }}">خدمات</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link text-white" href="{{ asset(route('index.carts')) }}">سفارشات</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link text-white" href="{{asset(route('post.index'))}}">نوشته ها</a>
                     </li>
                     <li class="nav-item">

@@ -11,6 +11,7 @@ function infoCart($id)
 
 function statusCart($status)
 {
+    /// 1- 'in_process' 2- 'being_packaged'  3- 'ready_to_send' 4-
     if ($status == 'in_process') {
         return 'در حال پردازش';
     } elseif ($status == 'being_packaged') {
@@ -28,7 +29,7 @@ function statusCart($status)
     } elseif ($status == 'lack_of_goods') {
         return 'موجود نبودن کالا';
     } elseif ($status == 'apply') {
-        return 'رسیدگی شد';
+        return 'رسیدگی شد'; // برای خدمات
     } else {
         return 'اطلاعی نیست';
     }

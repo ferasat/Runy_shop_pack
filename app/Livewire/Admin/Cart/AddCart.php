@@ -176,6 +176,8 @@ class AddCart extends Component
 
     public function step2()
     {
+        $customer = Customer::query()->find($this->customerSelect);
+        $user = User::query()->find($customer->customer_user_id);
         $this->orders = Order::query()->where('cart_id' , $this->cart->id)->get();
         $price_final = 0 ;
         foreach ($this->orders as $order){
@@ -186,6 +188,7 @@ class AddCart extends Component
             }
         }
         $this->cart->total_price = $price_final ;
+        $this->cart->user_id = $user->id ;
         $this->cart->save();
 
         $newCustomerLog = new CustomerLog();

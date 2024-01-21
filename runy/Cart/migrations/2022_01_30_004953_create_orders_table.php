@@ -14,6 +14,7 @@ class CreateOrdersTable extends Migration
             $table->bigInteger('session_id')->nullable();
             $table->bigInteger('product_id')->nullable();
             $table->string('product_name')->nullable();  //
+            $table->string('product_format')->default('normal');  // 'normal','show','varPro','gallery','dl-video','dl-file','service'
             $table->bigInteger('product_price')->nullable();  //  قیمت محصول
             $table->bigInteger('product_ps_price')->nullable(); //  قیمت فروش ویژه
             $table->integer('capacity')->nullable(); // ظرفیت محصول
