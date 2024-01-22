@@ -9,7 +9,7 @@
             @endphp
 
             <li class="list-group-item">
-                <input class="form-check-input" type="checkbox" id="answer_{{ $answer->id }}" value="{{ $answer->id }}"
+                <input class="form-check-input" type="checkbox" id="answer_{{ $myanswer->id }}" value="{{ $myanswer->id }}"
                        wire:model="selectedAnswer">
                 {{  '- ' . $myanswer->answer_title }}
             </li>

@@ -9,6 +9,7 @@ class RadioQuestion extends Component
     public $question, $selectedAnswer,$maxStep,$currentStep,$allResult;
     public function mount()
     {
+       // dd($this->question);
         if (isset($this->allResult[$this->currentStep]))
         {
             $this->selectedAnswer=$this->allResult[$this->currentStep];
@@ -20,7 +21,7 @@ class RadioQuestion extends Component
     }
     public function nextStep()
     {
-      //  dd($this->selectedAnswer);
+        //dd($this->selectedAnswer);
 
         $this->validate([
             'selectedAnswer' => 'required',

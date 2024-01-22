@@ -76,6 +76,7 @@ class ShowPoll extends Component
             foreach ($texts as $index=>$text)
             {
                 $answer_field_text= PollTypeAnswerField::query()->find($index);
+//                dd($index,$text,$answer_field_text);
                 $answer_field_text->value=$text;
                 $answer_field_text->save();
             }

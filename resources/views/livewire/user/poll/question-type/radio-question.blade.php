@@ -7,10 +7,9 @@
             @php
                 $myanswer=\Poll\Models\PollTypeAnswerField::query()->find($answer->poll_type_answer_field_id);
             @endphp
-
             <li class="list-group-item">
                 <input class="form-check-input" type="radio" name="answer_{{ $question->id }}"
-                       id="answer_{{ $question->id }}_{{ $index + 1 }}" value="{{ $answer->id }}"
+                       id="answer_{{ $question->id }}_{{ $index + 1 }}" value="{{ $myanswer->id }}"
                        wire:model.lazy="selectedAnswer">
                 {{ $index + 1 . '- ' . $myanswer->answer_title }}
             </li>
