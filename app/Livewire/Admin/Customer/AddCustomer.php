@@ -27,6 +27,7 @@ class AddCustomer extends Component
     protected $rules = [
         'name' => 'required',
         'family' => 'required',
+        'cell' => 'required',
     ];
 
     protected $messages = [
@@ -39,7 +40,10 @@ class AddCustomer extends Component
         $this->validate();
         $rand_pass = rand(10050201 , 99999999) ;
 
+
         if ($this->customer_user_id == 'create'){
+            $this->email = 'u'.$this->cell.'@'.setting_site()->site_url.'.ir' ;
+
             $newUser = new User();
             $newUser->name = $this->name ;
             $newUser->family = $this->family ;
@@ -67,7 +71,7 @@ class AddCustomer extends Component
         }
 
         $newCustomer->cell = $this->cell ;
-        $newCustomer->cellphone = $this->phone ;
+        $newCustomer->telephone = $this->phone ;
         $newCustomer->address = $this->address ;
         $newCustomer->email = $this->email ;
         $newCustomer->save();
