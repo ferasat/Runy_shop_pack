@@ -102,7 +102,6 @@ class AddToCart extends Component
 
     public function hiddenModal()
     {
-
         $this->showModal = false ;
     }
 

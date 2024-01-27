@@ -25,11 +25,11 @@ class RowCustomer extends Component
     {
        // dd($this->customer);
         $phone=$this->customer->cell;
-        $api = new GhasedakApi('b267a45bc4bccbbabe99555396023340c9e8e174116fdd1f33a68a63c5835efd');
+        $api = new GhasedakApi('01b0b9662b2eeafb88e875a4ec39d7d3096dc85c8fa4f99c19074d92ab13a70d');
         $api->SendSimple(
             $phone,          // receptor
             $this->msg,  // message
-            "300002525"      // choose a line number from your account
+            "10008642"      // choose a line number from your account
         );
     }
 }

@@ -18,6 +18,7 @@ class CreateCartsTable extends Migration
             $table->string('note_customer')->nullable();
             $table->string('address')->nullable();
             $table->string('zip_code')->nullable();
+            $table->string('discount_id')->nullable();  /// ایدی تخفیف
             $table->string('type_cart')->default('normal-product')->nullable(); // محصول یا خدمات و یا خرید فایل یا ... // service - dl-product - ...
             $table->string('user_id')->nullable(); // ایدی کاربری که این سبد به نام اون خرید می شود
             $table->string('status',25)->default('in_process'); // in_process  - being_packaged - ready_to_send - posted - delivered - defective_information - lack_of_goods - returned - 'apply'

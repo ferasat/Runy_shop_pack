@@ -13,8 +13,8 @@ class CreateSiteLogsTable extends Migration
             $table->id();
             $table->string('log_name');
             $table->text('description')->nullable();
-            $table->string('type')->nullable()->comment('هتل - تور - رزرواسیون ...');
-            $table->integer('type_id')->nullable()->comment('هتل - تور - رزرواسیون ...');
+            $table->string('type')->nullable()->comment(' - سرویس - خرید ...');
+            $table->integer('type_id')->nullable()->comment(' - سرویس - خرید ...');
             $table->string('event')->nullable();
             $table->string('causer_id')->nullable(); /// عامل این تغییر یا لاگ
             $table->string('user_ip')->nullable();

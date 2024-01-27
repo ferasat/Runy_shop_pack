@@ -12,6 +12,7 @@
             </select>
         </div>
     </div>
+    @if($post->typePost == 'post')
     <div class="card-body">
         <label class="visually-hidden" for="autoSizingStatus">نوع نوشته</label>
         <div class="input-group">
@@ -32,6 +33,7 @@
             </select>
         </div>
     </div>
+    @endif
     <div class="card-body">
         <label class="visually-hidden" for="formatPost">ساختار نوشته</label>
         <div class="input-group">
@@ -45,6 +47,7 @@
             </select>
         </div>
     </div>
+
     @if($formatPost == 'dl-file')
         <div class="card-body ">
 

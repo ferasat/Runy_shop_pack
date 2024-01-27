@@ -10,7 +10,7 @@ return [
     | You can switch to a different driver at runtime.
     |
     */
-    'default' => 'zarinpal',
+    'default' => 'aqayepardakht',
 
     /*
     |--------------------------------------------------------------------------
@@ -104,7 +104,7 @@ return [
             'merchantId' => '',
             'callbackUrl' => 'http://yoursite.com/path/to',
             'description' => 'payment using idpay',
-            'sandbox' => false, // set it to true for test environments
+            'sandbox' => true, // set it to true for test environments
             'currency' => 'R', //Can be R, T (Rial, Toman)
         ],
         'irankish' => [
@@ -366,11 +366,11 @@ return [
             'apiPaymentUrl' => 'https://panel.aqayepardakht.ir/startpay/',
             'apiPaymentUrlSandbox' => 'https://panel.aqayepardakht.ir/startpay/sandbox/',
             'apiVerificationUrl' => 'https://panel.aqayepardakht.ir/api/v2/verify',
-            'mode' => 'normal', //normal | sandbox
+            'mode' => 'sandbox', //normal | sandbox
             'callbackUrl' => '',
-            'pin' => '',
+            'pin' => 'A89E4897402B102E33F0',
             'invoice_id' => '',
-            'mobile' => '',
+            'mobile' => '09372088771',
             'email' => '',
             'description' => 'payment using Aqayepardakht',
             'currency' => 'T', //Can be R, T (Rial, Toman)

@@ -56,7 +56,7 @@
                                 <img class="w-50px rounded-circle" src="{{ asset(Auth::user()->pic) }}" alt="کاربر">
                             </div>
                         </div>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu r--30px">
                             <li>
                                 <a class="dropdown-item" href="#">  پروفایل</a>
                             </li>
@@ -71,11 +71,13 @@
                                 <a class="dropdown-item" href="{{ asset(route('logs.index')) }}">لاگ ها</a>
                             </li>
                             <li>
+                                <a class="dropdown-item" href="{{ asset(route('index.transactions')) }}">تراکنش های بانکی</a>
+                            </li>
+                            <li>
                                 <a class="dropdown-item" href="#">خروج</a>
                             </li>
                         </ul>
                     </div>
-
                 </div>
             </div>
         </div>

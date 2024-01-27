@@ -55,7 +55,7 @@ class InvoiceController extends Controller
 
             } catch (PurchaseFailedException | Exception | SoapFault $e) {
 
-                dd(($e));
+                //dd(($e));
                 $newTransaction->transaction_result = $e;
                 $newTransaction->status = 0;
                 $newTransaction->save();
@@ -85,6 +85,7 @@ class InvoiceController extends Controller
 
         $paymentId = $_REQUEST['paymentId'];
         $transaction = Transaction::where('payment_id', $paymentId)->first();
+        
         if (empty($transaction)) {
             /// اگر خالی  بود
             return redirect(route('pay.fail') . '/?error=empty');
