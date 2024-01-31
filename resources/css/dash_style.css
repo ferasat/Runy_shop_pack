@@ -52,8 +52,21 @@
 }
 
 /*--------------------------------------------*/
+/*Code*/
+pre {
+    display: block;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    overflow: auto;
+    font-size: .875em;
+    text-align: left;
+    direction: ltr;
+    border: #00000099 2px solid;
+    border-radius: 9px;
+    padding: 9px;
+}
 
-
+/*------------------*/
 @keyframes rotate {
     from {
         transform: rotate(0deg);

@@ -6,6 +6,7 @@
 
     <title>{{ $title }}</title>
     <meta name="description" content="چاپگر برادر اصفهان پرینتر برادر اصفهان نمایندگی برادر اصفهان پرینتر HP"/>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     @if(isset($keywords))
         <meta name="keywords" content="{{ $keywords }}"/>
     @else

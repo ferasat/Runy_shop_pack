@@ -12,12 +12,12 @@ return new class extends Migration
         Schema::create('invoices', function (Blueprint $table) {
             $table->id();
             $table->string('subject')->nullable()->comment('سفارش امین فراست');
-            $table->bigInteger('reservation_id')->nullable()->comment('آیدی رزرو');
+            $table->bigInteger('cart_id')->nullable()->comment('آیدی سبد خرید');
             $table->string('type')->nullable()->comment('product - service ...');
-            $table->string('item_id')->nullable()->comment('product_id ');
-            $table->bigInteger('counter_id')->nullable()->comment('کانتر صادر کننده فاکتور');
+            $table->string('cell')->nullable();
+            $table->bigInteger('creator_id')->nullable()->comment(' صادر کننده فاکتور');
             $table->string('owner')->nullable()->comment('نام کسی که باید به نام او صادر شود - درخواست کننده تراکنش');
-            $table->bigInteger('customer_id')->nullable()->comment('کابر درخواست کننده تراکنش');
+            $table->bigInteger('customer_id')->nullable()->comment('مشتری درخواست کننده تراکنش');
             $table->longText('description')->nullable()->comment('توضحات می تونه بصورت html بهم ذخیره بشود');
             $table->integer('status' )->nullable()->comment('وضعیت فاکتور : پرداخت شده 2 - پرداخت نشده1 - لغو0 -- 3تاییدشده -- 4کارت به کارت شده');
             $table->bigInteger('amount')->nullable()->comment('قیمت');

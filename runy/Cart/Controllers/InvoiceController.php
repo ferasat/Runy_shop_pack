@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Request;
 use Shetabit\Multipay\Exceptions\InvalidPaymentException;
 use Shetabit\Multipay\Exceptions\PurchaseFailedException;
 use Shetabit\Payment\Facade\Payment;
+use Omalizadeh\MultiPayment\Facades\PaymentGateway;
 use SiteLogs\Models\SiteLogs;
 
 class InvoiceController extends Controller
@@ -22,11 +23,32 @@ class InvoiceController extends Controller
         } elseif ($id->status == '0') {
             return 'فاکتور منقضی شده است';
         }
+        $runy_invoice = $id;
 
-        if ($id->contract_rules == 1) {
+        $invoice = new \Omalizadeh\MultiPayment\Invoice($id->amount);
+        $invoice->setPhoneNumber($id->cell);
+
+        return PaymentGateway::purchase($invoice, function (string $transactionId ) {
+            //dd($transactionId);
+            $newTransaction = new Transaction();
+            $newTransaction->payment_id = $transactionId;
+            $newTransaction->transaction_id = $transactionId;
+            $newTransaction->user_id = Auth::id();
+            //$newTransaction->invoice_id = $runy_invoice->id;
+            $newTransaction->uuid = $transactionId;
+            //$newTransaction->paid = $runy_invoice->amount;
+            $newTransaction->save();
+        })->view();
+
+
+        //dd($id , $invoice);
+
+        /*if ($id->contract_rules == 1) {
             try {
-                $invoice = new \Shetabit\Multipay\Invoice();
+                $invoice = new \Omalizadeh\MultiPayment\Invoice();
                 $invoice->amount(intval(($id->amount / 10)));
+
+                //dd($invoice);
 
                 $paymentId = md5(uniqid());
 
@@ -51,11 +73,14 @@ class InvoiceController extends Controller
                     $newTransaction->save();
                 });
 
+                dd($pay , $newTransaction , $id , $invoice);
+
                 return $pay->pay()->render();
 
             } catch (PurchaseFailedException | Exception | SoapFault $e) {
 
                 //dd(($e));
+
                 $newTransaction->transaction_result = $e;
                 $newTransaction->status = 0;
                 $newTransaction->save();
@@ -73,19 +98,35 @@ class InvoiceController extends Controller
                 return redirect(route('pay.fail') . '/?transaction_id=' . $newTransaction->id);
             }
         } else {
-            return 'اجازه پرداخت ندارید لطفا با کانتر فروش تماس بگیرید';
-        }
+            return 'اجازه پرداخت ندارید لطفا با مسئول فروش تماس بگیرید';
+        }*/
     }
 
     public function result(Request $request)
     {
-        if (!isset($_REQUEST['paymentId']) or $_REQUEST['paymentId'] == null) {
+        dd($request);
+
+        try {
+            // Get amount & transaction_id from database or gateway request
+            $invoice = new Invoice($amount, $transactionId);
+            $receipt = PaymentGateway::verify($invoice);
+            // Save receipt data and return response
+            //
+        } catch (PaymentAlreadyVerifiedException $exception) {
+            // Optional: Handle repeated verification request
+        } catch (PaymentFailedException $exception) {
+            // Handle exception for failed payments
+            return $exception->getMessage();
+        }
+
+
+        /*if (!isset($_REQUEST['paymentId']) or $_REQUEST['paymentId'] == null) {
             return redirect(route('pay.fail') . '/?error=paymentId');
         }
 
         $paymentId = $_REQUEST['paymentId'];
         $transaction = Transaction::where('payment_id', $paymentId)->first();
-        
+
         if (empty($transaction)) {
             /// اگر خالی  بود
             return redirect(route('pay.fail') . '/?error=empty');
@@ -94,7 +135,7 @@ class InvoiceController extends Controller
         /*        if ($transaction->user_id <> Auth::id()) {
                     /// کاربر لاگین با کاربری که صاحب صوت حساب فرق دارد
                     return redirect(route('pay.fail') . '/?error=user_id');
-                }*/
+                }
 
         if ($transaction->status <> Transaction::STATUS_PENDING) {
             /// وضعیت پرداخت : در حال پرداخت هست
@@ -131,8 +172,6 @@ class InvoiceController extends Controller
             $transaction->save();
 
             return redirect(route('pay.fail') . '/?transaction_id=' . $transaction->id);
-        }
-
-
+        }*/
     }
 }

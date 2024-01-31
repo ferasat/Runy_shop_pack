@@ -56,11 +56,18 @@ class ShowInvoice extends Component
         $this->cart->save() ;
 
         $invoice = new Invoice();
+        $invoice->cart_id = $this->cart->id;
         $invoice->status = 1;
         $invoice->contract_rules = 1;
-        //$invoice->amount=$this->cart->discounted_total_price;
+        $invoice->cell=$this->cart->cellPhone;
         $invoice->amount = $this->cart->total_price;
+        $invoice->owner = $this->name.' '.$this->family;
+        $invoice->cell = $this->cellPhone;
+        $invoice->creator_id = Auth::id();
         $invoice->save();
+        $invoice->invoice_number = $invoice->id.rand(1,999);
+        $invoice->save();
+
         $newLog = new SiteLogs();
         $newLog->new_Log('فاکتور '.$invoice->id , 'رفتن به درگاه به نام '.$this->name.' '.$this->family ,
             'فاکتور' , $invoice->id , 'رفتن به درگاه' );

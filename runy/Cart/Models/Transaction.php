@@ -61,10 +61,10 @@ class Transaction extends Model
 
     public function setTransactionResultAttribute($value)
     {
-        //dd($value);
-        $this->attributes['transaction_result'] = serialize($value);
+        //dd((string) $value);
+        //$this->attributes['transaction_result'] = serialize($value);
         //$this->attributes['transaction_result'] = $value->toString();
-        //$this->attributes['transaction_result'] = (string) $value;
+        $this->attributes['transaction_result'] = (string) $value;
     }
 
     public function scopeStatus($query, int $status)
