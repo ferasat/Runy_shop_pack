@@ -4,7 +4,6 @@
     @else
         {{$poll_type_answer_field->answer_title}}
         @if($poll_type_answer_field->value==1)
-
             <svg style="width: 2% ;height: 2%" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                  xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="#000000">
 

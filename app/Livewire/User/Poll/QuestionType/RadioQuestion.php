@@ -9,7 +9,7 @@ class RadioQuestion extends Component
     public $question, $selectedAnswer,$maxStep,$currentStep,$allResult;
     public function mount()
     {
-        dd($this->question , $this->allResult , $this->currentStep);
+        //dd($this->question , $this->allResult , $this->currentStep);
         if (isset($this->allResult[$this->currentStep]))
         {
             $this->selectedAnswer=$this->allResult[$this->currentStep];

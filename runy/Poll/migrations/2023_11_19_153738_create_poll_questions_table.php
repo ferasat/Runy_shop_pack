@@ -6,11 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CreatePollQuestionsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+
     public function up()
     {
         Schema::create('poll_questions', function (Blueprint $table) {
@@ -23,11 +19,7 @@ class CreatePollQuestionsTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+
     public function down()
     {
         Schema::dropIfExists('poll_questions');
