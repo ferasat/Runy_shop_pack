@@ -20,13 +20,13 @@ return [
      */
     'main' => [
         'terminal_id' => '',
-        'callback_url' => 'https://yoursite.com/path/to',
+        'callback_url' => 'http://127.0.0.1:8080/payed_invoice_callback_url',
         'callback_method' => 'POST', // supported values: POST, GET
         'description' => 'payment using saman',
     ],
     'other' => [
         'terminal_id' => '',
-        'callback_url' => 'https://yoursite.com/path/to',
+        'callback_url' => 'http://127.0.0.1:8080/payed_invoice_callback_url',
         'callback_method' => 'POST',
         'description' => 'payment using saman',
     ],

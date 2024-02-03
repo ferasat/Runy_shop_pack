@@ -3,17 +3,26 @@
 namespace App\Livewire\Admin\Poll\Temp;
 
 use Livewire\Component;
+use Livewire\WithPagination;
 use Poll\Models\PollTemplate;
 
 class IndexPollTemp extends Component
 {
-    public $titlePage,$poll_temps;
+    use WithPagination;
+
+    public $titlePage;
+
     public function mount()
     {
-        $this->poll_temps=PollTemplate::all();
+
     }
+
     public function render()
     {
-        return view('livewire.admin.poll.temp.index-poll-temp');
+        return view('livewire.admin.poll.temp.index-poll-temp',
+            [
+                'poll_temps' => PollTemplate::query()->orderByDesc('id')->paginate(10),
+            ]
+        );
     }
 }

@@ -22,7 +22,7 @@
 
     @livewireStyles
 </head>
-<body class="index-page">
+<body class="index-page ">
 
 @yield('content')
 

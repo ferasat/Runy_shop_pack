@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="wrapper default">
+    <div class="wrapper vh-100">
         @livewire('admin.theme.admin-cp-header' , ['menu'=>'cp'])
 
         <div class="container">

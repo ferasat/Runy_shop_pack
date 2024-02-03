@@ -25,11 +25,14 @@ return [
 
     'cipher' => 'AES-256-CBC',
 
+    'csrf_except' => [
+        '/payed_invoice_callback_url',
+    ],
+
     'maintenance' => [
         'driver' => 'file',
         // 'store'  => 'redis',
     ],
-
 
     'providers' => [
 
@@ -97,17 +100,6 @@ return [
         App\Providers\RouteServiceProvider::class,
 
     ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | Class Aliases
-    |--------------------------------------------------------------------------
-    |
-    | This array of class aliases will be registered when this application
-    | is started. However, feel free to register as many as you wish as
-    | the aliases are "lazy" loaded, so they don't hinder performance.
-    |
-    */
 
     'aliases' => Facade::defaultAliases()->merge([
         'SEO' => Artesaos\SEOTools\Facades\SEOTools::class,

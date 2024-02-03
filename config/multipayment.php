@@ -8,7 +8,7 @@ return [
      * valid pattern --> GATEWAY_NAME.GATEWAY_CONFIG_KEY
      * valid GATEWAY_NAME  --> zarinpal, saman, mellat, novin, parsian, pasargad, zibal, payir, idpay, paystar
      */
-    'default_gateway' => env('DEFAULT_PAYMENT_GATEWAY', 'idpay.main'),
+    'default_gateway' => env('DEFAULT_PAYMENT_GATEWAY', 'payir.main'),
 
     /**
      *  set to false if your in-app currency is IRR.

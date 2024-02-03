@@ -1,4 +1,5 @@
-<div class="row">
+<div class="container">
+<div class="row my-5 py-5">
     <div class="col-6 mx-auto">
         @if($showError)
             <span class="alert alert-danger">شما قبلا در این نظرسنجی شرکت کردید</span>
@@ -36,4 +37,4 @@
 
     </div>
 </div>
-
+</div>

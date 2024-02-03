@@ -7,7 +7,7 @@ return [
     'main' => [
         'authorization_token' => '', // optional, used only to refund payments (can be created from zarinpal panel)
         'merchant_id' => '55e0738a-4bec-4946-aefe-01bd5bef37d4',
-        'callback_url' => 'https://yoursite.com/path/to',
+        'callback_url' => 'http://127.0.0.1:8080/payed_invoice_callback_url',
         'mode' => 'sandbox', // supported values: sandbox, normal, zaringate
         'description' => 'payment using zarinpal',
     ],

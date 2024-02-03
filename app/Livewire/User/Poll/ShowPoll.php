@@ -16,6 +16,7 @@ class ShowPoll extends Component
         $this->maxStep=$this->poll->questions_count;
         $this->currentStep = 1;
         $this->loadQuestions();
+        //dd($this->poll);
     }
 
     public function loadQuestions()

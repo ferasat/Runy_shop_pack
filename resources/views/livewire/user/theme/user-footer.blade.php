@@ -1,5 +1,5 @@
 <!-- ======= Footer ======= -->
-<footer id="footer">
+<footer id="footer" class="">
 
     <div class="container-fluid footer-top">
         <div class="container">

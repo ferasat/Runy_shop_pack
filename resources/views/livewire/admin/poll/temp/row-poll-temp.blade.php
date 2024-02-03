@@ -10,7 +10,7 @@
 
                     <a class="btn btn-outline-warning btn-sm ms-1"
                        href="{{ asset('/dashboard/poll_template/edit_/'.$poll_temp -> id)  }}" type="button">دیدن</a>
-                    <a class="btn btn-outline-primary btn-sm ms-1"
+                    <a class="btn btn-outline-primary btn-sm ms-1" target="_blank"
                        href="{{ asset('/show/poll/'.$poll_temp -> id)  }}" type="button">دیدن در صفحه</a>
 
                     <a href="{{asset('/dashboard/poll_template/all_poll/'.$poll_temp -> id)}}" type="button"

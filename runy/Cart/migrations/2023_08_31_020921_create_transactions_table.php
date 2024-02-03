@@ -6,9 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('transactions', function (Blueprint $table) {
@@ -18,7 +15,7 @@ return new class extends Migration
             $table->bigInteger('amount')->nullable();
             $table->bigInteger('user_id')->nullable();
             $table->bigInteger('paid')->nullable();
-            $table->enum('status' , ['0','1','2'])->default(1);
+            $table->enum('status' , ['0','1','2'])->default(1)->comment('0=>cansel - 1=>not pay - 2=>success');
             $table->bigInteger('invoice_id')->nullable();
             $table->string('uuid')->nullable()->comment('یک ایدی یونیک برای صورتحساب شتابیت تنظیم می‌کند.');
             $table->longText('invoice_details')->nullable();
@@ -28,9 +25,6 @@ return new class extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('transactions');
