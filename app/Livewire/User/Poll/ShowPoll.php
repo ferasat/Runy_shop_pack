@@ -105,31 +105,31 @@ class ShowPoll extends Component
                 $newLog->save() ;
             }
         }else{
+            $user = User::query()->where('cellPhone' , $this->poll->mobile)->first();
             $customer = Customer::query()->where('cell' , $this->poll->mobile)->first();
+            ///dd($user , $this->poll->mobile , $this->poll);
             if ($customer != null){
                 $newLog = new CustomerLog();
                 $newLog->customer_id = $customer->id ;
                 $newLog->full_name = $customer->name.' '.$customer->family ;
                 $newLog->department = 'نظرسنجی' ;
-                $newLog->log_subject = $this->poll->name ;
-                $newLog->note = 'شرکت در نظر سنجی '.$this->poll->name ;
+                $newLog->log_subject = ' نظرسنجی ' .$this->poll->name ;
+                $newLog->note = 'شرکت در نظر سنجی '.$this->poll->first_name.' '.$customer->family ;
                 $newLog->save() ;
             }else {
                 $newCustomer = new Customer();
-                $newCustomer->name = $this->poll->name ;
-                $newCustomer->family = $this->poll->family ;
+                $newCustomer->name = $this->poll->first_name ;
+                $newCustomer->family = $this->poll->last_name ;
                 $newCustomer->cell = $this->poll->mobile ;
-
-                $newUser = new User();
-                $newUser->name = $this->poll->name ;
-                $newUser->family = $this->poll->family ;
-                $newUser->cellPhone = $this->poll->mobile ;
-                $newUser->password = bcrypt($this->poll->mobile) ;
-                $newUser->email = $this->poll->mobile.'@'.'ms.ir' ;
-                $newUser->save() ;
-
-                $newCustomer->customer_user_id = $newUser->id ;
+                $newCustomer->customer_user_id = $user->id ;
                 $newCustomer->save() ;
+                $newLog = new CustomerLog();
+                $newLog->customer_id = $newCustomer->id ;
+                $newLog->full_name = $newCustomer->name.' '.$newCustomer->family ;
+                $newLog->department = 'نظرسنجی' ;
+                $newLog->log_subject = ' نظرسنجی ' .$this->poll->name ;
+                $newLog->note = 'شرکت در نظر سنجی '.$this->poll->first_name.' '.$this->poll->last_name ;
+                $newLog->save() ;
             }
         }
 

@@ -59,7 +59,7 @@ class ShowCustomerInfoPoll extends Component
                     $newUser->name=$this->first_name;
                     $newUser->family=$this->last_name;
                     $newUser->cellPhone =$this->mobile;
-                    $newUser->email=$this->mobile."@asemanhaftom.ir";
+                    $newUser->email=$this->mobile."@mortazavistore.ir";
                     $newUser->password=$password;
                     $newUser->save();
                     $user_id=$newUser->id;
@@ -70,11 +70,11 @@ class ShowCustomerInfoPoll extends Component
                 $user_id=Auth::id();
             }
 
-
             $newPoll->user_id=$user_id;
             $poll_questions_temp=PollQuestionTemplate::query()->where('poll_id',$this->pollTemp->id)->get();
             $newPoll->questions_count=count($poll_questions_temp);
             $newPoll->save();
+
             foreach ($poll_questions_temp as $index=>$pq_temp)
             {
                 $newQuestion=new PollQuestion();
@@ -106,8 +106,6 @@ class ShowCustomerInfoPoll extends Component
         }else{
             $this->showError=true;
         }
-
-
 
     }
 }

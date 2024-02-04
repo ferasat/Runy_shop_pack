@@ -6,7 +6,8 @@
                 <div class="card">
                     <div class="card-header">نظر شما با موفقیت ثبت شد</div>
                     <div class="card-body ">
-
+                        <a href="{{ asset('/') }}" class="btn btn-runy-outline-primary m-3">رفتن به صفحه اصلی</a>
+                        <a href="{{ asset('/shop') }}" class="btn btn-runy-success m-3">رفتن به فروشگاه</a>
                     </div>
                 </div>
             @else
@@ -20,7 +21,7 @@
                         <div class="card-body d-flex justify-content-between">
 
                             <button class="btn btn-runy-success" wire:click="send">بله ثبت شود</button>
-                            <button class="btn btn-secondary" wire:click="send">خیر می خوام ویرایش کنم</button>
+                            <button class="btn btn-secondary" onclick="window.location.reload()">خیر می خوام ویرایش کنم</button>
                         </div>
                         <div class="card-footer">از اینکه وقت گذاشتید متشکریم </div>
 
