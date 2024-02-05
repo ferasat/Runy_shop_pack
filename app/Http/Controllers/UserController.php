@@ -25,4 +25,6 @@ class UserController extends Controller
         $description = 'ویرایش کاربران';
         return view('users.newUser' , compact('title' , 'description' , 'user'));
     }
+
+
 }

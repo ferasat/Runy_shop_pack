@@ -40,3 +40,19 @@ function orders_in_cart($cart_id)
     return Order::where('cart_id', $cart_id)->get();
 }
 
+function idpayStatus ($status){
+    if ($status == 10)
+        return 'موفق';
+    elseif ($status == 1)
+        return 'پرداخت انجام نشده';
+    elseif ($status == 2)
+        return 'پرداخت ناموفق';
+    elseif ($status == 3)
+        return 'خطا رخ داده';
+    elseif ($status == 6)
+        return 'برگشت خورده سیستمی';
+    elseif ($status == 7)
+        return 'انصراف از پرداخت';
+    else return 'تعریف نشده';
+}
+

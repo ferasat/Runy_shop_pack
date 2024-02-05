@@ -63,4 +63,9 @@ class CustomerController extends Controller
     {
         return Customer::query()->findOrFail($id->id)->delete();
     }
+
+    public function dashboard()
+    {
+
+    }
 }

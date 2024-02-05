@@ -21,6 +21,8 @@ return new class extends Migration
             $table->longText('invoice_details')->nullable();
             $table->bigInteger('transaction_id')->nullable();
             $table->longText('transaction_result')->nullable();
+            $table->longText('transaction_note')->nullable();
+            $table->longText('card_no')->nullable();
             $table->timestamps();
         });
     }

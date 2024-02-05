@@ -23,7 +23,7 @@ Route::prefix('/dashboard')->middleware('auth')->group( function (){
 Route::get('/cart/', [CartController::class , 'my_cart'])->name('cart');
 Route::get('/invoice/', [CartController::class , 'invoice'])->name('invoice');
 Route::get('/pay_invoice/{id}', [InvoiceController::class, 'pay'])->name('pay.invoice');
-//Route::post('/payed_invoice_callback_url', [InvoiceController::class, 'callback_url'])->name('pay.callback_url');
+Route::post('/payed_invoice_callback_url', [InvoiceController::class, 'callback_url'])->name('pay.callback_url');
 Route::get('/payed_invoice_callback_url', [InvoiceController::class, 'callback_url'])->name('pay.callback_url');
 /*Route::withoutMiddleware('VerifyCsrfToken')->get('/in_pay/result/', [InvoiceController::class , 'result'])->name('pay.result');
 Route::withoutMiddleware('VerifyCsrfToken')->post('/in_pay/result/', [InvoiceController::class , 'result']);*/

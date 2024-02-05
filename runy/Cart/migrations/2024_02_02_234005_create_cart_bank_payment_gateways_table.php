@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('use_sign')->nullable();
             $table->string('callback_method')->default('POST');
             $table->string('type')->nullable()->comment('mode');  // sandbox
+            $table->boolean('set_default')->default(0)->comment('درگاه اصلی');  //
             $table->timestamps();
         });
     }

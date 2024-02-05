@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('owner')->nullable()->comment('نام کسی که باید به نام او صادر شود - درخواست کننده تراکنش');
             $table->bigInteger('customer_id')->nullable()->comment('مشتری درخواست کننده تراکنش');
             $table->longText('description')->nullable()->comment('توضحات می تونه بصورت html بهم ذخیره بشود');
-            $table->integer('status' )->nullable()->comment('وضعیت فاکتور : پرداخت شده 2 - پرداخت نشده1 - لغو0 -- 3تاییدشده -- 4کارت به کارت شده');
+            $table->string('status' )->default('پرداخت نشده')->comment('وضعیت فاکتور : پرداخت شده  - پرداخت نشده - لغو -- تاییدشده -- کارت به کارت شده');
             $table->bigInteger('amount')->nullable()->comment('قیمت');
             $table->bigInteger('transaction_id')->nullable()->comment('در صورت عملیات پرداخت آی دی تراکنش را نمایش می دهد');
             $table->bigInteger('invoice_number')->nullable()->comment('شماره فاکتور');
