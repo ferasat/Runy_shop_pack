@@ -3,6 +3,7 @@
 namespace Customer\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Customer\Models\Customer;
 use Illuminate\Http\Request;
 
@@ -66,6 +67,6 @@ class CustomerController extends Controller
 
     public function dashboard()
     {
-
+        return view('CustomerView::dashboard.dashboardCustomer');
     }
 }
