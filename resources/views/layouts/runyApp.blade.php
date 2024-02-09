@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>{{ $title }}</title>
-    <meta name="description" content="چاپگر برادر اصفهان پرینتر برادر اصفهان نمایندگی برادر اصفهان پرینتر HP"/>
+    <meta name="description" content="{{ setting_site()->site_short_description }}"/>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @if(isset($keywords))
         <meta name="keywords" content="{{ $keywords }}"/>
@@ -14,21 +14,26 @@
     @endif
 
     <link rel="icon" type="image/png" sizes="60x60" href="{{ asset(setting_site()->site_icon) }}">
-    <link rel="alternate" hreflang="fa-IR" href="https://mortazavistore.ir/"/>
+    <link rel="alternate" hreflang="fa-IR" href="{{ asset(setting_site()->site_url) }}"/>
 
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    @include('layouts.runyHead')
+
+    @if(setting_site()->front_theme == 'tarahsite')
+        @include('layouts.tarahsite.runyHeadTarahsite')
+    @else
+        @include('layouts.runyHead')
+    @endif
 
     @livewireStyles
 </head>
 <body class="index-page ">
-
 @yield('content')
-
-@include('layouts.runyFooter')
-
+@if(setting_site()->front_theme == 'tarahsite')
+    @include('layouts.tarahsite.runyFooterTarahsite')
+@else
+    @include('layouts.runyFooter')
+@endif
 @livewireScripts
-
 </body>
 </html>
