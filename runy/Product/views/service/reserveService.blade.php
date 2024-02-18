@@ -11,15 +11,15 @@
 
             <div class="col-md-4">
                 <label for="inputEmail4" class="form-label">نام</label>
-                <input type="email" class="form-control" id="inputEmail4">
+                <input type="text" class="form-control" id="inputEmail4">
             </div>
             <div class="col-md-4">
                 <label for="inputPassword4" class="form-label">نام خانواد گی</label>
-                <input type="password" class="form-control" id="inputPassword4">
+                <input type="text" class="form-control" id="inputPassword4">
             </div>
             <div class="col-md-4">
                 <label for="inputPassword4" class="form-label">شماره تماس</label>
-                <input type="password" class="form-control" id="inputPassword4">
+                <input type="number" class="form-control" id="inputPassword4">
             </div>
             <div class="col-12">
                 <label for="inputAddress" class="form-label">آدرس</label>

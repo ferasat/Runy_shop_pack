@@ -1,5 +1,5 @@
 <div class="card mb-3 border-runy-service">
-    <div class="card-header border-runy-service">عنوان خدمت</div>
+    <div class="card-header border-runy-service  bg-runy-service-opt-25">عنوان خدمت</div>
     <div class="card-body mb-n2 border-last-none h-100">
         <div class="mb-3">
             <label class="form-label">عنوان</label>

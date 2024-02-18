@@ -167,9 +167,14 @@ pre {
 .bg-runy-club {
     background-color: #6c429a !important;
 }
-
+.bg-transparent-25 {
+    --bg-opacity: 0.5;
+}
 .bg-runy-service {
-    background-color: #f39c12 !important;
+    background-color: #f39c12 !important;  /*#ffc1070f*/
+}
+.bg-runy-service-opt-25 {
+    background-color: #ffc1070f !important;  /*#ffc1070f*/
 }
 
 .border-runy-service {

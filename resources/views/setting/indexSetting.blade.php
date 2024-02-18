@@ -1,7 +1,5 @@
 @extends('layouts.runyApp',['title'=>$title,'description'=>$description])
-
 @section('content')
-
     <div class="wrapper">
         @livewire('admin.theme.admin-cp-header' , ['menu'=>'cp'])
         <main class="dashboard-setting-page ">

@@ -3,6 +3,7 @@
 namespace App\Livewire\User\Requests;
 
 use App\Models\User;
+use Cart\Models\Cart;
 use Customer\Models\Customer;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
@@ -31,7 +32,7 @@ class FixRequestGust extends Component
             $this->name = Auth::user()->name ;
             $this->family = Auth::user()->family ;
             $this->address = Auth::user()->address ;
-            $this->cell = Auth::user()->cell ;
+            $this->cell = Auth::user()->cellPhone ;
         }
 
         if ($this->showStatus == 0){
@@ -89,44 +90,54 @@ class FixRequestGust extends Component
     {
         $this->validate();
 
-        $users = User::all();
-        $not_user = true ;
-        foreach ($users as $user){
-            if ($this->cell == $user->cell ){
-                $not_user = false ;
-                $customer_id = $user->id ;
+        if (Auth::check()){
+            $customer = Customer::query()->where('cell' , $this->cell)->first();
+            if ($customer == null){
+                $newCustomer_ = new Customer();
+                $newCustomer_->name = $this->name ;
+                $newCustomer_->family = $this->family ;
+                $newCustomer_->cell = $this->cell ;
+                $newCustomer_->address = $this->address ;
+                $newCustomer_->email = $this->cell.'@ms.ir' ;
+                $newCustomer_->customer_user_id = Auth::id() ;
+                $newCustomer_->save() ;
             }
+            $user_id = Auth::id();
+        }else {
+            $not_user = User::query()->where('cellPhone' , $this->cell)->first();
+
+            if ($not_user){
+                $newUser = new User();
+                $newUser->name = $this->name ;
+                $newUser->family = $this->family ;
+                $newUser->cellPhone = $this->cell ;
+                $newUser->address = $this->address ;
+                $newUser->email = $this->cell.'@ms.ir' ;
+                $newUser->password = bcrypt($this->cell) ;
+                $newUser->save() ;
+                $user_id = $newUser->id;
+
+
+                $newCustomer_ = new Customer();
+                $newCustomer_->name = $this->name ;
+                $newCustomer_->family = $this->family ;
+                $newCustomer_->cell = $this->cell ;
+                $newCustomer_->address = $this->address ;
+                $newCustomer_->email = $this->cell.'@ms.ir' ;
+                $newCustomer_->customer_user_id = $user_id ;
+                $newCustomer_->save() ;
+
+            }
+
         }
 
-        if ($not_user){
-            $newUser = new User();
-            $newUser->name = $this->name ;
-            $newUser->family = $this->family ;
-            $newUser->cellPhone = $this->cell ;
-            $newUser->address = $this->address ;
-            $newUser->email = $this->cell.'@ms.ir' ;
-            $newUser->password = bcrypt($this->cell) ;
-            $newUser->save() ;
-
-            $customer_id = $newUser->id ;
-
-            $newCustomer_ = new Customer();
-            $newCustomer_->name = $this->name ;
-            $newCustomer_->family = $this->family ;
-            $newCustomer_->cell = $this->cell ;
-            $newCustomer_->address = $this->address ;
-            $newCustomer_->email = $this->cell.'@ms.ir' ;
-            $newCustomer_->customer_user_id = $customer_id ;
-            $newCustomer_->save() ;
-
-        }
 
 
         $newReq = new Rqsts();
         $newReq->name = $this->title ;
         $newReq->note = $this->description ;
         $newReq->for_department_id = $this->department ;
-        $newReq->user_id = $customer_id ;
+        $newReq->user_id = $user_id ;
         $newReq->status = 'ثبت اولیه' ;
         if ($this->pic !== null){
             $year = now()->year;
@@ -160,6 +171,17 @@ class FixRequestGust extends Component
 
         $this->rqs_code = $newReq->rqs_code ;
         $this->showResult = 1 ;
+
+        $newCart = new Cart();
+        $newCart->name = $this->name ;
+        $newCart->family = $this->family ;
+        $newCart->cell = $this->cell ;
+        $newCart->address = $this->address ;
+        $newCart->type_cart = 'fix-service' ;
+        $newCart->user_id = $user_id ;
+        $newCart->note_customer = $this->description ;
+        $newCart->save() ;
+        
 
 
     }

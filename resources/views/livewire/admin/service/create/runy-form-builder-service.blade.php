@@ -1,5 +1,5 @@
 <div class="card mb-3 border-runy-service">
-    <div class="card-header border-runy-service">
+    <div class="card-header border-runy-service  bg-runy-service-opt-25">
         <svg class="icon-svg-panel" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
             <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -112,6 +112,4 @@
 
         @endif
     </div>
-
-
 </div>

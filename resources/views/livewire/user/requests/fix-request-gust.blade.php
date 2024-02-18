@@ -10,17 +10,17 @@
                             @csrf
                             <div class="col-md-4">
                                 <label for="name" class="form-label">نام</label>
-                                <input type="text" class="form-control" id="name" name="name" wire:model.live="name" required>
+                                <input type="text" class="form-control" id="name" name="name" wire:model.live="name" required @if(Auth::check()) disabled @endif>
                                 @error('name') <span class="bg-danger p-1 rounded-3">{{ $message }}</span> @enderror
                             </div>
                             <div class="col-md-4">
                                 <label for="family" class="form-label">نام خانوادگی</label>
-                                <input type="text" class="form-control" id="family" name="family" wire:model.live="family">
+                                <input type="text" class="form-control" id="family" name="family" wire:model.live="family" @if(Auth::check()) disabled @endif>
                                 @error('family') <span class="bg-danger p-1 rounded-3">{{ $message }}</span> @enderror
                             </div>
                             <div class="col-md-4">
                                 <label for="cell" class="form-label">شماره تماس</label>
-                                <input type="text" class="form-control" id="cell" name="cell" wire:model.live="cell">
+                                <input type="text" class="form-control" id="cell" name="cell" wire:model.live="cell" required @if(Auth::check()) disabled @endif>
                                 @error('cell') <span class="bg-danger p-1 rounded-3">{{ $message }}</span> @enderror
                             </div>
                             <div class="col-12">
