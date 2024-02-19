@@ -88,6 +88,7 @@ class FixRequestGust extends Component
 
     public function save()  /// فعلا بلا اسافاده بخاطر باگ در سیستم آپلود در لیرا در لوکال کار می کنه
     {
+        dd($this->name, $this->family , $this->cell );
         $this->validate();
 
         if (Auth::check()){
@@ -181,8 +182,6 @@ class FixRequestGust extends Component
         $newCart->user_id = $user_id ;
         $newCart->note_customer = $this->description ;
         $newCart->save() ;
-        
-
 
     }
 }

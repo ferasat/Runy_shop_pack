@@ -4,6 +4,7 @@ namespace Rqsts\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use Cart\Models\Cart;
 use Customer\Models\Customer;
 use FilesManager\Models\FileManager;
 use Illuminate\Http\Request;
@@ -22,12 +23,11 @@ class RqstsController extends Controller
         if (!Auth::check()){
             return redirect('/login');
         }
-        $html_tag_data = ["override"=>'{ "attributes" : { "placement" : "horizontal", "layout":"boxed" }, "storagePrefix" : "starter-project", "showSettings" : false }'];
         $title = 'مدیریت در خواست ها';
         $description= 'در خواست ها';
         $breadcrumbs = ["/dashboard"=>" پیشخوان " , "/dashboard/rqsts/index/" => "در خواست ها" ];
 
-        return view('RqstsView::indexRequests' , compact('html_tag_data' , 'title' , 'description' , 'breadcrumbs'));
+        return view('RqstsView::indexRequests' , compact( 'title' , 'description' , 'breadcrumbs'));
     }
 
     public function fix_request()
@@ -121,6 +121,16 @@ class RqstsController extends Controller
         $newReq->rqs_code = rand(99,999).$newReq->id ;
         $newReq->save() ;
 
+        $newCart = new Cart();
+        $newCart->name = $this->name ;
+        $newCart->family = $this->family ;
+        $newCart->cell = $this->cell ;
+        $newCart->address = $this->address ;
+        $newCart->type_cart = 'fix-service' ;
+        $newCart->user_id = $user_id ;
+        $newCart->note_customer = $this->description ;
+        $newCart->save() ;
+
         return redirect(route('fix_request').'?showStatus=1&&rqs_code='.$newReq->rqs_code);
 
     }
@@ -128,14 +138,12 @@ class RqstsController extends Controller
     public function show(Rqsts $id)
     {
         $rqst = $id ;
-        //dd($rqst);
-        $html_tag_data = ["override"=>'{ "attributes" : { "placement" : "horizontal", "layout":"boxed" }, "storagePrefix" : "starter-project", "showSettings" : false }'];
         $title = $rqst->name ;
         $description= 'در خواست ها';
         $breadcrumbs = ["/dashboard"=>" پیشخوان " , "/dashboard/rqsts/index/" => "در خواست ها" ];
         $editor = true ;
 
-        return view('RqstsView::show.showRequest' , compact('html_tag_data' , 'title' , 'description'
+        return view('RqstsView::show.showRequest' , compact('title' , 'description'
             , 'breadcrumbs' , 'rqst' , 'editor'));
     }
 

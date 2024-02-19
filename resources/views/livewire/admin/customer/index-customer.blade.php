@@ -27,6 +27,9 @@
                         @livewire('admin.customer.row-customer' , [ 'customer' => $customer ]  , key($customer->id))
                     @endforeach
                 </div>
+                <div class="card-footer">
+                    {{ $customers->links() }}
+                </div>
             </div>
         </section>
     </div>
