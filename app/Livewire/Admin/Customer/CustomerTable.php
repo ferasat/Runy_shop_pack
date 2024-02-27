@@ -40,7 +40,8 @@ class CustomerTable extends DataTableComponent
             ->setTableRowUrl(function($row) {
                 //dd($row->id);
                 return route('customer.show', $row->id);
-            });
+            })
+            ->setSortDesc('id');
         $this->setSearchEnabled();
         $this->setSearchPlaceholder('جستجو');
         $this->setSearchLive();
