@@ -18,6 +18,10 @@
             <div class="row">
                 @livewire('admin.user.index-users')
             </div>
+            <div class="row">
+
+                @livewire('admin.user.user-table')
+            </div>
 
         </div>
     </div>

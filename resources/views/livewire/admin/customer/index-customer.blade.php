@@ -19,18 +19,9 @@
 
         </div>
     </div>
-    <div class="col-xl-8 mt-5 m-auto">
+    <div class="col-xl-12 mt-5 m-auto">
         <section class="" id="listCustom">
-            <div class="card">
-                <div class="card-body">
-                    @foreach($customers as $customer)
-                        @livewire('admin.customer.row-customer' , [ 'customer' => $customer ]  , key($customer->id))
-                    @endforeach
-                </div>
-                <div class="card-footer">
-                    {{ $customers->links() }}
-                </div>
-            </div>
+            @livewire('admin.customer.customer-table')
         </section>
     </div>
 

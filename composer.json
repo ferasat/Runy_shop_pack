@@ -20,6 +20,7 @@
         "livewire/livewire": "^3.4.4",
         "omalizadeh/laravel-multi-payment": "^3.1.0",
         "phpmailer/phpmailer": "^6.9.1",
+        "rappasoft/laravel-livewire-tables": "^3.2",
         "shetabit/payment": "^5.6.0"
     },
     "require-dev": {
