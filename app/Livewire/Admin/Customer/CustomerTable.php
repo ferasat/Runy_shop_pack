@@ -61,7 +61,6 @@ class CustomerTable extends DataTableComponent
             'default' => false
         ]);
 
-
     }
 
     public function bulkActions(): array
@@ -90,10 +89,13 @@ class CustomerTable extends DataTableComponent
                     ];
                 }),
             Column::make("نام", "name")
+                ->searchable()
                 ->sortable(),
             Column::make("نام خانوادگی", "family")
+                ->searchable()
                 ->sortable(),
             Column::make("موبایل", "cell")
+                ->searchable()
                 ->sortable(),
             Column::make("دستبندی", "type")
                 ->sortable(),

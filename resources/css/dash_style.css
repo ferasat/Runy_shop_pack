@@ -232,6 +232,10 @@ pre {
     right: -30px !important;
 }
 
+/*.li-s-menu-hover li:hover {
+    border-bottom: 1px solid red;
+}*/
+
 
 /* موبایل: تا یک حداکثر عرض ۷۶۷ پیکسل */
 @media only screen and (max-width: 767px) {

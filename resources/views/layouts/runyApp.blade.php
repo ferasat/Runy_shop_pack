@@ -27,7 +27,7 @@
 
     @livewireStyles
 </head>
-<body class="index-page ">
+<body class="index-page">
 @yield('content')
 @if(setting_site()->front_theme == 'tarahsite')
     @include('layouts.tarahsite.runyFooterTarahsite')
