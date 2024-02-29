@@ -38,7 +38,6 @@ class CustomerController extends Controller
 
     public function show(Customer $id)
     {
-        //dd($id);
         $customer = $id ;
         $title = 'دیدن :'.$id->name.' '.$id->family ;
         $breadcrumbs = ["/dashboard" => " پیشخوان ", "/dashboard/customer" => " مدیریت مشتریان  ", "/dashboard/customer/edit/".$id->id => "ویرایش مشتری"];

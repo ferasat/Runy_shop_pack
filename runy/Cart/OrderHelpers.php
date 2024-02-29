@@ -3,6 +3,7 @@
 use Cart\Models\Cart;
 use Cart\Models\Order;
 use Product\Models\Product;
+use Rqsts\Models\Rqsts;
 
 function infoCart($id)
 {
@@ -56,3 +57,11 @@ function idpayStatus ($status){
     else return 'تعریف نشده';
 }
 
+function cart_to_rqst ($cart_id){
+    $rqst = Rqsts::query()->where('cart_id' , $cart_id)->first();
+    if ($rqst == null){
+        return 0 ;
+    }else{
+        return $rqst->id;
+    }
+}

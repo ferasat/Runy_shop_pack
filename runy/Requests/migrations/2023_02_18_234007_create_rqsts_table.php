@@ -22,6 +22,7 @@ class CreateRqstsTable extends Migration
             $table->longText('note')->nullable();
             $table->json('files')->nullable();
             $table->string('rqs_code' , 10)->nullable();
+            $table->string('cart_id')->nullable(); //
             $table->timestamps();
         });
     }

@@ -4449,6 +4449,9 @@ hr {
 .text-small {
     font-size: 8px;
 }
+.text-small-2 {
+    font-size: 10px;
+}
 
 /*----*/
 .box-shadow-soft-1 {

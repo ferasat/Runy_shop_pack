@@ -5,7 +5,9 @@ namespace Rqsts\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Cart\Models\Cart;
+use Cart\Models\Order;
 use Customer\Models\Customer;
+use Customer\Models\CustomerLog;
 use FilesManager\Models\FileManager;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -42,52 +44,51 @@ class RqstsController extends Controller
     public function fix_request_save(Request $request)
     {
         //dd($request->cell);
+        if (Auth::check()){
+            $user = Auth::user();
+        }else {
+            $user = User::query()->where('cellPhone' , $request->cell)->first();
+            if ($user == null){
+                $newUser = new User();
+                $newUser->name = $request->name ;
+                $newUser->family = $request->family ;
+                $newUser->cellPhone = $request->cell ;
+                $newUser->address = $request->address ;
+                $newUser->email = 'u'.$request->cell.'@ms.ir' ;
+                $newUser->password = bcrypt($request->cell) ;
+                $newUser->save() ;
 
-        $users = User::all();
-        $not_user = true ;
-        foreach ($users as $user){
-            if ($request->cell == $user->cell )
-            {
-                $not_user = false ;
-                $customer_id = $user->id ;
+                $customer_user_id = $newUser->id ;
+
+                $newCustomer_ = new Customer();
+                $newCustomer_->name = $request->name ;
+                $newCustomer_->family = $request->family ;
+                $newCustomer_->cell = $request->cell ;
+                $newCustomer_->address = $request->address ;
+                $newCustomer_->email = $newUser->email ;
+                $newCustomer_->customer_user_id = $customer_user_id ;
+                $newCustomer_->save() ;
+
+                $user = $newUser ;
+
+                $customer_id = $newCustomer_->id ;
+                $customer = $newCustomer_;
+                $customerLog = new CustomerLog();
+                $customerLog->newLog( $customer->id , $customer->name.' '.$customer->family , 'سامانه تعمیرات' , $request->title , $request->description , verta()  );
+
+            }else {
+                $customer = Customer::query()->where('customer_user_id' , $user->id )->first();
+                $customerLog = new CustomerLog();
+                $customerLog->newLog( $customer->id , $customer->name.' '.$customer->family , 'سامانه تعمیرات' , $request->title , $request->description , verta()  );
+                $customer_id = $customer->id ;
             }
         }
-
-        if ($not_user){
-            $newUser = new User();
-            $newUser->name = $request->name ;
-            $newUser->family = $request->family ;
-            $newUser->cell = $request->cell ;
-            $newUser->address = $request->address ;
-            $newUser->email = $request->cell.'@ms.ir' ;
-            $newUser->password = bcrypt($request->cell) ;
-            $newUser->save() ;
-
-            $customer_id = $newUser->id ;
-
-            $newCustomer_ = new Customer();
-            $newCustomer_->name = $request->name ;
-            $newCustomer_->family = $request->family ;
-            $newCustomer_->cell = $request->cell ;
-            $newCustomer_->address = $request->address ;
-            $newCustomer_->email = $request->cell.'@ms.ir' ;
-            $newCustomer_->customer_user_id = $customer_id ;
-            $newCustomer_->save() ;
-
-        }
-
-        if (Auth::check()){
-            $user_id = Auth::id();
-        }else {
-            $user_id = 0 ;
-        }
-
 
         $newReq = new Rqsts();
         $newReq->name = $request->title ;
         $newReq->note = $request->description ;
         $newReq->for_department_id = $request->department ;
-        $newReq->user_id = $customer_id ;
+        $newReq->user_id = $user->id ;
         $newReq->status = 'ثبت اولیه' ;
         if ($request->pic !== null){
 
@@ -100,7 +101,7 @@ class RqstsController extends Controller
             $file->save();
 
             $filename = $file->id . '.' . $request->file('pic')->getClientOriginalExtension();
-            $pathAdress = "uploads/rqst/fix" . date("Y", $mytime) . "/user_" . $user_id;
+            $pathAdress = "uploads/rqst/fix" . date("Y", $mytime) . "/user_" . $user->id;
             $request->file('pic')->move(public_path($pathAdress), $filename);
             $file->path = $pathAdress . '/' . $filename;
             $path_picture = $pathAdress . '/' . $filename;
@@ -118,18 +119,22 @@ class RqstsController extends Controller
         }
         $newReq->save() ;
 
+        $newCart = new Cart();
+        $newCart->name = $user->name ;
+        $newCart->family = $user->family ;
+        $newCart->cell = $user->cell ;
+        $newCart->address = $user->address ;
+        $newCart->type_cart = 'سامانه تعمیرات' ;
+        $newCart->user_id = $user->id ;
+        $newCart->note_customer = $request->description ;
+        $newCart->save() ;
+
+        $new_order = new Order();
+        $new_order->newOrder($newCart->id  , $session_id=null , $product_id=null , 'سامانه تعمیرات :'.$request->title , 'service' );
+
+        $newReq->cart_id = $newCart->id ;
         $newReq->rqs_code = rand(99,999).$newReq->id ;
         $newReq->save() ;
-
-        $newCart = new Cart();
-        $newCart->name = $this->name ;
-        $newCart->family = $this->family ;
-        $newCart->cell = $this->cell ;
-        $newCart->address = $this->address ;
-        $newCart->type_cart = 'fix-service' ;
-        $newCart->user_id = $user_id ;
-        $newCart->note_customer = $this->description ;
-        $newCart->save() ;
 
         return redirect(route('fix_request').'?showStatus=1&&rqs_code='.$newReq->rqs_code);
 

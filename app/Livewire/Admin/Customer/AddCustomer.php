@@ -42,7 +42,7 @@ class AddCustomer extends Component
 
 
         if ($this->customer_user_id == 'create'){
-            $this->email = 'u'.$this->cell.'@'.setting_site()->site_url.'.ir' ;
+            $this->email = 'u'.$this->cell.'@ms.ir' ;
 
             $newUser = new User();
             $newUser->name = $this->name ;
@@ -63,11 +63,11 @@ class AddCustomer extends Component
         $newCustomer->save();
 
         if ( strlen($this->cell) > 2 and strlen($this->email) < 5){
-            $this->email = $this->cell.'@'.setting_site()->site_url ;
+            $this->email = 'u'.$this->cell.'@ms.ir' ;
         }elseif (strlen($this->email) >= 5) {
 
         }else {
-            $this->email = 'u'.$newCustomer->id.rand(1,999).'@'.setting_site()->site_url ;
+            $this->email = 'u'.$newCustomer->id.'-'.rand(1,99).'@ms.ir' ;
         }
 
         $newCustomer->cell = $this->cell ;
