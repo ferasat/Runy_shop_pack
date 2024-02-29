@@ -4,6 +4,7 @@ namespace App\Livewire\Admin\Customer\Show;
 
 use Cart\Models\Cart;
 use Cart\Models\Order;
+use Customer\Models\Customer;
 use Customer\Models\CustomerLog;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
@@ -137,5 +138,11 @@ class ShowCustomer extends Component
         $newLog->save();
 
         $this->statusManual = !$this->statusManual;
+    }
+
+    public function deleteCustomer($customer_id)
+    {
+        Customer::query()->find($customer_id)->delete();
+        return $this->redirect(route('customer.index'));
     }
 }
