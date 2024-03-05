@@ -25,6 +25,7 @@
       <sourceFolder url="file://$MODULE_DIR$/runy/Poll" isTestSource="false" packagePrefix="Poll\" />
       <sourceFolder url="file://$MODULE_DIR$/runy/Regions" isTestSource="false" packagePrefix="Regions\" />
       <sourceFolder url="file://$MODULE_DIR$/runy/RunyFormBuilder" isTestSource="false" packagePrefix="RunyFormBuilder\" />
+      <sourceFolder url="file://$MODULE_DIR$/runy/RunyWarehousing" isTestSource="false" packagePrefix="RunyWarehousing\" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/lexer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dflydev/dot-access-data" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/egulias/email-validator" />
@@ -160,6 +161,8 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/laravel/pint" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/laravel/sail" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/inflector" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/chillerlan/php-settings-container" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/chillerlan/php-cache" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

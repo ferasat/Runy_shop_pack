@@ -2087,7 +2087,7 @@ button.dk-btn {
     justify-content: space-between;
 }
 
-.cart-page-content .page-content .btn-primary {
+.cart-page-content .page-content {
     font-size: 15px;
     border-radius: 8px;
     background-color: #ff1744;
@@ -3277,20 +3277,6 @@ textarea.form-control {
     text-decoration: none;
 }
 
-
-/* Button style */
-.btn-primary {
-    background: #ff4242;
-    color: #fff;
-    border-color: #ff4242;
-}
-
-.btn-primary:active, .btn-primary:hover, .btn-primary.focus, .btn-primary.active {
-    background: white !important;
-    border-color: #ff4242 !important;
-    color: #ff4242;
-}
-
 a,
 a:hover,
 a:focus {
@@ -3319,20 +3305,6 @@ select {
     position: relative;
     z-index: 2;
 }
-
-
-/*.section-header h2:after {*/
-/*    content: "";*/
-/*    position: absolute;*/
-/*    display: block;*/
-/*    width: 50px;*/
-/*    height: 3px;*/
-/*    background: var(--color-primary);*/
-/*    left: 0;*/
-/*    right: 0;*/
-/*    bottom: 0;*/
-/*    margin: auto;*/
-/*}*/
 
 .section-header span {
     position: absolute;

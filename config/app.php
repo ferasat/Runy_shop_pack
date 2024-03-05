@@ -88,6 +88,7 @@ return [
         Poll\PollServiceProvider::class,
         Regions\RegionServiceProvider::class,
         RunyFormBuilder\RunyFormBuilderServiceProvider::class,
+        RunyWarehousing\RunyWarehousingServiceProvider::class,
 
 
         /*

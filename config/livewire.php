@@ -62,6 +62,12 @@ return [
     | a global endpoint for temporary storage. You may configure this below:
     |
     */
+    'drivers' => [
+        'local' => 'livewire.filesystems.Local',
+        'public' => 'livewire.filesystems.Public',
+        's3' => 'livewire.filesystems.S3',
+        'disk' => 'livewire.filesystems.Disk',
+    ],
 
     'temporary_file_upload' => [
         'disk' => 'local',        // Example: 'local', 's3'              | Default: 'default'
