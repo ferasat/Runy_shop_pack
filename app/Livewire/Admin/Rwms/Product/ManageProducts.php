@@ -19,4 +19,10 @@ class ManageProducts extends Component
             'products'=>RunyWMProduct::query()->orderByDesc('id')->paginate(3)
         ]);
     }
+
+    public function delete($pro_id)
+    {
+        RunyWMProduct::query()->find($pro_id)->delete();
+        $this->render();
+    }
 }

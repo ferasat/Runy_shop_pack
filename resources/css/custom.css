@@ -4566,3 +4566,6 @@ table.table_product tr td {
 .product-description table tbody tr td {
     border: 1px solid #dadada;
 }
+.error{
+    color: red !important;
+}

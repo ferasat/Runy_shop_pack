@@ -45,5 +45,9 @@
     </div>
     <div class="mt-3">
         <button class="btn btn-primary" wire:click.prevent="addProduct()">ذخیره</button>
+        <ul class="d-block list-group text-danger">
+            <li class="list-group-item">@error('name') <span class="error">نام تکراری نباشد . بیشتر از 3 حرف وارد کنید .</span> @enderror</li>
+            <li class="list-group-item">@error('pic') <span class="error">{{ $message }}</span> @enderror</li>
+        </ul>
     </div>
 </div>

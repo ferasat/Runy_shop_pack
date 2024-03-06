@@ -1,7 +1,9 @@
 {
     "app": "runy-shop-mortazavi",
     "laravel": {
-      "buildAssets": true
+        "buildAssets": true,
+        "configCache": true,
+        "routeCache": true
     },
     "disks": [
         {

@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::create('runy_w_m_products', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->unique();
             $table->string('name_en')->nullable();
             $table->longText('texts')->nullable();
             $table->string('pic')->nullable();

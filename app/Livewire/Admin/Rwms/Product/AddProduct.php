@@ -15,24 +15,26 @@ class AddProduct extends Component
     #[Validate('image|max:1624')] // 1MB Max
     public $pic;
 
-    public $name , $texts , $wm_id , $wms, $category , $status='active' , $price , $input_stock , $names ;
+    #[Validate('required|min:3|unique:runy_w_m_products')]
+    public $name ;
+    public $texts , $wm_id , $wms, $category , $status='active' , $price , $input_stock , $names ;
 
     public function mount()
     {
-        $this->names = RunyWMProduct::query()->orderByDesc('id')->get()->take(5);
-        $this->wms = RunyWMS::query()->orderByDesc('id')->get();
-        $wm = $this->wms->first() ;
-        //dd($wm);
-        $this->wm_id = $wm->id ;
+
     }
     public function render()
     {
+        $this->wms = RunyWMS::query()->orderByDesc('id')->get();
+        $wm = $this->wms->first() ;
+        $this->wm_id = $wm->id ;
+        $this->names = RunyWMProduct::query()->orderByDesc('id')->get()->take(5);
         return view('livewire.admin.rwms.product.add-product');
     }
 
     public function addProduct()
     {
-        //dd($this->pic->store(path: 'upload_pic'));
+        $this->validate();
         $newPro = new RunyWMProduct();
         $newPro->name = $this->name ;
         $newPro->texts = $this->texts ;
@@ -40,10 +42,13 @@ class AddProduct extends Component
         $newPro->wm_id = $this->wm_id ;
         $newPro->category = $this->category ;
         $newPro->price = $this->price ;
-        $newPro->pic = $this->pic->store(path: 'public/uploads/wm/');
+        if ($this->pic){
+            $newPro->pic = $this->pic->store(path: 'public/uploads/wm/');
+        }
         $newPro->save() ;
 
         $this->dispatch('product-created');
+        $this->reset();
     }
 
     public function save()
