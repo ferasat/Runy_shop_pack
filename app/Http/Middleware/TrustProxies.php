@@ -19,11 +19,24 @@ class TrustProxies extends Middleware
      *
      * @var int
      */
-    protected $headers = Request::HEADER_X_FORWARDED_ALL;
-    /*protected $headers =
+
+    /*public function handle(Request $request, Closure $next)
+    {
+        $ips = $request->server('HTTP_X_FORWARDED_ALL');
+
+        if ($ips) {
+            $ip = explode(',', $ips)[0];
+        } else {
+            $ip = $request->ip();
+        }
+
+        // ...
+    }*/
+    //protected $headers = Request::HEADER_X_FORWARDED_ALL;
+    protected $headers =
         Request::HEADER_X_FORWARDED_FOR |
         Request::HEADER_X_FORWARDED_HOST |
         Request::HEADER_X_FORWARDED_PORT |
         Request::HEADER_X_FORWARDED_PROTO |
-        Request::HEADER_X_FORWARDED_AWS_ELB;*/
+        Request::HEADER_X_FORWARDED_AWS_ELB;
 }

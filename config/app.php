@@ -34,6 +34,8 @@ return [
         // 'store'  => 'redis',
     ],
 
+    'trustProxies' => ['*',],
+
     'providers' => [
 
         /*

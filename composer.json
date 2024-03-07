@@ -14,7 +14,7 @@
         "imanghafoori/laravel-heyman": "^2.2.55",
         "intervention/image": "^2.7.2",
         "laravel/fortify": "^1.20.0",
-        "laravel/framework": "^v10.47.0",
+        "laravel/framework": "^10.47",
         "laravel/sanctum": "^3.2",
         "laravel/tinker": "^2.8",
         "livewire/livewire": "^3.4.4",
