@@ -4102,15 +4102,7 @@ hr {
     bottom: 8px;
 }
 
-.w-70px {
-    width: 70px !important;
-}
-.w-50px {
-    width: 50px !important;
-}
-.h3-sm-w {
-    font-size: 1.75rem;
-}
+
 
 @media screen and (max-width: 1200px) {
     .product-grid {

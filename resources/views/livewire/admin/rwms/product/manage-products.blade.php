@@ -45,16 +45,38 @@
                     @foreach($products as $product)
                         <tr>
                             <th scope="row">{{ $product->id }}</th>
-                            <td><img src="{{ asset($product->pic) }}" ></td>
+                            <td class="text-center"><img src="{{ asset($product->pic) }}" class="rounded w-90px mx-auto"></td>
                             <td>{{ $product->name }}</td>
                             <td>{{ $product->wm_id }}</td>
                             <td>{{ $product->price }} {{ $product->current }}</td>
                             <td>{{ $product->input_stock }}</td>
                             <td>{{ $product->status }}</td>
                             <td>
-                                <button class="btn" wire:click.prevent="delete({{ $product->id }})">
+
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#product{{$product->id}}">
                                     <svg  fill="#000000" viewBox="0 0 24 24" id="delete-alt" data-name="Line Color" xmlns="http://www.w3.org/2000/svg" class="icon-svg-panel-sm"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path id="secondary" d="M16,7V4a1,1,0,0,0-1-1H9A1,1,0,0,0,8,4V7m2,4v6m4-6v6" style="fill: none; stroke: #d68585; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></path><path id="primary" d="M4,7H20M18,20V7H6V20a1,1,0,0,0,1,1H17A1,1,0,0,0,18,20Z" style="fill: none; stroke: #ff0000; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></path></g></svg>
                                 </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="product{{$product->id}}" tabindex="-1" aria-labelledby="product{{$product->id}}Label" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="product{{$product->id}}Label">حذف کردن محصول</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                اطلاعات این محصول بصورت کامل پاک می شود و در دسترس نخواد بود. آیا مطمئن هستید ؟
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">لغو</button>
+                                                <button type="button" wire:click.prevent="delete({{ $product->id }})" class="btn btn-danger" data-bs-dismiss="modal">حذف کن</button>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </td>
                         </tr>
                     @endforeach

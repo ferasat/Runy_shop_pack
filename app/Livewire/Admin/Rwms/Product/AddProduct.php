@@ -34,6 +34,7 @@ class AddProduct extends Component
 
     public function addProduct()
     {
+        //dd($this->pic->store('uploads/wm/' , 'public'));
         $this->validate();
         $newPro = new RunyWMProduct();
         $newPro->name = $this->name ;
@@ -43,7 +44,7 @@ class AddProduct extends Component
         $newPro->category = $this->category ;
         $newPro->price = $this->price ;
         if ($this->pic){
-            $newPro->pic = $this->pic->store(path: 'public/uploads/wm/');
+            $newPro->pic = 'storage/'.$this->pic->store('uploads/wm' , 'public');
         }
         $newPro->save() ;
 

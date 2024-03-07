@@ -1824,3 +1824,18 @@ main.profile-user-page .responsive-profile-menu .dropdown-menu a i {
     margin: 4px 0 0 7px;
 }
 
+.w-100px {
+    width: 100px !important;
+}
+.w-90px {
+    width: 90px !important;
+}
+.w-70px {
+    width: 70px !important;
+}
+.w-50px {
+    width: 50px !important;
+}
+.h3-sm-w {
+    font-size: 1.75rem;
+}

@@ -32,9 +32,18 @@
         </select>
     </div>
     <div class="mb-3">
+        <div
+            x-data="{ uploading: false, progress: 0 }"
+            x-on:livewire-upload-start="uploading = true"
+            x-on:livewire-upload-finish="uploading = false"
+            x-on:livewire-upload-cancel="uploading = false"
+            x-on:livewire-upload-error="uploading = false"
+            x-on:livewire-upload-progress="progress = $event.detail.progress"
+        >
         <label for="pic" class="form-label">تصویر محصول</label>
         <input type="file" class="form-control" id="pic" wire:model="pic" >
         @error('pic') <span class="error">{{ $message }}</span> @enderror
+        <div wire:loading wire:target="photo">Uploading...</div>
         @if ($pic)
             <img class="w-25" src="{{ $pic->temporaryUrl() }}">
         @endif
