@@ -6,6 +6,7 @@ use Livewire\Component;
 use Livewire\WithPagination;
 use RunyWarehousing\Models\RunyWMProduct;
 use Livewire\Attributes\On;
+use RunyWarehousing\Models\RunyWMProductSerial;
 
 
 class ManageProducts extends Component
@@ -22,6 +23,7 @@ class ManageProducts extends Component
 
     public function delete($pro_id)
     {
+        RunyWMProductSerial::query()->where('wm_product_id' , $pro_id)->delete();
         RunyWMProduct::query()->find($pro_id)->delete();
         $this->render();
     }

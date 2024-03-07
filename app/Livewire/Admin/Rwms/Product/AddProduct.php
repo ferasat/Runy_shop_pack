@@ -4,6 +4,7 @@ namespace App\Livewire\Admin\Rwms\Product;
 
 use Livewire\Component;
 use RunyWarehousing\Models\RunyWMProduct;
+use RunyWarehousing\Models\RunyWMProductSerial;
 use RunyWarehousing\Models\RunyWMS;
 use Livewire\WithFileUploads;
 use Livewire\Attributes\Validate;
@@ -47,6 +48,15 @@ class AddProduct extends Component
             $newPro->pic = 'storage/'.$this->pic->store('uploads/wm' , 'public');
         }
         $newPro->save() ;
+
+        if ($this->input_stock > 0){
+            $newSerial = new RunyWMProductSerial();
+            $newSerial->wm_product_id = $newPro->id ;
+            $newSerial->price = $newPro->price ;
+            $newSerial->save() ;
+            $newSerial->serial = $newPro->id.'000'.$newSerial->id ;
+            $newSerial->save() ;
+        }
 
         $this->dispatch('product-created');
         $this->reset();

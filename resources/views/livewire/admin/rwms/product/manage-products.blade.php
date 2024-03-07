@@ -44,7 +44,13 @@
                     <tbody>
                     @foreach($products as $product)
                         <tr>
-                            <th scope="row">{{ $product->id }}</th>
+                            <th scope="row">
+                                {{ $product->id }}
+                                <div class="visible-print text-center">
+                                    {!! QrCode::size(100)->generate($product->id); !!}
+                                    <p>Scan me to return to the original page.</p>
+                                </div>
+                            </th>
                             <td class="text-center"><img src="{{ asset($product->pic) }}" class="rounded w-90px mx-auto"></td>
                             <td>{{ $product->name }}</td>
                             <td>{{ $product->wm_id }}</td>
