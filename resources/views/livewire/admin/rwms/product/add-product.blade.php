@@ -18,9 +18,10 @@
     </div>
     <div class="mb-3">
         <label for="category" class="form-label">دستبندی محصول</label>
-        <select class="form-control" id="category" wire:model="category">
-            <option value="متفرقه">متفرقه</option>
-            <option value="متفرقه">متفرقه</option>
+        <select class="form-control" id="category" wire:model="category_id">
+            @foreach($cats as $cat)
+                <option value="{{ $cat->id }}">{{ $cat->name }}</option>
+            @endforeach
         </select>
     </div>
     <div class="mb-3">
@@ -32,14 +33,6 @@
         </select>
     </div>
     <div class="mb-3">
-        <div
-            x-data="{ uploading: false, progress: 0 }"
-            x-on:livewire-upload-start="uploading = true"
-            x-on:livewire-upload-finish="uploading = false"
-            x-on:livewire-upload-cancel="uploading = false"
-            x-on:livewire-upload-error="uploading = false"
-            x-on:livewire-upload-progress="progress = $event.detail.progress"
-        >
         <label for="pic" class="form-label">تصویر محصول</label>
         <input type="file" class="form-control" id="pic" wire:model="pic" >
         @error('pic') <span class="error">{{ $message }}</span> @enderror
@@ -53,7 +46,10 @@
         <textarea  class="form-control" id="texts" wire:model="texts" placeholder="اختیاری"></textarea>
     </div>
     <div class="mt-3">
-        <button class="btn btn-primary" wire:click.prevent="addProduct()">ذخیره</button>
+        <button class="btn btn-primary" wire:click.prevent="addProduct()">
+            ذخیره
+            <svg class="icon-svg-panel-sm" viewBox="0 0 24 24" id="_003_ECOMMERCE_03" data-name="003_ECOMMERCE_03" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title>003_085</title><path d="M11,21H4a.99974.99974,0,0,1-1-1V4A.99974.99974,0,0,1,4,3H20a.99974.99974,0,0,1,1,1v7a1,1,0,0,1-2,0V5H5V19h6a1,1,0,0,1,0,2Z" style="fill:#fafafa"></path><polygon points="10 4 10 10 12 8 14 10 14 4 10 4" style="fill:#fafafa"></polygon><path d="M17,21a.99974.99974,0,0,1-1-1V14a1,1,0,0,1,2,0v6A.99974.99974,0,0,1,17,21Z" style="fill:#fafafa"></path><path d="M20,18H14a1,1,0,0,1,0-2h6a1,1,0,0,1,0,2Z" style="fill:#fafafa"></path></g></svg>
+        </button>
         <ul class="d-block list-group text-danger">
             <li class="list-group-item">@error('name') <span class="error">نام تکراری نباشد . بیشتر از 3 حرف وارد کنید .</span> @enderror</li>
             <li class="list-group-item">@error('pic') <span class="error">{{ $message }}</span> @enderror</li>

@@ -91,6 +91,7 @@ return [
         Regions\RegionServiceProvider::class,
         RunyFormBuilder\RunyFormBuilderServiceProvider::class,
         RunyWarehousing\RunyWarehousingServiceProvider::class,
+        RunyAccounting\AccountingServiceProvider::class,
 
 
         /*

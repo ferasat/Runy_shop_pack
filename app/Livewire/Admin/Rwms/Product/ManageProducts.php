@@ -17,7 +17,7 @@ class ManageProducts extends Component
     public function render()
     {
         return view('livewire.admin.rwms.product.manage-products' , [
-            'products'=>RunyWMProduct::query()->orderByDesc('id')->paginate(3)
+            'products'=>RunyWMProduct::query()->orderByDesc('id')->paginate(10)
         ]);
     }
 

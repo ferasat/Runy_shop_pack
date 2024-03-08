@@ -12,5 +12,7 @@ Route::prefix('/dashboard/warehousing')->middleware('auth')->group( function (){
 
     Route::get('/products/', [RunyWMProductController::class , 'index'])->name('rwmp.index');
     Route::get('/products/', [RunyWMProductController::class , 'create'])->name('rwmp.create');
+
+    Route::get('/product-category/', [RunyWMProductController::class , 'index_cat'])->name('rwmp.cat.index');
 });
 

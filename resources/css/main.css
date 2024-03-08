@@ -1839,3 +1839,6 @@ main.profile-user-page .responsive-profile-menu .dropdown-menu a i {
 .h3-sm-w {
     font-size: 1.75rem;
 }
+.text-size-8rem {
+    font-size: 8rem !important;
+}

@@ -14,7 +14,9 @@ return new class extends Migration
             $table->string('name_en')->nullable();
             $table->longText('texts')->nullable();
             $table->string('pic')->nullable();
+            $table->string('address')->nullable();
             $table->string('category')->nullable();
+            $table->bigInteger('category_id')->nullable();
             $table->bigInteger('wm_id');  // runy_w_m_s -> id
             $table->enum('status', ['active' , 'disable' ])->default('active');
             $table->boolean('specialPin')->default('0');  /// هر عدد یه معنی : 0 معمولی - 1 خاص و پین شده
@@ -22,6 +24,7 @@ return new class extends Migration
             $table->bigInteger('price')->nullable();  // قیمت محصول
             $table->integer('input_stock')->nullable();  // موجودی
             $table->enum('current' , ['تومان' , 'ریال', 'دلار', 'لیر', 'درهم امارات', 'یورو'])->default('تومان');
+            $table->enum('unit' , ['کیلوگرم' , 'گرم', 'متر', 'سانتی متر', 'عدد', 'لیتر'])->default('عدد');
             $table->timestamps();
         });
     }

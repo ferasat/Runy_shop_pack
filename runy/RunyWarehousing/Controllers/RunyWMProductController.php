@@ -15,4 +15,9 @@ class RunyWMProductController extends Controller
     {
         return view('RunyWarehousingView::product-management.products-management');
     }
+
+    public function index_cat()
+    {
+        return view('RunyWarehousingView::product-management.index-cat');
+    }
 }
