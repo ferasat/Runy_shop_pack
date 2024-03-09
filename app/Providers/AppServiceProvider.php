@@ -28,11 +28,14 @@ class AppServiceProvider extends ServiceProvider
         Paginator::useBootstrap();
         Schema::defaultStringLength(200);
 
-        $setting = Setting::query()->first();
+/*        if (config('app.env') !== 'build') {
+            $setting = Setting::query()->first();
 
-        View::share([
-            'setting' => $setting
-        ]);
+            View::share([
+                'setting' => $setting
+            ]);
+        }*/
+
 
     }
 }
