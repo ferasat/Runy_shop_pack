@@ -42,12 +42,15 @@ class AddProduct extends Component
         //dd($this->validate());
 
         $this->validate();
+
+        $cat = RunyWMProductCategory::query()->first($this->category_id);
+
         $newPro = new RunyWMProduct();
         $newPro->name = $this->name ;
         $newPro->texts = $this->texts ;
         $newPro->input_stock = $this->input_stock ;
         $newPro->wm_id = $this->wm_id ;
-        $newPro->category = RunyWMProductCategory::query()->first($this->category_id)->name ;
+        $newPro->category = $cat->name ;
         $newPro->category_id = $this->category_id ;
         $newPro->price = $this->price ;
         if ($this->pic){
