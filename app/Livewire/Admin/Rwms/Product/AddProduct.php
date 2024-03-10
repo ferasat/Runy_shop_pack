@@ -34,6 +34,7 @@ class AddProduct extends Component
         $this->names = RunyWMProduct::query()->orderByDesc('id')->get()->take(5);
         $this->cats = RunyWMProductCategory::query()->orderByDesc('id')->get();
         $this->category_id = $this->cats->first()->id;
+        //dd($this->cats);
         return view('livewire.admin.rwms.product.add-product');
     }
 
@@ -43,7 +44,7 @@ class AddProduct extends Component
 
         $this->validate();
 
-        $cat = RunyWMProductCategory::query()->first($this->category_id);
+        $cat = RunyWMProductCategory::query()->find($this->category_id);
 
         $newPro = new RunyWMProduct();
         $newPro->name = $this->name ;
