@@ -1,7 +1,10 @@
-@extends('user.layouts.template')
-@section('title' , 'تنظیمات حسابداری')
+@extends('layouts.runyApp',['title'=>'تنظیمات حسابداری','description'=>'تنظیمات حسابداری'])
 @section('content')
-    <!-- Page-Title -->
-    @include('user.layouts.breadcrumb')
-    @livewire('admin.accounting.index-accounting')
+
+    <div class="wrapper">
+        @livewire('admin.theme.admin-cp-header' , ['menu'=>'cp'])
+        @livewire('admin.accounting.index-accounting')
+    </div>
+
+    @livewire('admin.theme.admin-footer' , ['menu'=>'cp'])
 @endsection

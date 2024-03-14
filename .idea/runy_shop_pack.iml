@@ -26,6 +26,7 @@
       <sourceFolder url="file://$MODULE_DIR$/runy/Regions" isTestSource="false" packagePrefix="Regions\" />
       <sourceFolder url="file://$MODULE_DIR$/runy/RunyFormBuilder" isTestSource="false" packagePrefix="RunyFormBuilder\" />
       <sourceFolder url="file://$MODULE_DIR$/runy/RunyWarehousing" isTestSource="false" packagePrefix="RunyWarehousing\" />
+      <sourceFolder url="file://$MODULE_DIR$/runy/Accounting" isTestSource="false" packagePrefix="RunyAccounting\" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/lexer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dflydev/dot-access-data" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/egulias/email-validator" />

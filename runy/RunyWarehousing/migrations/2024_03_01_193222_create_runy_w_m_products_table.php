@@ -24,7 +24,7 @@ return new class extends Migration
             $table->bigInteger('price')->nullable();  // قیمت محصول
             $table->integer('input_stock')->nullable();  // موجودی
             $table->enum('current' , ['تومان' , 'ریال', 'دلار', 'لیر', 'درهم امارات', 'یورو'])->default('تومان');
-            $table->enum('unit' , ['کیلوگرم' , 'گرم', 'متر', 'سانتی متر', 'عدد', 'لیتر'])->default('عدد');
+            $table->enum('unit' , ['کیلوگرم' , 'گرم', 'متر', 'سانتی متر', 'عدد', 'لیتر', 'بسته'])->default('عدد');
             $table->timestamps();
         });
     }

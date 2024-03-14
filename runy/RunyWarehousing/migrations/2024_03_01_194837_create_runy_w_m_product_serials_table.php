@@ -14,6 +14,7 @@ return new class extends Migration
             $table->bigInteger('price');
             $table->bigInteger('serial')->unique()->nullable(); // سریال تولید شده
             $table->string('status')->nullable(); // فروش نرفته یا فروش رفته و یا بازگشت گرانتی
+            $table->string('source')->nullable(); // تامین کننده محصول
             $table->string('barcode_png')->nullable(); //
             $table->string('barcode_svg')->nullable(); //
             $table->longText('barcode_svg_html')->nullable(); //

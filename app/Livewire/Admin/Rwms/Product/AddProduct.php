@@ -19,8 +19,8 @@ class AddProduct extends Component
 
     #[Validate('required|min:3|unique:runy_w_m_products')]
     public $name ;
-    public $texts , $wm_id , $wms, $category , $category_id , $status='active' , $price , $input_stock , $names , $cats
-    , $unit , $address , $source  ;
+    public $texts , $wm_id , $wms, $category , $category_id , $status='active' , $price , $input_stock=0 , $names , $cats
+    , $unit='عدد' , $address , $source  ;
 
     public function mount()
     {
@@ -66,6 +66,7 @@ class AddProduct extends Component
                 $newSerial = new RunyWMProductSerial();
                 $newSerial->wm_product_id = $newPro->id ;
                 $newSerial->price = $newPro->price ;
+                $newSerial->source = $this->source ;
                 $newSerial->save() ;
                 $newSerial->serial = $newPro->id.'110'.$newSerial->id ;
                 $newSerial->save() ;
