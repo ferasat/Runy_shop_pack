@@ -69,7 +69,7 @@
                     @if($dis>0)
                         <h3><strong>مجموع کل با احتساب تخفیف: {{$dis}}</strong></h3>
                     @endif
-                    <button class="btn btn-success" wire:click.privent="checkout({{$total}})">Checkout</button>
+                    <button class="btn btn-success" wire:click.privent="checkout({{$total}})">تسویه حساب</button>
                     @if($badDiscount)
                         <div class="alert alert-danger mt-3">
                             کد تخفیف منقضی

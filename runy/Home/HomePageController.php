@@ -91,6 +91,11 @@ class HomePageController extends Controller
         return view('HomeView::index' , ['owl_carousel'=>true , 'homePage'=>$homePage ]);
     }
 
+    public function to_json()
+    {
+        $date = $_REQUEST['date'];
 
+        return json_decode($date);
+    }
 
 }

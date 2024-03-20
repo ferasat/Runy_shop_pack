@@ -53,6 +53,7 @@ Route::post('/upload-image', function(Request $request) {
     return response()->json($response);
 });
 
+Route::get('/toJson', [HomePageController::class , 'to_json' ])->name('toJson');
 
 //// ---------------
 

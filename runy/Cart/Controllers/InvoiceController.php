@@ -24,32 +24,34 @@ class InvoiceController extends Controller
         } elseif ($id->status == '0') {
             return 'فاکتور منقضی شده است';
         }
-        $runy_invoice = $id;
-        $runy_invoice_id = $id->id;
-
         $invoice = new \Omalizadeh\MultiPayment\Invoice($id->amount);
-        $runy_invoice->invoice_number = $invoice->getInvoiceId();
-        $runy_invoice->description = $invoice->getUuid();
-        $runy_invoice->save();
-        $invoice->setPhoneNumber($runy_invoice->cell);
-        // dd($invoice , $runy_invoice);
-        $transactionId = PaymentGateway::purchase($invoice, function (string $transactionId) {
-            //dd($transactionId);
-            $newTransaction = new Transaction();
-            $newTransaction->payment_id = $transactionId;
-            $newTransaction->transaction_id = $transactionId;
-            $newTransaction->user_id = Auth::id();
-            //$newTransaction->invoice_id = $runy_invoice->id;
-            $newTransaction->uuid = $transactionId;
-            //$newTransaction->paid = $runy_invoice->amount;
-            $newTransaction->save();
+        $invoice_getUuid = $invoice->getUuid();
 
-            $newLog = new SiteLogs();
-            $newLog->new_Log('ساخت تراکنش', 'ساخت تراکنش به آیدی:' . $newTransaction->id, 'transaction', $newTransaction->id, 'ایجاد');
+        $runy_invoice = Invoice::query()->find($id->id);
+
+        $newTransaction = new Transaction();
+        $newTransaction->uuid = $invoice_getUuid;
+        $newTransaction->invoice_id = $runy_invoice->id;
+        $newTransaction->save();
+
+        if ($runy_invoice->transaction_id == null){
+            $runy_invoice->transaction_id = $newTransaction->id;
+        }else {
+            $runy_invoice->transaction_id = $runy_invoice->transaction_id .'|'.  $newTransaction->id;
         }
-        );
+        $runy_invoice->save();
 
-        //dd($transactionId);
+        $invoice->setPhoneNumber($runy_invoice->cell);
+
+        $transactionId = PaymentGateway::purchase($invoice, function (string $transactionId ) use ($newTransaction) {
+            $nTransaction = Transaction::query()->find( $newTransaction->id);
+            $nTransaction->payment_id = $transactionId;
+            $nTransaction->transaction_id = $transactionId;
+            $nTransaction->user_id = Auth::id();
+            $nTransaction->save();
+            $newLog = new SiteLogs();
+            $newLog->new_Log('ساخت تراکنش', json_encode($nTransaction), 'transaction', $nTransaction->id, 'ایجاد' , 'json');
+        }) ;
 
         return $transactionId->view();
 
@@ -58,39 +60,46 @@ class InvoiceController extends Controller
     public function callback_url(Request $request)
     {
         $getWay = CartBankPaymentGateway::query()->where('set_default', 1)->first();
+        $newLog = new SiteLogs();
+        $newLog->new_Log('نتیجه درگاه', json_encode($request->all()), 'transaction', $request->id, $request->status, 'json');
         //dd($request->all(), json_encode($request->all()), $request->id, $request->status , $getWay);
 
 
         if ($getWay->name == 'idpay') {
             $transaction = Transaction::query()->where('transaction_id', $request->id)->first();
-            $invoice = Invoice::query()->where('invoice_number', $request->order_id)->first();
+            $invoice = Invoice::query()->find( $transaction->invoice_id);
             $cart = Cart::query()->find($invoice->cart_id);
 
-            $transaction->transaction_note = idpayStatus($request->status);
-            $transaction->invoice_id = $request->order_id;
+            $transaction->status =  $request->status;
             $transaction->amount = $request->amount;
             $transaction->card_no = $request->card_no;
+            $transaction->get_way = $getWay->name ;
             $transaction->transaction_note = json_encode($request->all());
             if ($request->status == 10) {
-                $transaction->status = 2;
+                $transaction->status = $request->status;
                 $invoice->status = 'پرداخت شده';
                 $cart->status = 'پرداخت موفق';
+
             } else {
-                $transaction->status = 0;
+                $transaction->status = $request->status;
                 $invoice->status = 'ناموفق';
                 $cart->status = 'پرداخت ناموفق';
             }
             $transaction->save();
 
-            $invoice->transaction_id = $transaction->id;
             $invoice->save();
 
             $cart->save();
-            $orders = Order::query()->where('cart_id' , $cart->id )->get();
+            $orders = Order::query()->where('cart_id', $cart->id)->get();
+
+            result_pay_on_product($cart->status  , $orders); /// نتیجه پرداخت بروی موجودی محصول و انبار
+
+            $newLog = new SiteLogs();
+            $newLog->new_Log('نتیجه خرید : ' . $invoice->status, json_encode($cart), 'cart', $cart->id, $invoice->status, 'json', Auth::id());
 
         }
 
-        return view('CartView::user.successFullPay' , compact('cart' , 'invoice', 'orders'));
+        return view('CartView::user.successFullPay', compact('cart', 'invoice', 'orders'));
 
     }
 }

@@ -16,7 +16,7 @@
                     <!-- Title End -->
                 </div>
                 <div class="row justify-content-center">
-                    <div class="col-xl-9 mb-5">
+                    <div class="col-xl-12 col-md-12 mb-5">
                         <table class="table">
                             <thead>
                             <tr>
@@ -24,7 +24,7 @@
                                 <th scope="col"></th>
                                 <th scope="col">مقدار</th>
                                 <th scope="col">شناسه کاربر</th>
-                                <th scope="col">موقعیت</th>
+                                <th scope="col">وضعیت</th>
                                 <th scope="col">نام کاربر</th>
                                 <th scope="col">تاریخ</th>
                             </tr>
@@ -36,8 +36,8 @@
                                     <td>{{ $transaction->payment_id }}</td>
                                     <td>{{ $transaction->amount }}</td>
                                     <td>{{ $transaction->user_id  }}</td>
-                                    <td>{{ $transaction->status }}</td>
-                                    <td>{{ $transaction->invoice_id }}</td>
+                                    <td>{{ runy_transaction_status($transaction->get_way , $transaction->status) }}</td>
+                                    <td>{{ invoice_info($transaction->invoice_id)->own}}</td>
                                     <td>{{ verta($transaction->created_at)->format('%d %B %Y , H:i')  }}</td>
                                 </tr>
                             @endforeach

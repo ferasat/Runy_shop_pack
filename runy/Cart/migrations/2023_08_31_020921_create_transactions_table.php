@@ -15,7 +15,7 @@ return new class extends Migration
             $table->bigInteger('amount')->nullable();
             $table->bigInteger('user_id')->nullable();
             $table->bigInteger('paid')->nullable();
-            $table->enum('status' , ['0','1','2'])->default(1)->comment('0=>cansel - 1=>not pay - 2=>success');
+            $table->enum('status' , ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'])->default(1)->comment('به درگاه پرداخت بستگی دارد');
             $table->bigInteger('invoice_id')->nullable();
             $table->string('uuid')->nullable()->comment('یک ایدی یونیک برای صورتحساب شتابیت تنظیم می‌کند.');
             $table->longText('invoice_details')->nullable();
@@ -23,6 +23,7 @@ return new class extends Migration
             $table->longText('transaction_result')->nullable();
             $table->longText('transaction_note')->nullable();
             $table->longText('card_no')->nullable();
+            $table->string('get_way' , 50)->nullable();
             $table->timestamps();
         });
     }

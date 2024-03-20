@@ -11,7 +11,7 @@ use Product\Models\Discount;
 
 class ShowCart extends Component
 {
-    public $cart, $code, $badDiscount = false, $dis = 0, $discount_id;
+    public $cart, $code, $badDiscount = false, $dis = 0, $discount_id ;
 
     public function mount()
     {
@@ -130,4 +130,6 @@ class ShowCart extends Component
         return $this->redirect(route('invoice') . '?cart_id=' . $cart->id);
 
     }
+
+
 }

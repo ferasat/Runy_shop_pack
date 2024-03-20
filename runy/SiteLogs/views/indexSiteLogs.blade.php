@@ -16,13 +16,13 @@
                     <!-- Title End -->
                 </div>
                 <div class="row justify-content-center">
-                    <div class="col-xl-9 mb-5">
+                    <div class="col-xl-12 col-md-12 mb-5">
                         <table class="table">
                             <thead>
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">عنوان</th>
-                                <th scope="col">توضیحات</th>
+                                <th scope="col" class="w-25">توضیحات</th>
                                 <th scope="col">نوع</th>
                                 <th scope="col">رویداد</th>
                                 <th scope="col">نام کاربر</th>
@@ -34,8 +34,14 @@
                                 <tr>
                                     <th scope="row">{{ $log->id }}</th>
                                     <td>{{ $log->log_name }}</td>
-                                    <td>{{ $log->description }}</td>
-                                    <td>{{ $log->type_id .'->'.$log->type }}</td>
+                                    <td class="w-25">
+                                        @if($log->format == 'json')
+                                            <a target="_blank" href="{{ asset(route('toJson').'?date='.$log->description) }}">دیدن جیسون</a>
+                                        @else
+                                            {{  $log->description }}
+                                        @endif
+                                    </td>
+                                    <td dir="ltr">{{ $log->type_id .'->'.$log->type }}</td>
                                     <td>{{ $log->event }}</td>
                                     <td>{{ fullName($log->causer_id) }}</td>
                                     <td>{{ verta($log->created_at)->format('%d %B %Y , H:i')  }}</td>

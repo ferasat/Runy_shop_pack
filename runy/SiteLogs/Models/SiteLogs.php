@@ -10,7 +10,7 @@ class SiteLogs extends Model
     use HasFactory;
 
 
-    public function new_Log($log_name , $description , $type , $type_id , $event , $causer_id=null , $user_ip=null )
+    public function new_Log($log_name , $description , $type , $type_id , $event , $format='text' , $causer_id=null , $user_ip=null  )
     {
         $newLog = new SiteLogs();
         $newLog->log_name = $log_name ;
@@ -20,6 +20,7 @@ class SiteLogs extends Model
         $newLog->event = $event ;
         $newLog->causer_id = $causer_id ;
         $newLog->user_ip = $user_ip ;
+        $newLog->format = $format ;
         $newLog->save();
 
         return $newLog->id ;

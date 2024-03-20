@@ -12,7 +12,7 @@ use SiteLogs\Models\SiteLogs;
 
 class ShowInvoice extends Component
 {
-    public $name, $family, $email, $cellPhone, $address, $cart_id, $cart, $orders;
+    public $name, $family, $email, $cellPhone, $address, $cart_id, $cart, $orders , $zip_code;
 
     public function mount()
     {

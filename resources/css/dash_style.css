@@ -1,5 +1,5 @@
-.color-primary {
-    color: #673AB7;
+:root {
+    --color-runy-primary : #6c429a ;
 }
 
 .icon-svg-panel {
@@ -22,7 +22,7 @@
     animation: rotate 2s linear infinite;
     background: #ffffffbd;
     border-radius: 50%;
-    margin: 0px auto;
+    margin: 0 auto;
     padding: 3px;
 }
 
@@ -82,6 +82,11 @@ pre {
 
 /*---- Color Runy----*/
 
+.btn-simple {
+    border: 0 !important;
+    background: transparent !important;
+    padding: 0 !important;
+}
 
 .btn {
     font-family: Vazir, serif !important;
@@ -107,27 +112,27 @@ pre {
 
 .btn-runy-outline-primary {
     background: transparent;
-    color: #6c429a;
+    color: var(--color-runy-primary) ;
     border-color: #734b9f;
 }
 
 .btn-runy-outline-primary:active, .btn-runy-outline-primary:hover, .btn-runy-outline-primary.focus, .btn-runy-outline-primary.active {
-    background: #6c429a !important;
+    background: var(--color-runy-primary) !important;
     border-color: #734b9f !important;
     color: #fff;
 }
 
 
 .bg-runy-primary {
-    background-color: #6c429a !important;
+    background-color: var(--color-runy-primary) !important;
 }
 
 .color-runy-primary {
-    color: #6c429a !important;
+    color: var(--color-runy-primary) !important;
 }
 
 .border-color-runy-primary {
-    border-color: #6c429a !important;
+    border-color: var(--color-runy-primary) !important;
 }
 
 .bg-runy-primary-g {
@@ -165,7 +170,7 @@ pre {
 }
 
 .bg-runy-club {
-    background-color: #6c429a !important;
+    background-color: var(--color-runy-primary) !important;
 }
 .bg-transparent-25 {
     --bg-opacity: 0.5;
@@ -184,7 +189,7 @@ pre {
 .dropdown-item-runy.active .dropdown-item-runy:active {
     color: var(--bs-dropdown-link-active-color);
     text-decoration: none;
-    background-color: #6c429a !important;
+    background-color: var(--color-runy-primary) !important;
 }
 
 

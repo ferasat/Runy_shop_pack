@@ -8,7 +8,7 @@ use Livewire\Component;
 
 class ShowCart extends Component
 {
-    public $cart , $orders , $status;
+    public $cart , $orders , $status , $showEdit=false;
 
     public function mount()
     {
@@ -27,6 +27,11 @@ class ShowCart extends Component
         $cart = Cart::query()->findOrFail($this->cart->id);
         $cart -> status = $this->status ;
         $cart -> save();
+    }
+
+    public function changeToEdit()
+    {
+        $this->showEdit = !$this->showEdit ;
     }
 
 /*    public function statusTCart($cart_id)

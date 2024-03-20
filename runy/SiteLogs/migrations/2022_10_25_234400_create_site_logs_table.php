@@ -14,10 +14,11 @@ class CreateSiteLogsTable extends Migration
             $table->string('log_name');
             $table->text('description')->nullable();
             $table->string('type')->nullable()->comment(' - سرویس - خرید ...');
-            $table->integer('type_id')->nullable()->comment(' - سرویس - خرید ...');
+            $table->string('type_id')->nullable()->comment(' - سرویس - خرید ...');
             $table->string('event')->nullable();
             $table->string('causer_id')->nullable(); /// عامل این تغییر یا لاگ
             $table->string('user_ip')->nullable();
+            $table->string('format' , 25)->default('text')->comment('text or json or ..');
             $table->timestamps();
         });
     }
