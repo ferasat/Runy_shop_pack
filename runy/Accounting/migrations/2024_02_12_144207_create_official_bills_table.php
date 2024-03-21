@@ -43,11 +43,7 @@ class CreateOfficialBillsTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+
     public function down()
     {
         Schema::dropIfExists('official_bills');

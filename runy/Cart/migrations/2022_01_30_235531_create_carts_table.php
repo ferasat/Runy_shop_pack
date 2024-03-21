@@ -24,7 +24,7 @@ class CreateCartsTable extends Migration
             $table->string('status',25)->default('in_process'); // in_process  - being_packaged - ready_to_send - posted - delivered - defective_information - lack_of_goods - returned - 'apply'
             $table->string('price')->nullable()->comment('قیمت بدون تخفیف');
             $table->string('total_price')->nullable();
-            $table->string('acc_status' , 30)->default('بررسی نشده');
+            $table->string('acc_status' , 30)->default('پرداخت نشده');
             $table->timestamps();
         });
     }

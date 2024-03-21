@@ -37,7 +37,13 @@
                                     <td>{{ $transaction->amount }}</td>
                                     <td>{{ $transaction->user_id  }}</td>
                                     <td>{{ runy_transaction_status($transaction->get_way , $transaction->status) }}</td>
-                                    <td>{{ invoice_info($transaction->invoice_id)->own}}</td>
+                                    <td>
+                                        @if( invoice_info_owner($transaction->invoice_id) != null )
+                                            <a href="{{ asset('/dashboard/cart/show/'.invoice_info_owner($transaction->invoice_id)['cart_id']) }}">{{ invoice_info_owner($transaction->invoice_id)['owner'] }}</a>
+                                        @else
+                                            اطلاعی نیست
+                                        @endif
+                                    </td>
                                     <td>{{ verta($transaction->created_at)->format('%d %B %Y , H:i')  }}</td>
                                 </tr>
                             @endforeach

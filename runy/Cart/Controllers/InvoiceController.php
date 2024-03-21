@@ -77,13 +77,17 @@ class InvoiceController extends Controller
             $transaction->transaction_note = json_encode($request->all());
             if ($request->status == 10) {
                 $transaction->status = $request->status;
-                $invoice->status = 'پرداخت شده';
+                $invoice->status = 'پرداخت موفق';
+                $invoice->subject = 'پرداخت موفق برای '.$invoice->owner;
                 $cart->status = 'پرداخت موفق';
+                $cart->acc_status = 'پرداخت موفق';
 
             } else {
                 $transaction->status = $request->status;
-                $invoice->status = 'ناموفق';
-                $cart->status = 'پرداخت ناموفق';
+                $invoice->status = 'پرداخت نشد';
+                $invoice->subject = 'پرداخت نشده برای '.$invoice->owner;
+                $cart->status = 'پرداخت نشد';
+                $cart->acc_status = 'پرداخت نشد';
             }
             $transaction->save();
 

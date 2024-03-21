@@ -91,10 +91,14 @@ function order_to_text ($order){
 }
 
 
-function invoice_info($invoice_id){
+function invoice_info_owner($invoice_id){
     $invoice = Invoice::query()->find($invoice_id);
-    dd($invoice , $invoice_id);
-    return $invoice;
+    //dd($invoice);
+    if ($invoice != null){
+        return [ 'owner'=>$invoice->owner , 'cart_id'=>$invoice->cart_id ] ;
+    }else {
+        return null;
+    }
 }
  function result_pay_on_product($status  , $Orders){
 

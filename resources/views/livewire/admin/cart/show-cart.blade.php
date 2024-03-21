@@ -1,7 +1,6 @@
 <div>
     <div class="modal-body">
         <div class="scroll-section" id="customer_info">
-
                 <div class="row">
                     <div class="col-md-4 mb-3">
                         <div class="card">
@@ -86,11 +85,15 @@
                                 <div class="mb-3 ">
                                     <div class="d-flex justify-content-between">
                                         <div class="">تاریخ ایجاد :</div>
-                                        <div class="">{{ verta($cart->created_at) }}</div>
+                                        <div class="">{{ verta($cart->created_at)->format('%d %B %Y , H:i') }}</div>
                                     </div>
                                     <div class="d-flex justify-content-between">
                                         <div class="">بروزرسانی وضعیت:</div>
-                                        <div class="">{{ verta($cart->updated_at) }}</div>
+                                        <div class="">{{ verta($cart->updated_at)->format('%d %B %Y , H:i') }}</div>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <div class="">وضعیت پرداخت:</div>
+                                        <div class="">{{ $cart->acc_status }}</div>
                                     </div>
 
                                 </div>
@@ -115,7 +118,7 @@
                         <div class="card">
                             <div class="card-header">فعالیت ها</div>
                             <div class="card-body">
-                                
+
                             </div>
                             <div class="card-footer"></div>
                         </div>
