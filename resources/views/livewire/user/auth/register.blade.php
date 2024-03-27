@@ -38,9 +38,9 @@
                 d="M14.5 4C15.9045 4 16.6067 4 17.1111 4.33706C17.3295 4.48298 17.517 4.67048 17.6629 4.88886C18 5.39331 18 6.09554 18 7.5L18 12.5C18 13.9045 18 14.6067 17.6629 15.1111C17.517 15.3295 17.3295 15.517 17.1111 15.6629C16.6067 16 15.9045 16 14.5 16L5.5 16C4.09554 16 3.39331 16 2.88886 15.6629C2.67048 15.517 2.48298 15.3295 2.33706 15.1111C2 14.6067 2 13.9045 2 12.5L2 7.5C2 6.09554 2 5.39331 2.33706 4.88886C2.48298 4.67048 2.67048 4.48298 2.88886 4.33706C3.39331 4 4.09554 4 5.5 4L14.5 4Z"></path>
         </svg>
         <label>ایمیل:</label>
-        <input class="form-control pe-7" placeholder="ایمیل" name="email" wire:model="email">
+        <input class="form-control pe-7" placeholder="ایمیل اختیاری است" name="email" wire:model="email">
         @error('email')
-        <div id="email-error" class="error">این گزینه اجباری است.</div>@enderror
+        <div id="email-error" class="error">فرمت ایمیل را درست وارد نکردید</div>@enderror
     </div>
     <div class="mb-3 filled form-group tooltip-end-top">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
@@ -67,7 +67,7 @@
                 d="M11 15H10 9M13 6V5C13 3.34315 11.6569 2 10 2V2C8.34315 2 7 3.34315 7 5V10"></path>
         </svg>
         <input class="form-control pe-7" name="password" type="password" wire:model="password" placeholder="رمز">
-        <a class="text-small position-absolute t-3 s-3" href="">فراموش کردی؟</a>
+
     </div>
     <button type="submit" class="btn btn-lg btn-primary" wire:click="save()" >ثبت نام</button>
 </div>

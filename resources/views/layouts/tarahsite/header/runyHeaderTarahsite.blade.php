@@ -70,6 +70,20 @@
                                                 </ol>
                                             </div>
                                         </div>
+                                    @else
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <ol class="list-group">
+                                                    <li class="list-group-item">
+                                                        <a href="{{ asset(route('customer.dashboard')) }}">پیشخوان</a>
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <a href="{{ asset(route('customer.dashboard')) }}">سفارشات</a>
+                                                    </li>
+
+                                                </ol>
+                                            </div>
+                                        </div>
                                     @endif
                                 @else
 

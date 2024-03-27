@@ -18,37 +18,6 @@ class SmsMarketingController extends Controller
         //
     }
 
-
-    public function create()
-    {
-        //
-    }
-
-
-    public function store(Request $request)
-    {
-        //
-    }
-
-
-    public function show(SmsMarketing $smsMarketing)
-    {
-        //
-    }
-
-
-    public function edit(SmsMarketing $smsMarketing)
-    {
-        //
-    }
-
-
-    public function update(Request $request, SmsMarketing $smsMarketing)
-    {
-        //
-    }
-
-
     public function setting()
     {
         return view('SmsView::settingSms');

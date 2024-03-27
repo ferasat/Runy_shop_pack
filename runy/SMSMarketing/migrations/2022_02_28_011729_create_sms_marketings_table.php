@@ -16,6 +16,7 @@ class CreateSmsMarketingsTable extends Migration
             $table->string('token')->nullable()->comment('ApiKey or ...');
             $table->string('username')->nullable();
             $table->string('password')->nullable();
+            $table->boolean('pin')->nullable();
             $table->string('sender_number_ads_1')->nullable()->comment('خطوط تبلیغاتی');
             $table->string('sender_number_ads_2')->nullable()->comment('خطوط تبلیغاتی');
             $table->string('sender_number_ads_3')->nullable()->comment('خطوط تبلیغاتی');

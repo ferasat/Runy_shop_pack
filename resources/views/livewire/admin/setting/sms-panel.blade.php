@@ -1,5 +1,14 @@
 <div class="card mb-3">
-    <div class="card-header">تنظیمات سامانه پیامک {{ $panel->name_panel }}</div>
+    <div class="card-header d-flex justify-content-between">
+        <span>تنظیمات سامانه پیامک {{ $panel->name_panel }}</span>
+        <button class="btn @if($btnDefaultTrue) btn-success @else btn-outline-warning @endif" wire:click.prevent="changePin({{ $panel->pin }})">
+            @if($btnDefaultTrue)
+                پیش فرض استفاده
+            @else
+                پیش فرض نیست
+            @endif
+        </button>
+    </div>
     <div class="row card-body">
         <div class="col-md-6 mb-3">
             <label for="token" class="form-label">توکن یا کلید API</label>

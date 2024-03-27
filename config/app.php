@@ -92,6 +92,7 @@ return [
         RunyFormBuilder\RunyFormBuilderServiceProvider::class,
         RunyWarehousing\RunyWarehousingServiceProvider::class,
         RunyAccounting\AccountingServiceProvider::class,
+        MsgBox\MsgBoxServiceProvider::class,
 
 
         /*

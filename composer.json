@@ -7,6 +7,7 @@
     "require": {
         "php": "^8.1",
         "artesaos/seotools": "^1.2.0",
+        "darkaonline/l5-swagger": "^8.6",
         "ghasedak/laravel": "^2.1",
         "guzzlehttp/guzzle": "^7.8.1",
         "harrygulliford/laravel-firebird": "^3.2",
@@ -22,7 +23,8 @@
         "phpmailer/phpmailer": "^6.9.1",
         "rappasoft/laravel-livewire-tables": "^3.2",
         "shetabit/payment": "^5.6.0",
-        "simplesoftwareio/simple-qrcode": "~4"
+        "simplesoftwareio/simple-qrcode": "~4",
+        "ext-curl": "*"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
@@ -54,6 +56,7 @@
             "Regions\\": "runy/Regions",
             "RunyFormBuilder\\": "runy/RunyFormBuilder",
             "RunyAccounting\\": "runy/Accounting",
+            "MsgBox\\": "runy/MsgBox",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
         }

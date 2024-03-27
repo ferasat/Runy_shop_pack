@@ -45,6 +45,7 @@ class ShowInvoice extends Component
         $this->validate([
            'name' => 'min:2',
            'family' => 'min:2',
+           'zip_code' => 'min:2',
            'cellPhone' => 'min:9'
         ]);
 
@@ -53,6 +54,7 @@ class ShowInvoice extends Component
         $this->cart->family = $this->family ;
         $this->cart->cell = $this->cellPhone ;
         $this->cart->address = $this->address ;
+        $this->cart->zip_code = $this->zip_code ;
         $this->cart->save() ;
 
         $invoice = new Invoice();
@@ -71,6 +73,7 @@ class ShowInvoice extends Component
         $newLog = new SiteLogs();
         $newLog->new_Log('فاکتور '.$invoice->id , 'رفتن به درگاه به نام '.$this->name.' '.$this->family ,
             'فاکتور' , $invoice->id , 'رفتن به درگاه' );
+        
 
         return redirect(asset('/pay_invoice/'.$invoice->id));
 

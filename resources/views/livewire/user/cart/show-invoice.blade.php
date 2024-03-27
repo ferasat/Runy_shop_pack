@@ -33,7 +33,7 @@
                     <div class="row my-2">
                         <div class="form-group col-6">
                             <label for="zip_code">کدپستی</label>
-                            <input type="text" class="form-control " id="zip_code" wire:model.live.blur="zip_code">
+                            <input type="text" class="form-control " id="zip_code" wire:model.live="zip_code">
                         </div>
 
 

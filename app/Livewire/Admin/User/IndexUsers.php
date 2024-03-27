@@ -41,7 +41,9 @@ class IndexUsers extends Component
 
     public function deleteUser($user_id)
     {
-        dd($user_id);
+        User::query()->find($user_id)->delete();
+        $this->mount();
+        $this->render() ;
     }
 
     public function editUser($user_id)
