@@ -124,4 +124,10 @@ class ServiceController extends Controller
     {
         return redirect(asset('product/'.$id->slug));
     }
+
+
+    public function index_api()
+    {
+
+    }
 }

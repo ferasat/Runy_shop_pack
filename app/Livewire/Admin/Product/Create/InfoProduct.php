@@ -4,16 +4,18 @@ namespace App\Livewire\Admin\Product\Create;
 
 use Livewire\Component;
 use Product\Models\Product;
+use RunyAccounting\Models\AccSetting;
 
 class InfoProduct extends Component
 {
-    public $product , $price  , $input_stock=0 , $specialPrice;
+    public $product , $price  , $input_stock=0 , $specialPrice , $currency;
 
     public function mount()
     {
         $this->price = $this->product->price;
         $this->input_stock = $this->product->input_stock;
         $this->specialPrice = $this->product->specialPrice;
+        $this->currency = AccSetting::query()->first()->default_currency;
         ///dd($this->price);
     }
 

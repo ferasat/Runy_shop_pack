@@ -33,9 +33,9 @@
     <td>{{ verta($cart->created_at)->format('%d %B %Y , H:i') }}</td>
     <td>{{ statusCart($cart->status) }}</td>
     <td>{{ number_format($cart->total_price) }}</td>
-    <td>
-        @if(statusCart($cart->status) == 'پرداخت موفق') @endif
-        {{ statusCart($cart->status) }}</td>
+    <td class="{{ statusCartColor($cart->status) }}">
+        {{ statusCart($cart->status) }}
+    </td>
     <td>
         <button class="btn btn-outline-danger btn-sm ms-1" data-bs-toggle="modal" data-bs-target="#deleteModal{{$cart->id}}">حذف</button>
         <div class="modal fade" id="deleteModal{{$cart->id}}" tabindex="-1" aria-labelledby="deleteModal{{$cart->id}}Label" aria-hidden="true">

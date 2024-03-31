@@ -25,8 +25,8 @@
     "vue-owl-carousel": "^2.0.3"
   },
   "name": "runy_shop_pack",
-  "description": "",
-  "version": "1.1.0",
+  "description": "مدیریت جامع فروشگاه اینترنتی - حسابداری - انبارداری - مدیریت مشتریان - تعریف خدماتت و سرویس ها -سئوی قوی",
+  "version": "1.1.1",
   "main": "vite.config.js",
   "directories": {
     "test": "tests"

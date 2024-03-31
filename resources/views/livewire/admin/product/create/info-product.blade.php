@@ -8,10 +8,12 @@
             <div class="col-3">
                 <label for="price" class="form-label">قیمت محصول</label>
                 <input type="number" class="form-control" wire:model.live.blur="price">
+                <div class="d-block">{{ number_format($price) .' '.$currency }}</div>
             </div>
             <div class="col-3">
                 <label for="specialPrice" class="form-label">قیمت فروش ویژه</label>
                 <input type="number" class="form-control" wire:model.live.blur="specialPrice">
+                <div class="d-block">{{ number_format($specialPrice) .' '.$currency }}</div>
             </div>
             <div class="col-3">
                 <label for="input_stock" class="form-label">تعداد موجودی محصول</label>

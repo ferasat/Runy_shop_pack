@@ -4,12 +4,12 @@
             <div class="card">
                 <div class="card-header">پیشخوان</div>
                 <div class="card-body">
-                    <ul class="list-group">
-                        <li class="list-group-item"><a href="" wire:click.prevent="dashboardStatus('dashboard')">پیشخوان</a></li>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><a href="#" wire:click.prevent="dashboardStatus('dashboard')">پیشخوان</a></li>
                         <li class="list-group-item"><a href="#" wire:click.prevent="dashboardStatus('carts')">سفارشات</a></li>
                         <li class="list-group-item"><a href="#" wire:click.prevent="dashboardStatus('logs')">فعالیت ها</a></li>
                         <li class="list-group-item"><a href="#" wire:click.prevent="dashboardStatus('rates')">امتیازات</a></li>
-                        <li class="list-group-item"><a href="#" wire:click.prevent="dashboardStatus('profile')">تغییر مشخصات</a></li>
+                        <li class="list-group-item"><a href="#" wire:click.prevent="dashboardStatus('profile')">ویرایش مشخصات</a></li>
                     </ul>
                 </div>
             </div>
@@ -54,7 +54,7 @@
                 @elseif($dashboard_status == 'rates')
                     @livewire('user.user-dashboard.user-dashboard-my-rates' , compact('user'))
                 @elseif($dashboard_status == 'profile')
-                    @livewire('user.user-dashboard.user-dashboard-my-profile' , compact('user'))
+                    @livewire('user.user-dashboard.user-dashboard-my-profile' )
                 @endif
             @endif
         </div>

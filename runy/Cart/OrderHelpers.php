@@ -26,7 +26,9 @@ function statusCart($status)
         return 'تحویل داده شده';
     } elseif ($status == 'returned') {
         return 'برگشت خورده';
-    }  elseif ($status == 'پرداخت موفق') {
+    } elseif ($status == 'ثبت سفارش') {
+        return 'ثبت سفارش';
+    } elseif ($status == 'پرداخت موفق') {
         return 'پرداخت موفق';
     } elseif ($status == 'defective_information') {
         return 'نقص در اطلاعات';
@@ -36,6 +38,33 @@ function statusCart($status)
         return 'رسیدگی شد'; // برای خدمات
     } else {
         return 'اطلاعی نیست';
+    }
+}
+function statusCartColor($status)
+{
+    /// 1- 'in_process' 2- 'being_packaged'  3- 'ready_to_send' 4-
+    if ($status == 'in_process') {
+        return 'bg-runy-inprocess-low';
+    } elseif ($status == 'being_packaged') {
+        return 'bg-runy-inprocess-low';
+    } elseif ($status == 'ready_to_send') {
+        return 'bg-runy-inprocess';
+    } elseif ($status == 'posted') {
+        return 'bg-runy-success';
+    } elseif ($status == 'delivered') {
+        return 'تحویل داده شده';
+    } elseif ($status == 'returned') {
+        return 'bg-runy-danger-low';
+    } elseif ($status == 'پرداخت موفق') {
+        return 'bg-runy-success-low';
+    } elseif ($status == 'defective_information') {
+        return 'bg-runy-danger-low';
+    } elseif ($status == 'lack_of_goods') {
+        return 'bg-runy-danger';
+    } elseif ($status == 'apply') {
+        return 'bg-runy-success-high'; // برای خدمات
+    } else {
+        return 'bg-runy-primary';
     }
 }
 

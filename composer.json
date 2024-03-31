@@ -6,6 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.1",
+        "ext-curl": "*",
         "artesaos/seotools": "^1.2.0",
         "darkaonline/l5-swagger": "^8.6",
         "ghasedak/laravel": "^2.1",
@@ -15,16 +16,15 @@
         "imanghafoori/laravel-heyman": "^2.2.55",
         "intervention/image": "^2.7.2",
         "laravel/fortify": "^1.20.0",
-        "laravel/framework": "^10.47",
-        "laravel/sanctum": "^3.2",
+        "laravel/framework": "^10.48.4",
+        "laravel/sanctum": "^v3.3.3",
         "laravel/tinker": "^2.8",
-        "livewire/livewire": "^3.4.4",
+        "livewire/livewire": "^3.4.9",
         "omalizadeh/laravel-multi-payment": "^3.1.0",
         "phpmailer/phpmailer": "^6.9.1",
         "rappasoft/laravel-livewire-tables": "^3.2",
         "shetabit/payment": "^5.6.0",
-        "simplesoftwareio/simple-qrcode": "~4",
-        "ext-curl": "*"
+        "simplesoftwareio/simple-qrcode": "~4"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

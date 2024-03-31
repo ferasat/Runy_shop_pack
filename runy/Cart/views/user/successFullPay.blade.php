@@ -28,6 +28,9 @@
                         </ul>
                     </div>
                 </div>
+                <div class="my-4">
+                    <a href="{{ asset('/user/dashboard') }}" class="btn btn-info w-100px" >پیشخوان</a>
+                </div>
 
             </div>
         </div>

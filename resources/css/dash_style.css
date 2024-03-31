@@ -1,5 +1,19 @@
 :root {
+    --color-runy-primary-low : #BE90D4 ;
     --color-runy-primary : #6c429a ;
+    --color-runy-primary-high : #6E248D ;
+    --color-runy-success-low : #8EFFC1 ;
+    --color-runy-success : #4EEC91 ;
+    --color-runy-success-high : #1EBC61;
+    --color-runy-inprocess-low : #39D5FF ;
+    --color-runy-inprocess : #19B5FE ;
+    --color-runy-inprocess-high : #0287D0;
+    --color-runy-warning-low : #fdd35f;
+    --color-runy-warning : #fac802;
+    --color-runy-warning-high : #f6a000;
+    --color-runy-danger-low : #FF8C7C ;
+    --color-runy-danger : #f6321e;
+    --color-runy-danger-high : #870000;
 }
 
 .icon-svg-panel {
@@ -126,6 +140,12 @@ pre {
 .bg-runy-primary {
     background-color: var(--color-runy-primary) !important;
 }
+.bg-runy-primary-low {
+    background-color: var(--color-runy-primary-low) !important;
+}
+.bg-runy-primary-high {
+    background-color: var(--color-runy-primary-high) !important;
+}
 
 .color-runy-primary {
     color: var(--color-runy-primary) !important;
@@ -186,22 +206,49 @@ pre {
     border-color: #f39c12 !important;
 }
 
-.dropdown-item-runy.active .dropdown-item-runy:active {
-    color: var(--bs-dropdown-link-active-color);
-    text-decoration: none;
-    background-color: var(--color-runy-primary) !important;
-}
 
-
-.border-color-green {
-    border-color: #00c525 !important;
-}
 .bg-color-green {
     background-color: #00c52529 !important;
 }
 
+.bg-runy-inprocess {
+    background-color: var(--color-runy-inprocess);
+}
+.bg-runy-inprocess-low {
+    background-color: var(--color-runy-inprocess-low);
+}
+.bg-runy-inprocess-high {
+    background-color: var(--color-runy-inprocess-high);
+}
+
+.bg-runy-warning {
+    background-color: var(--color-runy-warning);
+}
+.bg-runy-warning-low {
+    background-color: var(--color-runy-warning-low);
+}
+.bg-runy-warning-high {
+    background-color: var(--color-runy-warning-high);
+}
+
 .bg-runy-success {
-    background-color: #1abc9c;
+    background-color: var(--color-runy-success);
+}
+.bg-runy-success-low {
+    background-color: var(--color-runy-success-low);
+}
+.bg-runy-success-high {
+    background-color: var(--color-runy-success-high);
+}
+
+.bg-runy-danger {
+    background-color: var(--color-runy-danger);
+}
+.bg-runy-danger-low {
+    background-color: var(--color-runy-danger-low);
+}
+.bg-runy-danger-high {
+    background-color: var(--color-runy-danger-high);
 }
 
 .btn-runy-success {
@@ -220,7 +267,18 @@ pre {
     --bs-btn-disabled-border-color: #198754;
 }
 
+.border-color-green {
+    border-color: #00c525 !important;
+}
+
 /*-- Header Amin --*/
+.dropdown-item-runy.active .dropdown-item-runy:active {
+    color: var(--bs-dropdown-link-active-color);
+    text-decoration: none;
+    background-color: var(--color-runy-primary) !important;
+}
+
+
 .mobile_header {
     display: none; /* پیش فرض: عدم نمایش کلاس */
 }
@@ -240,6 +298,19 @@ pre {
 /*.li-s-menu-hover li:hover {
     border-bottom: 1px solid red;
 }*/
+
+/*  --- Effects  ---*/
+.runy-text-shadow-sm {
+    text-shadow: 0px 2px 3px rgba(0,0,0,0.51);
+}
+
+.runy-hover-list:hover {
+    transition: 0.5s all;
+    transform: scale(1.02);
+    -webkit-box-shadow: 0px 14px 20px -16px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 14px 20px -16px rgba(0,0,0,0.75);
+    box-shadow: 0px 14px 20px -16px rgba(0,0,0,0.75);
+}
 
 
 /* موبایل: تا یک حداکثر عرض ۷۶۷ پیکسل */

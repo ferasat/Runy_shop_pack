@@ -15,5 +15,11 @@ use Illuminate\Http\Request;
  */
 class BaseController extends Controller
 {
-    //
+    public function errorMessage (){
+
+    }
+
+    public function loginMessage (){
+
+    }
 }

@@ -12,33 +12,42 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
+
     protected $fillable = [
         'name',
+        'family',
+        'cellPhone',
+        'status',
+        'levelUser',
+        'levelPermission',
         'email',
         'password',
     ];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
     protected $hidden = [
         'password',
         'remember_token',
     ];
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public static function isAdmin()
+    {
+        if (self::query()->status > 8) {
+            return true ;
+        }else {
+            return false ;
+        }
+    }
+
+    public static function isActive()
+    {
+        if (self::query()->status == 'active') {
+            return true ;
+        }else {
+            return false ;
+        }
+    }
 }

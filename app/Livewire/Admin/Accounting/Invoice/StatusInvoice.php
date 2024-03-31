@@ -41,13 +41,7 @@ class StatusInvoice extends Component
     public function makeInvoice($re_id)
     {
         $urlPay = asset('/cip_to_payment/'.$re_id);
-        $text='تشریفات اختصاصی آسمان هفتم (CIP) سفرخوشی را برای شما آرزومند است.
-        نوع پرواز:' .flyType($this->reserve->type) . '
-        تاریخ:' . verta($this->reserve->checkInFly)->format('%d %B, %Y') . '
-        شماره قرارداد:' . $this->reserve->re_code . '
-        لینک پرداخت:
-        ' . $urlPay . '
-        پشتیبانی: 02191306767';
+        $text='';
 
         $newSMS = new Limosms();
         $result = $newSMS->sendsms($this->reserve->cell, $text);

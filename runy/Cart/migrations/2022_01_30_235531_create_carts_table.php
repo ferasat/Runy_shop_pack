@@ -21,6 +21,7 @@ class CreateCartsTable extends Migration
             $table->string('discount_id')->nullable();  /// ایدی تخفیف
             $table->string('type_cart' , 50)->default('خریدمحصول')->nullable(); // محصول یا خدمات و یا خرید فایل یا ... // service - dl-product - ...
             $table->string('user_id')->nullable(); // ایدی کاربری که این سبد به نام اون خرید می شود
+            $table->bigInteger('seller_id')->nullable(); // ایدی کارمند فروشنده در مواقعی که فروش حضوری یا توسط کارمند فروش ثبت می شود
             $table->string('status',25)->default('in_process'); // in_process  - being_packaged - ready_to_send - posted - delivered - defective_information - lack_of_goods - returned - 'apply'
             $table->string('price')->nullable()->comment('قیمت بدون تخفیف');
             $table->string('total_price')->nullable();

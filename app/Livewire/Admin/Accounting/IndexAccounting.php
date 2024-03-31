@@ -8,10 +8,17 @@ use Carbon\Carbon;
 use Cart\Models\Transaction;
 use Livewire\Component;
 use RunyAccounting\Models\Accounting;
+use RunyAccounting\Models\AccSetting;
 
 class IndexAccounting extends Component
 {
     public $statement_id , $statement_name , $statement_type , $item_type , $item_id , $credit, $credit_limit ,$software_code,$vat_id ;
+    public $tax , $tax_calculation_type , $tax1 , $tax1_calculation_type , $tax2 , $tax2_calculation_type , $tax3 , $tax3_calculation_type ,
+    $default_currency ,$currency2 ,$currency3 , $default_get_way , $register_receipt ;
+    public $showMsg ;
+
+    protected $acc_setting ;
+
     public function mount()
     {
         $acc = Accounting::query()->first();
@@ -20,6 +27,21 @@ class IndexAccounting extends Component
         }else{
             $this->statement_id = $acc->statement_id ;
         }
+
+        $this->acc_setting =  AccSetting::query()->first();
+        $this->tax = $this->acc_setting->tax ;
+        $this->tax_calculation_type = $this->acc_setting->tax_calculation_type ;
+        $this->tax1 = $this->acc_setting->tax1 ;
+        $this->tax1_calculation_type = $this->acc_setting->tax1_calculation_type ;
+        $this->tax2 = $this->acc_setting->tax2 ;
+        $this->tax2_calculation_type = $this->acc_setting->tax2_calculation_type ;
+        $this->tax3 = $this->acc_setting->tax3 ;
+        $this->tax3_calculation_type = $this->acc_setting->tax3_calculation_type ;
+        $this->default_currency = $this->acc_setting->default_currency ;
+        $this->currency2 = $this->acc_setting->currency2 ;
+        $this->currency3 = $this->acc_setting->currency3 ;
+        $this->default_get_way = $this->acc_setting->default_get_way ;
+        $this->register_receipt = $this->acc_setting->register_receipt ;
 
         //dd($this->statement_id);
     }
@@ -77,4 +99,26 @@ class IndexAccounting extends Component
         }
 
     }*/
+
+    public function save()
+    {
+        $this->acc_setting =  AccSetting::query()->first();
+        $this->acc_setting->tax = $this->tax ;
+        $this->acc_setting->tax_calculation_type = $this->tax_calculation_type ;
+        $this->acc_setting->tax1 = $this->tax1 ;
+        $this->acc_setting->tax1_calculation_type = $this->tax1_calculation_type ;
+        $this->acc_setting->tax2 = $this->tax2 ;
+        $this->acc_setting->tax2_calculation_type = $this->tax2_calculation_type ;
+        $this->acc_setting->tax3 = $this->tax3 ;
+        $this->acc_setting->tax3_calculation_type = $this->tax3_calculation_type ;
+
+        $this->acc_setting->default_currency = $this->default_currency ;
+        $this->acc_setting->currency2 = $this->currency2 ;
+        $this->acc_setting->currency3 = $this->currency3 ;
+        $this->acc_setting->default_get_way = $this->default_get_way ;
+        $this->acc_setting->register_receipt = $this->register_receipt ;
+        $this->acc_setting->save() ;
+
+        $this->showMsg = 'ذخیره شد';
+    }
 }

@@ -199,4 +199,18 @@ class ProductController extends Controller
         }
     }
 
+    /* --- API ---*/
+    public function index_api()
+    {
+        $allProducts = Product::query()->orderByDesc('id')->paginate(15);
+        return response()->json();
+    }
+    public function product_slug_api()
+    {
+
+    }
+    public function product_id_api()
+    {
+
+    }
 }

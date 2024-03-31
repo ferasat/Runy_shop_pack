@@ -79,7 +79,7 @@ class InvoiceController extends Controller
                 $transaction->status = $request->status;
                 $invoice->status = 'پرداخت موفق';
                 $invoice->subject = 'پرداخت موفق برای '.$invoice->owner;
-                $cart->status = 'پرداخت موفق';
+                $cart->status = 'ثبت سفارش';
                 $cart->acc_status = 'پرداخت موفق';
 
             } else {

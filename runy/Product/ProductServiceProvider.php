@@ -27,5 +27,6 @@ class ProductServiceProvider extends ServiceProvider
 
         Route::middleware('web')->group(base_path('runy/Product/product_route.php'));
         Route::middleware('web')->group(base_path('runy/Product/product_show_route.php'));
+        Route::middleware('web')->group(base_path('runy/Product/product_route_api.php'));
     }
 }
