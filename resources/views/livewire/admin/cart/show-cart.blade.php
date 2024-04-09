@@ -87,17 +87,17 @@
                                         <div class="">تاریخ ایجاد :</div>
                                         <div class="">{{ verta($cart->created_at)->format('%d %B %Y , H:i') }}</div>
                                     </div>
-                                    <div class="d-flex justify-content-between">
+                                    <div class="d-flex justify-content-between ">
                                         <div class="">بروزرسانی وضعیت:</div>
                                         <div class="">{{ verta($cart->updated_at)->format('%d %B %Y , H:i') }}</div>
                                     </div>
-                                    <div class="d-flex justify-content-between">
+                                    <div class="d-flex justify-content-between ">
                                         <div class="">وضعیت پرداخت:</div>
                                         <div class="">{{ $cart->acc_status }}</div>
                                     </div>
 
                                 </div>
-                                <div class="mb-3">
+                                <div class="mb-3 {{ statusCartColor($status) }}">
                                     <label for="status{{$cart->id}}">وضعیت:</label>
                                     <select class="form-select" id="status{{$cart->id}}" wire:model.live="status">
                                         <option value="in_process">در حال پردازش</option>
@@ -110,15 +110,31 @@
                                         <option value="defective_information">اطلاعات اشتباه</option>
                                     </select>
                                 </div>
+                                <div class="my-3">
+                                    <div class="d-flex justify-content-between">
+                                        <span>تغییر وضعیت به خریدار اطلاع داده شود</span>
+                                        <span><input class="form-check-input" type="checkbox" wire:model="notifyToCustomer" /></span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="card-footer"></div>
+                            <div class="card-footer">
+                                <button class="btn btn-primary" wire:click.privent="saveStatus()" @if($deactivateBtnStatus) disabled @endif>ذخیره</button>
+                                <br>
+                                <span class="badge bg-info text-white rounded mt-2">{{ $msg_sms_status }}</span>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-4 mb-3">
                         <div class="card">
                             <div class="card-header">فعالیت ها</div>
                             <div class="card-body">
-
+                                <ul class="list-group">
+                                    @foreach($logsCart as $log)
+                                        <li class="list-group-item">
+                                            <strong>{{ $log->id.'-'.$log->log_name }} :</strong> {{ $log->event }}
+                                        </li>
+                                    @endforeach
+                                </ul>
                             </div>
                             <div class="card-footer"></div>
                         </div>

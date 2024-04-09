@@ -26,5 +26,7 @@ class OrderServiceProvider extends ServiceProvider
         ]);
 
         Route::middleware('web')->group(base_path('runy/Cart/order_route.php'));
+        Route::middleware('web')->group(base_path('runy/Cart/cart_route.php'));
+        Route::middleware('api')->group(base_path('runy/Cart/cart_api_route.php'));
     }
 }

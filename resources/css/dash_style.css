@@ -212,43 +212,43 @@ pre {
 }
 
 .bg-runy-inprocess {
-    background-color: var(--color-runy-inprocess);
+    background-color: var(--color-runy-inprocess) !important;
 }
 .bg-runy-inprocess-low {
-    background-color: var(--color-runy-inprocess-low);
+    background-color: var(--color-runy-inprocess-low) !important;
 }
 .bg-runy-inprocess-high {
-    background-color: var(--color-runy-inprocess-high);
+    background-color: var(--color-runy-inprocess-high) !important;
 }
 
 .bg-runy-warning {
-    background-color: var(--color-runy-warning);
+    background-color: var(--color-runy-warning) !important;
 }
 .bg-runy-warning-low {
-    background-color: var(--color-runy-warning-low);
+    background-color: var(--color-runy-warning-low) !important;
 }
 .bg-runy-warning-high {
-    background-color: var(--color-runy-warning-high);
+    background-color: var(--color-runy-warning-high) !important;
 }
 
 .bg-runy-success {
-    background-color: var(--color-runy-success);
+    background-color: var(--color-runy-success) !important;
 }
 .bg-runy-success-low {
-    background-color: var(--color-runy-success-low);
+    background-color: var(--color-runy-success-low) !important;
 }
 .bg-runy-success-high {
-    background-color: var(--color-runy-success-high);
+    background-color: var(--color-runy-success-high) !important;
 }
 
 .bg-runy-danger {
-    background-color: var(--color-runy-danger);
+    background-color: var(--color-runy-danger) !important;
 }
 .bg-runy-danger-low {
-    background-color: var(--color-runy-danger-low);
+    background-color: var(--color-runy-danger-low) !important;
 }
 .bg-runy-danger-high {
-    background-color: var(--color-runy-danger-high);
+    background-color: var(--color-runy-danger-high) !important;
 }
 
 .btn-runy-success {

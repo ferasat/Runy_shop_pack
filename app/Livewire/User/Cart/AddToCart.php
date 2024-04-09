@@ -84,15 +84,9 @@ class AddToCart extends Component
                 session()->put('cart', $cart);
                 session()->put('success_add', 'محصول به سبد خرید اضافه شد!');
 
-               // return redirect()->back()->with('success', 'Product added to cart successfully!');
             }
 
-            //   dd(session()->all());
-
         }
-
-
-        //dd($totalQuantity);
 
 
         $this->showModal=true;

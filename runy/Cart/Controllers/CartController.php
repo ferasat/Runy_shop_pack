@@ -47,12 +47,13 @@ class CartController extends Controller
     public function edit(Cart $cart)
     {
         return view('CartView::admin.addCart', compact('cart'));
-        //dd($cart);
     }
 
-    public function update(Request $request, Cart $cart)
+
+    /// برای فروش شناور
+    public function manualSale()
     {
-        //
+        return view('CartView::admin.manualSale.manual_sale');
     }
 
 

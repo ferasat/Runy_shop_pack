@@ -3,6 +3,7 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Enums\LevelUser;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -10,7 +11,7 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable ;
 
 
     protected $fillable = [
@@ -50,4 +51,25 @@ class User extends Authenticatable
             return false ;
         }
     }
+
+    public static function createFastUser($name , $family , $cell , $email=null , $password=null)
+    {
+        if ($password == null){
+            $password = rand(10008000 , 99999999);
+        }
+        if ($email == null) {
+            $email = $cell.'@rs.ir';
+        }
+        $newUser = new User();
+        $newUser->name = $name ;
+        $newUser->family = $family ;
+        $newUser->cellPhone = $cell ;
+        $newUser->email = $email ;
+        $newUser->password = bcrypt($password) ;
+        $newUser->save() ;
+
+        return $newUser ;
+    }
+
+
 }

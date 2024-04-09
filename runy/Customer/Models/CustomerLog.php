@@ -9,7 +9,7 @@ class CustomerLog extends Model
 {
     use HasFactory;
 
-    public function newLog($customer_id , $full_name , $department=null , $log_subject , $note=null , $date=null  )
+    public static function newLog($customer_id , $full_name , $department=null , $log_subject , $note=null , $date=null  )
     {
         $newLog = new CustomerLog();
         $newLog->customer_id = $customer_id ;

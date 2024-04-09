@@ -7,8 +7,17 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 class RegisterResource extends JsonResource
 {
-    public function toArray(Request $request): array
+    public function toArray(Request $request)
     {
-        return parent::toArray($request);
+        //return parent::toArray($request);
+        return response()->json([
+            'data'=>[
+                'name'=>$request->name ,
+                'family'=>$request->family ,
+                'email'=>$request->email ,
+                'token'=>$request->token ,
+                'cellPhone'=>$request->cellPhone
+            ]
+        ]);
     }
 }

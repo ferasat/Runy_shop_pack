@@ -1,18 +1,26 @@
 <?php
 
-namespace App\Livewire\Admin\Cart;
+namespace App\Livewire\Admin\Cart\ManualSale;
 
 use App\Models\User;
+use Cart\Models\Cart;
 use Cart\Models\Order;
 use Customer\Models\Customer;
 use Customer\Models\CustomerLog;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Product\Models\Product;
+use SiteLogs\Models\SiteLogs;
+use Livewire\Attributes\On;
+use Livewire\Attributes\Url;
 
-class AddCart extends Component
+class ManualSale extends Component
 {
-    public $cart, $name, $family, $cell, $customers, $customerSearch, $customerSelect, $status
-    , $services, $products, $productSearch, $serviceSearch, $orders;
+    #[Url(history: true)]
+    public $cart_id = '';
+    public $status ='step1' ,$cart, $name, $family, $cell, $customers, $customerSearch, $customerSelect
+    , $services, $products, $productSearch, $serviceSearch, $orders , $qAdd=false , $customer;
+    public $sum ;
 
     public function mount()
     {
@@ -21,18 +29,17 @@ class AddCart extends Component
         $this->services = [];
         $this->products = [];
         $this->status = 'step1';
-        $this->orders = Order::query()->where('cart_id', $this->cart->id)->get();
+        $this->sum = 0 ;
     }
-
     public function render()
     {
-        return view('livewire.admin.cart.add-cart');
+        return view('livewire.admin.cart.manual-sale.manual-sale');
     }
 
-    public function customer_search()
+    public function updated()
     {
-        $this->customerSelect = null;
         if (strlen($this->customerSearch) > 2) {
+            //dd(555);
             $this->customers = Customer::query()
                 ->where('name', 'LIKE', '%' . $this->customerSearch . "%")
                 ->orWhere('family', 'LIKE', '%' . $this->customerSearch . "%")
@@ -43,25 +50,21 @@ class AddCart extends Component
         }
     }
 
-    public function updatedCustomerSelect()
+    public function customer_search()
     {
-        //dd(555);
+        $this->customerSelect = null;
+        if (strlen($this->customerSearch) > 2) {
+            //dd(555);
+            $this->customers = Customer::query()
+                ->where('name', 'LIKE', '%' . $this->customerSearch . "%")
+                ->orWhere('family', 'LIKE', '%' . $this->customerSearch . "%")
+                ->orWhere('cell', 'LIKE', '%' . $this->customerSearch . "%")
+                ->get();
+
+            $this->render();
+        }
     }
 
-    public function step1()
-    {
-        $user = Customer::query()->find($this->customerSelect);
-        $this->name = $user->name;
-        $this->family = $user->family;
-        $this->cell = $user->cell;
-
-        $this->cart->name = $this->name;
-        $this->cart->family = $this->family;
-        $this->cart->cell = $this->cell;
-        $this->cart->save();
-
-        $this->status = 'step2';
-    }
 
     public function product_search()
     {
@@ -171,12 +174,32 @@ class AddCart extends Component
         $this->render();
     }
 
+    #[On('add-customer-manual-sale')]
+    public function qAddCustomer($cart_id, $customer_id)
+    {
+        $this->customer = Customer::query()->find($customer_id);
+        $this->cart = Cart::query()->find($cart_id);
+        $this->cart_id = $cart_id ;
+        $this->qAdd = true;
+        $this->step1();
+    }
+    public function step1()
+    {
+        if ($this->qAdd == false){
+            $this->customer = Customer::query()->find($this->customerSelect);
+            $this->cart = Cart::createFastCart($this->customer->name, $this->customer->family, $this->customer->cell, $this->customer->customer_user_id);
+        }
+        $this->orders = Order::query()->where('cart_id', $this->cart->id)->get();
+        $this->status = 'step2';
+        $this->render();
+    }
+
     public function step2()
     {
-        $customer = Customer::query()->find($this->customerSelect);
-        $user = User::query()->find($customer->customer_user_id);
+        $user = User::query()->find($this->customer->customer_user_id);
         $this->orders = Order::query()->where('cart_id' , $this->cart->id)->get();
         $price_final = 0 ;
+
         foreach ($this->orders as $order){
             if ($order->product_ps_price < $order->product_price ){
                 $price_final = $price_final + $order->product_ps_price ;
@@ -184,6 +207,7 @@ class AddCart extends Component
                 $price_final = $price_final + $order->product_price ;
             }
         }
+
         $this->cart->total_price = $price_final ;
         $this->cart->user_id = $user->id ;
         $this->cart->save();
@@ -198,5 +222,23 @@ class AddCart extends Component
         $newCustomerLog->save();
 
         $this->status = 'step3'; // final
+    }
+
+    #[on('update-manual-cart')]
+    public function update_manual_cart()
+    {
+        $this->cart = Cart::query()->find($this->cart->id);
+        //dd($this->cart);
+        $this->orders = Order::query()->where('cart_id' , $this->cart->id)->get();
+
+        $this->sum = 0 ;
+        foreach ($this->orders as $order){
+            if ($order->product_ps_price > 1 ){
+                $this->sum = $this->sum + $order->product_price ;
+            }else{
+                $this->sum = $this->sum + $order->product_ps_price ;
+            }
+        }
+        $this->render();
     }
 }

@@ -17,7 +17,16 @@ Route::get('/users', function () {
 });
 
 Route::group(['prefix'=> '/V1'] , function (){
+    Route::get('/login', [\App\Http\Controllers\Api\V1\AuthApiController::class , 'index']);
+    Route::post('/login', [\App\Http\Controllers\Api\V1\AuthApiController::class , 'login']);
+
     Route::get('/register', [\App\Http\Controllers\Api\V1\AuthApiController::class , 'index']);
     Route::post('/register', [\App\Http\Controllers\Api\V1\AuthApiController::class , 'register']);
+
+
+    /*----- Cart -----*/
+    Route::group(['prefix' => '/cart' , 'middleware' => 'auth:sanctum'] , function (){
+        Route::get('/index', [\Cart\Controllers\CartApiController::class , 'index']);
+    });
 });
 

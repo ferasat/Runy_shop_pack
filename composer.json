@@ -57,6 +57,7 @@
             "RunyFormBuilder\\": "runy/RunyFormBuilder",
             "RunyAccounting\\": "runy/Accounting",
             "MsgBox\\": "runy/MsgBox",
+            "Enums\\": "runy/Enums",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
         }

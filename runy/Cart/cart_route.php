@@ -17,6 +17,9 @@ Route::prefix('/dashboard')->middleware('auth')->group( function (){
     Route::get('/cart/delete/{id}', [CartController::class , 'destroy']);
 
     Route::get('/cart/transactions', [TransactionController::class , 'index'])->name('index.transactions');
+
+
+    Route::get('/cart/Create-Manual-Sale', [CartController::class , 'manualSale'])->name('manualSale');
 });
 
 

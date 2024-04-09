@@ -1814,6 +1814,18 @@ main.profile-user-page .responsive-profile-menu .dropdown-menu a i {
     margin: 4px 0 0 7px;
 }
 
+.w-180px {
+    width: 180px !important;
+}
+.w-160px {
+    width: 160px !important;
+}
+.w-140px {
+    width: 140px !important;
+}
+.w-110px {
+    width: 110px !important;
+}
 .w-100px {
     width: 100px !important;
 }
@@ -1831,4 +1843,21 @@ main.profile-user-page .responsive-profile-menu .dropdown-menu a i {
 }
 .text-size-8rem {
     font-size: 8rem !important;
+}
+.vertical-text {
+    writing-mode: vertical-rl !important;
+}
+.rotate-90 {
+    transform: rotate(90deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.-rotate-90 {
+    transform: rotate(-90deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

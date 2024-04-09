@@ -47,7 +47,7 @@ class LimoSms extends Model
         curl_setopt($process, CURLOPT_RETURNTRANSFER, TRUE);
         curl_setopt($process, CURLOPT_FOLLOWLOCATION, true);
         curl_setopt($process, CURLOPT_HTTPHEADER,
-            array('Content-Type: application/json', 'ApiKey:' . self::$apikey));
+            array('Content-Type: application/json', 'ApiKey:' . self::get_apikey() ));
         $return = curl_exec($process);
         $httpcode = curl_getinfo($process, CURLINFO_HTTP_CODE);
         curl_close($process);
@@ -74,7 +74,7 @@ class LimoSms extends Model
         curl_setopt($process, CURLOPT_RETURNTRANSFER, TRUE);
         curl_setopt($process, CURLOPT_FOLLOWLOCATION, true);
         curl_setopt($process, CURLOPT_HTTPHEADER, array('Content-Type: application/json'
-        , 'ApiKey:'. self::$apikey ));
+        , 'ApiKey:'. self::get_apikey() ));
         $return = curl_exec($process);
         $httpcode = curl_getinfo($process, CURLINFO_HTTP_CODE);
         curl_close($process);
@@ -99,12 +99,13 @@ class LimoSms extends Model
         curl_setopt($process, CURLOPT_RETURNTRANSFER, TRUE);
         curl_setopt($process, CURLOPT_FOLLOWLOCATION, true);
         curl_setopt($process, CURLOPT_HTTPHEADER, array('Content-Type: application/json'
-        , 'ApiKey:'. self::$apikey ));
+        , 'ApiKey:'. self::get_apikey() ));
         $return = curl_exec($process);
         $httpcode = curl_getinfo($process, CURLINFO_HTTP_CODE);
         curl_close($process);
         $decoded = json_decode($return);
-        dd($decoded);
+
+        return $decoded;
     }
 
     public static function sendCode($mobile , $footer='خوش امدید')

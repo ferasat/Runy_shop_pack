@@ -26,5 +26,7 @@ class MsgBox extends Model
         $newMsg->status = $status ;
         $newMsg->importance = $importance ;
         $newMsg->save() ;
+
+        return $newMsg ;
     }
 }

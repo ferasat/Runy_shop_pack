@@ -16,5 +16,4 @@ class CartRow extends Component
         return view('livewire.admin.cart.cart-row' , ['orders'=>$orders , 'count_orders'=>$count_orders]);
     }
 
-
 }
