@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Product\Models\Discount;
 
-
 class ShowCart extends Component
 {
     public $cart, $code, $badDiscount = false, $dis = 0, $discount_id ;

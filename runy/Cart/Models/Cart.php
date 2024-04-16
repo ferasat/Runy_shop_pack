@@ -15,7 +15,10 @@ class Cart extends Model
         'family' ,
         'cell' ,
         'user_id' ,
-        'status'
+        'status',
+        'price',
+        'discount_id',
+        'total_price',
     ];
 
     public static function createFastCart($name , $family , $cell , $user_id=null)

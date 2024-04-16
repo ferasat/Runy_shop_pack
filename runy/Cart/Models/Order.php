@@ -10,6 +10,7 @@ class Order extends Model
 {
     use HasFactory;
     use Notifiable;
+    protected $fillable = ['product_price','quantity','sum'];
 
     public function newOrder($cart_id , $session_id=null , $product_id=null , $product_name=null , $product_format=null ,
                              $product_price=null , $product_ps_price=null , $capacity=null , $quantity=null , $sum=null , $benefit=null )

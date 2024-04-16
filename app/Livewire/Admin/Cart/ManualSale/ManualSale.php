@@ -9,6 +9,7 @@ use Customer\Models\Customer;
 use Customer\Models\CustomerLog;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
+use Product\Models\Discount;
 use Product\Models\Product;
 use SiteLogs\Models\SiteLogs;
 use Livewire\Attributes\On;
@@ -20,7 +21,7 @@ class ManualSale extends Component
     public $cart_id = '';
     public $status ='step1' ,$cart, $name, $family, $cell, $customers, $customerSearch, $customerSelect
     , $services, $products, $productSearch, $serviceSearch, $orders , $qAdd=false , $customer;
-    public $sum ;
+    public $sum , $total_price , $discount_id, $discount_code , $badDiscount=false;
 
     public function mount()
     {
@@ -167,9 +168,9 @@ class ManualSale extends Component
         $this->render();
     }
 
-    public function deleteOrder($order_id)
+    #[on('update-orders')]
+    public function updateOrders()
     {
-        Order::query()->find($order_id)->delete();
         $this->orders = Order::query()->where('cart_id', $this->cart->id)->get();
         $this->render();
     }
@@ -231,14 +232,47 @@ class ManualSale extends Component
         //dd($this->cart);
         $this->orders = Order::query()->where('cart_id' , $this->cart->id)->get();
 
-        $this->sum = 0 ;
+        $price_cart = 0 ;
         foreach ($this->orders as $order){
-            if ($order->product_ps_price > 1 ){
-                $this->sum = $this->sum + $order->product_price ;
-            }else{
-                $this->sum = $this->sum + $order->product_ps_price ;
-            }
+            $price_cart = $price_cart + $order->sum ;
         }
+        $this->cart->price = $price_cart ;
+        $this->cart->total_price = $price_cart ;
+        $this->cart->save();
+        $this->total_price = $this->cart->total_price;
+        $this->sum = $this->cart->price;
         $this->render();
+    }
+
+    public function apply()
+    {
+        $total = $this->cart->price ;
+        $discount = Discount::query()->where('code', $this->discount_code)->first();
+
+        if ($discount) {
+            if ($discount->status === 'active' && isValidDiscount($discount)) {
+                if ($discount->type == 'fixed') {
+                    $this->total_price = $total - $discount->amount;
+                    $this->discount_id = $discount->id;
+                } elseif ($discount->type == 'percentage') {
+                    $this->total_price = $total - (($discount->amount / 100) * $total);
+                    $this->discount_id = $discount->id;
+                }
+            } else {
+                $this->badDiscount = true;
+            }
+
+        } else {
+            $this->badDiscount = true;
+        }
+
+        //dd(isValidDiscount($discount) , $discount , $total , $this->total_price , $this->badDiscount);
+
+        $this->cart->discount_id = $this->discount_id ;
+        $this->cart->total_price = $this->total_price;
+        $this->cart->save();
+        $this->cart = Cart::query()->find($this->cart->id);
+        $this->render();
+
     }
 }
