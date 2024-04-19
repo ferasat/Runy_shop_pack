@@ -4,7 +4,9 @@ namespace App\Livewire\Admin\Cart\ManualSale;
 
 use App\Models\User;
 use Cart\Models\Cart;
+use Cart\Models\Invoice;
 use Cart\Models\Order;
+use Cart\Models\Transaction;
 use Customer\Models\Customer;
 use Customer\Models\CustomerLog;
 use Illuminate\Support\Facades\Auth;
@@ -14,6 +16,7 @@ use Product\Models\Product;
 use SiteLogs\Models\SiteLogs;
 use Livewire\Attributes\On;
 use Livewire\Attributes\Url;
+use Sms\Models\LimoSms;
 
 class ManualSale extends Component
 {
@@ -21,7 +24,7 @@ class ManualSale extends Component
     public $cart_id = '';
     public $status ='step1' ,$cart, $name, $family, $cell, $customers, $customerSearch, $customerSelect
     , $services, $products, $productSearch, $serviceSearch, $orders , $qAdd=false , $customer;
-    public $sum , $total_price , $discount_id, $discount_code , $badDiscount=false;
+    public $sum , $total_price , $discount_id, $discount_code , $badDiscount=false , $type_pay='', $type_pay_msg ;
 
     public function mount()
     {
@@ -31,7 +34,10 @@ class ManualSale extends Component
         $this->products = [];
         $this->status = 'step1';
         $this->sum = 0 ;
+        $this->type_pay='پرداخت حضوری';
+        $this->type_pay_msg = 'پرداخت نقدی یا با کارت خوان حضوری';
     }
+
     public function render()
     {
         return view('livewire.admin.cart.manual-sale.manual-sale');
@@ -48,6 +54,14 @@ class ManualSale extends Component
                 ->get();
 
             $this->render();
+        }
+
+        if ($this->type_pay == 'پرداخت حضوری'){
+            $this->type_pay_msg = 'پرداخت نقدی یا با کارت خوان حضوری';
+        }elseif ($this->type_pay == 'پرداخت آنلاین'){
+            $this->type_pay_msg = 'برای مشتری لینک پرداخت ارسال خواهد شد و از طریق درگاه بانکی پرداخت می کند';
+        }elseif ($this->type_pay == 'پرداخت اعتباری'){
+            $this->type_pay_msg = 'مبلغ در دفتر حساب مشتری ذخیره می شود';
         }
     }
 
@@ -195,36 +209,6 @@ class ManualSale extends Component
         $this->render();
     }
 
-    public function step2()
-    {
-        $user = User::query()->find($this->customer->customer_user_id);
-        $this->orders = Order::query()->where('cart_id' , $this->cart->id)->get();
-        $price_final = 0 ;
-
-        foreach ($this->orders as $order){
-            if ($order->product_ps_price < $order->product_price ){
-                $price_final = $price_final + $order->product_ps_price ;
-            }else {
-                $price_final = $price_final + $order->product_price ;
-            }
-        }
-
-        $this->cart->total_price = $price_final ;
-        $this->cart->user_id = $user->id ;
-        $this->cart->save();
-
-        $newCustomerLog = new CustomerLog();
-        $newCustomerLog->customer_id = $this->customerSelect;
-        $newCustomerLog->full_name = $this->cart->name.' '.$this->cart->family;
-        $newCustomerLog->department = 'سبد خرید';
-        $newCustomerLog->log_subject = 'اضافه شدن سبد خرید به '.$newCustomerLog->full_name;
-        $newCustomerLog->note = 'اضافه شدن سبد خرید به شناسه '.$this->cart->id.' به پرونده '.$newCustomerLog->full_name;
-        $newCustomerLog->date = verta();
-        $newCustomerLog->save();
-
-        $this->status = 'step3'; // final
-    }
-
     #[on('update-manual-cart')]
     public function update_manual_cart()
     {
@@ -270,9 +254,84 @@ class ManualSale extends Component
 
         $this->cart->discount_id = $this->discount_id ;
         $this->cart->total_price = $this->total_price;
+        $this->cart->seller_id = Auth::id() ;
         $this->cart->save();
         $this->cart = Cart::query()->find($this->cart->id);
         $this->render();
 
+    }
+
+    public function saveFinal()
+    {
+        SiteLogs::new_Log('ثبت فروش صندوقدار', json_encode($this->cart), 'Transaction' , $this->cart->id , 'ثبت فروش' , 'json' , Auth::id());
+
+        $invoce = Invoice::query()->where('cart_id' , $this->cart->id)->first();
+        if ($invoce == null){
+            $invoce = new Invoice();
+            $invoce->subject = 'سبد خرید '.$this->cart->id .' برای '.$this->cart->name.' '.$this->cart->family;
+            $invoce->cart_id = $this->cart->id ;
+            $invoce->type = 'product&service';
+            $invoce->cell = $this->cart->cell ;
+            $invoce->creator_id = Auth::id() ;
+            $invoce->owner = $this->cart->name.' '.$this->cart->family ;
+            $invoce->customer_id = $this->customer->id ;
+            $invoce->description = $this->cart->id ;
+            $invoce->status = $this->type_pay ;
+            $invoce->amount = $this->cart->total_price ;
+            $invoce->save();
+        }else {
+            $invoce->subject = 'سبد خرید '.$this->cart->id .' برای '.$this->cart->name.' '.$this->cart->family;
+            $invoce->cart_id = $this->cart->id ;
+            $invoce->type = 'product&service';
+            $invoce->cell = $this->cart->cell ;
+            $invoce->creator_id = Auth::id() ;
+            $invoce->owner = $this->cart->name.' '.$this->cart->family ;
+            $invoce->customer_id = $this->customer->id ;
+            $invoce->description = $this->cart->id ;
+            $invoce->status = $this->type_pay ;
+            $invoce->amount = $this->cart->total_price ;
+            $invoce->save();
+        }
+
+
+        SiteLogs::new_Log('ثبت فروش صندوقدار', json_encode($invoce), 'invoice' , $invoce->id , 'ساخت فاکتور' , 'json' , Auth::id());
+
+        if ($this->type_pay == 'پرداخت حضوری'){
+            $newTransaction = new Transaction();
+            $newTransaction->uuid = time().rand(1,999);
+            $newTransaction->invoice_id = $invoce->id;
+            $newTransaction->user_id = $this->customer->id;
+            $newTransaction->paid = $this->cart->total_price;
+            $newTransaction->amount = $this->cart->total_price;
+            $newTransaction->transaction_id = $newTransaction->uuid;
+            $newTransaction->get_way = $this->type_pay;
+            $newTransaction->status = 10;
+            $newTransaction->save();
+
+            SiteLogs::new_Log('ثبت فروش صندوقدار', json_encode($newTransaction), 'Transaction' , $newTransaction->id , 'ساخت ترانزاکشن' , 'json' , Auth::id());
+
+            $this->cart->acc_status = 'پرداخت شد';
+            $this->cart->status = 'تحویل داده شد';
+            $this->cart->save();
+
+
+        }elseif ($this->type_pay == 'پرداخت آنلاین'){
+            ///dd(545455);
+            LimoSms::sendPatternMessage(523 , [$invoce->owner , $invoce->id] , $this->cart->cell);
+        }elseif ($this->type_pay == 'پرداخت اعتباری'){
+
+        }
+
+
+        $newCustomerLog = new CustomerLog();
+        $newCustomerLog->customer_id = $this->customerSelect;
+        $newCustomerLog->full_name = $this->cart->name.' '.$this->cart->family;
+        $newCustomerLog->department = 'سبد خرید';
+        $newCustomerLog->log_subject = 'اضافه شدن سبد خرید به '.$newCustomerLog->full_name;
+        $newCustomerLog->note = 'اضافه شدن سبد خرید به شناسه '.$this->cart->id.' به پرونده '.$newCustomerLog->full_name;
+        $newCustomerLog->date = verta();
+        $newCustomerLog->save();
+
+        $this->status = 'step3'; // final
     }
 }

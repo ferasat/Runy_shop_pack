@@ -214,42 +214,63 @@
                     </div>
 
 
-                    <div class="col-md-12 my-4">
-                        <div class="card">
-                            <div class="card-header">کد تخفیف</div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <label for="discount_id" class="form-label">کد تخفیف</label>
-                                        <div class="input-group has-validation">
-                                            <span class="input-group-text" id="discount_id_">کد تخفیف</span>
-                                            <input type="text" class="form-control" id="discount_id" wire:model.live="discount_code">
-                                            @error('discount_id')
-                                            <div class="invalid-feedback">
-                                                {{ $message }}
-                                            </div>
-                                            @enderror
-                                            <button class="input-group-text" id="btnDiscount" wire:click="apply">اعمال</button>
-                                        </div>
-                                    </div>
 
-
-                                    <div class="col-md-4">
-                                        <label for="total_price" class="form-label">مبلغ قابل پرداخت :</label>
-                                        <p>
-                                            مبلغ با تخفیف: {{ number_format($total_price) }}
-                                        </p>
-                                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="discount_id" class="form-label">کد تخفیف</label>
+                            <div class="input-group has-validation">
+                                <span class="input-group-text" id="discount_id_">کد تخفیف</span>
+                                <input type="text" class="form-control" id="discount_id" wire:model.live="discount_code">
+                                @error('discount_id')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
                                 </div>
-
+                                @enderror
+                                <button class="input-group-text" id="btnDiscount" wire:click="apply">اعمال</button>
                             </div>
-                            <div class="card-footer"></div>
+                        </div>
+
+
+                        <div class="col-md-4">
+                            <label for="total_price" class="form-label">مبلغ قابل پرداخت :</label>
+                            <p>
+                                مبلغ با تخفیف: {{ number_format($total_price) }}
+                            </p>
                         </div>
                     </div>
                 </div>
-                <div class="card-footer">
-                    <button class="btn btn-runy-success btn-sm" wire:click.prevent="step2()">ادامه
-                    </button>
+            </div>
+
+            <div class="card shadow-sm border-0 mt-2">
+                <div class="card-header">تسویه حساب</div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="discount_id" class="form-label">نحوه پرداخت</label>
+                            <div class="input-group has-validation">
+                                <span class="input-group-text" id="type_pay">نحوه پرداخت</span>
+                                <select type="text" class="form-control" id="type_pay" wire:model.live="type_pay">
+                                    <option value="پرداخت حضوری">پرداخت حضوری</option>
+                                    <option value="پرداخت آنلاین">پرداخت آنلاین</option>
+                                    <option value="پرداخت اعتباری">پرداخت اعتباری</option>
+                                </select>
+                                <span>{{ $type_pay_msg }}</span>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-4">
+                            <label for="total_price" class="form-label">مبلغ قابل پرداخت :</label>
+                            <p>
+                                مبلغ با تخفیف: {{ number_format($total_price) }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer d-flex justify-content-end">
+                    <button class="btn btn-primary" wire:click="saveFinal">ذخیره</button>
                 </div>
             </div>
         @elseif($status == 'step3')

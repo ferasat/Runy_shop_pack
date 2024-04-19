@@ -28,7 +28,7 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        DB::table('users')->insert([
+        DB::table('acc_settings')->insert([
             'tax' => 0 ,
             'tax_calculation_type' => 'percentage' ,
             'tax1' => 0 ,

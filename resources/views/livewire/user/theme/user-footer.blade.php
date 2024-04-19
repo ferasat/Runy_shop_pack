@@ -4,10 +4,10 @@
     <div class="container-fluid footer-top">
         <div class="container">
             <div class="row text-center">
-                {!! $footer1->value !!}
-                {!! $footer2->value !!}
-                {!! $footer3->value !!}
-                {!! $footer4->value !!}
+                @if($footer1 != null) {!! $footer1->value !!} @endif
+                @if($footer2 != null) {!! $footer2->value !!} @endif
+                @if($footer4 != null) {!! $footer4->value !!} @endif
+                @if($footer4 != null) {!! $footer4->value !!} @endif
             </div>
         </div>
     </div>

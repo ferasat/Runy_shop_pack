@@ -16,7 +16,12 @@ class SlideShow extends Component
 
     public function render()
     {
-        $this->pics = RunySliderPics::query()->where('runy_slider_id' , $this->homePage->slideshow_id)->get();
+        if (isset($this->homePage->slideshow_id)){
+            $this->pics = RunySliderPics::query()->where('runy_slider_id' , $this->homePage->slideshow_id)->get();
+        }else {
+            $this->pics = [] ;
+
+        }
         return view('livewire.user.home.slide.slide-show');
     }
 }
