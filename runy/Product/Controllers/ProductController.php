@@ -184,6 +184,11 @@ class ProductController extends Controller
         return view('ProductView::show', compact('product', 'title', 'description' , 'breadcrumbs'));
     }
 
+    public function showId(Product $id)
+    {
+        return redirect()->to(asset('/product/'.$id->slug));
+    }
+
     public function shop()
     {
         $setting = Setting::query()->first();

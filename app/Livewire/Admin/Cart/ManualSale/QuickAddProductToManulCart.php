@@ -3,12 +3,13 @@
 namespace App\Livewire\Admin\Cart\ManualSale;
 
 use Cart\Models\Order;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Product\Models\Product;
 
 class QuickAddProductToManulCart extends Component
 {
-    public $cart , $orders , $product , $products , $wordSearch ;
+    public $cart , $orders , $product , $products , $wordSearch , $addNewProductView = false  , $searchInSerial=false , $new_product_name;
 
     public function mount()
     {
@@ -90,5 +91,29 @@ class QuickAddProductToManulCart extends Component
         }
     }
 
+    public function switchNewProduct()
+    {
+        $this->addNewProductView = !$this->addNewProductView ;
+    }
 
+    public function addNewProduct()
+    {
+        $newProduct = new Product();
+        $newProduct->name = $this->new_product_name ;
+        $newProduct->user_id = Auth::id() ;
+        $newProduct->number_of_days_to_expiry = 0 ;
+        $newProduct->save() ;
+
+        $newOrder = new Order();
+        $newOrder->cart_id = $this->cart->id;
+        $newOrder->quantity = 1;
+        $newOrder->product_id = $newProduct->id;
+        $newOrder->product_name = $newProduct->name;
+        $newOrder->product_format = 'normal' ;
+        $newOrder->product_price = 1 ;
+        $newOrder->save();
+        
+        $this->dispatch('update-manual-cart');
+
+    }
 }

@@ -235,6 +235,7 @@ class ManualSale extends Component
 
         if ($discount) {
             if ($discount->status === 'active' && isValidDiscount($discount)) {
+
                 if ($discount->type == 'fixed') {
                     $this->total_price = $total - $discount->amount;
                     $this->discount_id = $discount->id;
@@ -242,6 +243,11 @@ class ManualSale extends Component
                     $this->total_price = $total - (($discount->amount / 100) * $total);
                     $this->discount_id = $discount->id;
                 }
+
+                $this->cart->discount_id = $discount->id ;
+                $this->cart->discount_type = discount_type($discount->type)  ;
+                $this->cart->discount_amount = $discount->amount ;
+
             } else {
                 $this->badDiscount = true;
             }
@@ -252,7 +258,6 @@ class ManualSale extends Component
 
         //dd(isValidDiscount($discount) , $discount , $total , $this->total_price , $this->badDiscount);
 
-        $this->cart->discount_id = $this->discount_id ;
         $this->cart->total_price = $this->total_price;
         $this->cart->seller_id = Auth::id() ;
         $this->cart->save();
@@ -266,6 +271,7 @@ class ManualSale extends Component
         SiteLogs::new_Log('ثبت فروش صندوقدار', json_encode($this->cart), 'Transaction' , $this->cart->id , 'ثبت فروش' , 'json' , Auth::id());
 
         $invoce = Invoice::query()->where('cart_id' , $this->cart->id)->first();
+
         if ($invoce == null){
             $invoce = new Invoice();
             $invoce->subject = 'سبد خرید '.$this->cart->id .' برای '.$this->cart->name.' '.$this->cart->family;
@@ -293,7 +299,6 @@ class ManualSale extends Component
             $invoce->save();
         }
 
-
         SiteLogs::new_Log('ثبت فروش صندوقدار', json_encode($invoce), 'invoice' , $invoce->id , 'ساخت فاکتور' , 'json' , Auth::id());
 
         if ($this->type_pay == 'پرداخت حضوری'){
@@ -310,16 +315,24 @@ class ManualSale extends Component
 
             SiteLogs::new_Log('ثبت فروش صندوقدار', json_encode($newTransaction), 'Transaction' , $newTransaction->id , 'ساخت ترانزاکشن' , 'json' , Auth::id());
 
-            $this->cart->acc_status = 'پرداخت شد';
+            $this->cart->acc_status = 'پرداخت حضوری';
             $this->cart->status = 'تحویل داده شد';
+            $this->cart->how_to_order = 'حضوری';
             $this->cart->save();
+
+            result_pay_on_product('پرداخت حضوری'  , $this->orders );
 
 
         }elseif ($this->type_pay == 'پرداخت آنلاین'){
-            ///dd(545455);
+
+            $this->cart->acc_status = 'پرداخت نشده';
+            $this->cart->how_to_order = 'حضوری';
+            $this->cart->save();
             LimoSms::sendPatternMessage(523 , [$invoce->owner , $invoce->id] , $this->cart->cell);
+
         }elseif ($this->type_pay == 'پرداخت اعتباری'){
 
+            result_pay_on_product('پرداخت اعتباری'  , $this->orders );
         }
 
 

@@ -26,6 +26,10 @@ class CreateCartsTable extends Migration
             $table->string('price')->nullable()->comment('قیمت بدون تخفیف');
             $table->string('total_price')->nullable();
             $table->string('acc_status' , 30)->default('پرداخت نشده');
+            $table->boolean('discount_type')->default(0)->comment('0 percent | 1 const ');
+            $table->integer('discount_amount')->default(0)->comment('مقدار درصد یا ثابت');
+            $table->string('currency' , 22)->default('تومان')->comment('واحد پولی کلی که بروی سبد خرید اعمال شده');
+            $table->enum('how_to_order' , ['حضوری' , 'آنلاین' , 'تلفنی'])->default('آنلاین')->comment('نحوه سفارش');
             $table->timestamps();
         });
     }

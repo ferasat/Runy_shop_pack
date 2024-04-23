@@ -17,7 +17,7 @@ class CreateProductsTable extends Migration
             $table->longText('technical_info')->nullable();
             $table->longText('shortDescription')->nullable();
             $table->string('pic')->nullable();
-            $table->enum('statusPublish', ['forCheck' , 'draft' ,'publish'])->default('draft')->nullable();
+            $table->enum('statusPublish', ['forCheck' , 'draft' ,'publish'])->default('draft');
             $table->integer('specialPin')->default('0');  /// هر عدد یه معنی : 0 معمولی - 1 خاص و پین شده
             $table->enum('formatProduct' , ['normal','show','varPro','gallery','dl-video','dl-file','service'])->default('normal');  /// فرمت نمایش پست را نشان می دهد
             $table->bigInteger('price')->nullable();  // قیمت محصول
@@ -34,6 +34,7 @@ class CreateProductsTable extends Migration
             $table->integer('number_of_days_to_expiry')->nullable(); //  انقضای خدمت بعد از زمان خرید به تعداد روز  محاسبه می شود
             $table->foreignId('user_id');
             $table->foreign('user_id')->references('id')->on('users');
+            $table->integer('like_product')->default(0);
             $table->timestamps();
         });
     }

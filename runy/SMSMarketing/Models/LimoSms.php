@@ -105,7 +105,7 @@ class LimoSms extends Model
         $httpcode = curl_getinfo($process, CURLINFO_HTTP_CODE);
         curl_close($process);
         $decoded = json_decode($return);
-        dd($decoded);
+        //dd($decoded);
         return $decoded;
     }
 

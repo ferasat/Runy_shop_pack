@@ -16,23 +16,23 @@ function statusCart($status)
     /// 1- 'in_process' 2- 'being_packaged'  3- 'ready_to_send' 4-
     if ($status == 'in_process') {
         return 'در حال پردازش';
-    } elseif ($status == 'being_packaged') {
+    } elseif ($status == 'در حال بستبندی') {
         return 'در حال بستبندی';
-    } elseif ($status == 'ready_to_send') {
+    } elseif ($status == 'آماده ارسال') {
         return 'آماده ارسال';
-    } elseif ($status == 'posted') {
+    } elseif ($status == 'ارسال شده') {
         return 'ارسال شده';
-    } elseif ($status == 'delivered') {
-        return 'تحویل داده شده';
-    } elseif ($status == 'returned') {
+    } elseif ($status == 'تحویل داده شد') {
+        return 'تحویل داده شد';
+    } elseif ($status == 'برگشت خورده') {
         return 'برگشت خورده';
     } elseif ($status == 'ثبت سفارش') {
         return 'ثبت سفارش';
     } elseif ($status == 'پرداخت موفق') {
         return 'پرداخت موفق';
-    } elseif ($status == 'defective_information') {
+    } elseif ($status == 'نقص در اطلاعات') {
         return 'نقص در اطلاعات';
-    } elseif ($status == 'lack_of_goods') {
+    } elseif ($status == 'موجود نبودن کالا') {
         return 'موجود نبودن کالا';
     } elseif ($status == 'apply') {
         return 'رسیدگی شد'; // برای خدمات
@@ -45,21 +45,23 @@ function statusCartColor($status)
     /// 1- 'in_process' 2- 'being_packaged'  3- 'ready_to_send' 4-
     if ($status == 'in_process') {
         return 'bg-runy-inprocess-low';
-    } elseif ($status == 'being_packaged') {
-        return 'bg-runy-inprocess-low';
-    } elseif ($status == 'ready_to_send') {
+    } elseif ($status == 'ثبت سفارش') {
         return 'bg-runy-inprocess';
-    } elseif ($status == 'posted') {
+    } elseif ($status == 'در حال بستبندی') {
+        return 'bg-runy-inprocess-low';
+    } elseif ($status == 'آماده ارسال') {
+        return 'bg-runy-inprocess';
+    } elseif ($status == 'ارسال شده') {
         return 'bg-runy-success';
-    } elseif ($status == 'delivered') {
-        return 'تحویل داده شده';
-    } elseif ($status == 'returned') {
+    } elseif ($status == 'تحویل داده شد') {
+        return 'bg-runy-success-high';
+    } elseif ($status == 'برگشت خورده') {
         return 'bg-runy-danger-low';
     } elseif ($status == 'پرداخت موفق') {
         return 'bg-runy-success-low';
-    } elseif ($status == 'defective_information') {
+    } elseif ($status == 'نقص در اطلاعات') {
         return 'bg-runy-danger-low';
-    } elseif ($status == 'lack_of_goods') {
+    } elseif ($status == 'موجود نبودن کالا') {
         return 'bg-runy-danger';
     } elseif ($status == 'apply') {
         return 'bg-runy-success-high'; // برای خدمات
@@ -131,4 +133,9 @@ function invoice_info_owner($invoice_id){
 }
  function result_pay_on_product($status  , $Orders){
 
+    if ($status == 'پرداخت موفق' or $status == 'پرداخت حضوری' or $status == 'پرداخت اعتباری'){
+        return true ;
+    }else{
+        return false ;
+    }
  }

@@ -143,7 +143,7 @@ function isOrNot_pro($cat_id, $pro_id)
         return false ;
     }
 }
-
+/// دستبندی
 function isTax_pro($cat_id, $pro_id)
 {
     $tax_is = Taxonomy::query()->where([
@@ -199,4 +199,22 @@ function isValidDiscount($discount)
     }
 
     return false;
+}
+
+function count_discount($price , $total_price){
+    if ($price == 0 or $price == null){
+        return 0 ;
+    }
+    $men = $price - $total_price ;
+    $dev = 100/$price ;
+    $result = $men*$dev ;
+    return $result ;
+}
+
+function discount_type($type){
+    if ($type == 'percentage'){
+        return 0 ;
+    }else{
+        return 1;
+    }
 }

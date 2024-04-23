@@ -203,7 +203,7 @@
                                     @endforeach
                                     <tr class="border-opacity-25 " >
                                         <td colspan="5" ></td>
-                                        <td class="table-active border">جمع کل : <strong>{{ number_format($sum) }}</strong></td>
+                                        <td class="table-active border">جمع کل : <strong>{{ number_format($sum). ' '.$cart->currency }}</strong></td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -236,7 +236,7 @@
                         <div class="col-md-4">
                             <label for="total_price" class="form-label">مبلغ قابل پرداخت :</label>
                             <p>
-                                مبلغ با تخفیف: {{ number_format($total_price) }}
+                                مبلغ با تخفیف: {{ number_format($total_price) . ' '.$cart->currency }}
                             </p>
                         </div>
                     </div>
@@ -256,16 +256,13 @@
                                     <option value="پرداخت آنلاین">پرداخت آنلاین</option>
                                     <option value="پرداخت اعتباری">پرداخت اعتباری</option>
                                 </select>
-                                <span>{{ $type_pay_msg }}</span>
+
                             </div>
                         </div>
 
-
                         <div class="col-md-4">
-                            <label for="total_price" class="form-label">مبلغ قابل پرداخت :</label>
-                            <p>
-                                مبلغ با تخفیف: {{ number_format($total_price) }}
-                            </p>
+                            <label for="discount_id" class="form-label">راهنما :</label><br>
+                            <span>{{ $type_pay_msg }}</span>
                         </div>
                     </div>
                 </div>
@@ -277,15 +274,16 @@
             <div class="card shadow-sm border-0 step3">
                 <div class="card-body">
                     <div class="title bg-info rounded p-3">
-                        سبد خرید به ارزش : {{ number_format($cart->total_price) }}
+                        سبد خرید به ارزش : {{ number_format($cart->total_price) .' '.$cart->currency }}
                         برای {{ $cart->name .' '.$cart->family }} ایجاد شد .<br>
                         شناسه سبد خرید : <strong> {{ $cart->id }}</strong>
                     </div>
                 </div>
-                <div class="card-footer">
+                <div class="card-footer d-flex justify-content-between">
                     <a href="{{ asset(route('index.carts')) }}" class="btn btn-runy-success">
                         سفارشات
                     </a>
+                    <a class="btn btn-primary" href="{{ asset(route('manualSale')) }}">ثبت سفارش جدید</a>
                 </div>
             </div>
         @endif

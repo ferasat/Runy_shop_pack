@@ -26,7 +26,7 @@ return new class extends Migration
             $table->boolean('contract_rules')->default(0)->comment('تایید خواندن قوانین و مقررات قرارداد : 1:خوانده شده و تایید شده - 0: تایید نشده');
             $table->date('contract_accept_time')->nullable()->comment('زمان تایید قرارداد');
             $table->date('pay_time')->nullable()->comment('زمان پرداخت قرارداد');
-            $table->enum('active' , ['active' , 'inactive'])->default('active')->comment('قابل پرداخت یا غیر قابل پرداخت یا فعال و غیر فعال کردن فاکتور');
+            $table->enum('active' , ['active' , 'inactive'])->default('active')->comment('قابل پرداخت یا غیر قابل پرداخت یا فعال و غیر فعال کردن فاکتور'); // زمانی که تراکنش تمام و صورت حساب کامل پرداخت می شود این غیر فعال باید شود
             $table->string('inactiveTime' )->default('15')->comment('زمان غیرفعال کردن فاکتور');
             $table->timestamps();
         });

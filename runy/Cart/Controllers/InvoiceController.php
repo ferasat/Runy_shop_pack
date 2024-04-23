@@ -29,6 +29,15 @@ class InvoiceController extends Controller
 
         $runy_invoice = Invoice::query()->find($id->id);
 
+        if ($runy_invoice->active == 'inactive'){
+            $message = [
+                'title'=>'این صورت حساب غیر فعال است',
+                'description'=>'این صورت حساب  در وضعیت غیر فعال است و نمی تونید صورت حساب را پرداخت کنید . لطفا با پشتیبان تماس بگیرید .',
+                'status' => 'info'
+            ];
+            return view('messages.user-show-messages' , compact('message'));
+        }
+
         $newTransaction = new Transaction();
         $newTransaction->uuid = $invoice_getUuid;
         $newTransaction->invoice_id = $runy_invoice->id;
@@ -79,6 +88,7 @@ class InvoiceController extends Controller
                 $transaction->status = $request->status;
                 $invoice->status = 'پرداخت موفق';
                 $invoice->subject = 'پرداخت موفق برای '.$invoice->owner;
+                $invoice->active = 'inactive';
                 $cart->status = 'ثبت سفارش';
                 $cart->acc_status = 'پرداخت موفق';
 
@@ -96,7 +106,7 @@ class InvoiceController extends Controller
             $cart->save();
             $orders = Order::query()->where('cart_id', $cart->id)->get();
 
-            result_pay_on_product($cart->status  , $orders); /// نتیجه پرداخت بروی موجودی محصول و انبار
+            result_pay_on_product($cart->acc_status  , $orders); /// نتیجه پرداخت بروی موجودی محصول و انبار
 
             $newLog = new SiteLogs();
             $newLog->new_Log('نتیجه خرید : ' . $invoice->status, json_encode($cart), 'cart', $cart->id, $invoice->status, 'json', Auth::id());

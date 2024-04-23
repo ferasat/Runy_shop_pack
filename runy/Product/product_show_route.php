@@ -9,6 +9,7 @@ use Product\Controllers\ServiceController;
 Route::prefix('/product')->group( function (){
     Route::get('/{product:slug}/', [ProductController::class , 'show']);
 });
+Route::get('/sp/{id}', [ProductController::class , 'showId']);
 
 Route::get('/product-category/{category_product:slug}', [CategoryProductController::class , 'show']);
 

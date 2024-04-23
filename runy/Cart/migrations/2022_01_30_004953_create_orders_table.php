@@ -19,7 +19,7 @@ class CreateOrdersTable extends Migration
             $table->bigInteger('product_ps_price')->nullable(); //  قیمت فروش ویژه
             $table->integer('capacity')->nullable(); // ظرفیت محصول
             $table->integer('quantity')->nullable(); // تعداد محصول
-            $table->string('currency' , 20)->default('T'); // تعداد محصول
+            $table->string('currency' , 22)->default('تومان'); // واحد محاسبه مالی
             $table->bigInteger('sum')->nullable();
             $table->bigInteger('benefit')->nullable();
             $table->timestamps();
